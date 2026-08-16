@@ -1,0 +1,128 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "BIFROST 字段整合只读映射响应 Schema",
+  "type": "object",
+  "required": [
+    "status",
+    "logical_skill_version",
+    "release_status",
+    "request_id",
+    "source_verification",
+    "source_identity",
+    "contract_versions",
+    "schema_summary",
+    "field_profile_summary",
+    "mapping_summary",
+    "mapping_draft",
+    "join_candidates",
+    "data_quality_findings",
+    "semantic_extension_proposals",
+    "human_confirmation_queue",
+    "validation",
+    "data_gaps",
+    "local_trace_id",
+    "aily_run_id"
+  ],
+  "properties": {
+    "status": {
+      "type": "string",
+      "enum": ["completed", "needs_confirmation", "blocked"]
+    },
+    "logical_skill_version": {
+      "type": "string",
+      "const": "0.1.2"
+    },
+    "release_status": {
+      "type": "string",
+      "const": "LOCAL_VALIDATED_NOT_PUBLISHED"
+    },
+    "request_id": {
+      "type": ["string", "null"]
+    },
+    "source_verification": {
+      "type": "object",
+      "required": ["source_sha256_before", "source_sha256_after", "source_write_performed"],
+      "properties": {
+        "source_sha256_before": {"type": ["string", "null"]},
+        "source_sha256_after": {"type": ["string", "null"]},
+        "source_write_performed": {"type": "boolean"}
+      }
+    },
+    "source_identity": {
+      "type": "object",
+      "properties": {
+        "declared_source_family": {"type": ["string", "null"]},
+        "detected_source_family": {"type": ["string", "null"]},
+        "identity_confidence": {"type": "number"},
+        "source_signature_status": {"type": "string", "enum": ["exact", "compatible", "unknown"]},
+        "source_signature_registry_version": {"type": "string"}
+      }
+    },
+    "contract_versions": {
+      "type": "object"
+    },
+    "schema_summary": {
+      "type": "object"
+    },
+    "field_profile_summary": {
+      "type": "object"
+    },
+    "mapping_summary": {
+      "type": "object"
+    },
+    "mapping_draft": {
+      "type": "array"
+    },
+    "mapping_draft_count": {
+      "type": "integer"
+    },
+    "inherited_approval_count": {
+      "type": "integer"
+    },
+    "active_confirmed_count": {
+      "type": "integer"
+    },
+    "confirmed_new_count": {
+      "type": "integer"
+    },
+    "suspended_inherited_approvals": {
+      "type": "array"
+    },
+    "oee_safety_contract": {
+      "type": "object"
+    },
+    "inventory_contract_flags": {
+      "type": "object"
+    },
+    "join_candidates": {
+      "type": "array"
+    },
+    "data_quality_findings": {
+      "type": "array"
+    },
+    "semantic_extension_proposals": {
+      "type": "array"
+    },
+    "human_confirmation_queue": {
+      "type": "array"
+    },
+    "validation": {
+      "type": "object",
+      "required": ["status", "issues"],
+      "properties": {
+        "status": {"type": "string", "enum": ["passed", "warning", "failed"]},
+        "issues": {"type": "array"},
+        "warnings": {"type": "array"}
+      }
+    },
+    "data_gaps": {
+      "type": "array"
+    },
+    "local_trace_id": {
+      "type": "string"
+    },
+    "aily_run_id": {
+      "type": ["string", "null"]
+    }
+  }
+}

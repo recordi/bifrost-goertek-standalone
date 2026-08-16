@@ -1,0 +1,1164 @@
+{
+  "contract_name": "BIFROST_DECISION_INPUT_v0.1",
+  "contract_version": "BIFROST-DECISION-INPUT-v0.1",
+  "request_id": "INT-SUPPLY-EXP-001",
+  "consumer_agent_id": "",
+  "role": "supply",
+  "query_context": {
+    "semantic_entity": "purchase_order",
+    "source_scope": "P01",
+    "requested_fields": [
+      "po_number",
+      "material_code",
+      "material_name",
+      "supplier",
+      "purchase_qty",
+      "unit",
+      "order_date",
+      "promised_delivery_date",
+      "actual_arrival_date",
+      "arrived_qty"
+    ],
+    "filters": {
+      "po_number": "PO-2026-0001"
+    },
+    "time_window": null,
+    "limit": null,
+    "semantic_data_ref": {
+      "ref_id": "SDR-P01-v03-RC1",
+      "snapshot_id": "SDS-P01_OFFICIAL-20260810-113847",
+      "access_mode": "read_only",
+      "materialization_status": "materialized"
+    },
+    "read_only": true
+  },
+  "source_release_id": "BIFROST_v0.3_RC1",
+  "source_snapshot_id": "SDS-P01_OFFICIAL-20260810-113847",
+  "normalized_facts": [
+    {
+      "semantic_record_key": "供-采购订单与库存#purchase_order#PO-2026-0001#row2",
+      "source_table": "供-采购订单与库存",
+      "source_record_id": "PO-2026-0001#row2",
+      "semantic_field": "po_number",
+      "normalized_value": "PO-2026-0001",
+      "normalized_data_type": "str",
+      "normalized_unit": "",
+      "display_format": "",
+      "value_consumption_status": "usable",
+      "provenance_ref": {
+        "source_field": "采购订单号",
+        "raw_value": "PO-2026-0001",
+        "raw_value_status": "available",
+        "source_data_type": "str",
+        "source_unit": "",
+        "transformation_rule_id": "TR-DIRECT",
+        "mapping_ref": {
+          "approval_rule_version": "MAP-v1.0.1",
+          "match_method": "approved_contract",
+          "semantic_model_version": "SEM-v1.1.1",
+          "inherited_approval": true
+        },
+        "evidence_locator": {
+          "source_file_sha256": "2906f6e7d3c57834a939d5e17acd8ea89585abaffac5000c1ecfa83bc176fd92",
+          "source_table": "供-采购订单与库存",
+          "source_row_number": 2,
+          "source_column_name": "采购订单号",
+          "source_column_index": 0
+        },
+        "note": "raw_value 为源始值，仅供审计追溯；normalized_value 为消费者业务值，两者不得互相替代"
+      }
+    },
+    {
+      "semantic_record_key": "供-采购订单与库存#purchase_order#PO-2026-0001#row2",
+      "source_table": "供-采购订单与库存",
+      "source_record_id": "PO-2026-0001#row2",
+      "semantic_field": "material_code",
+      "normalized_value": "MAT-001",
+      "normalized_data_type": "str",
+      "normalized_unit": "",
+      "display_format": "",
+      "value_consumption_status": "usable",
+      "provenance_ref": {
+        "source_field": "物料编码",
+        "raw_value": "MAT-001",
+        "raw_value_status": "available",
+        "source_data_type": "str",
+        "source_unit": "",
+        "transformation_rule_id": "TR-DIRECT",
+        "mapping_ref": {
+          "approval_rule_version": "MAP-v1.0.1",
+          "match_method": "approved_contract",
+          "semantic_model_version": "SEM-v1.1.1",
+          "inherited_approval": true
+        },
+        "evidence_locator": {
+          "source_file_sha256": "2906f6e7d3c57834a939d5e17acd8ea89585abaffac5000c1ecfa83bc176fd92",
+          "source_table": "供-采购订单与库存",
+          "source_row_number": 2,
+          "source_column_name": "物料编码",
+          "source_column_index": 1
+        },
+        "note": "raw_value 为源始值，仅供审计追溯；normalized_value 为消费者业务值，两者不得互相替代"
+      }
+    },
+    {
+      "semantic_record_key": "供-采购订单与库存#purchase_order#PO-2026-0001#row2",
+      "source_table": "供-采购订单与库存",
+      "source_record_id": "PO-2026-0001#row2",
+      "semantic_field": "material_name",
+      "normalized_value": "高通骁龙XR3芯片",
+      "normalized_data_type": "str",
+      "normalized_unit": "",
+      "display_format": "",
+      "value_consumption_status": "usable",
+      "provenance_ref": {
+        "source_field": "物料名称",
+        "raw_value": "高通骁龙XR3芯片",
+        "raw_value_status": "available",
+        "source_data_type": "str",
+        "source_unit": "",
+        "transformation_rule_id": "TR-DIRECT",
+        "mapping_ref": {
+          "approval_rule_version": "MAP-v1.0.1",
+          "match_method": "approved_contract",
+          "semantic_model_version": "SEM-v1.1.1",
+          "inherited_approval": true
+        },
+        "evidence_locator": {
+          "source_file_sha256": "2906f6e7d3c57834a939d5e17acd8ea89585abaffac5000c1ecfa83bc176fd92",
+          "source_table": "供-采购订单与库存",
+          "source_row_number": 2,
+          "source_column_name": "物料名称",
+          "source_column_index": 2
+        },
+        "note": "raw_value 为源始值，仅供审计追溯；normalized_value 为消费者业务值，两者不得互相替代"
+      }
+    },
+    {
+      "semantic_record_key": "供-采购订单与库存#purchase_order#PO-2026-0001#row2",
+      "source_table": "供-采购订单与库存",
+      "source_record_id": "PO-2026-0001#row2",
+      "semantic_field": "supplier",
+      "normalized_value": "S-欣旺达电子",
+      "normalized_data_type": "str",
+      "normalized_unit": "",
+      "display_format": "",
+      "value_consumption_status": "usable",
+      "provenance_ref": {
+        "source_field": "供应商",
+        "raw_value": "S-欣旺达电子",
+        "raw_value_status": "available",
+        "source_data_type": "str",
+        "source_unit": "",
+        "transformation_rule_id": "TR-DIRECT",
+        "mapping_ref": {
+          "approval_rule_version": "MAP-v1.0.1",
+          "match_method": "approved_contract",
+          "semantic_model_version": "SEM-v1.1.1",
+          "inherited_approval": true
+        },
+        "evidence_locator": {
+          "source_file_sha256": "2906f6e7d3c57834a939d5e17acd8ea89585abaffac5000c1ecfa83bc176fd92",
+          "source_table": "供-采购订单与库存",
+          "source_row_number": 2,
+          "source_column_name": "供应商",
+          "source_column_index": 3
+        },
+        "note": "raw_value 为源始值，仅供审计追溯；normalized_value 为消费者业务值，两者不得互相替代"
+      }
+    },
+    {
+      "semantic_record_key": "供-采购订单与库存#purchase_order#PO-2026-0001#row2",
+      "source_table": "供-采购订单与库存",
+      "source_record_id": "PO-2026-0001#row2",
+      "semantic_field": "purchase_qty",
+      "normalized_value": 6666,
+      "normalized_data_type": "int",
+      "normalized_unit": "count",
+      "display_format": "",
+      "value_consumption_status": "usable",
+      "provenance_ref": {
+        "source_field": "采购数量",
+        "raw_value": 6666,
+        "raw_value_status": "available",
+        "source_data_type": "int",
+        "source_unit": "count",
+        "transformation_rule_id": "TR-UNIT-NORMALIZE-COUNT",
+        "mapping_ref": {
+          "approval_rule_version": "MAP-v1.0.1",
+          "match_method": "approved_contract",
+          "semantic_model_version": "SEM-v1.1.1",
+          "inherited_approval": true
+        },
+        "evidence_locator": {
+          "source_file_sha256": "2906f6e7d3c57834a939d5e17acd8ea89585abaffac5000c1ecfa83bc176fd92",
+          "source_table": "供-采购订单与库存",
+          "source_row_number": 2,
+          "source_column_name": "采购数量",
+          "source_column_index": 4
+        },
+        "note": "raw_value 为源始值，仅供审计追溯；normalized_value 为消费者业务值，两者不得互相替代"
+      }
+    },
+    {
+      "semantic_record_key": "供-采购订单与库存#purchase_order#PO-2026-0001#row2",
+      "source_table": "供-采购订单与库存",
+      "source_record_id": "PO-2026-0001#row2",
+      "semantic_field": "unit",
+      "normalized_value": "pcs",
+      "normalized_data_type": "str",
+      "normalized_unit": "",
+      "display_format": "",
+      "value_consumption_status": "usable",
+      "provenance_ref": {
+        "source_field": "单位",
+        "raw_value": "pcs",
+        "raw_value_status": "available",
+        "source_data_type": "str",
+        "source_unit": "",
+        "transformation_rule_id": "TR-DIRECT",
+        "mapping_ref": {
+          "approval_rule_version": "MAP-v1.0.1",
+          "match_method": "approved_contract",
+          "semantic_model_version": "SEM-v1.1.1",
+          "inherited_approval": true
+        },
+        "evidence_locator": {
+          "source_file_sha256": "2906f6e7d3c57834a939d5e17acd8ea89585abaffac5000c1ecfa83bc176fd92",
+          "source_table": "供-采购订单与库存",
+          "source_row_number": 2,
+          "source_column_name": "单位",
+          "source_column_index": 5
+        },
+        "note": "raw_value 为源始值，仅供审计追溯；normalized_value 为消费者业务值，两者不得互相替代"
+      }
+    },
+    {
+      "semantic_record_key": "供-采购订单与库存#purchase_order#PO-2026-0001#row2",
+      "source_table": "供-采购订单与库存",
+      "source_record_id": "PO-2026-0001#row2",
+      "semantic_field": "order_date",
+      "normalized_value": "2026-02-06T00:00:00",
+      "normalized_data_type": "datetime",
+      "normalized_unit": "date",
+      "display_format": "",
+      "value_consumption_status": "usable",
+      "provenance_ref": {
+        "source_field": "下单日期",
+        "raw_value": "2026-02-06T00:00:00",
+        "raw_value_status": "available",
+        "source_data_type": "datetime",
+        "source_unit": "date",
+        "transformation_rule_id": "TR-UNIT-NORMALIZE-DATE",
+        "mapping_ref": {
+          "approval_rule_version": "MAP-v1.0.1",
+          "match_method": "approved_contract",
+          "semantic_model_version": "SEM-v1.1.1",
+          "inherited_approval": true
+        },
+        "evidence_locator": {
+          "source_file_sha256": "2906f6e7d3c57834a939d5e17acd8ea89585abaffac5000c1ecfa83bc176fd92",
+          "source_table": "供-采购订单与库存",
+          "source_row_number": 2,
+          "source_column_name": "下单日期",
+          "source_column_index": 6
+        },
+        "note": "raw_value 为源始值，仅供审计追溯；normalized_value 为消费者业务值，两者不得互相替代"
+      }
+    },
+    {
+      "semantic_record_key": "供-采购订单与库存#purchase_order#PO-2026-0001#row2",
+      "source_table": "供-采购订单与库存",
+      "source_record_id": "PO-2026-0001#row2",
+      "semantic_field": "promised_delivery_date",
+      "normalized_value": "2026-04-01T00:00:00",
+      "normalized_data_type": "datetime",
+      "normalized_unit": "",
+      "display_format": "",
+      "value_consumption_status": "usable",
+      "provenance_ref": {
+        "source_field": "承诺交期",
+        "raw_value": "2026-04-01T00:00:00",
+        "raw_value_status": "available",
+        "source_data_type": "datetime",
+        "source_unit": "",
+        "transformation_rule_id": "TR-DIRECT",
+        "mapping_ref": {
+          "approval_rule_version": "MAP-v1.0.1",
+          "match_method": "approved_contract",
+          "semantic_model_version": "SEM-v1.1.1",
+          "inherited_approval": true
+        },
+        "evidence_locator": {
+          "source_file_sha256": "2906f6e7d3c57834a939d5e17acd8ea89585abaffac5000c1ecfa83bc176fd92",
+          "source_table": "供-采购订单与库存",
+          "source_row_number": 2,
+          "source_column_name": "承诺交期",
+          "source_column_index": 7
+        },
+        "note": "raw_value 为源始值，仅供审计追溯；normalized_value 为消费者业务值，两者不得互相替代"
+      }
+    },
+    {
+      "semantic_record_key": "供-采购订单与库存#purchase_order#PO-2026-0001#row2",
+      "source_table": "供-采购订单与库存",
+      "source_record_id": "PO-2026-0001#row2",
+      "semantic_field": "actual_arrival_date",
+      "normalized_value": "2026-03-27T00:00:00",
+      "normalized_data_type": "datetime",
+      "normalized_unit": "date",
+      "display_format": "",
+      "value_consumption_status": "usable",
+      "provenance_ref": {
+        "source_field": "实际到货日期",
+        "raw_value": "2026-03-27T00:00:00",
+        "raw_value_status": "available",
+        "source_data_type": "datetime",
+        "source_unit": "date",
+        "transformation_rule_id": "TR-UNIT-NORMALIZE-DATE",
+        "mapping_ref": {
+          "approval_rule_version": "MAP-v1.0.1",
+          "match_method": "approved_contract",
+          "semantic_model_version": "SEM-v1.1.1",
+          "inherited_approval": true
+        },
+        "evidence_locator": {
+          "source_file_sha256": "2906f6e7d3c57834a939d5e17acd8ea89585abaffac5000c1ecfa83bc176fd92",
+          "source_table": "供-采购订单与库存",
+          "source_row_number": 2,
+          "source_column_name": "实际到货日期",
+          "source_column_index": 8
+        },
+        "note": "raw_value 为源始值，仅供审计追溯；normalized_value 为消费者业务值，两者不得互相替代"
+      }
+    },
+    {
+      "semantic_record_key": "供-采购订单与库存#purchase_order#PO-2026-0001#row2",
+      "source_table": "供-采购订单与库存",
+      "source_record_id": "PO-2026-0001#row2",
+      "semantic_field": "arrived_qty",
+      "normalized_value": 6573,
+      "normalized_data_type": "int",
+      "normalized_unit": "count",
+      "display_format": "",
+      "value_consumption_status": "usable",
+      "provenance_ref": {
+        "source_field": "到货数量",
+        "raw_value": 6573,
+        "raw_value_status": "available",
+        "source_data_type": "int",
+        "source_unit": "count",
+        "transformation_rule_id": "TR-UNIT-NORMALIZE-COUNT",
+        "mapping_ref": {
+          "approval_rule_version": "MAP-v1.0.1",
+          "match_method": "approved_contract",
+          "semantic_model_version": "SEM-v1.1.1",
+          "inherited_approval": true
+        },
+        "evidence_locator": {
+          "source_file_sha256": "2906f6e7d3c57834a939d5e17acd8ea89585abaffac5000c1ecfa83bc176fd92",
+          "source_table": "供-采购订单与库存",
+          "source_row_number": 2,
+          "source_column_name": "到货数量",
+          "source_column_index": 9
+        },
+        "note": "raw_value 为源始值，仅供审计追溯；normalized_value 为消费者业务值，两者不得互相替代"
+      }
+    },
+    {
+      "semantic_record_key": "供-采购订单与库存#purchase_order#PO-2026-0001#row12",
+      "source_table": "供-采购订单与库存",
+      "source_record_id": "PO-2026-0001#row12",
+      "semantic_field": "po_number",
+      "normalized_value": "PO-2026-0001",
+      "normalized_data_type": "str",
+      "normalized_unit": "",
+      "display_format": "",
+      "value_consumption_status": "usable",
+      "provenance_ref": {
+        "source_field": "采购订单号",
+        "raw_value": "PO-2026-0001",
+        "raw_value_status": "available",
+        "source_data_type": "str",
+        "source_unit": "",
+        "transformation_rule_id": "TR-DIRECT",
+        "mapping_ref": {
+          "approval_rule_version": "MAP-v1.0.1",
+          "match_method": "approved_contract",
+          "semantic_model_version": "SEM-v1.1.1",
+          "inherited_approval": true
+        },
+        "evidence_locator": {
+          "source_file_sha256": "2906f6e7d3c57834a939d5e17acd8ea89585abaffac5000c1ecfa83bc176fd92",
+          "source_table": "供-采购订单与库存",
+          "source_row_number": 12,
+          "source_column_name": "采购订单号",
+          "source_column_index": 0
+        },
+        "note": "raw_value 为源始值，仅供审计追溯；normalized_value 为消费者业务值，两者不得互相替代"
+      }
+    },
+    {
+      "semantic_record_key": "供-采购订单与库存#purchase_order#PO-2026-0001#row12",
+      "source_table": "供-采购订单与库存",
+      "source_record_id": "PO-2026-0001#row12",
+      "semantic_field": "material_code",
+      "normalized_value": "MAT-011",
+      "normalized_data_type": "str",
+      "normalized_unit": "",
+      "display_format": "",
+      "value_consumption_status": "usable",
+      "provenance_ref": {
+        "source_field": "物料编码",
+        "raw_value": "MAT-011",
+        "raw_value_status": "available",
+        "source_data_type": "str",
+        "source_unit": "",
+        "transformation_rule_id": "TR-DIRECT",
+        "mapping_ref": {
+          "approval_rule_version": "MAP-v1.0.1",
+          "match_method": "approved_contract",
+          "semantic_model_version": "SEM-v1.1.1",
+          "inherited_approval": true
+        },
+        "evidence_locator": {
+          "source_file_sha256": "2906f6e7d3c57834a939d5e17acd8ea89585abaffac5000c1ecfa83bc176fd92",
+          "source_table": "供-采购订单与库存",
+          "source_row_number": 12,
+          "source_column_name": "物料编码",
+          "source_column_index": 1
+        },
+        "note": "raw_value 为源始值，仅供审计追溯；normalized_value 为消费者业务值，两者不得互相替代"
+      }
+    },
+    {
+      "semantic_record_key": "供-采购订单与库存#purchase_order#PO-2026-0001#row12",
+      "source_table": "供-采购订单与库存",
+      "source_record_id": "PO-2026-0001#row12",
+      "semantic_field": "material_name",
+      "normalized_value": "散热铜箔",
+      "normalized_data_type": "str",
+      "normalized_unit": "",
+      "display_format": "",
+      "value_consumption_status": "usable",
+      "provenance_ref": {
+        "source_field": "物料名称",
+        "raw_value": "散热铜箔",
+        "raw_value_status": "available",
+        "source_data_type": "str",
+        "source_unit": "",
+        "transformation_rule_id": "TR-DIRECT",
+        "mapping_ref": {
+          "approval_rule_version": "MAP-v1.0.1",
+          "match_method": "approved_contract",
+          "semantic_model_version": "SEM-v1.1.1",
+          "inherited_approval": true
+        },
+        "evidence_locator": {
+          "source_file_sha256": "2906f6e7d3c57834a939d5e17acd8ea89585abaffac5000c1ecfa83bc176fd92",
+          "source_table": "供-采购订单与库存",
+          "source_row_number": 12,
+          "source_column_name": "物料名称",
+          "source_column_index": 2
+        },
+        "note": "raw_value 为源始值，仅供审计追溯；normalized_value 为消费者业务值，两者不得互相替代"
+      }
+    },
+    {
+      "semantic_record_key": "供-采购订单与库存#purchase_order#PO-2026-0001#row12",
+      "source_table": "供-采购订单与库存",
+      "source_record_id": "PO-2026-0001#row12",
+      "semantic_field": "supplier",
+      "normalized_value": "S-瑞声科技",
+      "normalized_data_type": "str",
+      "normalized_unit": "",
+      "display_format": "",
+      "value_consumption_status": "usable",
+      "provenance_ref": {
+        "source_field": "供应商",
+        "raw_value": "S-瑞声科技",
+        "raw_value_status": "available",
+        "source_data_type": "str",
+        "source_unit": "",
+        "transformation_rule_id": "TR-DIRECT",
+        "mapping_ref": {
+          "approval_rule_version": "MAP-v1.0.1",
+          "match_method": "approved_contract",
+          "semantic_model_version": "SEM-v1.1.1",
+          "inherited_approval": true
+        },
+        "evidence_locator": {
+          "source_file_sha256": "2906f6e7d3c57834a939d5e17acd8ea89585abaffac5000c1ecfa83bc176fd92",
+          "source_table": "供-采购订单与库存",
+          "source_row_number": 12,
+          "source_column_name": "供应商",
+          "source_column_index": 3
+        },
+        "note": "raw_value 为源始值，仅供审计追溯；normalized_value 为消费者业务值，两者不得互相替代"
+      }
+    },
+    {
+      "semantic_record_key": "供-采购订单与库存#purchase_order#PO-2026-0001#row12",
+      "source_table": "供-采购订单与库存",
+      "source_record_id": "PO-2026-0001#row12",
+      "semantic_field": "purchase_qty",
+      "normalized_value": 5662,
+      "normalized_data_type": "int",
+      "normalized_unit": "count",
+      "display_format": "",
+      "value_consumption_status": "usable",
+      "provenance_ref": {
+        "source_field": "采购数量",
+        "raw_value": 5662,
+        "raw_value_status": "available",
+        "source_data_type": "int",
+        "source_unit": "count",
+        "transformation_rule_id": "TR-UNIT-NORMALIZE-COUNT",
+        "mapping_ref": {
+          "approval_rule_version": "MAP-v1.0.1",
+          "match_method": "approved_contract",
+          "semantic_model_version": "SEM-v1.1.1",
+          "inherited_approval": true
+        },
+        "evidence_locator": {
+          "source_file_sha256": "2906f6e7d3c57834a939d5e17acd8ea89585abaffac5000c1ecfa83bc176fd92",
+          "source_table": "供-采购订单与库存",
+          "source_row_number": 12,
+          "source_column_name": "采购数量",
+          "source_column_index": 4
+        },
+        "note": "raw_value 为源始值，仅供审计追溯；normalized_value 为消费者业务值，两者不得互相替代"
+      }
+    },
+    {
+      "semantic_record_key": "供-采购订单与库存#purchase_order#PO-2026-0001#row12",
+      "source_table": "供-采购订单与库存",
+      "source_record_id": "PO-2026-0001#row12",
+      "semantic_field": "unit",
+      "normalized_value": "set",
+      "normalized_data_type": "str",
+      "normalized_unit": "",
+      "display_format": "",
+      "value_consumption_status": "usable",
+      "provenance_ref": {
+        "source_field": "单位",
+        "raw_value": "set",
+        "raw_value_status": "available",
+        "source_data_type": "str",
+        "source_unit": "",
+        "transformation_rule_id": "TR-DIRECT",
+        "mapping_ref": {
+          "approval_rule_version": "MAP-v1.0.1",
+          "match_method": "approved_contract",
+          "semantic_model_version": "SEM-v1.1.1",
+          "inherited_approval": true
+        },
+        "evidence_locator": {
+          "source_file_sha256": "2906f6e7d3c57834a939d5e17acd8ea89585abaffac5000c1ecfa83bc176fd92",
+          "source_table": "供-采购订单与库存",
+          "source_row_number": 12,
+          "source_column_name": "单位",
+          "source_column_index": 5
+        },
+        "note": "raw_value 为源始值，仅供审计追溯；normalized_value 为消费者业务值，两者不得互相替代"
+      }
+    },
+    {
+      "semantic_record_key": "供-采购订单与库存#purchase_order#PO-2026-0001#row12",
+      "source_table": "供-采购订单与库存",
+      "source_record_id": "PO-2026-0001#row12",
+      "semantic_field": "order_date",
+      "normalized_value": "2026-03-27T00:00:00",
+      "normalized_data_type": "datetime",
+      "normalized_unit": "date",
+      "display_format": "",
+      "value_consumption_status": "usable",
+      "provenance_ref": {
+        "source_field": "下单日期",
+        "raw_value": "2026-03-27T00:00:00",
+        "raw_value_status": "available",
+        "source_data_type": "datetime",
+        "source_unit": "date",
+        "transformation_rule_id": "TR-UNIT-NORMALIZE-DATE",
+        "mapping_ref": {
+          "approval_rule_version": "MAP-v1.0.1",
+          "match_method": "approved_contract",
+          "semantic_model_version": "SEM-v1.1.1",
+          "inherited_approval": true
+        },
+        "evidence_locator": {
+          "source_file_sha256": "2906f6e7d3c57834a939d5e17acd8ea89585abaffac5000c1ecfa83bc176fd92",
+          "source_table": "供-采购订单与库存",
+          "source_row_number": 12,
+          "source_column_name": "下单日期",
+          "source_column_index": 6
+        },
+        "note": "raw_value 为源始值，仅供审计追溯；normalized_value 为消费者业务值，两者不得互相替代"
+      }
+    },
+    {
+      "semantic_record_key": "供-采购订单与库存#purchase_order#PO-2026-0001#row12",
+      "source_table": "供-采购订单与库存",
+      "source_record_id": "PO-2026-0001#row12",
+      "semantic_field": "promised_delivery_date",
+      "normalized_value": "2026-05-22T00:00:00",
+      "normalized_data_type": "datetime",
+      "normalized_unit": "",
+      "display_format": "",
+      "value_consumption_status": "usable",
+      "provenance_ref": {
+        "source_field": "承诺交期",
+        "raw_value": "2026-05-22T00:00:00",
+        "raw_value_status": "available",
+        "source_data_type": "datetime",
+        "source_unit": "",
+        "transformation_rule_id": "TR-DIRECT",
+        "mapping_ref": {
+          "approval_rule_version": "MAP-v1.0.1",
+          "match_method": "approved_contract",
+          "semantic_model_version": "SEM-v1.1.1",
+          "inherited_approval": true
+        },
+        "evidence_locator": {
+          "source_file_sha256": "2906f6e7d3c57834a939d5e17acd8ea89585abaffac5000c1ecfa83bc176fd92",
+          "source_table": "供-采购订单与库存",
+          "source_row_number": 12,
+          "source_column_name": "承诺交期",
+          "source_column_index": 7
+        },
+        "note": "raw_value 为源始值，仅供审计追溯；normalized_value 为消费者业务值，两者不得互相替代"
+      }
+    },
+    {
+      "semantic_record_key": "供-采购订单与库存#purchase_order#PO-2026-0001#row12",
+      "source_table": "供-采购订单与库存",
+      "source_record_id": "PO-2026-0001#row12",
+      "semantic_field": "actual_arrival_date",
+      "normalized_value": "2026-06-02T00:00:00",
+      "normalized_data_type": "datetime",
+      "normalized_unit": "date",
+      "display_format": "",
+      "value_consumption_status": "usable",
+      "provenance_ref": {
+        "source_field": "实际到货日期",
+        "raw_value": "2026-06-02T00:00:00",
+        "raw_value_status": "available",
+        "source_data_type": "datetime",
+        "source_unit": "date",
+        "transformation_rule_id": "TR-UNIT-NORMALIZE-DATE",
+        "mapping_ref": {
+          "approval_rule_version": "MAP-v1.0.1",
+          "match_method": "approved_contract",
+          "semantic_model_version": "SEM-v1.1.1",
+          "inherited_approval": true
+        },
+        "evidence_locator": {
+          "source_file_sha256": "2906f6e7d3c57834a939d5e17acd8ea89585abaffac5000c1ecfa83bc176fd92",
+          "source_table": "供-采购订单与库存",
+          "source_row_number": 12,
+          "source_column_name": "实际到货日期",
+          "source_column_index": 8
+        },
+        "note": "raw_value 为源始值，仅供审计追溯；normalized_value 为消费者业务值，两者不得互相替代"
+      }
+    },
+    {
+      "semantic_record_key": "供-采购订单与库存#purchase_order#PO-2026-0001#row12",
+      "source_table": "供-采购订单与库存",
+      "source_record_id": "PO-2026-0001#row12",
+      "semantic_field": "arrived_qty",
+      "normalized_value": 5546,
+      "normalized_data_type": "int",
+      "normalized_unit": "count",
+      "display_format": "",
+      "value_consumption_status": "usable",
+      "provenance_ref": {
+        "source_field": "到货数量",
+        "raw_value": 5546,
+        "raw_value_status": "available",
+        "source_data_type": "int",
+        "source_unit": "count",
+        "transformation_rule_id": "TR-UNIT-NORMALIZE-COUNT",
+        "mapping_ref": {
+          "approval_rule_version": "MAP-v1.0.1",
+          "match_method": "approved_contract",
+          "semantic_model_version": "SEM-v1.1.1",
+          "inherited_approval": true
+        },
+        "evidence_locator": {
+          "source_file_sha256": "2906f6e7d3c57834a939d5e17acd8ea89585abaffac5000c1ecfa83bc176fd92",
+          "source_table": "供-采购订单与库存",
+          "source_row_number": 12,
+          "source_column_name": "到货数量",
+          "source_column_index": 9
+        },
+        "note": "raw_value 为源始值，仅供审计追溯；normalized_value 为消费者业务值，两者不得互相替代"
+      }
+    }
+  ],
+  "data_gaps": [],
+  "provenance_refs": [
+    {
+      "source_field": "采购订单号",
+      "raw_value": "PO-2026-0001",
+      "raw_value_status": "available",
+      "source_data_type": "str",
+      "source_unit": "",
+      "transformation_rule_id": "TR-DIRECT",
+      "mapping_ref": {
+        "approval_rule_version": "MAP-v1.0.1",
+        "match_method": "approved_contract",
+        "semantic_model_version": "SEM-v1.1.1",
+        "inherited_approval": true
+      },
+      "evidence_locator": {
+        "source_file_sha256": "2906f6e7d3c57834a939d5e17acd8ea89585abaffac5000c1ecfa83bc176fd92",
+        "source_table": "供-采购订单与库存",
+        "source_row_number": 2,
+        "source_column_name": "采购订单号",
+        "source_column_index": 0
+      },
+      "note": "raw_value 为源始值，仅供审计追溯；normalized_value 为消费者业务值，两者不得互相替代"
+    },
+    {
+      "source_field": "物料编码",
+      "raw_value": "MAT-001",
+      "raw_value_status": "available",
+      "source_data_type": "str",
+      "source_unit": "",
+      "transformation_rule_id": "TR-DIRECT",
+      "mapping_ref": {
+        "approval_rule_version": "MAP-v1.0.1",
+        "match_method": "approved_contract",
+        "semantic_model_version": "SEM-v1.1.1",
+        "inherited_approval": true
+      },
+      "evidence_locator": {
+        "source_file_sha256": "2906f6e7d3c57834a939d5e17acd8ea89585abaffac5000c1ecfa83bc176fd92",
+        "source_table": "供-采购订单与库存",
+        "source_row_number": 2,
+        "source_column_name": "物料编码",
+        "source_column_index": 1
+      },
+      "note": "raw_value 为源始值，仅供审计追溯；normalized_value 为消费者业务值，两者不得互相替代"
+    },
+    {
+      "source_field": "物料名称",
+      "raw_value": "高通骁龙XR3芯片",
+      "raw_value_status": "available",
+      "source_data_type": "str",
+      "source_unit": "",
+      "transformation_rule_id": "TR-DIRECT",
+      "mapping_ref": {
+        "approval_rule_version": "MAP-v1.0.1",
+        "match_method": "approved_contract",
+        "semantic_model_version": "SEM-v1.1.1",
+        "inherited_approval": true
+      },
+      "evidence_locator": {
+        "source_file_sha256": "2906f6e7d3c57834a939d5e17acd8ea89585abaffac5000c1ecfa83bc176fd92",
+        "source_table": "供-采购订单与库存",
+        "source_row_number": 2,
+        "source_column_name": "物料名称",
+        "source_column_index": 2
+      },
+      "note": "raw_value 为源始值，仅供审计追溯；normalized_value 为消费者业务值，两者不得互相替代"
+    },
+    {
+      "source_field": "供应商",
+      "raw_value": "S-欣旺达电子",
+      "raw_value_status": "available",
+      "source_data_type": "str",
+      "source_unit": "",
+      "transformation_rule_id": "TR-DIRECT",
+      "mapping_ref": {
+        "approval_rule_version": "MAP-v1.0.1",
+        "match_method": "approved_contract",
+        "semantic_model_version": "SEM-v1.1.1",
+        "inherited_approval": true
+      },
+      "evidence_locator": {
+        "source_file_sha256": "2906f6e7d3c57834a939d5e17acd8ea89585abaffac5000c1ecfa83bc176fd92",
+        "source_table": "供-采购订单与库存",
+        "source_row_number": 2,
+        "source_column_name": "供应商",
+        "source_column_index": 3
+      },
+      "note": "raw_value 为源始值，仅供审计追溯；normalized_value 为消费者业务值，两者不得互相替代"
+    },
+    {
+      "source_field": "采购数量",
+      "raw_value": 6666,
+      "raw_value_status": "available",
+      "source_data_type": "int",
+      "source_unit": "count",
+      "transformation_rule_id": "TR-UNIT-NORMALIZE-COUNT",
+      "mapping_ref": {
+        "approval_rule_version": "MAP-v1.0.1",
+        "match_method": "approved_contract",
+        "semantic_model_version": "SEM-v1.1.1",
+        "inherited_approval": true
+      },
+      "evidence_locator": {
+        "source_file_sha256": "2906f6e7d3c57834a939d5e17acd8ea89585abaffac5000c1ecfa83bc176fd92",
+        "source_table": "供-采购订单与库存",
+        "source_row_number": 2,
+        "source_column_name": "采购数量",
+        "source_column_index": 4
+      },
+      "note": "raw_value 为源始值，仅供审计追溯；normalized_value 为消费者业务值，两者不得互相替代"
+    },
+    {
+      "source_field": "单位",
+      "raw_value": "pcs",
+      "raw_value_status": "available",
+      "source_data_type": "str",
+      "source_unit": "",
+      "transformation_rule_id": "TR-DIRECT",
+      "mapping_ref": {
+        "approval_rule_version": "MAP-v1.0.1",
+        "match_method": "approved_contract",
+        "semantic_model_version": "SEM-v1.1.1",
+        "inherited_approval": true
+      },
+      "evidence_locator": {
+        "source_file_sha256": "2906f6e7d3c57834a939d5e17acd8ea89585abaffac5000c1ecfa83bc176fd92",
+        "source_table": "供-采购订单与库存",
+        "source_row_number": 2,
+        "source_column_name": "单位",
+        "source_column_index": 5
+      },
+      "note": "raw_value 为源始值，仅供审计追溯；normalized_value 为消费者业务值，两者不得互相替代"
+    },
+    {
+      "source_field": "下单日期",
+      "raw_value": "2026-02-06T00:00:00",
+      "raw_value_status": "available",
+      "source_data_type": "datetime",
+      "source_unit": "date",
+      "transformation_rule_id": "TR-UNIT-NORMALIZE-DATE",
+      "mapping_ref": {
+        "approval_rule_version": "MAP-v1.0.1",
+        "match_method": "approved_contract",
+        "semantic_model_version": "SEM-v1.1.1",
+        "inherited_approval": true
+      },
+      "evidence_locator": {
+        "source_file_sha256": "2906f6e7d3c57834a939d5e17acd8ea89585abaffac5000c1ecfa83bc176fd92",
+        "source_table": "供-采购订单与库存",
+        "source_row_number": 2,
+        "source_column_name": "下单日期",
+        "source_column_index": 6
+      },
+      "note": "raw_value 为源始值，仅供审计追溯；normalized_value 为消费者业务值，两者不得互相替代"
+    },
+    {
+      "source_field": "承诺交期",
+      "raw_value": "2026-04-01T00:00:00",
+      "raw_value_status": "available",
+      "source_data_type": "datetime",
+      "source_unit": "",
+      "transformation_rule_id": "TR-DIRECT",
+      "mapping_ref": {
+        "approval_rule_version": "MAP-v1.0.1",
+        "match_method": "approved_contract",
+        "semantic_model_version": "SEM-v1.1.1",
+        "inherited_approval": true
+      },
+      "evidence_locator": {
+        "source_file_sha256": "2906f6e7d3c57834a939d5e17acd8ea89585abaffac5000c1ecfa83bc176fd92",
+        "source_table": "供-采购订单与库存",
+        "source_row_number": 2,
+        "source_column_name": "承诺交期",
+        "source_column_index": 7
+      },
+      "note": "raw_value 为源始值，仅供审计追溯；normalized_value 为消费者业务值，两者不得互相替代"
+    },
+    {
+      "source_field": "实际到货日期",
+      "raw_value": "2026-03-27T00:00:00",
+      "raw_value_status": "available",
+      "source_data_type": "datetime",
+      "source_unit": "date",
+      "transformation_rule_id": "TR-UNIT-NORMALIZE-DATE",
+      "mapping_ref": {
+        "approval_rule_version": "MAP-v1.0.1",
+        "match_method": "approved_contract",
+        "semantic_model_version": "SEM-v1.1.1",
+        "inherited_approval": true
+      },
+      "evidence_locator": {
+        "source_file_sha256": "2906f6e7d3c57834a939d5e17acd8ea89585abaffac5000c1ecfa83bc176fd92",
+        "source_table": "供-采购订单与库存",
+        "source_row_number": 2,
+        "source_column_name": "实际到货日期",
+        "source_column_index": 8
+      },
+      "note": "raw_value 为源始值，仅供审计追溯；normalized_value 为消费者业务值，两者不得互相替代"
+    },
+    {
+      "source_field": "到货数量",
+      "raw_value": 6573,
+      "raw_value_status": "available",
+      "source_data_type": "int",
+      "source_unit": "count",
+      "transformation_rule_id": "TR-UNIT-NORMALIZE-COUNT",
+      "mapping_ref": {
+        "approval_rule_version": "MAP-v1.0.1",
+        "match_method": "approved_contract",
+        "semantic_model_version": "SEM-v1.1.1",
+        "inherited_approval": true
+      },
+      "evidence_locator": {
+        "source_file_sha256": "2906f6e7d3c57834a939d5e17acd8ea89585abaffac5000c1ecfa83bc176fd92",
+        "source_table": "供-采购订单与库存",
+        "source_row_number": 2,
+        "source_column_name": "到货数量",
+        "source_column_index": 9
+      },
+      "note": "raw_value 为源始值，仅供审计追溯；normalized_value 为消费者业务值，两者不得互相替代"
+    },
+    {
+      "source_field": "采购订单号",
+      "raw_value": "PO-2026-0001",
+      "raw_value_status": "available",
+      "source_data_type": "str",
+      "source_unit": "",
+      "transformation_rule_id": "TR-DIRECT",
+      "mapping_ref": {
+        "approval_rule_version": "MAP-v1.0.1",
+        "match_method": "approved_contract",
+        "semantic_model_version": "SEM-v1.1.1",
+        "inherited_approval": true
+      },
+      "evidence_locator": {
+        "source_file_sha256": "2906f6e7d3c57834a939d5e17acd8ea89585abaffac5000c1ecfa83bc176fd92",
+        "source_table": "供-采购订单与库存",
+        "source_row_number": 12,
+        "source_column_name": "采购订单号",
+        "source_column_index": 0
+      },
+      "note": "raw_value 为源始值，仅供审计追溯；normalized_value 为消费者业务值，两者不得互相替代"
+    },
+    {
+      "source_field": "物料编码",
+      "raw_value": "MAT-011",
+      "raw_value_status": "available",
+      "source_data_type": "str",
+      "source_unit": "",
+      "transformation_rule_id": "TR-DIRECT",
+      "mapping_ref": {
+        "approval_rule_version": "MAP-v1.0.1",
+        "match_method": "approved_contract",
+        "semantic_model_version": "SEM-v1.1.1",
+        "inherited_approval": true
+      },
+      "evidence_locator": {
+        "source_file_sha256": "2906f6e7d3c57834a939d5e17acd8ea89585abaffac5000c1ecfa83bc176fd92",
+        "source_table": "供-采购订单与库存",
+        "source_row_number": 12,
+        "source_column_name": "物料编码",
+        "source_column_index": 1
+      },
+      "note": "raw_value 为源始值，仅供审计追溯；normalized_value 为消费者业务值，两者不得互相替代"
+    },
+    {
+      "source_field": "物料名称",
+      "raw_value": "散热铜箔",
+      "raw_value_status": "available",
+      "source_data_type": "str",
+      "source_unit": "",
+      "transformation_rule_id": "TR-DIRECT",
+      "mapping_ref": {
+        "approval_rule_version": "MAP-v1.0.1",
+        "match_method": "approved_contract",
+        "semantic_model_version": "SEM-v1.1.1",
+        "inherited_approval": true
+      },
+      "evidence_locator": {
+        "source_file_sha256": "2906f6e7d3c57834a939d5e17acd8ea89585abaffac5000c1ecfa83bc176fd92",
+        "source_table": "供-采购订单与库存",
+        "source_row_number": 12,
+        "source_column_name": "物料名称",
+        "source_column_index": 2
+      },
+      "note": "raw_value 为源始值，仅供审计追溯；normalized_value 为消费者业务值，两者不得互相替代"
+    },
+    {
+      "source_field": "供应商",
+      "raw_value": "S-瑞声科技",
+      "raw_value_status": "available",
+      "source_data_type": "str",
+      "source_unit": "",
+      "transformation_rule_id": "TR-DIRECT",
+      "mapping_ref": {
+        "approval_rule_version": "MAP-v1.0.1",
+        "match_method": "approved_contract",
+        "semantic_model_version": "SEM-v1.1.1",
+        "inherited_approval": true
+      },
+      "evidence_locator": {
+        "source_file_sha256": "2906f6e7d3c57834a939d5e17acd8ea89585abaffac5000c1ecfa83bc176fd92",
+        "source_table": "供-采购订单与库存",
+        "source_row_number": 12,
+        "source_column_name": "供应商",
+        "source_column_index": 3
+      },
+      "note": "raw_value 为源始值，仅供审计追溯；normalized_value 为消费者业务值，两者不得互相替代"
+    },
+    {
+      "source_field": "采购数量",
+      "raw_value": 5662,
+      "raw_value_status": "available",
+      "source_data_type": "int",
+      "source_unit": "count",
+      "transformation_rule_id": "TR-UNIT-NORMALIZE-COUNT",
+      "mapping_ref": {
+        "approval_rule_version": "MAP-v1.0.1",
+        "match_method": "approved_contract",
+        "semantic_model_version": "SEM-v1.1.1",
+        "inherited_approval": true
+      },
+      "evidence_locator": {
+        "source_file_sha256": "2906f6e7d3c57834a939d5e17acd8ea89585abaffac5000c1ecfa83bc176fd92",
+        "source_table": "供-采购订单与库存",
+        "source_row_number": 12,
+        "source_column_name": "采购数量",
+        "source_column_index": 4
+      },
+      "note": "raw_value 为源始值，仅供审计追溯；normalized_value 为消费者业务值，两者不得互相替代"
+    },
+    {
+      "source_field": "单位",
+      "raw_value": "set",
+      "raw_value_status": "available",
+      "source_data_type": "str",
+      "source_unit": "",
+      "transformation_rule_id": "TR-DIRECT",
+      "mapping_ref": {
+        "approval_rule_version": "MAP-v1.0.1",
+        "match_method": "approved_contract",
+        "semantic_model_version": "SEM-v1.1.1",
+        "inherited_approval": true
+      },
+      "evidence_locator": {
+        "source_file_sha256": "2906f6e7d3c57834a939d5e17acd8ea89585abaffac5000c1ecfa83bc176fd92",
+        "source_table": "供-采购订单与库存",
+        "source_row_number": 12,
+        "source_column_name": "单位",
+        "source_column_index": 5
+      },
+      "note": "raw_value 为源始值，仅供审计追溯；normalized_value 为消费者业务值，两者不得互相替代"
+    },
+    {
+      "source_field": "下单日期",
+      "raw_value": "2026-03-27T00:00:00",
+      "raw_value_status": "available",
+      "source_data_type": "datetime",
+      "source_unit": "date",
+      "transformation_rule_id": "TR-UNIT-NORMALIZE-DATE",
+      "mapping_ref": {
+        "approval_rule_version": "MAP-v1.0.1",
+        "match_method": "approved_contract",
+        "semantic_model_version": "SEM-v1.1.1",
+        "inherited_approval": true
+      },
+      "evidence_locator": {
+        "source_file_sha256": "2906f6e7d3c57834a939d5e17acd8ea89585abaffac5000c1ecfa83bc176fd92",
+        "source_table": "供-采购订单与库存",
+        "source_row_number": 12,
+        "source_column_name": "下单日期",
+        "source_column_index": 6
+      },
+      "note": "raw_value 为源始值，仅供审计追溯；normalized_value 为消费者业务值，两者不得互相替代"
+    },
+    {
+      "source_field": "承诺交期",
+      "raw_value": "2026-05-22T00:00:00",
+      "raw_value_status": "available",
+      "source_data_type": "datetime",
+      "source_unit": "",
+      "transformation_rule_id": "TR-DIRECT",
+      "mapping_ref": {
+        "approval_rule_version": "MAP-v1.0.1",
+        "match_method": "approved_contract",
+        "semantic_model_version": "SEM-v1.1.1",
+        "inherited_approval": true
+      },
+      "evidence_locator": {
+        "source_file_sha256": "2906f6e7d3c57834a939d5e17acd8ea89585abaffac5000c1ecfa83bc176fd92",
+        "source_table": "供-采购订单与库存",
+        "source_row_number": 12,
+        "source_column_name": "承诺交期",
+        "source_column_index": 7
+      },
+      "note": "raw_value 为源始值，仅供审计追溯；normalized_value 为消费者业务值，两者不得互相替代"
+    },
+    {
+      "source_field": "实际到货日期",
+      "raw_value": "2026-06-02T00:00:00",
+      "raw_value_status": "available",
+      "source_data_type": "datetime",
+      "source_unit": "date",
+      "transformation_rule_id": "TR-UNIT-NORMALIZE-DATE",
+      "mapping_ref": {
+        "approval_rule_version": "MAP-v1.0.1",
+        "match_method": "approved_contract",
+        "semantic_model_version": "SEM-v1.1.1",
+        "inherited_approval": true
+      },
+      "evidence_locator": {
+        "source_file_sha256": "2906f6e7d3c57834a939d5e17acd8ea89585abaffac5000c1ecfa83bc176fd92",
+        "source_table": "供-采购订单与库存",
+        "source_row_number": 12,
+        "source_column_name": "实际到货日期",
+        "source_column_index": 8
+      },
+      "note": "raw_value 为源始值，仅供审计追溯；normalized_value 为消费者业务值，两者不得互相替代"
+    },
+    {
+      "source_field": "到货数量",
+      "raw_value": 5546,
+      "raw_value_status": "available",
+      "source_data_type": "int",
+      "source_unit": "count",
+      "transformation_rule_id": "TR-UNIT-NORMALIZE-COUNT",
+      "mapping_ref": {
+        "approval_rule_version": "MAP-v1.0.1",
+        "match_method": "approved_contract",
+        "semantic_model_version": "SEM-v1.1.1",
+        "inherited_approval": true
+      },
+      "evidence_locator": {
+        "source_file_sha256": "2906f6e7d3c57834a939d5e17acd8ea89585abaffac5000c1ecfa83bc176fd92",
+        "source_table": "供-采购订单与库存",
+        "source_row_number": 12,
+        "source_column_name": "到货数量",
+        "source_column_index": 9
+      },
+      "note": "raw_value 为源始值，仅供审计追溯；normalized_value 为消费者业务值，两者不得互相替代"
+    }
+  ],
+  "contract_versions": {
+    "semantic_model_version": "SEM-v1.1.1",
+    "mapping_rule_version": "MAP-v1.0.1",
+    "data_contract_version": "BIFROST-SEMANTIC-DATA-v0.1",
+    "query_contract_version": "BIFROST-CONSUMER-QUERY-v0.2",
+    "decision_input_contract_version": "BIFROST-DECISION-INPUT-v0.1",
+    "consumer_logical_version": "0.1.3"
+  },
+  "validation": {
+    "status": "passed",
+    "issues": [],
+    "normalized_facts_count": 20,
+    "data_gaps_count": 0,
+    "decision_usable_gate_enforced": true,
+    "read_only_enforced": true,
+    "no_cross_record_join": true,
+    "no_business_conclusion": true
+  },
+  "source_write_performed": false,
+  "actor_can_execute": false,
+  "generated_at": "2026-08-11T16:34:40.657877+00:00",
+  "local_trace_id": "CONSUMER-890B082BEB6B4B55"
+}

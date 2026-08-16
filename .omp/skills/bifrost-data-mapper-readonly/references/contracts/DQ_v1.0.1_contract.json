@@ -1,0 +1,86 @@
+{
+  "quality_contract_version": "DQ-v1.0.1",
+  "acceptance_version": "04C.2.1",
+  "description": "DQFinding 数据质量记录合同 v1.0.1",
+  "required_fields": [
+    "issue_id",
+    "issue_type",
+    "detection_status",
+    "source_sheet",
+    "record_key",
+    "source_field",
+    "observed_value",
+    "expected_rule",
+    "rule_source",
+    "severity",
+    "confidence",
+    "evidence",
+    "suggested_action",
+    "auto_fix_allowed"
+  ],
+  "field_types": {
+    "issue_id": "string",
+    "issue_type": "enum",
+    "detection_status": "enum",
+    "source_sheet": "string",
+    "record_key": "string",
+    "source_field": "string",
+    "observed_value": "any",
+    "expected_rule": "string",
+    "rule_source": "string",
+    "severity": "enum(high/medium/low)",
+    "confidence": "number[0,1]",
+    "evidence": "string",
+    "suggested_action": "string",
+    "auto_fix_allowed": "boolean"
+  },
+  "issue_type_enum": [
+    "missing_value",
+    "duplicate_record",
+    "abnormal_value",
+    "inconsistent_format",
+    "logical_conflict",
+    "stale_data"
+  ],
+  "detection_status_enum": [
+    "detected",
+    "tested_no_anomaly",
+    "not_tested",
+    "needs_rule"
+  ],
+  "severity_enum": [
+    "high",
+    "medium",
+    "low"
+  ],
+  "construction_rule": "必须使用命名参数(make_finding)或经JSON Schema校验，禁止位置参数",
+  "conservation_invariants": [
+    "findings_count == len(findings)",
+    "findings_count == sum(by_type.values())",
+    "findings_count == sum(by_severity.values())",
+    "每条 issue_type ∈ issue_type_enum",
+    "每条 severity ∈ severity_enum",
+    "confidence ∈ [0,1] 且为数值",
+    "auto_fix_allowed 为 boolean"
+  ],
+  "field_requirement_classes": [
+    "required",
+    "conditionally_required",
+    "optional",
+    "unknown_requirement"
+  ],
+  "missing_value_rules": [
+    "required 为空 → missing_value(detected)",
+    "conditionally_required 仅条件满足时形成缺陷，否则 tested_no_anomaly",
+    "optional 为空不形成缺陷(不进入findings)",
+    "unknown_requirement 仅标记 needs_rule，不直接报缺陷"
+  ],
+  "stale_data_rules": [
+    "必须同时具备 reliable_update_timestamp / refresh_sla / evaluation_time / elapsed_time / SLA来源",
+    "缺少更新时间/SLA时 detection_status=not_tested，不得生成确定性缺陷"
+  ],
+  "heuristic_rule_policy": [
+    "TEAM_HEURISTIC_UNCONFIRMED 阈值需 requires_human_confirmation=true",
+    "不得表述为已确认企业规则"
+  ]
+}

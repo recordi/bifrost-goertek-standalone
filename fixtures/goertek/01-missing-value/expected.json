@@ -1,0 +1,15 @@
+{
+  "defect_type": "missing_value",
+  "severity": "high",
+  "affected_columns": ["quantity", "product_id", "revenue_cny", "yield_rate", "line_code"],
+  "description": "Critical production fields contain NULL values. 24 missing values spread across 5 critical columns in 60 data rows (40% of rows affected). Missing values impact quantity (7 rows), product_id (4 rows), revenue_cny (4 rows), yield_rate (6 rows), and line_code (3 rows). These nulls prevent accurate production reporting and revenue calculation.",
+  "detection_hints": "Profiling module detects via ColumnProfile.null_rate and quality_flags. Missing values in identifier columns (product_id, line_code) and quantitative columns (quantity, revenue_cny) with semantic: identifier and semantic: quantitative respectively. Nulls in yield_rate (semantic: ratio) prevent quality analysis.",
+  "affected_rows": [2, 5, 7, 9, 12, 14, 15, 19, 22, 24, 26, 29, 31, 32, 36, 39, 41, 43, 46, 48, 49, 53, 56, 58],
+  "evidence": {
+    "quantity_nulls": [2, 15, 19, 32, 36, 49, 53],
+    "product_id_nulls": [5, 22, 39, 56],
+    "revenue_cny_nulls": [7, 24, 41, 58],
+    "yield_rate_nulls": [9, 14, 26, 31, 43, 48],
+    "line_code_nulls": [12, 29, 46]
+  }
+}

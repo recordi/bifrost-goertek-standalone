@@ -1,0 +1,68 @@
+# 依赖与构建产物
+node_modules/
+.next/
+dist/
+build/
+coverage/
+.turbo/
+*.tsbuildinfo
+
+# Python 缓存与构建产物
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+*.egg-info/
+# pytest-cov 的数据文件（`coverage/` 只匹配目录，匹配不到这个点开头的文件）
+.coverage
+.coverage.*
+# pytest basetemp 临时目录
+.test-tmp/
+
+# 本地环境与密钥
+.env
+.env.*
+!.env.example
+.venv/
+venv/
+apps/runner/.venv/
+
+# 运行时项目数据与测试产物
+projects/
+apps/daemon/runs/
+playwright-report/
+test-results/
+# 对比实验产物（apps/daemon/src/experiment/compare.ts 写入 REPO_ROOT/experiments/<id>/）
+experiments/
+
+# 编辑器与系统文件
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
+# 变异测试的临时备份（scripts/mutate.mjs），绝不进版本库
+*.mutbak
+
+# M6 端到端脚本落盘的看板产物（scripts/pipeline-e2e.ts）
+runs-e2e/
+.playwright-cli/
+
+# 端到端调试快照（含单次 run 的完整产物，属于本地排查数据，不进版本库）
+e2e-run-debug.json
+
+# BIFROST 本地运行时产物（源码与固定测试夹具除外）
+.omp/runner-venv/
+.omp/runtime-home*/
+.omp/ui-review/
+.omp/*.log
+.omp/*-run.json
+.omp/*-review.json
+.omp/*-probe.json
+.omp/config.yml.broken-*
+*.log
+*.db
+!data/fixtures/*.db
+!apps/daemon/data/.gitkeep
+pnpm-exec-summary.json

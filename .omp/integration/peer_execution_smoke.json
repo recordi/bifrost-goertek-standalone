@@ -1,0 +1,1586 @@
+﻿{
+  "adapter": "bifrost-fixed-local-adapter",
+  "adapter_version": "1.0.0",
+  "status": "PASS",
+  "event_id": "EVT-OMP-03-GOLDEN-0001",
+  "overall_status": "PASS",
+  "task_count": 3,
+  "checks": {
+    "golden_event": {
+      "status": "PASS",
+      "errors": []
+    },
+    "high_risk_confirmation": {
+      "status": "PASS",
+      "observed_status": "needs_confirmation"
+    },
+    "readonly_boundary": {
+      "status": "PASS",
+      "input_hashes_unchanged": true,
+      "all_tasks_non_writing": true,
+      "input_file_count": 3
+    },
+    "spc_missing": {
+      "status": "PASS",
+      "observed_status": "warning"
+    },
+    "stop_defect_variation": {
+      "status": "PASS",
+      "downtime_removed": true,
+      "defect_effect": true
+    },
+    "supply_insufficient": {
+      "status": "PASS",
+      "observed_status": "warning",
+      "blocked_gap_count": 1
+    }
+  },
+  "event": {
+    "event_id": "EVT-OMP-03-GOLDEN-0001",
+    "status": "needs_confirmation",
+    "task_count": 3,
+    "evidence_ref_count": 17,
+    "data_gap_count": 4,
+    "human_confirmation_required": true
+  },
+  "tasks": [
+    {
+      "event_id": "EVT-OMP-03-GOLDEN-0001",
+      "task_id": "TASK-OMP-03-PROD",
+      "agent_id": "production-specialist",
+      "objective": "����Ӱ������",
+      "status": "needs_confirmation",
+      "conclusion": "���������ɣ�������¼: REC-PROD-S03-001�� ԴOEE: 0.609567�� ����OEE: 0.605231��availability �� performance_rate �� quality_factor���� OEEֱ����������: availability=0.85, performance_rate=0.78, quality_factor=0.912867�� �Ǽƻ�ͣ�� 45 ���ӣ�Ϊ�������½�֤�ݡ� ���ض�: unknown�� δ�ṩ��׼�����ض���ֵ����(missing_severity_rule)�� ֤�ݸ�����(confidence): 1.0��",
+      "severity": "unknown",
+      "confidence": 1.0,
+      "metrics": [
+        {
+          "metric_id": "METRIC-0000-oee_source",
+          "label": "oee_source",
+          "value": 0.609567,
+          "display_format": "0.0%",
+          "semantic_field": "oee_source",
+          "evidence_refs": [
+            "EVREF-v1:c3face5807ad5b1f8dc3ef82bedb46fe563c21720c47152cb915103a90e7e60f"
+          ]
+        },
+        {
+          "metric_id": "METRIC-0001-availability",
+          "label": "availability",
+          "value": 0.85,
+          "display_format": "0.0%",
+          "semantic_field": "availability",
+          "evidence_refs": [
+            "EVREF-v1:5ff4114f4c0d40b727908e1d120493ba1929519955bd736a6d61ed5b40f8bace"
+          ]
+        },
+        {
+          "metric_id": "METRIC-0002-performance_rate",
+          "label": "performance_rate",
+          "value": 0.78,
+          "display_format": "0.0%",
+          "semantic_field": "performance_rate",
+          "evidence_refs": [
+            "EVREF-v1:6d7359295d824b418cc97ebf859fc801b88592a532cbe1fdcb5254f09f13ee36"
+          ]
+        },
+        {
+          "metric_id": "METRIC-0003-quality_factor",
+          "label": "quality_factor",
+          "value": 0.912867,
+          "display_format": "0.0%",
+          "semantic_field": "quality_factor",
+          "evidence_refs": [
+            "EVREF-v1:25af4b6d3356e3d5810e43303d4b62775d17a040d21541006ed08b3421e1c49a"
+          ]
+        },
+        {
+          "metric_id": "METRIC-0004-total_output",
+          "label": "total_output",
+          "value": 1200,
+          "display_format": "0",
+          "semantic_field": "total_output",
+          "evidence_refs": [
+            "EVREF-v1:a8d0cd12b2c9a6a760e37df215ce8446da9a592d92138bc4e3c44fb6b9ac958f"
+          ]
+        },
+        {
+          "metric_id": "METRIC-0005-good_output",
+          "label": "good_output",
+          "value": 1095,
+          "display_format": "0",
+          "semantic_field": "good_output",
+          "evidence_refs": [
+            "EVREF-v1:2e41c03a80d6b9fb13f0c38ae941c32707339d0b3f3c78950ded627173b19ce8"
+          ]
+        },
+        {
+          "metric_id": "METRIC-0006-defect_total",
+          "label": "defect_total",
+          "value": 105,
+          "display_format": "0",
+          "semantic_field": "defect_total",
+          "evidence_refs": [
+            "EVREF-v1:9fb662ec899a3215a2d1ae3630346d74c9097cc618cb7cad379d3b5761e5b334"
+          ]
+        },
+        {
+          "metric_id": "METRIC-0007-unplanned_downtime_minutes",
+          "label": "unplanned_downtime_minutes",
+          "value": 45,
+          "display_format": "0",
+          "semantic_field": "unplanned_downtime_minutes",
+          "evidence_refs": [
+            "EVREF-v1:f96e0f3419d50da377aaa21cfc0c2784ad94548e1d46fea993fc0e089f72840a"
+          ]
+        }
+      ],
+      "causes": [
+        {
+          "cause_id": "CAUSE-0000",
+          "category": "oee_direct_driver",
+          "statement": "availability=0.85��OEEֱ����������",
+          "causal_evidence_level": "direct_verified",
+          "evidence_refs": [
+            "EVREF-v1:5ff4114f4c0d40b727908e1d120493ba1929519955bd736a6d61ed5b40f8bace"
+          ]
+        },
+        {
+          "cause_id": "CAUSE-0001",
+          "category": "oee_direct_driver",
+          "statement": "performance_rate=0.78��OEEֱ����������",
+          "causal_evidence_level": "direct_verified",
+          "evidence_refs": [
+            "EVREF-v1:6d7359295d824b418cc97ebf859fc801b88592a532cbe1fdcb5254f09f13ee36"
+          ]
+        },
+        {
+          "cause_id": "CAUSE-0002",
+          "category": "oee_direct_driver",
+          "statement": "quality_factor=0.912867��OEEֱ����������",
+          "causal_evidence_level": "direct_verified",
+          "evidence_refs": [
+            "EVREF-v1:25af4b6d3356e3d5810e43303d4b62775d17a040d21541006ed08b3421e1c49a"
+          ]
+        },
+        {
+          "cause_id": "CAUSE-0003",
+          "category": "availability_loss",
+          "statement": "�Ǽƻ�ͣ�� 45 ���ӣ�Ϊ�������½�֤�ݣ�OEEֱ������ availability ��֤�ݣ�",
+          "causal_evidence_level": "direct_verified",
+          "evidence_refs": [
+            "EVREF-v1:f96e0f3419d50da377aaa21cfc0c2784ad94548e1d46fea993fc0e089f72840a"
+          ]
+        }
+      ],
+      "affected_objects": [
+        {
+          "type": "production_line",
+          "id": "LINE-S03"
+        },
+        {
+          "type": "shift",
+          "id": "LINE-S03-PRE-20251009"
+        }
+      ],
+      "recommended_actions": [
+        {
+          "action_id": "ACTION-0000",
+          "action": "�����Ų�Ǽƻ�ͣ������ȷ���Ƿ�Ӱ�쿪����",
+          "priority": "medium",
+          "is_high_risk": false,
+          "needs_human_confirmation": false,
+          "prohibited_auto_execute": true,
+          "actor_can_execute": false,
+          "affected_object": "LINE-S03",
+          "evidence_refs": [
+            "EVREF-v1:f96e0f3419d50da377aaa21cfc0c2784ad94548e1d46fea993fc0e089f72840a"
+          ]
+        },
+        {
+          "action_id": "ACTION-0001",
+          "action": "��������Ų��ƻ���������Ȩ��Ա��ҵ��ϵͳ��ȷ�Ϻ�ִ��",
+          "priority": "high",
+          "is_high_risk": true,
+          "needs_human_confirmation": true,
+          "prohibited_auto_execute": true,
+          "actor_can_execute": false,
+          "affected_object": "LINE-S03",
+          "evidence_refs": [
+            "EVREF-v1:c3face5807ad5b1f8dc3ef82bedb46fe563c21720c47152cb915103a90e7e60f"
+          ]
+        }
+      ],
+      "needs_human_confirmation": true,
+      "evidence_refs": [
+        "EVREF-v1:c3face5807ad5b1f8dc3ef82bedb46fe563c21720c47152cb915103a90e7e60f",
+        "EVREF-v1:5ff4114f4c0d40b727908e1d120493ba1929519955bd736a6d61ed5b40f8bace",
+        "EVREF-v1:6d7359295d824b418cc97ebf859fc801b88592a532cbe1fdcb5254f09f13ee36",
+        "EVREF-v1:25af4b6d3356e3d5810e43303d4b62775d17a040d21541006ed08b3421e1c49a",
+        "EVREF-v1:f96e0f3419d50da377aaa21cfc0c2784ad94548e1d46fea993fc0e089f72840a",
+        "EVREF-v1:a8d0cd12b2c9a6a760e37df215ce8446da9a592d92138bc4e3c44fb6b9ac958f",
+        "EVREF-v1:2e41c03a80d6b9fb13f0c38ae941c32707339d0b3f3c78950ded627173b19ce8",
+        "EVREF-v1:9fb662ec899a3215a2d1ae3630346d74c9097cc618cb7cad379d3b5761e5b334"
+      ],
+      "data_gaps": [
+        {
+          "semantic_entity": "shift",
+          "semantic_field": "mtbf_mttr",
+          "reason": "missing_equipment_fault_repair_evidence",
+          "value_consumption_status": "missing",
+          "source_locator": "REC-PROD-S03-001",
+          "required_resolution": "ȱ�� EquipmentID/������/ά�޹��������ü��� MTBF/MTTR",
+          "affected_record_count": 1,
+          "occurrence_count": 1,
+          "sample_source_locators": [
+            "REC-PROD-S03-001"
+          ]
+        },
+        {
+          "semantic_entity": "shift",
+          "semantic_field": "shift_trend",
+          "reason": "insufficient_temporal_evidence",
+          "value_consumption_status": "missing",
+          "source_locator": "REC-PROD-S03-001",
+          "required_resolution": "ȱ��ʱ���ֶλ��¼˳��֤�ݣ�������������",
+          "affected_record_count": 1,
+          "occurrence_count": 1,
+          "sample_source_locators": [
+            "REC-PROD-S03-001"
+          ]
+        }
+      ],
+      "source_write_performed": false,
+      "actor_can_execute": false
+    },
+    {
+      "event_id": "EVT-OMP-03-GOLDEN-0001",
+      "task_id": "TASK-OMP-03-QUAL",
+      "agent_id": "quality-specialist",
+      "objective": "��������������",
+      "status": "warning",
+      "conclusion": "�����ֶ� yield=0.95����¼: ��-������ϸ#defect_detail#LINE-S03-001��; �������ͷֲ�: 2 �ֲ�������; ��������=50; �����ֲ�ͳ���غ���ͨ��; ȱ�� SPC ���ݣ�Cpk ���ɼ���; ��ʱ���ֶΣ����������ƽ���",
+      "severity": "unknown",
+      "confidence": 1.0,
+      "metrics": [
+        {
+          "metric_id": "M-QUAL-001",
+          "label": "yield",
+          "value": 0.95,
+          "display_format": "0.0%",
+          "semantic_field": "yield",
+          "evidence_refs": [
+            "EVREF-v1:5208d666bf141e2f72ff83a290a82bd3f44cb3a8b966273f79d8b85c3e73b0ef"
+          ]
+        },
+        {
+          "metric_id": "M-QUAL-002",
+          "label": "defect_total",
+          "value": 50,
+          "display_format": "0",
+          "semantic_field": "defect_total",
+          "evidence_refs": [
+            "EVREF-v1:7e32579d6ade4195e27b2513d371c67c427ae5607c4f59ec7f05cae5074cbece"
+          ]
+        }
+      ],
+      "causes": [
+        {
+          "cause_id": "C-QUAL-001",
+          "category": "associated_defect_type",
+          "statement": "�������͡���۲�����Ϊ��������֤�ݼ���Ϊ������correlation_not_causation��",
+          "causal_evidence_level": "associated_risk",
+          "evidence_refs": [
+            "EVREF-v1:3ae85957ba607c7a2daa666dd06edca0ab015a8a40061547d143eacd650909b8"
+          ]
+        },
+        {
+          "cause_id": "C-QUAL-002",
+          "category": "associated_defect_type",
+          "statement": "�������͡��ߴ糬�Ϊ��������֤�ݼ���Ϊ������correlation_not_causation��",
+          "causal_evidence_level": "associated_risk",
+          "evidence_refs": [
+            "EVREF-v1:48c90c3a270d5b2265448f96168fa879f774d8523d346b765cf2fd0b4f1cca7e"
+          ]
+        }
+      ],
+      "affected_objects": [],
+      "recommended_actions": [],
+      "needs_human_confirmation": false,
+      "evidence_refs": [
+        "EVREF-v1:5208d666bf141e2f72ff83a290a82bd3f44cb3a8b966273f79d8b85c3e73b0ef",
+        "EVREF-v1:7e32579d6ade4195e27b2513d371c67c427ae5607c4f59ec7f05cae5074cbece",
+        "EVREF-v1:3ae85957ba607c7a2daa666dd06edca0ab015a8a40061547d143eacd650909b8",
+        "EVREF-v1:48c90c3a270d5b2265448f96168fa879f774d8523d346b765cf2fd0b4f1cca7e"
+      ],
+      "data_gaps": [
+        {
+          "semantic_entity": "defect_detail",
+          "semantic_field": "spc_measurement_points",
+          "reason": "GAP-SPC-MEASUREMENT",
+          "value_consumption_status": "missing",
+          "source_locator": "missing_fields=lsl,spc_measurement_points,usl",
+          "required_resolution": "ȱ�� SPC ԭʼ������/�����(USL/LSL)/�������򣬲��ü��� Cpk/Cp�������ж� SPC Խ��",
+          "affected_record_count": 1,
+          "occurrence_count": 1,
+          "sample_source_locators": [
+            "missing_fields=lsl,spc_measurement_points,usl"
+          ]
+        },
+        {
+          "semantic_entity": "defect_detail",
+          "semantic_field": "sample_rule",
+          "reason": "missing_sample_rule",
+          "value_consumption_status": "missing",
+          "source_locator": null,
+          "required_resolution": "ȱ�ٳ��������壬SPC �ж�������ɿ�",
+          "affected_record_count": 1,
+          "occurrence_count": 1,
+          "sample_source_locators": []
+        }
+      ],
+      "source_write_performed": false,
+      "actor_can_execute": false
+    },
+    {
+      "event_id": "EVT-OMP-03-GOLDEN-0001",
+      "task_id": "TASK-OMP-03-SUPPLY",
+      "agent_id": "supply-specialist",
+      "objective": "��Ӧ����������",
+      "status": "completed",
+      "conclusion": "δ��⵽��Ӧ�����Է����ź�",
+      "severity": "unknown",
+      "confidence": 1.0,
+      "metrics": [
+        {
+          "metric_id": "M-SUP-001",
+          "label": "PO-TEST-0001#row1 �ɹ�����",
+          "value": 1000.0,
+          "display_format": "#,##0",
+          "semantic_field": "purchase_qty",
+          "evidence_refs": [
+            "EVREF-v1:553e0295c0a085d3151d6cdbe5d279d3ec371745b51a35d16d7261133bd9ea3b"
+          ]
+        },
+        {
+          "metric_id": "M-SUP-002",
+          "label": "PO-TEST-0001#row1 ��������",
+          "value": 1000.0,
+          "display_format": "#,##0",
+          "semantic_field": "arrived_qty",
+          "evidence_refs": [
+            "EVREF-v1:389d4a1da99ca49798af2868b17b35d4debd29cee1904bbd4a9659b8c5fd419d"
+          ]
+        }
+      ],
+      "causes": [],
+      "affected_objects": [
+        {
+          "object_type": "purchase_order",
+          "object_id": "PO-TEST-0001#row1"
+        }
+      ],
+      "recommended_actions": [],
+      "needs_human_confirmation": false,
+      "evidence_refs": [
+        "EVREF-v1:b81c7e9e48e3818b4149d0e4c7f9669be26d215228cc89474f2e82cdb0150f99",
+        "EVREF-v1:553e0295c0a085d3151d6cdbe5d279d3ec371745b51a35d16d7261133bd9ea3b",
+        "EVREF-v1:389d4a1da99ca49798af2868b17b35d4debd29cee1904bbd4a9659b8c5fd419d",
+        "EVREF-v1:8cc0db0e01432eec066fa2e42a2498d30e7d4848dd1c0a87ff01d67678fbef10",
+        "EVREF-v1:8e0d77e29cf72ec779803314fa771cfdf69d3d92a918b5bd998e3bcc82faa7c2"
+      ],
+      "data_gaps": [],
+      "source_write_performed": false,
+      "actor_can_execute": false
+    }
+  ],
+  "role_projections": {
+    "factory": {
+      "event_id": "EVT-OMP-03-GOLDEN-0001",
+      "task_count": 3,
+      "status": "needs_confirmation"
+    },
+    "line": {
+      "production_status": "needs_confirmation",
+      "metrics": [
+        {
+          "metric_id": "METRIC-0000-oee_source",
+          "label": "oee_source",
+          "value": 0.609567,
+          "display_format": "0.0%",
+          "semantic_field": "oee_source",
+          "evidence_refs": [
+            "EVREF-v1:c3face5807ad5b1f8dc3ef82bedb46fe563c21720c47152cb915103a90e7e60f"
+          ]
+        },
+        {
+          "metric_id": "METRIC-0001-availability",
+          "label": "availability",
+          "value": 0.85,
+          "display_format": "0.0%",
+          "semantic_field": "availability",
+          "evidence_refs": [
+            "EVREF-v1:5ff4114f4c0d40b727908e1d120493ba1929519955bd736a6d61ed5b40f8bace"
+          ]
+        },
+        {
+          "metric_id": "METRIC-0002-performance_rate",
+          "label": "performance_rate",
+          "value": 0.78,
+          "display_format": "0.0%",
+          "semantic_field": "performance_rate",
+          "evidence_refs": [
+            "EVREF-v1:6d7359295d824b418cc97ebf859fc801b88592a532cbe1fdcb5254f09f13ee36"
+          ]
+        },
+        {
+          "metric_id": "METRIC-0003-quality_factor",
+          "label": "quality_factor",
+          "value": 0.912867,
+          "display_format": "0.0%",
+          "semantic_field": "quality_factor",
+          "evidence_refs": [
+            "EVREF-v1:25af4b6d3356e3d5810e43303d4b62775d17a040d21541006ed08b3421e1c49a"
+          ]
+        },
+        {
+          "metric_id": "METRIC-0004-total_output",
+          "label": "total_output",
+          "value": 1200,
+          "display_format": "0",
+          "semantic_field": "total_output",
+          "evidence_refs": [
+            "EVREF-v1:a8d0cd12b2c9a6a760e37df215ce8446da9a592d92138bc4e3c44fb6b9ac958f"
+          ]
+        },
+        {
+          "metric_id": "METRIC-0005-good_output",
+          "label": "good_output",
+          "value": 1095,
+          "display_format": "0",
+          "semantic_field": "good_output",
+          "evidence_refs": [
+            "EVREF-v1:2e41c03a80d6b9fb13f0c38ae941c32707339d0b3f3c78950ded627173b19ce8"
+          ]
+        },
+        {
+          "metric_id": "METRIC-0006-defect_total",
+          "label": "defect_total",
+          "value": 105,
+          "display_format": "0",
+          "semantic_field": "defect_total",
+          "evidence_refs": [
+            "EVREF-v1:9fb662ec899a3215a2d1ae3630346d74c9097cc618cb7cad379d3b5761e5b334"
+          ]
+        },
+        {
+          "metric_id": "METRIC-0007-unplanned_downtime_minutes",
+          "label": "unplanned_downtime_minutes",
+          "value": 45,
+          "display_format": "0",
+          "semantic_field": "unplanned_downtime_minutes",
+          "evidence_refs": [
+            "EVREF-v1:f96e0f3419d50da377aaa21cfc0c2784ad94548e1d46fea993fc0e089f72840a"
+          ]
+        }
+      ]
+    },
+    "quality": {
+      "status": "warning",
+      "metrics": [
+        {
+          "metric_id": "M-QUAL-001",
+          "label": "yield",
+          "value": 0.95,
+          "display_format": "0.0%",
+          "semantic_field": "yield",
+          "evidence_refs": [
+            "EVREF-v1:5208d666bf141e2f72ff83a290a82bd3f44cb3a8b966273f79d8b85c3e73b0ef"
+          ]
+        },
+        {
+          "metric_id": "M-QUAL-002",
+          "label": "defect_total",
+          "value": 50,
+          "display_format": "0",
+          "semantic_field": "defect_total",
+          "evidence_refs": [
+            "EVREF-v1:7e32579d6ade4195e27b2513d371c67c427ae5607c4f59ec7f05cae5074cbece"
+          ]
+        }
+      ]
+    },
+    "equipment": {
+      "causes": [
+        {
+          "cause_id": "CAUSE-0000",
+          "category": "oee_direct_driver",
+          "statement": "availability=0.85��OEEֱ����������",
+          "causal_evidence_level": "direct_verified",
+          "evidence_refs": [
+            "EVREF-v1:5ff4114f4c0d40b727908e1d120493ba1929519955bd736a6d61ed5b40f8bace"
+          ]
+        },
+        {
+          "cause_id": "CAUSE-0001",
+          "category": "oee_direct_driver",
+          "statement": "performance_rate=0.78��OEEֱ����������",
+          "causal_evidence_level": "direct_verified",
+          "evidence_refs": [
+            "EVREF-v1:6d7359295d824b418cc97ebf859fc801b88592a532cbe1fdcb5254f09f13ee36"
+          ]
+        },
+        {
+          "cause_id": "CAUSE-0002",
+          "category": "oee_direct_driver",
+          "statement": "quality_factor=0.912867��OEEֱ����������",
+          "causal_evidence_level": "direct_verified",
+          "evidence_refs": [
+            "EVREF-v1:25af4b6d3356e3d5810e43303d4b62775d17a040d21541006ed08b3421e1c49a"
+          ]
+        },
+        {
+          "cause_id": "CAUSE-0003",
+          "category": "availability_loss",
+          "statement": "�Ǽƻ�ͣ�� 45 ���ӣ�Ϊ�������½�֤�ݣ�OEEֱ������ availability ��֤�ݣ�",
+          "causal_evidence_level": "direct_verified",
+          "evidence_refs": [
+            "EVREF-v1:f96e0f3419d50da377aaa21cfc0c2784ad94548e1d46fea993fc0e089f72840a"
+          ]
+        }
+      ]
+    },
+    "process": {
+      "data_gaps": [
+        {
+          "semantic_entity": "shift",
+          "semantic_field": "mtbf_mttr",
+          "reason": "missing_equipment_fault_repair_evidence",
+          "value_consumption_status": "missing",
+          "source_locator": "REC-PROD-S03-001",
+          "required_resolution": "ȱ�� EquipmentID/������/ά�޹��������ü��� MTBF/MTTR",
+          "affected_record_count": 1,
+          "occurrence_count": 1,
+          "sample_source_locators": [
+            "REC-PROD-S03-001"
+          ]
+        },
+        {
+          "semantic_entity": "shift",
+          "semantic_field": "shift_trend",
+          "reason": "insufficient_temporal_evidence",
+          "value_consumption_status": "missing",
+          "source_locator": "REC-PROD-S03-001",
+          "required_resolution": "ȱ��ʱ���ֶλ��¼˳��֤�ݣ�������������",
+          "affected_record_count": 1,
+          "occurrence_count": 1,
+          "sample_source_locators": [
+            "REC-PROD-S03-001"
+          ]
+        }
+      ]
+    },
+    "supply": {
+      "status": "completed",
+      "data_gaps": []
+    }
+  },
+  "input_hashes_sha256": {
+    "BIFROST_���鵼�����ݰ�_v3_P0�޸���_SIM-v2.2.xlsx": "57317ccc234aa66407c989f3d5c41090924a030d9ae0588afe6a95a765cbd086",
+    "README.md": "76e4fa92634eb9403abda42815a52906725cdd839ea90c720ef38d585d2de51e",
+    "�����������ҵ�������ݼ�.xlsx": "2906f6e7d3c57834a939d5e17acd8ea89585abaffac5000c1ecfa83bc176fd92"
+  },
+  "source_write_performed": false,
+  "actor_can_execute": false,
+  "result_file": ".omp\\integration\\orchestration_test_results.json",
+  "errors": [],
+  "peer_integration": {
+    "matrix_version": "BIFROST-SKILL-COMPAT-v1.0",
+    "adapter_version": "2.0.0",
+    "execution_mode": "contract-executed-readonly",
+    "overlay_mode": "deprecated",
+    "source_payload_sha256": "01eeebec1179dc238da8eaaa5251a67af55ad10319ccd62812f9b62b6a420d3f",
+    "source_payload_unchanged": true,
+    "source_write_performed": false,
+    "actor_can_execute": false,
+    "status": "PASS",
+    "errors": [],
+    "source_adapter_status": "PASS"
+  },
+  "analysis_enhancements": [
+    {
+      "contract_version": "BIFROST_PEER_SKILL_OUTPUT_v1",
+      "skill_id": "a01-oee-loss-tree",
+      "status": "available",
+      "event_id": "EVT-OMP-03-GOLDEN-0001",
+      "task_id": "TASK-OMP-03-PROD",
+      "evidence_refs": [
+        "EVREF-v1:25af4b6d3356e3d5810e43303d4b62775d17a040d21541006ed08b3421e1c49a",
+        "EVREF-v1:2e41c03a80d6b9fb13f0c38ae941c32707339d0b3f3c78950ded627173b19ce8",
+        "EVREF-v1:5ff4114f4c0d40b727908e1d120493ba1929519955bd736a6d61ed5b40f8bace",
+        "EVREF-v1:6d7359295d824b418cc97ebf859fc801b88592a532cbe1fdcb5254f09f13ee36",
+        "EVREF-v1:9fb662ec899a3215a2d1ae3630346d74c9097cc618cb7cad379d3b5761e5b334",
+        "EVREF-v1:a8d0cd12b2c9a6a760e37df215ce8446da9a592d92138bc4e3c44fb6b9ac958f",
+        "EVREF-v1:c3face5807ad5b1f8dc3ef82bedb46fe563c21720c47152cb915103a90e7e60f",
+        "EVREF-v1:f96e0f3419d50da377aaa21cfc0c2784ad94548e1d46fea993fc0e089f72840a"
+      ],
+      "data_gaps": [
+        "mtbf_mttr",
+        "shift_trend"
+      ],
+      "insights": [],
+      "display_descriptor": {
+        "language": "zh-CN",
+        "source": "peer_skill_executor",
+        "title_zh": "OEE��ʧ��",
+        "chart_type": "loss_tree"
+      },
+      "does_not_replace_authoritative_metrics": true,
+      "oee_loss_tree": {
+        "availability": [
+          {
+            "cause_type": "direct_driver",
+            "semantic_field": "availability",
+            "value": 0.85,
+            "unit": "ratio",
+            "evidence_refs": [
+              "EVREF-v1:5ff4114f4c0d40b727908e1d120493ba1929519955bd736a6d61ed5b40f8bace"
+            ]
+          },
+          {
+            "cause_type": "observed_cause",
+            "category": "availability_loss",
+            "statement": "�Ǽƻ�ͣ�� 45 ���ӣ�Ϊ�������½�֤�ݣ�OEEֱ������ availability ��֤�ݣ�",
+            "evidence_refs": [
+              "EVREF-v1:f96e0f3419d50da377aaa21cfc0c2784ad94548e1d46fea993fc0e089f72840a"
+            ]
+          }
+        ],
+        "performance": [
+          {
+            "cause_type": "direct_driver",
+            "semantic_field": "performance_rate",
+            "value": 0.78,
+            "unit": "ratio",
+            "evidence_refs": [
+              "EVREF-v1:6d7359295d824b418cc97ebf859fc801b88592a532cbe1fdcb5254f09f13ee36"
+            ]
+          }
+        ],
+        "quality": [
+          {
+            "cause_type": "direct_driver",
+            "semantic_field": "quality_factor",
+            "value": 0.912867,
+            "unit": "ratio",
+            "evidence_refs": [
+              "EVREF-v1:25af4b6d3356e3d5810e43303d4b62775d17a040d21541006ed08b3421e1c49a"
+            ]
+          }
+        ]
+      },
+      "validation_errors": []
+    },
+    {
+      "contract_version": "BIFROST_PEER_SKILL_OUTPUT_v1",
+      "skill_id": "a02-pareto",
+      "status": "not_observed",
+      "event_id": "EVT-OMP-03-GOLDEN-0001",
+      "task_id": "TASK-OMP-03-PROD",
+      "evidence_refs": [
+        "EVREF-v1:25af4b6d3356e3d5810e43303d4b62775d17a040d21541006ed08b3421e1c49a",
+        "EVREF-v1:2e41c03a80d6b9fb13f0c38ae941c32707339d0b3f3c78950ded627173b19ce8",
+        "EVREF-v1:5ff4114f4c0d40b727908e1d120493ba1929519955bd736a6d61ed5b40f8bace",
+        "EVREF-v1:6d7359295d824b418cc97ebf859fc801b88592a532cbe1fdcb5254f09f13ee36",
+        "EVREF-v1:9fb662ec899a3215a2d1ae3630346d74c9097cc618cb7cad379d3b5761e5b334",
+        "EVREF-v1:a8d0cd12b2c9a6a760e37df215ce8446da9a592d92138bc4e3c44fb6b9ac958f",
+        "EVREF-v1:c3face5807ad5b1f8dc3ef82bedb46fe563c21720c47152cb915103a90e7e60f",
+        "EVREF-v1:f96e0f3419d50da377aaa21cfc0c2784ad94548e1d46fea993fc0e089f72840a"
+      ],
+      "data_gaps": [
+        "mtbf_mttr",
+        "shift_trend",
+        "categorical_cause_values"
+      ],
+      "insights": [],
+      "display_descriptor": {
+        "language": "zh-CN",
+        "source": "peer_skill_executor",
+        "title_zh": "ԭ�� Pareto",
+        "chart_type": "horizontal_bar"
+      },
+      "does_not_replace_authoritative_metrics": true,
+      "pareto": {
+        "dimension": null,
+        "unit": null,
+        "items": []
+      },
+      "reason": "no_categorical_cause_values",
+      "validation_errors": []
+    },
+    {
+      "contract_version": "BIFROST_PEER_SKILL_OUTPUT_v1",
+      "skill_id": "a07-yield-funnel",
+      "status": "available",
+      "event_id": "EVT-OMP-03-GOLDEN-0001",
+      "task_id": "TASK-OMP-03-QUAL",
+      "evidence_refs": [
+        "EVREF-v1:3ae85957ba607c7a2daa666dd06edca0ab015a8a40061547d143eacd650909b8",
+        "EVREF-v1:48c90c3a270d5b2265448f96168fa879f774d8523d346b765cf2fd0b4f1cca7e",
+        "EVREF-v1:5208d666bf141e2f72ff83a290a82bd3f44cb3a8b966273f79d8b85c3e73b0ef",
+        "EVREF-v1:7e32579d6ade4195e27b2513d371c67c427ae5607c4f59ec7f05cae5074cbece"
+      ],
+      "data_gaps": [
+        "sample_rule",
+        "spc_measurement_points"
+      ],
+      "insights": [],
+      "display_descriptor": {
+        "language": "zh-CN",
+        "source": "peer_skill_executor",
+        "title_zh": "����©��",
+        "chart_type": "funnel"
+      },
+      "does_not_replace_authoritative_metrics": true,
+      "yield_funnel": {
+        "stages": [
+          {
+            "semantic_field": "defect_total",
+            "value": 50,
+            "unit": null,
+            "evidence_refs": [
+              "EVREF-v1:7e32579d6ade4195e27b2513d371c67c427ae5607c4f59ec7f05cae5074cbece"
+            ]
+          },
+          {
+            "semantic_field": "yield",
+            "value": 0.95,
+            "unit": null,
+            "evidence_refs": [
+              "EVREF-v1:5208d666bf141e2f72ff83a290a82bd3f44cb3a8b966273f79d8b85c3e73b0ef"
+            ]
+          }
+        ]
+      },
+      "validation_errors": []
+    },
+    {
+      "contract_version": "BIFROST_PEER_SKILL_OUTPUT_v1",
+      "skill_id": "a03-spc-rules",
+      "status": "blocked",
+      "event_id": "EVT-OMP-03-GOLDEN-0001",
+      "task_id": "TASK-OMP-03-QUAL",
+      "evidence_refs": [
+        "EVREF-v1:3ae85957ba607c7a2daa666dd06edca0ab015a8a40061547d143eacd650909b8",
+        "EVREF-v1:48c90c3a270d5b2265448f96168fa879f774d8523d346b765cf2fd0b4f1cca7e",
+        "EVREF-v1:5208d666bf141e2f72ff83a290a82bd3f44cb3a8b966273f79d8b85c3e73b0ef",
+        "EVREF-v1:7e32579d6ade4195e27b2513d371c67c427ae5607c4f59ec7f05cae5074cbece"
+      ],
+      "data_gaps": [
+        "sample_rule",
+        "spc_measurement_points"
+      ],
+      "insights": [],
+      "display_descriptor": {
+        "language": "zh-CN",
+        "source": "peer_skill_executor",
+        "title_zh": "SPC״̬",
+        "chart_type": "status_card"
+      },
+      "does_not_replace_authoritative_metrics": true,
+      "spc": {
+        "cpk": null,
+        "measurement_points": null,
+        "missing_fields": [
+          "sample_rule",
+          "spc_measurement_points"
+        ]
+      },
+      "cpk": null,
+      "validation_errors": []
+    },
+    {
+      "contract_version": "BIFROST_PEER_SKILL_OUTPUT_v1",
+      "skill_id": "a08-supply-chain-gap",
+      "status": "blocked",
+      "event_id": "EVT-OMP-03-GOLDEN-0001",
+      "task_id": "TASK-OMP-03-SUPPLY",
+      "evidence_refs": [
+        "EVREF-v1:389d4a1da99ca49798af2868b17b35d4debd29cee1904bbd4a9659b8c5fd419d",
+        "EVREF-v1:553e0295c0a085d3151d6cdbe5d279d3ec371745b51a35d16d7261133bd9ea3b",
+        "EVREF-v1:8cc0db0e01432eec066fa2e42a2498d30e7d4848dd1c0a87ff01d67678fbef10",
+        "EVREF-v1:8e0d77e29cf72ec779803314fa771cfdf69d3d92a918b5bd998e3bcc82faa7c2",
+        "EVREF-v1:b81c7e9e48e3818b4149d0e4c7f9669be26d215228cc89474f2e82cdb0150f99"
+      ],
+      "data_gaps": [],
+      "insights": [],
+      "display_descriptor": {
+        "language": "zh-CN",
+        "source": "peer_skill_executor",
+        "title_zh": "��Ӧȱ��",
+        "chart_type": "table"
+      },
+      "does_not_replace_authoritative_metrics": true,
+      "supply_gap": {
+        "metrics": [
+          {
+            "metric_id": "M-SUP-001",
+            "label": "PO-TEST-0001#row1 �ɹ�����",
+            "value": 1000.0,
+            "display_format": "#,##0",
+            "semantic_field": "purchase_qty",
+            "evidence_refs": [
+              "EVREF-v1:553e0295c0a085d3151d6cdbe5d279d3ec371745b51a35d16d7261133bd9ea3b"
+            ]
+          },
+          {
+            "metric_id": "M-SUP-002",
+            "label": "PO-TEST-0001#row1 ��������",
+            "value": 1000.0,
+            "display_format": "#,##0",
+            "semantic_field": "arrived_qty",
+            "evidence_refs": [
+              "EVREF-v1:389d4a1da99ca49798af2868b17b35d4debd29cee1904bbd4a9659b8c5fd419d"
+            ]
+          }
+        ],
+        "oee_attribution": "forbidden"
+      },
+      "oee_attribution": "forbidden",
+      "validation_errors": [
+        "invalid_status"
+      ]
+    },
+    {
+      "skill_id": "a01-oee-loss-tree",
+      "status": "available",
+      "branches": [
+        {
+          "category": "oee_direct_driver",
+          "statement": "availability=0.85��OEEֱ����������",
+          "causal_evidence_level": "direct_verified",
+          "evidence_refs": [
+            "EVREF-v1:5ff4114f4c0d40b727908e1d120493ba1929519955bd736a6d61ed5b40f8bace"
+          ]
+        },
+        {
+          "category": "oee_direct_driver",
+          "statement": "performance_rate=0.78��OEEֱ����������",
+          "causal_evidence_level": "direct_verified",
+          "evidence_refs": [
+            "EVREF-v1:6d7359295d824b418cc97ebf859fc801b88592a532cbe1fdcb5254f09f13ee36"
+          ]
+        },
+        {
+          "category": "oee_direct_driver",
+          "statement": "quality_factor=0.912867��OEEֱ����������",
+          "causal_evidence_level": "direct_verified",
+          "evidence_refs": [
+            "EVREF-v1:25af4b6d3356e3d5810e43303d4b62775d17a040d21541006ed08b3421e1c49a"
+          ]
+        },
+        {
+          "category": "availability_loss",
+          "statement": "�Ǽƻ�ͣ�� 45 ���ӣ�Ϊ�������½�֤�ݣ�OEEֱ������ availability ��֤�ݣ�",
+          "causal_evidence_level": "direct_verified",
+          "evidence_refs": [
+            "EVREF-v1:f96e0f3419d50da377aaa21cfc0c2784ad94548e1d46fea993fc0e089f72840a"
+          ]
+        }
+      ],
+      "metric_source": "authoritative_task_metrics",
+      "does_not_recalculate": true
+    },
+    {
+      "skill_id": "a02-pareto",
+      "status": "available",
+      "items": [
+        {
+          "label": "total_output",
+          "value": 1200,
+          "evidence_refs": [
+            "EVREF-v1:a8d0cd12b2c9a6a760e37df215ce8446da9a592d92138bc4e3c44fb6b9ac958f"
+          ]
+        },
+        {
+          "label": "good_output",
+          "value": 1095,
+          "evidence_refs": [
+            "EVREF-v1:2e41c03a80d6b9fb13f0c38ae941c32707339d0b3f3c78950ded627173b19ce8"
+          ]
+        },
+        {
+          "label": "defect_total",
+          "value": 105,
+          "evidence_refs": [
+            "EVREF-v1:9fb662ec899a3215a2d1ae3630346d74c9097cc618cb7cad379d3b5761e5b334"
+          ]
+        },
+        {
+          "label": "unplanned_downtime_minutes",
+          "value": 45,
+          "evidence_refs": [
+            "EVREF-v1:f96e0f3419d50da377aaa21cfc0c2784ad94548e1d46fea993fc0e089f72840a"
+          ]
+        },
+        {
+          "label": "quality_factor",
+          "value": 0.912867,
+          "evidence_refs": [
+            "EVREF-v1:25af4b6d3356e3d5810e43303d4b62775d17a040d21541006ed08b3421e1c49a"
+          ]
+        },
+        {
+          "label": "availability",
+          "value": 0.85,
+          "evidence_refs": [
+            "EVREF-v1:5ff4114f4c0d40b727908e1d120493ba1929519955bd736a6d61ed5b40f8bace"
+          ]
+        },
+        {
+          "label": "performance_rate",
+          "value": 0.78,
+          "evidence_refs": [
+            "EVREF-v1:6d7359295d824b418cc97ebf859fc801b88592a532cbe1fdcb5254f09f13ee36"
+          ]
+        },
+        {
+          "label": "oee_source",
+          "value": 0.609567,
+          "evidence_refs": [
+            "EVREF-v1:c3face5807ad5b1f8dc3ef82bedb46fe563c21720c47152cb915103a90e7e60f"
+          ]
+        }
+      ],
+      "reason": null,
+      "does_not_recalculate": true
+    },
+    {
+      "skill_id": "a07-yield-funnel",
+      "status": "available",
+      "stages": [
+        {
+          "field": "defect_total",
+          "value": 50,
+          "evidence_refs": [
+            "EVREF-v1:7e32579d6ade4195e27b2513d371c67c427ae5607c4f59ec7f05cae5074cbece"
+          ]
+        },
+        {
+          "field": "yield",
+          "value": 0.95,
+          "evidence_refs": [
+            "EVREF-v1:5208d666bf141e2f72ff83a290a82bd3f44cb3a8b966273f79d8b85c3e73b0ef"
+          ]
+        }
+      ],
+      "does_not_recalculate": true
+    },
+    {
+      "skill_id": "a03-spc-rules",
+      "status": "blocked",
+      "missing_fields": [
+        "sample_rule",
+        "spc_measurement_points"
+      ],
+      "reason": "required_spc_inputs_missing",
+      "cpk": null,
+      "evidence_refs": [
+        "EVREF-v1:3ae85957ba607c7a2daa666dd06edca0ab015a8a40061547d143eacd650909b8",
+        "EVREF-v1:48c90c3a270d5b2265448f96168fa879f774d8523d346b765cf2fd0b4f1cca7e",
+        "EVREF-v1:5208d666bf141e2f72ff83a290a82bd3f44cb3a8b966273f79d8b85c3e73b0ef",
+        "EVREF-v1:7e32579d6ade4195e27b2513d371c67c427ae5607c4f59ec7f05cae5074cbece"
+      ]
+    },
+    {
+      "skill_id": "a08-supply-chain-gap",
+      "status": "completed",
+      "task_metrics": [
+        {
+          "metric_id": "M-SUP-001",
+          "label": "PO-TEST-0001#row1 �ɹ�����",
+          "value": 1000.0,
+          "display_format": "#,##0",
+          "semantic_field": "purchase_qty",
+          "evidence_refs": [
+            "EVREF-v1:553e0295c0a085d3151d6cdbe5d279d3ec371745b51a35d16d7261133bd9ea3b"
+          ]
+        },
+        {
+          "metric_id": "M-SUP-002",
+          "label": "PO-TEST-0001#row1 ��������",
+          "value": 1000.0,
+          "display_format": "#,##0",
+          "semantic_field": "arrived_qty",
+          "evidence_refs": [
+            "EVREF-v1:389d4a1da99ca49798af2868b17b35d4debd29cee1904bbd4a9659b8c5fd419d"
+          ]
+        }
+      ],
+      "data_gaps": [],
+      "oee_attribution": "forbidden",
+      "evidence_refs": [
+        "EVREF-v1:389d4a1da99ca49798af2868b17b35d4debd29cee1904bbd4a9659b8c5fd419d",
+        "EVREF-v1:553e0295c0a085d3151d6cdbe5d279d3ec371745b51a35d16d7261133bd9ea3b",
+        "EVREF-v1:8cc0db0e01432eec066fa2e42a2498d30e7d4848dd1c0a87ff01d67678fbef10",
+        "EVREF-v1:8e0d77e29cf72ec779803314fa771cfdf69d3d92a918b5bd998e3bcc82faa7c2",
+        "EVREF-v1:b81c7e9e48e3818b4149d0e4c7f9669be26d215228cc89474f2e82cdb0150f99"
+      ]
+    }
+  ],
+  "peer_skill_outputs": [
+    {
+      "contract_version": "BIFROST_PEER_SKILL_OUTPUT_v1",
+      "skill_id": "a01-oee-loss-tree",
+      "status": "available",
+      "event_id": "EVT-OMP-03-GOLDEN-0001",
+      "task_id": "TASK-OMP-03-PROD",
+      "evidence_refs": [
+        "EVREF-v1:25af4b6d3356e3d5810e43303d4b62775d17a040d21541006ed08b3421e1c49a",
+        "EVREF-v1:2e41c03a80d6b9fb13f0c38ae941c32707339d0b3f3c78950ded627173b19ce8",
+        "EVREF-v1:5ff4114f4c0d40b727908e1d120493ba1929519955bd736a6d61ed5b40f8bace",
+        "EVREF-v1:6d7359295d824b418cc97ebf859fc801b88592a532cbe1fdcb5254f09f13ee36",
+        "EVREF-v1:9fb662ec899a3215a2d1ae3630346d74c9097cc618cb7cad379d3b5761e5b334",
+        "EVREF-v1:a8d0cd12b2c9a6a760e37df215ce8446da9a592d92138bc4e3c44fb6b9ac958f",
+        "EVREF-v1:c3face5807ad5b1f8dc3ef82bedb46fe563c21720c47152cb915103a90e7e60f",
+        "EVREF-v1:f96e0f3419d50da377aaa21cfc0c2784ad94548e1d46fea993fc0e089f72840a"
+      ],
+      "data_gaps": [
+        "mtbf_mttr",
+        "shift_trend"
+      ],
+      "insights": [],
+      "display_descriptor": {
+        "language": "zh-CN",
+        "source": "peer_skill_executor",
+        "title_zh": "OEE��ʧ��",
+        "chart_type": "loss_tree"
+      },
+      "does_not_replace_authoritative_metrics": true,
+      "oee_loss_tree": {
+        "availability": [
+          {
+            "cause_type": "direct_driver",
+            "semantic_field": "availability",
+            "value": 0.85,
+            "unit": "ratio",
+            "evidence_refs": [
+              "EVREF-v1:5ff4114f4c0d40b727908e1d120493ba1929519955bd736a6d61ed5b40f8bace"
+            ]
+          },
+          {
+            "cause_type": "observed_cause",
+            "category": "availability_loss",
+            "statement": "�Ǽƻ�ͣ�� 45 ���ӣ�Ϊ�������½�֤�ݣ�OEEֱ������ availability ��֤�ݣ�",
+            "evidence_refs": [
+              "EVREF-v1:f96e0f3419d50da377aaa21cfc0c2784ad94548e1d46fea993fc0e089f72840a"
+            ]
+          }
+        ],
+        "performance": [
+          {
+            "cause_type": "direct_driver",
+            "semantic_field": "performance_rate",
+            "value": 0.78,
+            "unit": "ratio",
+            "evidence_refs": [
+              "EVREF-v1:6d7359295d824b418cc97ebf859fc801b88592a532cbe1fdcb5254f09f13ee36"
+            ]
+          }
+        ],
+        "quality": [
+          {
+            "cause_type": "direct_driver",
+            "semantic_field": "quality_factor",
+            "value": 0.912867,
+            "unit": "ratio",
+            "evidence_refs": [
+              "EVREF-v1:25af4b6d3356e3d5810e43303d4b62775d17a040d21541006ed08b3421e1c49a"
+            ]
+          }
+        ]
+      },
+      "validation_errors": []
+    },
+    {
+      "contract_version": "BIFROST_PEER_SKILL_OUTPUT_v1",
+      "skill_id": "a02-pareto",
+      "status": "not_observed",
+      "event_id": "EVT-OMP-03-GOLDEN-0001",
+      "task_id": "TASK-OMP-03-PROD",
+      "evidence_refs": [
+        "EVREF-v1:25af4b6d3356e3d5810e43303d4b62775d17a040d21541006ed08b3421e1c49a",
+        "EVREF-v1:2e41c03a80d6b9fb13f0c38ae941c32707339d0b3f3c78950ded627173b19ce8",
+        "EVREF-v1:5ff4114f4c0d40b727908e1d120493ba1929519955bd736a6d61ed5b40f8bace",
+        "EVREF-v1:6d7359295d824b418cc97ebf859fc801b88592a532cbe1fdcb5254f09f13ee36",
+        "EVREF-v1:9fb662ec899a3215a2d1ae3630346d74c9097cc618cb7cad379d3b5761e5b334",
+        "EVREF-v1:a8d0cd12b2c9a6a760e37df215ce8446da9a592d92138bc4e3c44fb6b9ac958f",
+        "EVREF-v1:c3face5807ad5b1f8dc3ef82bedb46fe563c21720c47152cb915103a90e7e60f",
+        "EVREF-v1:f96e0f3419d50da377aaa21cfc0c2784ad94548e1d46fea993fc0e089f72840a"
+      ],
+      "data_gaps": [
+        "mtbf_mttr",
+        "shift_trend",
+        "categorical_cause_values"
+      ],
+      "insights": [],
+      "display_descriptor": {
+        "language": "zh-CN",
+        "source": "peer_skill_executor",
+        "title_zh": "ԭ�� Pareto",
+        "chart_type": "horizontal_bar"
+      },
+      "does_not_replace_authoritative_metrics": true,
+      "pareto": {
+        "dimension": null,
+        "unit": null,
+        "items": []
+      },
+      "reason": "no_categorical_cause_values",
+      "validation_errors": []
+    },
+    {
+      "contract_version": "BIFROST_PEER_SKILL_OUTPUT_v1",
+      "skill_id": "a07-yield-funnel",
+      "status": "available",
+      "event_id": "EVT-OMP-03-GOLDEN-0001",
+      "task_id": "TASK-OMP-03-QUAL",
+      "evidence_refs": [
+        "EVREF-v1:3ae85957ba607c7a2daa666dd06edca0ab015a8a40061547d143eacd650909b8",
+        "EVREF-v1:48c90c3a270d5b2265448f96168fa879f774d8523d346b765cf2fd0b4f1cca7e",
+        "EVREF-v1:5208d666bf141e2f72ff83a290a82bd3f44cb3a8b966273f79d8b85c3e73b0ef",
+        "EVREF-v1:7e32579d6ade4195e27b2513d371c67c427ae5607c4f59ec7f05cae5074cbece"
+      ],
+      "data_gaps": [
+        "sample_rule",
+        "spc_measurement_points"
+      ],
+      "insights": [],
+      "display_descriptor": {
+        "language": "zh-CN",
+        "source": "peer_skill_executor",
+        "title_zh": "����©��",
+        "chart_type": "funnel"
+      },
+      "does_not_replace_authoritative_metrics": true,
+      "yield_funnel": {
+        "stages": [
+          {
+            "semantic_field": "defect_total",
+            "value": 50,
+            "unit": null,
+            "evidence_refs": [
+              "EVREF-v1:7e32579d6ade4195e27b2513d371c67c427ae5607c4f59ec7f05cae5074cbece"
+            ]
+          },
+          {
+            "semantic_field": "yield",
+            "value": 0.95,
+            "unit": null,
+            "evidence_refs": [
+              "EVREF-v1:5208d666bf141e2f72ff83a290a82bd3f44cb3a8b966273f79d8b85c3e73b0ef"
+            ]
+          }
+        ]
+      },
+      "validation_errors": []
+    },
+    {
+      "contract_version": "BIFROST_PEER_SKILL_OUTPUT_v1",
+      "skill_id": "a03-spc-rules",
+      "status": "blocked",
+      "event_id": "EVT-OMP-03-GOLDEN-0001",
+      "task_id": "TASK-OMP-03-QUAL",
+      "evidence_refs": [
+        "EVREF-v1:3ae85957ba607c7a2daa666dd06edca0ab015a8a40061547d143eacd650909b8",
+        "EVREF-v1:48c90c3a270d5b2265448f96168fa879f774d8523d346b765cf2fd0b4f1cca7e",
+        "EVREF-v1:5208d666bf141e2f72ff83a290a82bd3f44cb3a8b966273f79d8b85c3e73b0ef",
+        "EVREF-v1:7e32579d6ade4195e27b2513d371c67c427ae5607c4f59ec7f05cae5074cbece"
+      ],
+      "data_gaps": [
+        "sample_rule",
+        "spc_measurement_points"
+      ],
+      "insights": [],
+      "display_descriptor": {
+        "language": "zh-CN",
+        "source": "peer_skill_executor",
+        "title_zh": "SPC״̬",
+        "chart_type": "status_card"
+      },
+      "does_not_replace_authoritative_metrics": true,
+      "spc": {
+        "cpk": null,
+        "measurement_points": null,
+        "missing_fields": [
+          "sample_rule",
+          "spc_measurement_points"
+        ]
+      },
+      "cpk": null,
+      "validation_errors": []
+    },
+    {
+      "contract_version": "BIFROST_PEER_SKILL_OUTPUT_v1",
+      "skill_id": "a08-supply-chain-gap",
+      "status": "blocked",
+      "event_id": "EVT-OMP-03-GOLDEN-0001",
+      "task_id": "TASK-OMP-03-SUPPLY",
+      "evidence_refs": [
+        "EVREF-v1:389d4a1da99ca49798af2868b17b35d4debd29cee1904bbd4a9659b8c5fd419d",
+        "EVREF-v1:553e0295c0a085d3151d6cdbe5d279d3ec371745b51a35d16d7261133bd9ea3b",
+        "EVREF-v1:8cc0db0e01432eec066fa2e42a2498d30e7d4848dd1c0a87ff01d67678fbef10",
+        "EVREF-v1:8e0d77e29cf72ec779803314fa771cfdf69d3d92a918b5bd998e3bcc82faa7c2",
+        "EVREF-v1:b81c7e9e48e3818b4149d0e4c7f9669be26d215228cc89474f2e82cdb0150f99"
+      ],
+      "data_gaps": [],
+      "insights": [],
+      "display_descriptor": {
+        "language": "zh-CN",
+        "source": "peer_skill_executor",
+        "title_zh": "��Ӧȱ��",
+        "chart_type": "table"
+      },
+      "does_not_replace_authoritative_metrics": true,
+      "supply_gap": {
+        "metrics": [
+          {
+            "metric_id": "M-SUP-001",
+            "label": "PO-TEST-0001#row1 �ɹ�����",
+            "value": 1000.0,
+            "display_format": "#,##0",
+            "semantic_field": "purchase_qty",
+            "evidence_refs": [
+              "EVREF-v1:553e0295c0a085d3151d6cdbe5d279d3ec371745b51a35d16d7261133bd9ea3b"
+            ]
+          },
+          {
+            "metric_id": "M-SUP-002",
+            "label": "PO-TEST-0001#row1 ��������",
+            "value": 1000.0,
+            "display_format": "#,##0",
+            "semantic_field": "arrived_qty",
+            "evidence_refs": [
+              "EVREF-v1:389d4a1da99ca49798af2868b17b35d4debd29cee1904bbd4a9659b8c5fd419d"
+            ]
+          }
+        ],
+        "oee_attribution": "forbidden"
+      },
+      "oee_attribution": "forbidden",
+      "validation_errors": [
+        "invalid_status"
+      ]
+    },
+    {
+      "skill_id": "a01-oee-loss-tree",
+      "status": "available",
+      "branches": [
+        {
+          "category": "oee_direct_driver",
+          "statement": "availability=0.85��OEEֱ����������",
+          "causal_evidence_level": "direct_verified",
+          "evidence_refs": [
+            "EVREF-v1:5ff4114f4c0d40b727908e1d120493ba1929519955bd736a6d61ed5b40f8bace"
+          ]
+        },
+        {
+          "category": "oee_direct_driver",
+          "statement": "performance_rate=0.78��OEEֱ����������",
+          "causal_evidence_level": "direct_verified",
+          "evidence_refs": [
+            "EVREF-v1:6d7359295d824b418cc97ebf859fc801b88592a532cbe1fdcb5254f09f13ee36"
+          ]
+        },
+        {
+          "category": "oee_direct_driver",
+          "statement": "quality_factor=0.912867��OEEֱ����������",
+          "causal_evidence_level": "direct_verified",
+          "evidence_refs": [
+            "EVREF-v1:25af4b6d3356e3d5810e43303d4b62775d17a040d21541006ed08b3421e1c49a"
+          ]
+        },
+        {
+          "category": "availability_loss",
+          "statement": "�Ǽƻ�ͣ�� 45 ���ӣ�Ϊ�������½�֤�ݣ�OEEֱ������ availability ��֤�ݣ�",
+          "causal_evidence_level": "direct_verified",
+          "evidence_refs": [
+            "EVREF-v1:f96e0f3419d50da377aaa21cfc0c2784ad94548e1d46fea993fc0e089f72840a"
+          ]
+        }
+      ],
+      "metric_source": "authoritative_task_metrics",
+      "does_not_recalculate": true
+    },
+    {
+      "skill_id": "a02-pareto",
+      "status": "available",
+      "items": [
+        {
+          "label": "total_output",
+          "value": 1200,
+          "evidence_refs": [
+            "EVREF-v1:a8d0cd12b2c9a6a760e37df215ce8446da9a592d92138bc4e3c44fb6b9ac958f"
+          ]
+        },
+        {
+          "label": "good_output",
+          "value": 1095,
+          "evidence_refs": [
+            "EVREF-v1:2e41c03a80d6b9fb13f0c38ae941c32707339d0b3f3c78950ded627173b19ce8"
+          ]
+        },
+        {
+          "label": "defect_total",
+          "value": 105,
+          "evidence_refs": [
+            "EVREF-v1:9fb662ec899a3215a2d1ae3630346d74c9097cc618cb7cad379d3b5761e5b334"
+          ]
+        },
+        {
+          "label": "unplanned_downtime_minutes",
+          "value": 45,
+          "evidence_refs": [
+            "EVREF-v1:f96e0f3419d50da377aaa21cfc0c2784ad94548e1d46fea993fc0e089f72840a"
+          ]
+        },
+        {
+          "label": "quality_factor",
+          "value": 0.912867,
+          "evidence_refs": [
+            "EVREF-v1:25af4b6d3356e3d5810e43303d4b62775d17a040d21541006ed08b3421e1c49a"
+          ]
+        },
+        {
+          "label": "availability",
+          "value": 0.85,
+          "evidence_refs": [
+            "EVREF-v1:5ff4114f4c0d40b727908e1d120493ba1929519955bd736a6d61ed5b40f8bace"
+          ]
+        },
+        {
+          "label": "performance_rate",
+          "value": 0.78,
+          "evidence_refs": [
+            "EVREF-v1:6d7359295d824b418cc97ebf859fc801b88592a532cbe1fdcb5254f09f13ee36"
+          ]
+        },
+        {
+          "label": "oee_source",
+          "value": 0.609567,
+          "evidence_refs": [
+            "EVREF-v1:c3face5807ad5b1f8dc3ef82bedb46fe563c21720c47152cb915103a90e7e60f"
+          ]
+        }
+      ],
+      "reason": null,
+      "does_not_recalculate": true
+    },
+    {
+      "skill_id": "a07-yield-funnel",
+      "status": "available",
+      "stages": [
+        {
+          "field": "defect_total",
+          "value": 50,
+          "evidence_refs": [
+            "EVREF-v1:7e32579d6ade4195e27b2513d371c67c427ae5607c4f59ec7f05cae5074cbece"
+          ]
+        },
+        {
+          "field": "yield",
+          "value": 0.95,
+          "evidence_refs": [
+            "EVREF-v1:5208d666bf141e2f72ff83a290a82bd3f44cb3a8b966273f79d8b85c3e73b0ef"
+          ]
+        }
+      ],
+      "does_not_recalculate": true
+    },
+    {
+      "skill_id": "a03-spc-rules",
+      "status": "blocked",
+      "missing_fields": [
+        "sample_rule",
+        "spc_measurement_points"
+      ],
+      "reason": "required_spc_inputs_missing",
+      "cpk": null,
+      "evidence_refs": [
+        "EVREF-v1:3ae85957ba607c7a2daa666dd06edca0ab015a8a40061547d143eacd650909b8",
+        "EVREF-v1:48c90c3a270d5b2265448f96168fa879f774d8523d346b765cf2fd0b4f1cca7e",
+        "EVREF-v1:5208d666bf141e2f72ff83a290a82bd3f44cb3a8b966273f79d8b85c3e73b0ef",
+        "EVREF-v1:7e32579d6ade4195e27b2513d371c67c427ae5607c4f59ec7f05cae5074cbece"
+      ]
+    },
+    {
+      "skill_id": "a08-supply-chain-gap",
+      "status": "completed",
+      "task_metrics": [
+        {
+          "metric_id": "M-SUP-001",
+          "label": "PO-TEST-0001#row1 �ɹ�����",
+          "value": 1000.0,
+          "display_format": "#,##0",
+          "semantic_field": "purchase_qty",
+          "evidence_refs": [
+            "EVREF-v1:553e0295c0a085d3151d6cdbe5d279d3ec371745b51a35d16d7261133bd9ea3b"
+          ]
+        },
+        {
+          "metric_id": "M-SUP-002",
+          "label": "PO-TEST-0001#row1 ��������",
+          "value": 1000.0,
+          "display_format": "#,##0",
+          "semantic_field": "arrived_qty",
+          "evidence_refs": [
+            "EVREF-v1:389d4a1da99ca49798af2868b17b35d4debd29cee1904bbd4a9659b8c5fd419d"
+          ]
+        }
+      ],
+      "data_gaps": [],
+      "oee_attribution": "forbidden",
+      "evidence_refs": [
+        "EVREF-v1:389d4a1da99ca49798af2868b17b35d4debd29cee1904bbd4a9659b8c5fd419d",
+        "EVREF-v1:553e0295c0a085d3151d6cdbe5d279d3ec371745b51a35d16d7261133bd9ea3b",
+        "EVREF-v1:8cc0db0e01432eec066fa2e42a2498d30e7d4848dd1c0a87ff01d67678fbef10",
+        "EVREF-v1:8e0d77e29cf72ec779803314fa771cfdf69d3d92a918b5bd998e3bcc82faa7c2",
+        "EVREF-v1:b81c7e9e48e3818b4149d0e4c7f9669be26d215228cc89474f2e82cdb0150f99"
+      ]
+    }
+  ],
+  "peer_overlay": {
+    "overlay_version": "PEER-OVERLAY-v1.0",
+    "source_payload_sha256": "01eeebec1179dc238da8eaaa5251a67af55ad10319ccd62812f9b62b6a420d3f",
+    "status": "active",
+    "read_only": true,
+    "target": "adapter-test-only",
+    "role_scope": {
+      "factory": [
+        "event",
+        "analysis_enhancements"
+      ],
+      "line": [
+        "production-specialist",
+        "analysis_enhancements"
+      ],
+      "quality": [
+        "quality-specialist",
+        "analysis_enhancements"
+      ],
+      "equipment": [
+        "production-specialist",
+        "data_gaps"
+      ],
+      "process": [
+        "quality-specialist",
+        "data_gaps"
+      ],
+      "supply": [
+        "supply-specialist",
+        "analysis_enhancements"
+      ]
+    },
+    "display_hints": {
+      "a01-oee-loss-tree": {
+        "title_key": "oee_loss_tree",
+        "chart": "loss_tree",
+        "roles": [
+          "factory",
+          "line",
+          "equipment"
+        ]
+      },
+      "a02-pareto": {
+        "title_key": "pareto",
+        "chart": "horizontal_bar",
+        "roles": [
+          "factory",
+          "line",
+          "quality"
+        ]
+      },
+      "a07-yield-funnel": {
+        "title_key": "yield_funnel",
+        "chart": "funnel",
+        "roles": [
+          "factory",
+          "quality",
+          "line"
+        ]
+      },
+      "a03-spc-rules": {
+        "title_key": "spc_gate",
+        "chart": "status_card",
+        "roles": [
+          "quality",
+          "process"
+        ]
+      },
+      "a08-supply-chain-gap": {
+        "title_key": "supply_gap",
+        "chart": "table",
+        "roles": [
+          "supply",
+          "factory",
+          "line"
+        ]
+      }
+    }
+  },
+  "governance_findings": {
+    "status": "not_run",
+    "reason": "fixed adapter contract contains validated results, not raw governance input",
+    "required_next_input": [
+      "raw_rows",
+      "schema",
+      "reference_tables",
+      "time_fields"
+    ]
+  },
+  "role_projection_hints": [
+    {
+      "role": "factory",
+      "allowed_sources": [
+        "event",
+        "tasks",
+        "analysis_enhancements"
+      ]
+    },
+    {
+      "role": "line",
+      "allowed_sources": [
+        "production-specialist",
+        "analysis_enhancements"
+      ]
+    },
+    {
+      "role": "quality",
+      "allowed_sources": [
+        "quality-specialist",
+        "analysis_enhancements"
+      ]
+    },
+    {
+      "role": "equipment",
+      "allowed_sources": [
+        "production-specialist",
+        "data_gaps"
+      ]
+    },
+    {
+      "role": "process",
+      "allowed_sources": [
+        "quality-specialist",
+        "data_gaps"
+      ]
+    },
+    {
+      "role": "supply",
+      "allowed_sources": [
+        "supply-specialist",
+        "analysis_enhancements"
+      ]
+    }
+  ]
+}

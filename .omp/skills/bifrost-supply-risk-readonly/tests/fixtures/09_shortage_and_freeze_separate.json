@@ -1,0 +1,196 @@
+{
+  "contract_name": "BIFROST_DECISION_INPUT_v0.1",
+  "contract_version": "BIFROST-DECISION-INPUT-v0.1",
+  "request_id": "FIX-09",
+  "consumer_agent_id": "agent_test",
+  "role": "supply",
+  "query_context": {
+    "semantic_entity": "purchase_order",
+    "source_scope": "P01",
+    "read_only": true,
+    "requested_action": "expedite_purchase"
+  },
+  "source_release_id": "REL-TEST",
+  "source_snapshot_id": "SNAP-TEST",
+  "normalized_facts": [
+    {
+      "semantic_record_key": "供-缺口#material_shortage#SH-001#row1",
+      "source_table": "test",
+      "source_record_id": "row1",
+      "semantic_field": "material_code",
+      "normalized_value": "MAT-S1",
+      "normalized_data_type": "str",
+      "normalized_unit": "",
+      "display_format": "",
+      "value_consumption_status": "usable",
+      "provenance_ref": {
+        "source_field": "material_code",
+        "raw_value": "MAT-S1",
+        "source_data_type": "str",
+        "evidence_locator": {
+          "source_file_sha256": "abc123",
+          "source_table": "test",
+          "source_row_number": 1,
+          "source_column_name": "material_code",
+          "source_column_index": 1
+        }
+      }
+    },
+    {
+      "semantic_record_key": "供-缺口#material_shortage#SH-001#row1",
+      "source_table": "test",
+      "source_record_id": "row1",
+      "semantic_field": "demand_qty",
+      "normalized_value": 1000,
+      "normalized_data_type": "str",
+      "normalized_unit": "",
+      "display_format": "",
+      "value_consumption_status": "usable",
+      "provenance_ref": {
+        "source_field": "demand_qty",
+        "raw_value": 1000,
+        "source_data_type": "str",
+        "evidence_locator": {
+          "source_file_sha256": "abc123",
+          "source_table": "test",
+          "source_row_number": 1,
+          "source_column_name": "demand_qty",
+          "source_column_index": 14
+        }
+      }
+    },
+    {
+      "semantic_record_key": "供-缺口#material_shortage#SH-001#row1",
+      "source_table": "test",
+      "source_record_id": "row1",
+      "semantic_field": "available_qty",
+      "normalized_value": 600,
+      "normalized_data_type": "str",
+      "normalized_unit": "",
+      "display_format": "",
+      "value_consumption_status": "usable",
+      "provenance_ref": {
+        "source_field": "available_qty",
+        "raw_value": 600,
+        "source_data_type": "str",
+        "evidence_locator": {
+          "source_file_sha256": "abc123",
+          "source_table": "test",
+          "source_row_number": 1,
+          "source_column_name": "available_qty",
+          "source_column_index": 15
+        }
+      }
+    },
+    {
+      "semantic_record_key": "供-缺口#material_shortage#SH-001#row1",
+      "source_table": "test",
+      "source_record_id": "row1",
+      "semantic_field": "shortage_qty",
+      "normalized_value": 400,
+      "normalized_data_type": "str",
+      "normalized_unit": "",
+      "display_format": "",
+      "value_consumption_status": "usable",
+      "provenance_ref": {
+        "source_field": "shortage_qty",
+        "raw_value": 400,
+        "source_data_type": "str",
+        "evidence_locator": {
+          "source_file_sha256": "abc123",
+          "source_table": "test",
+          "source_row_number": 1,
+          "source_column_name": "shortage_qty",
+          "source_column_index": 16
+        }
+      }
+    },
+    {
+      "semantic_record_key": "供-冻结#material_detail#FZ-001#row1",
+      "source_table": "test",
+      "source_record_id": "row1",
+      "semantic_field": "material_code",
+      "normalized_value": "MAT-F1",
+      "normalized_data_type": "str",
+      "normalized_unit": "",
+      "display_format": "",
+      "value_consumption_status": "usable",
+      "provenance_ref": {
+        "source_field": "material_code",
+        "raw_value": "MAT-F1",
+        "source_data_type": "str",
+        "evidence_locator": {
+          "source_file_sha256": "abc123",
+          "source_table": "test",
+          "source_row_number": 1,
+          "source_column_name": "material_code",
+          "source_column_index": 1
+        }
+      }
+    },
+    {
+      "semantic_record_key": "供-冻结#material_detail#FZ-001#row1",
+      "source_table": "test",
+      "source_record_id": "row1",
+      "semantic_field": "freeze_quantity",
+      "normalized_value": 200,
+      "normalized_data_type": "str",
+      "normalized_unit": "",
+      "display_format": "",
+      "value_consumption_status": "usable",
+      "provenance_ref": {
+        "source_field": "freeze_quantity",
+        "raw_value": 200,
+        "source_data_type": "str",
+        "evidence_locator": {
+          "source_file_sha256": "abc123",
+          "source_table": "test",
+          "source_row_number": 1,
+          "source_column_name": "freeze_quantity",
+          "source_column_index": 17
+        }
+      }
+    },
+    {
+      "semantic_record_key": "供-冻结#material_detail#FZ-001#row1",
+      "source_table": "test",
+      "source_record_id": "row1",
+      "semantic_field": "freeze_status",
+      "normalized_value": "frozen",
+      "normalized_data_type": "str",
+      "normalized_unit": "",
+      "display_format": "",
+      "value_consumption_status": "usable",
+      "provenance_ref": {
+        "source_field": "freeze_status",
+        "raw_value": "frozen",
+        "source_data_type": "str",
+        "evidence_locator": {
+          "source_file_sha256": "abc123",
+          "source_table": "test",
+          "source_row_number": 1,
+          "source_column_name": "freeze_status",
+          "source_column_index": 18
+        }
+      }
+    }
+  ],
+  "data_gaps": [],
+  "provenance_refs": [],
+  "contract_versions": {
+    "decision_input_contract_version": "BIFROST-DECISION-INPUT-v0.1"
+  },
+  "validation": {
+    "status": "passed",
+    "issues": [],
+    "normalized_facts_count": 7,
+    "data_gaps_count": 0,
+    "decision_usable_gate_enforced": true,
+    "read_only_enforced": true,
+    "no_cross_record_join": true,
+    "no_business_conclusion": true
+  },
+  "source_write_performed": false,
+  "actor_can_execute": false,
+  "local_trace_id": "TRACE-b0499d70581b"
+}

@@ -1,0 +1,17 @@
+{
+  "defect_type": "false_anomaly",
+  "severity": "low",
+  "affected_columns": ["units_sold", "revenue_cny"],
+  "description": "Statistical anomaly detected: daily sales spike from baseline ~200-260 units to ~1800-2200 units during 2026-06-01 to 2026-06-03 (8-10x increase). This is NOT a data defect. The spike corresponds to a documented promotional event (promo_tag='promo_6_1_mid_year') aligned with the 6.1 mid-year shopping festival widely observed in e-commerce. The promo_tag field provides explicit business context. Per d05-business-exception skill, this should be checked against MemoryDigest business_exception entries before flagging as a defect. If a memory entry exists documenting this promo window, governance should NOT generate a proposal. If no memory entry exists, governance should generate a low-severity proposal with explicit note: 'spike pattern matches promotional event timing per promo_tag field, but no confirming business_exception entry found in memory; recommend verification before treating as defect'.",
+  "detection_hints": "d05-business-exception skill Step 3 pattern recognition: 'short-term sales spike matching known promotional calendar'. Step 1: check MemoryDigest for business_exception entries covering 2026-06-01 to 2026-06-03 promo. Step 4: if no memory entry, still generate proposal but downgrade severity and add uncertainty note. This fixture tests that governance does NOT silently suppress legitimate-looking anomalies without memory support, and that it correctly references promo_tag as circumstantial evidence.",
+  "affected_rows": [31, 32, 33],
+  "evidence": {
+    "baseline_daily_sales": "200-260 units",
+    "spike_daily_sales": "1800-2200 units",
+    "spike_magnitude": "8-10x baseline",
+    "spike_window": "2026-06-01 to 2026-06-03 (3 days)",
+    "promo_tag": "promo_6_1_mid_year",
+    "business_context": "6.1 mid-year shopping festival (e-commerce industry-standard promotional event)",
+    "expected_governance_behavior": "Step 1: query memory for business_exception covering this window. If found, skip proposal. If not found, generate low-severity proposal noting promo_tag evidence and requesting business-side confirmation before treating as defect."
+  }
+}

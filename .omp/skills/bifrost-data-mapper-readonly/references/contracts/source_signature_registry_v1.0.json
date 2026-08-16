@@ -1,0 +1,33 @@
+{
+  "source_signature_registry_version": "SOURCE-SIGNATURE-v1.0",
+  "description": "可信数据源签名注册表。仅当文件 SHA-256 与批准资产完全一致(exact)，或 schema 指纹一致且字段级类型/单位/口径检查通过(compatible)时，方可继承已批准映射。文件名、路径名、source_name、declared_source_family 仅作提示，不得单独建立 exact 或 compatible 身份。",
+  "fingerprint_basis": [
+    "有序表名",
+    "每张表的有序字段名",
+    "字段数量",
+    "非标准表分类"
+  ],
+  "fingerprint_excludes": "业务数值",
+  "approved_sources": [
+    {
+      "source_family": "TEAM_ENGINEERED_SIMULATION",
+      "source_type": "TEAM_ENGINEERED_SIMULATION_STATIC_SNAPSHOT",
+      "approved_asset_sha256": "57317ccc234aa66407c989f3d5c41090924a030d9ae0588afe6a95a765cbd086",
+      "approved_schema_fingerprint_sha256": "8ef7ac0669d1213a4eecb2a7ad6086dd25db25f0b036a30641b17da8d9dde85d",
+      "mapping_rule_version": "MAP-v1.0.1",
+      "approval_status": "approved",
+      "approved_by": "项目负责人（用户指令）",
+      "approved_at": "2026-08-09"
+    },
+    {
+      "source_family": "OFFICIAL_DEIDENTIFIED_SIMULATION",
+      "source_type": "OFFICIAL_DEIDENTIFIED_SIMULATION",
+      "approved_asset_sha256": "2906f6e7d3c57834a939d5e17acd8ea89585abaffac5000c1ecfa83bc176fd92",
+      "approved_schema_fingerprint_sha256": "849743153b345a30d2262811d20c98c9e9a59bad88df5cfa59d536de09ed5c24",
+      "mapping_rule_version": "MAP-OFFICIAL-v0.2.1",
+      "approval_status": "approved",
+      "approved_by": "项目负责人（用户指令）",
+      "approved_at": "2026-08-09"
+    }
+  ]
+}

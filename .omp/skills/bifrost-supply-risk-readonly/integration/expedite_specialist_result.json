@@ -1,0 +1,217 @@
+{
+  "contract_name": "BIFROST_SPECIALIST_RESULT_v0.1",
+  "contract_version": "BIFROST-SPECIALIST-RESULT-v0.1.3",
+  "specialist_type": "supply",
+  "status": "warning",
+  "request_id": "INT-SUPPLY-EXP-001",
+  "source_release_id": "BIFROST_v0.3_RC1",
+  "source_snapshot_id": "SDS-P01_OFFICIAL-20260810-113847",
+  "conclusion": "存在 2 条部分到货采购订单",
+  "severity": "unknown",
+  "confidence": 1.0,
+  "metrics": [
+    {
+      "metric_id": "M-SUP-001",
+      "label": "PO-2026-0001#row2 采购数量",
+      "value": 6666.0,
+      "display_format": "#,##0",
+      "semantic_field": "purchase_qty",
+      "evidence_refs": [
+        "EVREF-v1:4467803ce0aabec3ffc705890bf01235a96a734fb90f8c0500ed7d04bcb937aa"
+      ]
+    },
+    {
+      "metric_id": "M-SUP-002",
+      "label": "PO-2026-0001#row2 到货数量",
+      "value": 6573.0,
+      "display_format": "#,##0",
+      "semantic_field": "arrived_qty",
+      "evidence_refs": [
+        "EVREF-v1:c156aa6993942295901282ec8913d28e6d13d6aec916a2f1e0d74aa67844c79b"
+      ]
+    },
+    {
+      "metric_id": "M-SUP-003",
+      "label": "PO-2026-0001#row2 到货缺口",
+      "value": 93.0,
+      "display_format": "#,##0",
+      "semantic_field": "arrived_qty",
+      "evidence_refs": [
+        "EVREF-v1:c156aa6993942295901282ec8913d28e6d13d6aec916a2f1e0d74aa67844c79b"
+      ]
+    },
+    {
+      "metric_id": "M-SUP-004",
+      "label": "PO-2026-0001#row12 采购数量",
+      "value": 5662.0,
+      "display_format": "#,##0",
+      "semantic_field": "purchase_qty",
+      "evidence_refs": [
+        "EVREF-v1:25e5e6fc91c46e6453afa07e3692f298df8cda91788a994a4e9e39534244c1d6"
+      ]
+    },
+    {
+      "metric_id": "M-SUP-005",
+      "label": "PO-2026-0001#row12 到货数量",
+      "value": 5546.0,
+      "display_format": "#,##0",
+      "semantic_field": "arrived_qty",
+      "evidence_refs": [
+        "EVREF-v1:7402a31a81edfc02cf701a3521e6b67497e98a061819fd6aec0a2a53e7ce8a07"
+      ]
+    },
+    {
+      "metric_id": "M-SUP-006",
+      "label": "PO-2026-0001#row12 到货缺口",
+      "value": 116.0,
+      "display_format": "#,##0",
+      "semantic_field": "arrived_qty",
+      "evidence_refs": [
+        "EVREF-v1:7402a31a81edfc02cf701a3521e6b67497e98a061819fd6aec0a2a53e7ce8a07"
+      ]
+    }
+  ],
+  "causes": [
+    {
+      "cause_id": "C-SUP-001",
+      "category": "partial_delivery_shortfall",
+      "statement": "采购订单 PO-2026-0001#row2 部分到货，缺口 93.0（后续生产连续性风险）；已登记到货日期 2026-03-27 不晚于承诺交期 2026-04-01（仅到货登记事实，非整单完成判定）",
+      "causal_evidence_level": "direct_verified",
+      "evidence_refs": [
+        "EVREF-v1:4467803ce0aabec3ffc705890bf01235a96a734fb90f8c0500ed7d04bcb937aa",
+        "EVREF-v1:c156aa6993942295901282ec8913d28e6d13d6aec916a2f1e0d74aa67844c79b"
+      ]
+    },
+    {
+      "cause_id": "C-SUP-002",
+      "category": "partial_delivery_shortfall",
+      "statement": "采购订单 PO-2026-0001#row12 部分到货，缺口 116.0（后续生产连续性风险）；已登记到货日期 2026-06-02 晚于承诺交期 2026-05-22（仅到货登记事实，非整单完成判定）",
+      "causal_evidence_level": "direct_verified",
+      "evidence_refs": [
+        "EVREF-v1:25e5e6fc91c46e6453afa07e3692f298df8cda91788a994a4e9e39534244c1d6",
+        "EVREF-v1:7402a31a81edfc02cf701a3521e6b67497e98a061819fd6aec0a2a53e7ce8a07"
+      ]
+    }
+  ],
+  "affected_objects": [
+    {
+      "object_type": "purchase_order",
+      "object_id": "PO-2026-0001#row2"
+    },
+    {
+      "object_type": "purchase_order",
+      "object_id": "PO-2026-0001#row12"
+    }
+  ],
+  "recommended_actions": [],
+  "needs_human_confirmation": false,
+  "evidence_refs": [
+    "EVREF-v1:3459c192cebd4f72e3e340434d3b5d7fa015a204dedde1f845b78753e66ab793",
+    "EVREF-v1:e05afa6bcff45226df6d39bd3cc22edf8316b4f6fe30707660ceb7ae6db0c1a2",
+    "EVREF-v1:2659f3b6913f74275c30898fab3324ac48f753bbed709eca2502c6f35a1d7f5a",
+    "EVREF-v1:a17509610b1982affd791529c365f189301e7062767dacd45b81cca6bf41352e",
+    "EVREF-v1:4467803ce0aabec3ffc705890bf01235a96a734fb90f8c0500ed7d04bcb937aa",
+    "EVREF-v1:07a08d58d8960743464ad749b2e7ba261e51a5740ac9f8d4c4efe70f8cff364e",
+    "EVREF-v1:9e457e779bc706ec1f3d66b6836736775270e7877c6dcacf091547a11fd00297",
+    "EVREF-v1:7ca7702e74f66e71eafc323d34bb27bf90390d8933b5d21ad14a031c2fea976b",
+    "EVREF-v1:f9fdab73e63b903c2e274de75e257de7b749d9010c47093cc873efe37e396cb6",
+    "EVREF-v1:c156aa6993942295901282ec8913d28e6d13d6aec916a2f1e0d74aa67844c79b",
+    "EVREF-v1:25869652f7b98446a8eaf53def8518fa338c608b17f2fe54b2240ca54eac132f",
+    "EVREF-v1:7d43f01062dfd1ff9a9f20b8cbd1787635a0b0bd361bde84cf58dc8e9ed0abda",
+    "EVREF-v1:27f2f06ba6d7f35e9121013e293dd5f7b55785172898f95e7dd47dc1272e5dc3",
+    "EVREF-v1:d2ff974a6fb8b7d403a609377561bbc1aa002bc99e0bc1aeefc5ec55ac2e58de",
+    "EVREF-v1:25e5e6fc91c46e6453afa07e3692f298df8cda91788a994a4e9e39534244c1d6",
+    "EVREF-v1:723ad287fc6b86ba208198e758100cf94540377fbb42f4a754d21544b8d2a49e",
+    "EVREF-v1:d4904fa31f8c37d4707a4adf40600a175afb7f94d6497952b9eb53cbbb2b7908",
+    "EVREF-v1:f758df91efd1b83fb79287bc3959209814b09fb1458c0ef20ffdc2c66485175b",
+    "EVREF-v1:036760e17f1b94a869a9c1fbfe0f563790ccb7fcf5b38030f01fda05eff1b23e",
+    "EVREF-v1:7402a31a81edfc02cf701a3521e6b67497e98a061819fd6aec0a2a53e7ce8a07"
+  ],
+  "data_gaps": [
+    {
+      "semantic_entity": "purchase_order",
+      "semantic_field": "complete_delivery_date",
+      "reason": "missing_full_delivery_completion_evidence",
+      "value_consumption_status": "missing",
+      "source_locator": "PO-2026-0001#row2",
+      "required_resolution": "缺少 complete_delivery_date/order_completion_status/remaining_expected_arrival_date，整单到货完成状态不确定",
+      "affected_record_count": 2,
+      "occurrence_count": 2,
+      "sample_source_locators": [
+        "PO-2026-0001#row2",
+        "PO-2026-0001#row12"
+      ]
+    },
+    {
+      "semantic_entity": "purchase_order",
+      "semantic_field": "evaluation_time",
+      "reason": "missing_as_of_time_for_remaining_overdue",
+      "value_consumption_status": "missing",
+      "source_locator": "PO-2026-0001#row2",
+      "required_resolution": "缺少评估时点(as_of_time)，剩余数量是否逾期无法判定，不得使用系统当前时间猜测",
+      "affected_record_count": 2,
+      "occurrence_count": 2,
+      "sample_source_locators": [
+        "PO-2026-0001#row2",
+        "PO-2026-0001#row12"
+      ]
+    },
+    {
+      "semantic_entity": "supply_continuity_risk",
+      "semantic_field": "severity",
+      "reason": "未登记批准的供应连续性风险严重度阈值规则",
+      "value_consumption_status": "pending",
+      "source_locator": null,
+      "required_resolution": "需登记批准的严重度阈值规则后方可定级",
+      "affected_record_count": 1,
+      "occurrence_count": 1,
+      "sample_source_locators": []
+    },
+    {
+      "semantic_entity": "material_shortage",
+      "semantic_field": "shortage_qty",
+      "reason": "entity_not_present_in_data_plane",
+      "value_consumption_status": "missing",
+      "source_locator": null,
+      "required_resolution": "真实数据面无 material_shortage/quality_freeze 语义实体，无法进行缺口与冻结分析",
+      "affected_record_count": 1,
+      "occurrence_count": 1,
+      "sample_source_locators": []
+    }
+  ],
+  "actor_can_execute": false,
+  "contract_versions": {
+    "specialist_result_contract_version": "BIFROST-SPECIALIST-RESULT-v0.1.3",
+    "decision_input_contract_version": "BIFROST-DECISION-INPUT-v0.1",
+    "specialist_logical_version": "SUPPLY-LOGIC-v0.1.3",
+    "delivery_status_rule_version": "SUPPLY-DELIVERY-STATUS-v0.2",
+    "arrival_compare_rule_version": "SUPPLY-ARRIVAL-CMP-v0.2"
+  },
+  "validation": {
+    "status": "warning",
+    "issues": [],
+    "warnings": [
+      "存在 4 项数据缺口"
+    ],
+    "input_contract_valid": true,
+    "evidence_contract_valid": true,
+    "output_contract_valid": true
+  },
+  "local_trace_id": "SUPPLY-cd8b34d7d5f74ee5",
+  "specialist_details": {
+    "confidence_basis": {
+      "method": "evidence_coverage",
+      "usable_facts_with_evidence": 20,
+      "total_usable_facts": 20
+    },
+    "stage": "04D.4B_SUPPLY_P1_DELIVERY_SEMANTIC_FIX_LOCALLY_VALIDATED_NOT_DEPLOYED",
+    "generated_at": "2026-08-11T16:34:40Z",
+    "shortage_as_continuity_risk": true,
+    "inventory_grain_status": "unresolved",
+    "relation_materialized": false,
+    "evidence_ref_granularity": "field_level_EVREF-v1",
+    "delivery_semantic_fix": "v0.1.3_P1_actual_arrival_date_is_registered_only",
+    "expedite_gate": "explicit_request_detected",
+    "action_identifier_scope": "local_run_only"
+  }
+}

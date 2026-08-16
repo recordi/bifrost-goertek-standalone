@@ -1,0 +1,8 @@
+{
+  "mode": "adapter-test",
+  "adapter_result_sha256": "397b960bdac559d07fdafa50da3fbe146a2d4bb3a9e7b22a217411abcf5dd166",
+  "overview_test_sha256": "b6d45b0e91565af9bf35f1a47b95ac2b6e7181ac117bd8a51e512e324a7af628",
+  "event_test_sha256": "4c502de9cd51a4570b9b272f5ee3327e2548734a707194cee441ecc8a9265dfd",
+  "source_write_performed": false,
+  "actor_can_execute": false
+}

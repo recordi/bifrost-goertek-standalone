@@ -1,0 +1,244 @@
+{
+  "total": 28,
+  "passed": 28,
+  "failed": 0,
+  "all_passed": true,
+  "results": [
+    {
+      "test": "S1_input_validation",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "test": "S1_output_validation",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "test": "S1_validate_against_input",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "test": "S1_external_validation",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "test": "S1_result_reasonable",
+      "passed": true,
+      "detail": "status=needs_confirmation, facts=525, gaps=7"
+    },
+    {
+      "test": "S1_data_gaps_merged",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "test": "S2_has_data_gap",
+      "passed": true,
+      "detail": "raw_gaps=735"
+    },
+    {
+      "test": "S2_output_validation",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "test": "S2_validate_against_input",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "test": "S2_gaps_reduced_by_merge",
+      "passed": true,
+      "detail": "raw=735 → merged=8"
+    },
+    {
+      "test": "S2_result_reasonable",
+      "passed": true,
+      "detail": "status=needs_confirmation, merged_gaps=8"
+    },
+    {
+      "test": "S3_output_validation",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "test": "S3_blocked_correct",
+      "passed": true,
+      "detail": "status=blocked, evref_count=0"
+    },
+    {
+      "test": "S4_mutation_oee_disappeared",
+      "passed": true,
+      "detail": "orig_has_oee=True, mut_has_oee=False"
+    },
+    {
+      "test": "S4_gap_count_changed",
+      "passed": true,
+      "detail": "orig_gaps=7, mut_gaps=8"
+    },
+    {
+      "test": "S4_mutated_valid",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "test": "S5_output_validation",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "test": "S5_validate_against_input",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "test": "S5_high_risk_gate_needs_confirmation",
+      "passed": true,
+      "detail": "high_risk_count=1, status=needs_confirmation"
+    },
+    {
+      "test": "S5_gate_break_warning_rejected",
+      "passed": true,
+      "detail": "broken_warning_rejected=True"
+    },
+    {
+      "test": "S6_wrong_evref_against_input_rejected",
+      "passed": true,
+      "detail": "rejected=True"
+    },
+    {
+      "test": "S7_bare_key_ext_rejected",
+      "passed": true,
+      "detail": "rejected=True"
+    },
+    {
+      "test": "S7_bare_key_against_input_rejected",
+      "passed": true,
+      "detail": "rejected=True"
+    },
+    {
+      "test": "S8_placeholder_rejected",
+      "passed": true,
+      "detail": "rejected=True"
+    },
+    {
+      "test": "S8_placeholder_ext_rejected",
+      "passed": true,
+      "detail": "rejected=True"
+    },
+    {
+      "test": "S9_high_risk_warning_rejected",
+      "passed": true,
+      "detail": "rejected=True"
+    },
+    {
+      "test": "S9_high_risk_warning_ext_rejected",
+      "passed": true,
+      "detail": "rejected=True"
+    },
+    {
+      "test": "S9_high_risk_completed_rejected",
+      "passed": true,
+      "detail": "rejected=True"
+    }
+  ],
+  "integration_infos": {
+    "scenario_1_real_success": {
+      "consumer_version": "0.1.1",
+      "consumer_input_zip_sha256": "81a8e5947a28ffe1dcabe123f54e00815ec4a06ca876e0f070ca59a88cf01b42",
+      "source_release_id": "BIFROST-SEMANTIC-DATA-PLANE-v0.2-HOTFIX-04C.5B.2",
+      "source_snapshot_id": "SDS-P02_SIM-20260810-113856",
+      "bifrost_decision_input_validation": "passed",
+      "specialist_skill_version": "0.1.2",
+      "specialist_contract_version": "BIFROST-SPECIALIST-RESULT-v0.1.3",
+      "bifrost_specialist_result_validation": "passed",
+      "normalized_facts_count": 525,
+      "evidence_refs_count": 1,
+      "data_gaps_count": 7,
+      "data_gaps_merged": true,
+      "status": "needs_confirmation",
+      "actor_can_execute": false,
+      "source_write_performed": false,
+      "local_trace_id": "PROD-BF6529F140BF4CB4"
+    },
+    "scenario_2_real_data_gap": {
+      "consumer_version": "0.1.1",
+      "consumer_input_zip_sha256": "81a8e5947a28ffe1dcabe123f54e00815ec4a06ca876e0f070ca59a88cf01b42",
+      "source_release_id": "BIFROST-SEMANTIC-DATA-PLANE-v0.2-HOTFIX-04C.5B.2",
+      "source_snapshot_id": "SDS-P02_SIM-20260810-113856",
+      "bifrost_decision_input_validation": "passed",
+      "specialist_skill_version": "0.1.2",
+      "specialist_contract_version": "BIFROST-SPECIALIST-RESULT-v0.1.3",
+      "bifrost_specialist_result_validation": "passed",
+      "normalized_facts_count": 105,
+      "evidence_refs_count": 1,
+      "data_gaps_count": 8,
+      "data_gaps_merged": true,
+      "status": "needs_confirmation",
+      "actor_can_execute": false,
+      "source_write_performed": false,
+      "local_trace_id": "PROD-3FE1CABC8FE246E4",
+      "raw_data_gaps_count": 735,
+      "merged_data_gaps_count": 8
+    },
+    "scenario_3_input_blocked": {
+      "consumer_version": "0.1.1",
+      "consumer_input_zip_sha256": "81a8e5947a28ffe1dcabe123f54e00815ec4a06ca876e0f070ca59a88cf01b42",
+      "source_release_id": "BIFROST-SEMANTIC-DATA-PLANE-v0.2-HOTFIX-04C.5B.2",
+      "source_snapshot_id": "SDS-P02_SIM-20260810-113856",
+      "bifrost_decision_input_validation": "passed",
+      "specialist_skill_version": "0.1.2",
+      "specialist_contract_version": "BIFROST-SPECIALIST-RESULT-v0.1.3",
+      "bifrost_specialist_result_validation": "passed",
+      "normalized_facts_count": 105,
+      "evidence_refs_count": 0,
+      "data_gaps_count": 0,
+      "data_gaps_merged": true,
+      "status": "blocked",
+      "actor_can_execute": false,
+      "source_write_performed": false,
+      "local_trace_id": "PROD-D33947F7D4B34745"
+    },
+    "scenario_4_mutation": {
+      "consumer_version": "0.1.1",
+      "consumer_input_zip_sha256": "81a8e5947a28ffe1dcabe123f54e00815ec4a06ca876e0f070ca59a88cf01b42",
+      "source_release_id": "BIFROST-SEMANTIC-DATA-PLANE-v0.2-HOTFIX-04C.5B.2",
+      "source_snapshot_id": "SDS-P02_SIM-20260810-113856",
+      "bifrost_decision_input_validation": "passed",
+      "specialist_skill_version": "0.1.2",
+      "specialist_contract_version": "BIFROST-SPECIALIST-RESULT-v0.1.3",
+      "bifrost_specialist_result_validation": "passed",
+      "normalized_facts_count": 525,
+      "evidence_refs_count": 0,
+      "data_gaps_count": 8,
+      "data_gaps_merged": true,
+      "status": "warning",
+      "actor_can_execute": false,
+      "source_write_performed": false,
+      "local_trace_id": "PROD-88584A40325C4325",
+      "original_data_gaps_count": 7,
+      "mutated_data_gaps_count": 8
+    },
+    "scenario_5_high_risk_gate": {
+      "consumer_version": "N/A (合成夹具)",
+      "specialist_skill_version": "0.1.2",
+      "specialist_contract_version": "BIFROST-SPECIALIST-RESULT-v0.1.3",
+      "bifrost_decision_input_validation": "passed",
+      "bifrost_specialist_result_validation": "passed",
+      "normalized_facts_count": 11,
+      "evidence_refs_count": 8,
+      "data_gaps_count": 2,
+      "status": "needs_confirmation",
+      "high_risk_count": 1,
+      "actor_can_execute": false,
+      "source_write_performed": false,
+      "local_trace_id": "PROD-4BFE7AE9001847EF"
+    }
+  },
+  "data_plane_zip_sha256": "81a8e5947a28ffe1dcabe123f54e00815ec4a06ca876e0f070ca59a88cf01b42",
+  "skill_version": "0.1.2",
+  "contract_version": "BIFROST-SPECIALIST-RESULT-v0.1.3"
+}

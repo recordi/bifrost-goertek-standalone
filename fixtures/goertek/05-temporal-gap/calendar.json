@@ -1,0 +1,12 @@
+{
+  "data_label": "SYNTHETIC_GOERTEK_FIXTURE",
+  "description": "Business calendar for the 05-temporal-gap fixture. d03-temporal-gap states the business calendar is a premise of the judgement, so the planned-downtime window declared by expected.json must come from data rather than from an assumption baked into the detector.",
+  "time_grain": "day",
+  "planned_downtime": [
+    {
+      "start": "2026-03-09",
+      "end": "2026-03-10",
+      "reason": "Planned maintenance window (synthetic)."
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "contract_name": "BIFROST_SPECIALIST_RESULT_v0.1",
+  "contract_version": "BIFROST-SPECIALIST-RESULT-v0.1.3",
+  "specialist_type": "quality",
+  "status": "blocked",
+  "request_id": "FIX-CONTRACT-FAIL-002",
+  "source_release_id": "BIFROST-SEMANTIC-DATA-PLANE-v0.2-TEST",
+  "source_snapshot_id": "SDS-P02-TEST",
+  "conclusion": "",
+  "severity": "unknown",
+  "confidence": 0.0,
+  "metrics": [],
+  "causes": [],
+  "affected_objects": [],
+  "recommended_actions": [],
+  "needs_human_confirmation": false,
+  "evidence_refs": [],
+  "data_gaps": [],
+  "actor_can_execute": false,
+  "contract_versions": {
+    "specialist_result_contract_version": "BIFROST-SPECIALIST-RESULT-v0.1.3",
+    "decision_input_contract_version": "BIFROST-DECISION-INPUT-v0.1",
+    "specialist_logical_version": "QUAL-LOGIC-v0.1.2"
+  },
+  "validation": {
+    "status": "failed",
+    "issues": [
+      "source_write_performed 必须为 false",
+      "actor_can_execute 必须为 false",
+      "validation.status 为 failed，不得消费",
+      "输入包含禁止字段: conclusion"
+    ],
+    "warnings": [],
+    "input_contract_valid": false,
+    "evidence_contract_valid": false,
+    "output_contract_valid": false
+  },
+  "local_trace_id": "QUALITY-CE54A7E8E90D4B33",
+  "specialist_details": {
+    "blocked_code": "BLOCKED_INPUT_VALIDATION",
+    "blocked_reason": "source_write_performed 必须为 false; actor_can_execute 必须为 false; validation.status 为 failed，不得消费; 输入包含禁止字段: conclusion"
+  }
+}

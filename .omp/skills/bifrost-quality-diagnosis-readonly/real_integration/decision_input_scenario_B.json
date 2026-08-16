@@ -1,0 +1,2528 @@
+{
+  "contract_name": "BIFROST_DECISION_INPUT_v0.1",
+  "contract_version": "BIFROST-DECISION-INPUT-v0.1",
+  "request_id": "QUAL-REAL-B",
+  "consumer_agent_id": "bifrost-semantic-consumer-readonly",
+  "role": "quality",
+  "query_context": {
+    "semantic_entity": "quality_freeze",
+    "source_scope": "P02",
+    "requested_fields": [
+      "decision_event_id"
+    ],
+    "filters": {},
+    "time_window": null,
+    "limit": null,
+    "semantic_data_ref": {
+      "ref_id": "SDR-SDS-P02_SIM-20260810-113856",
+      "snapshot_id": "SDS-P02_SIM-20260810-113856",
+      "access_mode": "readonly_static_snapshot",
+      "materialization_status": "materialized"
+    },
+    "read_only": true
+  },
+  "source_release_id": "BIFROST-SEMANTIC-DATA-PLANE-v0.2-HOTFIX-04C.5B.2",
+  "source_snapshot_id": "SDS-P02_SIM-20260810-113856",
+  "normalized_facts": [
+    {
+      "semantic_record_key": "17_质量冻结明细_模拟#quality_freeze#FZ-0001",
+      "source_table": "17_质量冻结明细_模拟",
+      "source_record_id": "FZ-0001",
+      "semantic_field": "decision_event_id",
+      "normalized_value": "EVT-0001",
+      "normalized_data_type": "str",
+      "normalized_unit": "",
+      "display_format": "",
+      "value_consumption_status": "usable",
+      "provenance_ref": {
+        "source_field": "EventID",
+        "raw_value": "EVT-0001",
+        "raw_value_status": "available",
+        "source_data_type": "str",
+        "source_unit": "",
+        "transformation_rule_id": "TR-DIRECT",
+        "mapping_ref": {
+          "approval_rule_version": "MAP-v1.0.1",
+          "match_method": "approved_contract",
+          "semantic_model_version": "SEM-v1.1.1",
+          "inherited_approval": true
+        },
+        "evidence_locator": {
+          "source_file_sha256": "57317ccc234aa66407c989f3d5c41090924a030d9ae0588afe6a95a765cbd086",
+          "source_table": "17_质量冻结明细_模拟",
+          "source_row_number": 2,
+          "source_column_name": "EventID",
+          "source_column_index": 2
+        },
+        "note": "raw_value 为源始值，仅供审计追溯；normalized_value 为消费者业务值，两者不得互相替代"
+      }
+    },
+    {
+      "semantic_record_key": "17_质量冻结明细_模拟#quality_freeze#FZ-0004",
+      "source_table": "17_质量冻结明细_模拟",
+      "source_record_id": "FZ-0004",
+      "semantic_field": "decision_event_id",
+      "normalized_value": "EVT-0008",
+      "normalized_data_type": "str",
+      "normalized_unit": "",
+      "display_format": "",
+      "value_consumption_status": "usable",
+      "provenance_ref": {
+        "source_field": "EventID",
+        "raw_value": "EVT-0008",
+        "raw_value_status": "available",
+        "source_data_type": "str",
+        "source_unit": "",
+        "transformation_rule_id": "TR-DIRECT",
+        "mapping_ref": {
+          "approval_rule_version": "MAP-v1.0.1",
+          "match_method": "approved_contract",
+          "semantic_model_version": "SEM-v1.1.1",
+          "inherited_approval": true
+        },
+        "evidence_locator": {
+          "source_file_sha256": "57317ccc234aa66407c989f3d5c41090924a030d9ae0588afe6a95a765cbd086",
+          "source_table": "17_质量冻结明细_模拟",
+          "source_row_number": 3,
+          "source_column_name": "EventID",
+          "source_column_index": 2
+        },
+        "note": "raw_value 为源始值，仅供审计追溯；normalized_value 为消费者业务值，两者不得互相替代"
+      }
+    },
+    {
+      "semantic_record_key": "17_质量冻结明细_模拟#quality_freeze#FZ-0007",
+      "source_table": "17_质量冻结明细_模拟",
+      "source_record_id": "FZ-0007",
+      "semantic_field": "decision_event_id",
+      "normalized_value": "EVT-0015",
+      "normalized_data_type": "str",
+      "normalized_unit": "",
+      "display_format": "",
+      "value_consumption_status": "usable",
+      "provenance_ref": {
+        "source_field": "EventID",
+        "raw_value": "EVT-0015",
+        "raw_value_status": "available",
+        "source_data_type": "str",
+        "source_unit": "",
+        "transformation_rule_id": "TR-DIRECT",
+        "mapping_ref": {
+          "approval_rule_version": "MAP-v1.0.1",
+          "match_method": "approved_contract",
+          "semantic_model_version": "SEM-v1.1.1",
+          "inherited_approval": true
+        },
+        "evidence_locator": {
+          "source_file_sha256": "57317ccc234aa66407c989f3d5c41090924a030d9ae0588afe6a95a765cbd086",
+          "source_table": "17_质量冻结明细_模拟",
+          "source_row_number": 4,
+          "source_column_name": "EventID",
+          "source_column_index": 2
+        },
+        "note": "raw_value 为源始值，仅供审计追溯；normalized_value 为消费者业务值，两者不得互相替代"
+      }
+    },
+    {
+      "semantic_record_key": "17_质量冻结明细_模拟#quality_freeze#FZ-0010",
+      "source_table": "17_质量冻结明细_模拟",
+      "source_record_id": "FZ-0010",
+      "semantic_field": "decision_event_id",
+      "normalized_value": "EVT-0022",
+      "normalized_data_type": "str",
+      "normalized_unit": "",
+      "display_format": "",
+      "value_consumption_status": "usable",
+      "provenance_ref": {
+        "source_field": "EventID",
+        "raw_value": "EVT-0022",
+        "raw_value_status": "available",
+        "source_data_type": "str",
+        "source_unit": "",
+        "transformation_rule_id": "TR-DIRECT",
+        "mapping_ref": {
+          "approval_rule_version": "MAP-v1.0.1",
+          "match_method": "approved_contract",
+          "semantic_model_version": "SEM-v1.1.1",
+          "inherited_approval": true
+        },
+        "evidence_locator": {
+          "source_file_sha256": "57317ccc234aa66407c989f3d5c41090924a030d9ae0588afe6a95a765cbd086",
+          "source_table": "17_质量冻结明细_模拟",
+          "source_row_number": 5,
+          "source_column_name": "EventID",
+          "source_column_index": 2
+        },
+        "note": "raw_value 为源始值，仅供审计追溯；normalized_value 为消费者业务值，两者不得互相替代"
+      }
+    },
+    {
+      "semantic_record_key": "17_质量冻结明细_模拟#quality_freeze#FZ-0013",
+      "source_table": "17_质量冻结明细_模拟",
+      "source_record_id": "FZ-0013",
+      "semantic_field": "decision_event_id",
+      "normalized_value": "EVT-0029",
+      "normalized_data_type": "str",
+      "normalized_unit": "",
+      "display_format": "",
+      "value_consumption_status": "usable",
+      "provenance_ref": {
+        "source_field": "EventID",
+        "raw_value": "EVT-0029",
+        "raw_value_status": "available",
+        "source_data_type": "str",
+        "source_unit": "",
+        "transformation_rule_id": "TR-DIRECT",
+        "mapping_ref": {
+          "approval_rule_version": "MAP-v1.0.1",
+          "match_method": "approved_contract",
+          "semantic_model_version": "SEM-v1.1.1",
+          "inherited_approval": true
+        },
+        "evidence_locator": {
+          "source_file_sha256": "57317ccc234aa66407c989f3d5c41090924a030d9ae0588afe6a95a765cbd086",
+          "source_table": "17_质量冻结明细_模拟",
+          "source_row_number": 6,
+          "source_column_name": "EventID",
+          "source_column_index": 2
+        },
+        "note": "raw_value 为源始值，仅供审计追溯；normalized_value 为消费者业务值，两者不得互相替代"
+      }
+    },
+    {
+      "semantic_record_key": "17_质量冻结明细_模拟#quality_freeze#FZ-0016",
+      "source_table": "17_质量冻结明细_模拟",
+      "source_record_id": "FZ-0016",
+      "semantic_field": "decision_event_id",
+      "normalized_value": "EVT-0036",
+      "normalized_data_type": "str",
+      "normalized_unit": "",
+      "display_format": "",
+      "value_consumption_status": "usable",
+      "provenance_ref": {
+        "source_field": "EventID",
+        "raw_value": "EVT-0036",
+        "raw_value_status": "available",
+        "source_data_type": "str",
+        "source_unit": "",
+        "transformation_rule_id": "TR-DIRECT",
+        "mapping_ref": {
+          "approval_rule_version": "MAP-v1.0.1",
+          "match_method": "approved_contract",
+          "semantic_model_version": "SEM-v1.1.1",
+          "inherited_approval": true
+        },
+        "evidence_locator": {
+          "source_file_sha256": "57317ccc234aa66407c989f3d5c41090924a030d9ae0588afe6a95a765cbd086",
+          "source_table": "17_质量冻结明细_模拟",
+          "source_row_number": 7,
+          "source_column_name": "EventID",
+          "source_column_index": 2
+        },
+        "note": "raw_value 为源始值，仅供审计追溯；normalized_value 为消费者业务值，两者不得互相替代"
+      }
+    },
+    {
+      "semantic_record_key": "17_质量冻结明细_模拟#quality_freeze#FZ-0019",
+      "source_table": "17_质量冻结明细_模拟",
+      "source_record_id": "FZ-0019",
+      "semantic_field": "decision_event_id",
+      "normalized_value": "EVT-0043",
+      "normalized_data_type": "str",
+      "normalized_unit": "",
+      "display_format": "",
+      "value_consumption_status": "usable",
+      "provenance_ref": {
+        "source_field": "EventID",
+        "raw_value": "EVT-0043",
+        "raw_value_status": "available",
+        "source_data_type": "str",
+        "source_unit": "",
+        "transformation_rule_id": "TR-DIRECT",
+        "mapping_ref": {
+          "approval_rule_version": "MAP-v1.0.1",
+          "match_method": "approved_contract",
+          "semantic_model_version": "SEM-v1.1.1",
+          "inherited_approval": true
+        },
+        "evidence_locator": {
+          "source_file_sha256": "57317ccc234aa66407c989f3d5c41090924a030d9ae0588afe6a95a765cbd086",
+          "source_table": "17_质量冻结明细_模拟",
+          "source_row_number": 8,
+          "source_column_name": "EventID",
+          "source_column_index": 2
+        },
+        "note": "raw_value 为源始值，仅供审计追溯；normalized_value 为消费者业务值，两者不得互相替代"
+      }
+    },
+    {
+      "semantic_record_key": "17_质量冻结明细_模拟#quality_freeze#FZ-0022",
+      "source_table": "17_质量冻结明细_模拟",
+      "source_record_id": "FZ-0022",
+      "semantic_field": "decision_event_id",
+      "normalized_value": "EVT-0050",
+      "normalized_data_type": "str",
+      "normalized_unit": "",
+      "display_format": "",
+      "value_consumption_status": "usable",
+      "provenance_ref": {
+        "source_field": "EventID",
+        "raw_value": "EVT-0050",
+        "raw_value_status": "available",
+        "source_data_type": "str",
+        "source_unit": "",
+        "transformation_rule_id": "TR-DIRECT",
+        "mapping_ref": {
+          "approval_rule_version": "MAP-v1.0.1",
+          "match_method": "approved_contract",
+          "semantic_model_version": "SEM-v1.1.1",
+          "inherited_approval": true
+        },
+        "evidence_locator": {
+          "source_file_sha256": "57317ccc234aa66407c989f3d5c41090924a030d9ae0588afe6a95a765cbd086",
+          "source_table": "17_质量冻结明细_模拟",
+          "source_row_number": 9,
+          "source_column_name": "EventID",
+          "source_column_index": 2
+        },
+        "note": "raw_value 为源始值，仅供审计追溯；normalized_value 为消费者业务值，两者不得互相替代"
+      }
+    },
+    {
+      "semantic_record_key": "17_质量冻结明细_模拟#quality_freeze#FZ-0025",
+      "source_table": "17_质量冻结明细_模拟",
+      "source_record_id": "FZ-0025",
+      "semantic_field": "decision_event_id",
+      "normalized_value": "EVT-0057",
+      "normalized_data_type": "str",
+      "normalized_unit": "",
+      "display_format": "",
+      "value_consumption_status": "usable",
+      "provenance_ref": {
+        "source_field": "EventID",
+        "raw_value": "EVT-0057",
+        "raw_value_status": "available",
+        "source_data_type": "str",
+        "source_unit": "",
+        "transformation_rule_id": "TR-DIRECT",
+        "mapping_ref": {
+          "approval_rule_version": "MAP-v1.0.1",
+          "match_method": "approved_contract",
+          "semantic_model_version": "SEM-v1.1.1",
+          "inherited_approval": true
+        },
+        "evidence_locator": {
+          "source_file_sha256": "57317ccc234aa66407c989f3d5c41090924a030d9ae0588afe6a95a765cbd086",
+          "source_table": "17_质量冻结明细_模拟",
+          "source_row_number": 10,
+          "source_column_name": "EventID",
+          "source_column_index": 2
+        },
+        "note": "raw_value 为源始值，仅供审计追溯；normalized_value 为消费者业务值，两者不得互相替代"
+      }
+    },
+    {
+      "semantic_record_key": "17_质量冻结明细_模拟#quality_freeze#FZ-0028",
+      "source_table": "17_质量冻结明细_模拟",
+      "source_record_id": "FZ-0028",
+      "semantic_field": "decision_event_id",
+      "normalized_value": "EVT-0064",
+      "normalized_data_type": "str",
+      "normalized_unit": "",
+      "display_format": "",
+      "value_consumption_status": "usable",
+      "provenance_ref": {
+        "source_field": "EventID",
+        "raw_value": "EVT-0064",
+        "raw_value_status": "available",
+        "source_data_type": "str",
+        "source_unit": "",
+        "transformation_rule_id": "TR-DIRECT",
+        "mapping_ref": {
+          "approval_rule_version": "MAP-v1.0.1",
+          "match_method": "approved_contract",
+          "semantic_model_version": "SEM-v1.1.1",
+          "inherited_approval": true
+        },
+        "evidence_locator": {
+          "source_file_sha256": "57317ccc234aa66407c989f3d5c41090924a030d9ae0588afe6a95a765cbd086",
+          "source_table": "17_质量冻结明细_模拟",
+          "source_row_number": 11,
+          "source_column_name": "EventID",
+          "source_column_index": 2
+        },
+        "note": "raw_value 为源始值，仅供审计追溯；normalized_value 为消费者业务值，两者不得互相替代"
+      }
+    },
+    {
+      "semantic_record_key": "17_质量冻结明细_模拟#quality_freeze#FZ-0031",
+      "source_table": "17_质量冻结明细_模拟",
+      "source_record_id": "FZ-0031",
+      "semantic_field": "decision_event_id",
+      "normalized_value": "EVT-0071",
+      "normalized_data_type": "str",
+      "normalized_unit": "",
+      "display_format": "",
+      "value_consumption_status": "usable",
+      "provenance_ref": {
+        "source_field": "EventID",
+        "raw_value": "EVT-0071",
+        "raw_value_status": "available",
+        "source_data_type": "str",
+        "source_unit": "",
+        "transformation_rule_id": "TR-DIRECT",
+        "mapping_ref": {
+          "approval_rule_version": "MAP-v1.0.1",
+          "match_method": "approved_contract",
+          "semantic_model_version": "SEM-v1.1.1",
+          "inherited_approval": true
+        },
+        "evidence_locator": {
+          "source_file_sha256": "57317ccc234aa66407c989f3d5c41090924a030d9ae0588afe6a95a765cbd086",
+          "source_table": "17_质量冻结明细_模拟",
+          "source_row_number": 12,
+          "source_column_name": "EventID",
+          "source_column_index": 2
+        },
+        "note": "raw_value 为源始值，仅供审计追溯；normalized_value 为消费者业务值，两者不得互相替代"
+      }
+    },
+    {
+      "semantic_record_key": "17_质量冻结明细_模拟#quality_freeze#FZ-0034",
+      "source_table": "17_质量冻结明细_模拟",
+      "source_record_id": "FZ-0034",
+      "semantic_field": "decision_event_id",
+      "normalized_value": "EVT-0078",
+      "normalized_data_type": "str",
+      "normalized_unit": "",
+      "display_format": "",
+      "value_consumption_status": "usable",
+      "provenance_ref": {
+        "source_field": "EventID",
+        "raw_value": "EVT-0078",
+        "raw_value_status": "available",
+        "source_data_type": "str",
+        "source_unit": "",
+        "transformation_rule_id": "TR-DIRECT",
+        "mapping_ref": {
+          "approval_rule_version": "MAP-v1.0.1",
+          "match_method": "approved_contract",
+          "semantic_model_version": "SEM-v1.1.1",
+          "inherited_approval": true
+        },
+        "evidence_locator": {
+          "source_file_sha256": "57317ccc234aa66407c989f3d5c41090924a030d9ae0588afe6a95a765cbd086",
+          "source_table": "17_质量冻结明细_模拟",
+          "source_row_number": 13,
+          "source_column_name": "EventID",
+          "source_column_index": 2
+        },
+        "note": "raw_value 为源始值，仅供审计追溯；normalized_value 为消费者业务值，两者不得互相替代"
+      }
+    },
+    {
+      "semantic_record_key": "17_质量冻结明细_模拟#quality_freeze#FZ-0037",
+      "source_table": "17_质量冻结明细_模拟",
+      "source_record_id": "FZ-0037",
+      "semantic_field": "decision_event_id",
+      "normalized_value": "EVT-0085",
+      "normalized_data_type": "str",
+      "normalized_unit": "",
+      "display_format": "",
+      "value_consumption_status": "usable",
+      "provenance_ref": {
+        "source_field": "EventID",
+        "raw_value": "EVT-0085",
+        "raw_value_status": "available",
+        "source_data_type": "str",
+        "source_unit": "",
+        "transformation_rule_id": "TR-DIRECT",
+        "mapping_ref": {
+          "approval_rule_version": "MAP-v1.0.1",
+          "match_method": "approved_contract",
+          "semantic_model_version": "SEM-v1.1.1",
+          "inherited_approval": true
+        },
+        "evidence_locator": {
+          "source_file_sha256": "57317ccc234aa66407c989f3d5c41090924a030d9ae0588afe6a95a765cbd086",
+          "source_table": "17_质量冻结明细_模拟",
+          "source_row_number": 14,
+          "source_column_name": "EventID",
+          "source_column_index": 2
+        },
+        "note": "raw_value 为源始值，仅供审计追溯；normalized_value 为消费者业务值，两者不得互相替代"
+      }
+    },
+    {
+      "semantic_record_key": "17_质量冻结明细_模拟#quality_freeze#FZ-0040",
+      "source_table": "17_质量冻结明细_模拟",
+      "source_record_id": "FZ-0040",
+      "semantic_field": "decision_event_id",
+      "normalized_value": "EVT-0092",
+      "normalized_data_type": "str",
+      "normalized_unit": "",
+      "display_format": "",
+      "value_consumption_status": "usable",
+      "provenance_ref": {
+        "source_field": "EventID",
+        "raw_value": "EVT-0092",
+        "raw_value_status": "available",
+        "source_data_type": "str",
+        "source_unit": "",
+        "transformation_rule_id": "TR-DIRECT",
+        "mapping_ref": {
+          "approval_rule_version": "MAP-v1.0.1",
+          "match_method": "approved_contract",
+          "semantic_model_version": "SEM-v1.1.1",
+          "inherited_approval": true
+        },
+        "evidence_locator": {
+          "source_file_sha256": "57317ccc234aa66407c989f3d5c41090924a030d9ae0588afe6a95a765cbd086",
+          "source_table": "17_质量冻结明细_模拟",
+          "source_row_number": 15,
+          "source_column_name": "EventID",
+          "source_column_index": 2
+        },
+        "note": "raw_value 为源始值，仅供审计追溯；normalized_value 为消费者业务值，两者不得互相替代"
+      }
+    },
+    {
+      "semantic_record_key": "17_质量冻结明细_模拟#quality_freeze#FZ-0043",
+      "source_table": "17_质量冻结明细_模拟",
+      "source_record_id": "FZ-0043",
+      "semantic_field": "decision_event_id",
+      "normalized_value": "EVT-0099",
+      "normalized_data_type": "str",
+      "normalized_unit": "",
+      "display_format": "",
+      "value_consumption_status": "usable",
+      "provenance_ref": {
+        "source_field": "EventID",
+        "raw_value": "EVT-0099",
+        "raw_value_status": "available",
+        "source_data_type": "str",
+        "source_unit": "",
+        "transformation_rule_id": "TR-DIRECT",
+        "mapping_ref": {
+          "approval_rule_version": "MAP-v1.0.1",
+          "match_method": "approved_contract",
+          "semantic_model_version": "SEM-v1.1.1",
+          "inherited_approval": true
+        },
+        "evidence_locator": {
+          "source_file_sha256": "57317ccc234aa66407c989f3d5c41090924a030d9ae0588afe6a95a765cbd086",
+          "source_table": "17_质量冻结明细_模拟",
+          "source_row_number": 16,
+          "source_column_name": "EventID",
+          "source_column_index": 2
+        },
+        "note": "raw_value 为源始值，仅供审计追溯；normalized_value 为消费者业务值，两者不得互相替代"
+      }
+    },
+    {
+      "semantic_record_key": "17_质量冻结明细_模拟#quality_freeze#FZ-0003",
+      "source_table": "17_质量冻结明细_模拟",
+      "source_record_id": "FZ-0003",
+      "semantic_field": "decision_event_id",
+      "normalized_value": "EVT-0007",
+      "normalized_data_type": "str",
+      "normalized_unit": "",
+      "display_format": "",
+      "value_consumption_status": "usable",
+      "provenance_ref": {
+        "source_field": "EventID",
+        "raw_value": "EVT-0007",
+        "raw_value_status": "available",
+        "source_data_type": "str",
+        "source_unit": "",
+        "transformation_rule_id": "TR-DIRECT",
+        "mapping_ref": {
+          "approval_rule_version": "MAP-v1.0.1",
+          "match_method": "approved_contract",
+          "semantic_model_version": "SEM-v1.1.1",
+          "inherited_approval": true
+        },
+        "evidence_locator": {
+          "source_file_sha256": "57317ccc234aa66407c989f3d5c41090924a030d9ae0588afe6a95a765cbd086",
+          "source_table": "17_质量冻结明细_模拟",
+          "source_row_number": 17,
+          "source_column_name": "EventID",
+          "source_column_index": 2
+        },
+        "note": "raw_value 为源始值，仅供审计追溯；normalized_value 为消费者业务值，两者不得互相替代"
+      }
+    },
+    {
+      "semantic_record_key": "17_质量冻结明细_模拟#quality_freeze#FZ-0006",
+      "source_table": "17_质量冻结明细_模拟",
+      "source_record_id": "FZ-0006",
+      "semantic_field": "decision_event_id",
+      "normalized_value": "EVT-0014",
+      "normalized_data_type": "str",
+      "normalized_unit": "",
+      "display_format": "",
+      "value_consumption_status": "usable",
+      "provenance_ref": {
+        "source_field": "EventID",
+        "raw_value": "EVT-0014",
+        "raw_value_status": "available",
+        "source_data_type": "str",
+        "source_unit": "",
+        "transformation_rule_id": "TR-DIRECT",
+        "mapping_ref": {
+          "approval_rule_version": "MAP-v1.0.1",
+          "match_method": "approved_contract",
+          "semantic_model_version": "SEM-v1.1.1",
+          "inherited_approval": true
+        },
+        "evidence_locator": {
+          "source_file_sha256": "57317ccc234aa66407c989f3d5c41090924a030d9ae0588afe6a95a765cbd086",
+          "source_table": "17_质量冻结明细_模拟",
+          "source_row_number": 18,
+          "source_column_name": "EventID",
+          "source_column_index": 2
+        },
+        "note": "raw_value 为源始值，仅供审计追溯；normalized_value 为消费者业务值，两者不得互相替代"
+      }
+    },
+    {
+      "semantic_record_key": "17_质量冻结明细_模拟#quality_freeze#FZ-0009",
+      "source_table": "17_质量冻结明细_模拟",
+      "source_record_id": "FZ-0009",
+      "semantic_field": "decision_event_id",
+      "normalized_value": "EVT-0021",
+      "normalized_data_type": "str",
+      "normalized_unit": "",
+      "display_format": "",
+      "value_consumption_status": "usable",
+      "provenance_ref": {
+        "source_field": "EventID",
+        "raw_value": "EVT-0021",
+        "raw_value_status": "available",
+        "source_data_type": "str",
+        "source_unit": "",
+        "transformation_rule_id": "TR-DIRECT",
+        "mapping_ref": {
+          "approval_rule_version": "MAP-v1.0.1",
+          "match_method": "approved_contract",
+          "semantic_model_version": "SEM-v1.1.1",
+          "inherited_approval": true
+        },
+        "evidence_locator": {
+          "source_file_sha256": "57317ccc234aa66407c989f3d5c41090924a030d9ae0588afe6a95a765cbd086",
+          "source_table": "17_质量冻结明细_模拟",
+          "source_row_number": 19,
+          "source_column_name": "EventID",
+          "source_column_index": 2
+        },
+        "note": "raw_value 为源始值，仅供审计追溯；normalized_value 为消费者业务值，两者不得互相替代"
+      }
+    },
+    {
+      "semantic_record_key": "17_质量冻结明细_模拟#quality_freeze#FZ-0012",
+      "source_table": "17_质量冻结明细_模拟",
+      "source_record_id": "FZ-0012",
+      "semantic_field": "decision_event_id",
+      "normalized_value": "EVT-0028",
+      "normalized_data_type": "str",
+      "normalized_unit": "",
+      "display_format": "",
+      "value_consumption_status": "usable",
+      "provenance_ref": {
+        "source_field": "EventID",
+        "raw_value": "EVT-0028",
+        "raw_value_status": "available",
+        "source_data_type": "str",
+        "source_unit": "",
+        "transformation_rule_id": "TR-DIRECT",
+        "mapping_ref": {
+          "approval_rule_version": "MAP-v1.0.1",
+          "match_method": "approved_contract",
+          "semantic_model_version": "SEM-v1.1.1",
+          "inherited_approval": true
+        },
+        "evidence_locator": {
+          "source_file_sha256": "57317ccc234aa66407c989f3d5c41090924a030d9ae0588afe6a95a765cbd086",
+          "source_table": "17_质量冻结明细_模拟",
+          "source_row_number": 20,
+          "source_column_name": "EventID",
+          "source_column_index": 2
+        },
+        "note": "raw_value 为源始值，仅供审计追溯；normalized_value 为消费者业务值，两者不得互相替代"
+      }
+    },
+    {
+      "semantic_record_key": "17_质量冻结明细_模拟#quality_freeze#FZ-0015",
+      "source_table": "17_质量冻结明细_模拟",
+      "source_record_id": "FZ-0015",
+      "semantic_field": "decision_event_id",
+      "normalized_value": "EVT-0035",
+      "normalized_data_type": "str",
+      "normalized_unit": "",
+      "display_format": "",
+      "value_consumption_status": "usable",
+      "provenance_ref": {
+        "source_field": "EventID",
+        "raw_value": "EVT-0035",
+        "raw_value_status": "available",
+        "source_data_type": "str",
+        "source_unit": "",
+        "transformation_rule_id": "TR-DIRECT",
+        "mapping_ref": {
+          "approval_rule_version": "MAP-v1.0.1",
+          "match_method": "approved_contract",
+          "semantic_model_version": "SEM-v1.1.1",
+          "inherited_approval": true
+        },
+        "evidence_locator": {
+          "source_file_sha256": "57317ccc234aa66407c989f3d5c41090924a030d9ae0588afe6a95a765cbd086",
+          "source_table": "17_质量冻结明细_模拟",
+          "source_row_number": 21,
+          "source_column_name": "EventID",
+          "source_column_index": 2
+        },
+        "note": "raw_value 为源始值，仅供审计追溯；normalized_value 为消费者业务值，两者不得互相替代"
+      }
+    },
+    {
+      "semantic_record_key": "17_质量冻结明细_模拟#quality_freeze#FZ-0018",
+      "source_table": "17_质量冻结明细_模拟",
+      "source_record_id": "FZ-0018",
+      "semantic_field": "decision_event_id",
+      "normalized_value": "EVT-0042",
+      "normalized_data_type": "str",
+      "normalized_unit": "",
+      "display_format": "",
+      "value_consumption_status": "usable",
+      "provenance_ref": {
+        "source_field": "EventID",
+        "raw_value": "EVT-0042",
+        "raw_value_status": "available",
+        "source_data_type": "str",
+        "source_unit": "",
+        "transformation_rule_id": "TR-DIRECT",
+        "mapping_ref": {
+          "approval_rule_version": "MAP-v1.0.1",
+          "match_method": "approved_contract",
+          "semantic_model_version": "SEM-v1.1.1",
+          "inherited_approval": true
+        },
+        "evidence_locator": {
+          "source_file_sha256": "57317ccc234aa66407c989f3d5c41090924a030d9ae0588afe6a95a765cbd086",
+          "source_table": "17_质量冻结明细_模拟",
+          "source_row_number": 22,
+          "source_column_name": "EventID",
+          "source_column_index": 2
+        },
+        "note": "raw_value 为源始值，仅供审计追溯；normalized_value 为消费者业务值，两者不得互相替代"
+      }
+    },
+    {
+      "semantic_record_key": "17_质量冻结明细_模拟#quality_freeze#FZ-0021",
+      "source_table": "17_质量冻结明细_模拟",
+      "source_record_id": "FZ-0021",
+      "semantic_field": "decision_event_id",
+      "normalized_value": "EVT-0049",
+      "normalized_data_type": "str",
+      "normalized_unit": "",
+      "display_format": "",
+      "value_consumption_status": "usable",
+      "provenance_ref": {
+        "source_field": "EventID",
+        "raw_value": "EVT-0049",
+        "raw_value_status": "available",
+        "source_data_type": "str",
+        "source_unit": "",
+        "transformation_rule_id": "TR-DIRECT",
+        "mapping_ref": {
+          "approval_rule_version": "MAP-v1.0.1",
+          "match_method": "approved_contract",
+          "semantic_model_version": "SEM-v1.1.1",
+          "inherited_approval": true
+        },
+        "evidence_locator": {
+          "source_file_sha256": "57317ccc234aa66407c989f3d5c41090924a030d9ae0588afe6a95a765cbd086",
+          "source_table": "17_质量冻结明细_模拟",
+          "source_row_number": 23,
+          "source_column_name": "EventID",
+          "source_column_index": 2
+        },
+        "note": "raw_value 为源始值，仅供审计追溯；normalized_value 为消费者业务值，两者不得互相替代"
+      }
+    },
+    {
+      "semantic_record_key": "17_质量冻结明细_模拟#quality_freeze#FZ-0024",
+      "source_table": "17_质量冻结明细_模拟",
+      "source_record_id": "FZ-0024",
+      "semantic_field": "decision_event_id",
+      "normalized_value": "EVT-0056",
+      "normalized_data_type": "str",
+      "normalized_unit": "",
+      "display_format": "",
+      "value_consumption_status": "usable",
+      "provenance_ref": {
+        "source_field": "EventID",
+        "raw_value": "EVT-0056",
+        "raw_value_status": "available",
+        "source_data_type": "str",
+        "source_unit": "",
+        "transformation_rule_id": "TR-DIRECT",
+        "mapping_ref": {
+          "approval_rule_version": "MAP-v1.0.1",
+          "match_method": "approved_contract",
+          "semantic_model_version": "SEM-v1.1.1",
+          "inherited_approval": true
+        },
+        "evidence_locator": {
+          "source_file_sha256": "57317ccc234aa66407c989f3d5c41090924a030d9ae0588afe6a95a765cbd086",
+          "source_table": "17_质量冻结明细_模拟",
+          "source_row_number": 24,
+          "source_column_name": "EventID",
+          "source_column_index": 2
+        },
+        "note": "raw_value 为源始值，仅供审计追溯；normalized_value 为消费者业务值，两者不得互相替代"
+      }
+    },
+    {
+      "semantic_record_key": "17_质量冻结明细_模拟#quality_freeze#FZ-0027",
+      "source_table": "17_质量冻结明细_模拟",
+      "source_record_id": "FZ-0027",
+      "semantic_field": "decision_event_id",
+      "normalized_value": "EVT-0063",
+      "normalized_data_type": "str",
+      "normalized_unit": "",
+      "display_format": "",
+      "value_consumption_status": "usable",
+      "provenance_ref": {
+        "source_field": "EventID",
+        "raw_value": "EVT-0063",
+        "raw_value_status": "available",
+        "source_data_type": "str",
+        "source_unit": "",
+        "transformation_rule_id": "TR-DIRECT",
+        "mapping_ref": {
+          "approval_rule_version": "MAP-v1.0.1",
+          "match_method": "approved_contract",
+          "semantic_model_version": "SEM-v1.1.1",
+          "inherited_approval": true
+        },
+        "evidence_locator": {
+          "source_file_sha256": "57317ccc234aa66407c989f3d5c41090924a030d9ae0588afe6a95a765cbd086",
+          "source_table": "17_质量冻结明细_模拟",
+          "source_row_number": 25,
+          "source_column_name": "EventID",
+          "source_column_index": 2
+        },
+        "note": "raw_value 为源始值，仅供审计追溯；normalized_value 为消费者业务值，两者不得互相替代"
+      }
+    },
+    {
+      "semantic_record_key": "17_质量冻结明细_模拟#quality_freeze#FZ-0030",
+      "source_table": "17_质量冻结明细_模拟",
+      "source_record_id": "FZ-0030",
+      "semantic_field": "decision_event_id",
+      "normalized_value": "EVT-0070",
+      "normalized_data_type": "str",
+      "normalized_unit": "",
+      "display_format": "",
+      "value_consumption_status": "usable",
+      "provenance_ref": {
+        "source_field": "EventID",
+        "raw_value": "EVT-0070",
+        "raw_value_status": "available",
+        "source_data_type": "str",
+        "source_unit": "",
+        "transformation_rule_id": "TR-DIRECT",
+        "mapping_ref": {
+          "approval_rule_version": "MAP-v1.0.1",
+          "match_method": "approved_contract",
+          "semantic_model_version": "SEM-v1.1.1",
+          "inherited_approval": true
+        },
+        "evidence_locator": {
+          "source_file_sha256": "57317ccc234aa66407c989f3d5c41090924a030d9ae0588afe6a95a765cbd086",
+          "source_table": "17_质量冻结明细_模拟",
+          "source_row_number": 26,
+          "source_column_name": "EventID",
+          "source_column_index": 2
+        },
+        "note": "raw_value 为源始值，仅供审计追溯；normalized_value 为消费者业务值，两者不得互相替代"
+      }
+    },
+    {
+      "semantic_record_key": "17_质量冻结明细_模拟#quality_freeze#FZ-0033",
+      "source_table": "17_质量冻结明细_模拟",
+      "source_record_id": "FZ-0033",
+      "semantic_field": "decision_event_id",
+      "normalized_value": "EVT-0077",
+      "normalized_data_type": "str",
+      "normalized_unit": "",
+      "display_format": "",
+      "value_consumption_status": "usable",
+      "provenance_ref": {
+        "source_field": "EventID",
+        "raw_value": "EVT-0077",
+        "raw_value_status": "available",
+        "source_data_type": "str",
+        "source_unit": "",
+        "transformation_rule_id": "TR-DIRECT",
+        "mapping_ref": {
+          "approval_rule_version": "MAP-v1.0.1",
+          "match_method": "approved_contract",
+          "semantic_model_version": "SEM-v1.1.1",
+          "inherited_approval": true
+        },
+        "evidence_locator": {
+          "source_file_sha256": "57317ccc234aa66407c989f3d5c41090924a030d9ae0588afe6a95a765cbd086",
+          "source_table": "17_质量冻结明细_模拟",
+          "source_row_number": 27,
+          "source_column_name": "EventID",
+          "source_column_index": 2
+        },
+        "note": "raw_value 为源始值，仅供审计追溯；normalized_value 为消费者业务值，两者不得互相替代"
+      }
+    },
+    {
+      "semantic_record_key": "17_质量冻结明细_模拟#quality_freeze#FZ-0036",
+      "source_table": "17_质量冻结明细_模拟",
+      "source_record_id": "FZ-0036",
+      "semantic_field": "decision_event_id",
+      "normalized_value": "EVT-0084",
+      "normalized_data_type": "str",
+      "normalized_unit": "",
+      "display_format": "",
+      "value_consumption_status": "usable",
+      "provenance_ref": {
+        "source_field": "EventID",
+        "raw_value": "EVT-0084",
+        "raw_value_status": "available",
+        "source_data_type": "str",
+        "source_unit": "",
+        "transformation_rule_id": "TR-DIRECT",
+        "mapping_ref": {
+          "approval_rule_version": "MAP-v1.0.1",
+          "match_method": "approved_contract",
+          "semantic_model_version": "SEM-v1.1.1",
+          "inherited_approval": true
+        },
+        "evidence_locator": {
+          "source_file_sha256": "57317ccc234aa66407c989f3d5c41090924a030d9ae0588afe6a95a765cbd086",
+          "source_table": "17_质量冻结明细_模拟",
+          "source_row_number": 28,
+          "source_column_name": "EventID",
+          "source_column_index": 2
+        },
+        "note": "raw_value 为源始值，仅供审计追溯；normalized_value 为消费者业务值，两者不得互相替代"
+      }
+    },
+    {
+      "semantic_record_key": "17_质量冻结明细_模拟#quality_freeze#FZ-0039",
+      "source_table": "17_质量冻结明细_模拟",
+      "source_record_id": "FZ-0039",
+      "semantic_field": "decision_event_id",
+      "normalized_value": "EVT-0091",
+      "normalized_data_type": "str",
+      "normalized_unit": "",
+      "display_format": "",
+      "value_consumption_status": "usable",
+      "provenance_ref": {
+        "source_field": "EventID",
+        "raw_value": "EVT-0091",
+        "raw_value_status": "available",
+        "source_data_type": "str",
+        "source_unit": "",
+        "transformation_rule_id": "TR-DIRECT",
+        "mapping_ref": {
+          "approval_rule_version": "MAP-v1.0.1",
+          "match_method": "approved_contract",
+          "semantic_model_version": "SEM-v1.1.1",
+          "inherited_approval": true
+        },
+        "evidence_locator": {
+          "source_file_sha256": "57317ccc234aa66407c989f3d5c41090924a030d9ae0588afe6a95a765cbd086",
+          "source_table": "17_质量冻结明细_模拟",
+          "source_row_number": 29,
+          "source_column_name": "EventID",
+          "source_column_index": 2
+        },
+        "note": "raw_value 为源始值，仅供审计追溯；normalized_value 为消费者业务值，两者不得互相替代"
+      }
+    },
+    {
+      "semantic_record_key": "17_质量冻结明细_模拟#quality_freeze#FZ-0042",
+      "source_table": "17_质量冻结明细_模拟",
+      "source_record_id": "FZ-0042",
+      "semantic_field": "decision_event_id",
+      "normalized_value": "EVT-0098",
+      "normalized_data_type": "str",
+      "normalized_unit": "",
+      "display_format": "",
+      "value_consumption_status": "usable",
+      "provenance_ref": {
+        "source_field": "EventID",
+        "raw_value": "EVT-0098",
+        "raw_value_status": "available",
+        "source_data_type": "str",
+        "source_unit": "",
+        "transformation_rule_id": "TR-DIRECT",
+        "mapping_ref": {
+          "approval_rule_version": "MAP-v1.0.1",
+          "match_method": "approved_contract",
+          "semantic_model_version": "SEM-v1.1.1",
+          "inherited_approval": true
+        },
+        "evidence_locator": {
+          "source_file_sha256": "57317ccc234aa66407c989f3d5c41090924a030d9ae0588afe6a95a765cbd086",
+          "source_table": "17_质量冻结明细_模拟",
+          "source_row_number": 30,
+          "source_column_name": "EventID",
+          "source_column_index": 2
+        },
+        "note": "raw_value 为源始值，仅供审计追溯；normalized_value 为消费者业务值，两者不得互相替代"
+      }
+    },
+    {
+      "semantic_record_key": "17_质量冻结明细_模拟#quality_freeze#FZ-0045",
+      "source_table": "17_质量冻结明细_模拟",
+      "source_record_id": "FZ-0045",
+      "semantic_field": "decision_event_id",
+      "normalized_value": "EVT-0105",
+      "normalized_data_type": "str",
+      "normalized_unit": "",
+      "display_format": "",
+      "value_consumption_status": "usable",
+      "provenance_ref": {
+        "source_field": "EventID",
+        "raw_value": "EVT-0105",
+        "raw_value_status": "available",
+        "source_data_type": "str",
+        "source_unit": "",
+        "transformation_rule_id": "TR-DIRECT",
+        "mapping_ref": {
+          "approval_rule_version": "MAP-v1.0.1",
+          "match_method": "approved_contract",
+          "semantic_model_version": "SEM-v1.1.1",
+          "inherited_approval": true
+        },
+        "evidence_locator": {
+          "source_file_sha256": "57317ccc234aa66407c989f3d5c41090924a030d9ae0588afe6a95a765cbd086",
+          "source_table": "17_质量冻结明细_模拟",
+          "source_row_number": 31,
+          "source_column_name": "EventID",
+          "source_column_index": 2
+        },
+        "note": "raw_value 为源始值，仅供审计追溯；normalized_value 为消费者业务值，两者不得互相替代"
+      }
+    },
+    {
+      "semantic_record_key": "17_质量冻结明细_模拟#quality_freeze#FZ-0002",
+      "source_table": "17_质量冻结明细_模拟",
+      "source_record_id": "FZ-0002",
+      "semantic_field": "decision_event_id",
+      "normalized_value": "EVT-0006",
+      "normalized_data_type": "str",
+      "normalized_unit": "",
+      "display_format": "",
+      "value_consumption_status": "usable",
+      "provenance_ref": {
+        "source_field": "EventID",
+        "raw_value": "EVT-0006",
+        "raw_value_status": "available",
+        "source_data_type": "str",
+        "source_unit": "",
+        "transformation_rule_id": "TR-DIRECT",
+        "mapping_ref": {
+          "approval_rule_version": "MAP-v1.0.1",
+          "match_method": "approved_contract",
+          "semantic_model_version": "SEM-v1.1.1",
+          "inherited_approval": true
+        },
+        "evidence_locator": {
+          "source_file_sha256": "57317ccc234aa66407c989f3d5c41090924a030d9ae0588afe6a95a765cbd086",
+          "source_table": "17_质量冻结明细_模拟",
+          "source_row_number": 32,
+          "source_column_name": "EventID",
+          "source_column_index": 2
+        },
+        "note": "raw_value 为源始值，仅供审计追溯；normalized_value 为消费者业务值，两者不得互相替代"
+      }
+    },
+    {
+      "semantic_record_key": "17_质量冻结明细_模拟#quality_freeze#FZ-0005",
+      "source_table": "17_质量冻结明细_模拟",
+      "source_record_id": "FZ-0005",
+      "semantic_field": "decision_event_id",
+      "normalized_value": "EVT-0013",
+      "normalized_data_type": "str",
+      "normalized_unit": "",
+      "display_format": "",
+      "value_consumption_status": "usable",
+      "provenance_ref": {
+        "source_field": "EventID",
+        "raw_value": "EVT-0013",
+        "raw_value_status": "available",
+        "source_data_type": "str",
+        "source_unit": "",
+        "transformation_rule_id": "TR-DIRECT",
+        "mapping_ref": {
+          "approval_rule_version": "MAP-v1.0.1",
+          "match_method": "approved_contract",
+          "semantic_model_version": "SEM-v1.1.1",
+          "inherited_approval": true
+        },
+        "evidence_locator": {
+          "source_file_sha256": "57317ccc234aa66407c989f3d5c41090924a030d9ae0588afe6a95a765cbd086",
+          "source_table": "17_质量冻结明细_模拟",
+          "source_row_number": 33,
+          "source_column_name": "EventID",
+          "source_column_index": 2
+        },
+        "note": "raw_value 为源始值，仅供审计追溯；normalized_value 为消费者业务值，两者不得互相替代"
+      }
+    },
+    {
+      "semantic_record_key": "17_质量冻结明细_模拟#quality_freeze#FZ-0008",
+      "source_table": "17_质量冻结明细_模拟",
+      "source_record_id": "FZ-0008",
+      "semantic_field": "decision_event_id",
+      "normalized_value": "EVT-0020",
+      "normalized_data_type": "str",
+      "normalized_unit": "",
+      "display_format": "",
+      "value_consumption_status": "usable",
+      "provenance_ref": {
+        "source_field": "EventID",
+        "raw_value": "EVT-0020",
+        "raw_value_status": "available",
+        "source_data_type": "str",
+        "source_unit": "",
+        "transformation_rule_id": "TR-DIRECT",
+        "mapping_ref": {
+          "approval_rule_version": "MAP-v1.0.1",
+          "match_method": "approved_contract",
+          "semantic_model_version": "SEM-v1.1.1",
+          "inherited_approval": true
+        },
+        "evidence_locator": {
+          "source_file_sha256": "57317ccc234aa66407c989f3d5c41090924a030d9ae0588afe6a95a765cbd086",
+          "source_table": "17_质量冻结明细_模拟",
+          "source_row_number": 34,
+          "source_column_name": "EventID",
+          "source_column_index": 2
+        },
+        "note": "raw_value 为源始值，仅供审计追溯；normalized_value 为消费者业务值，两者不得互相替代"
+      }
+    },
+    {
+      "semantic_record_key": "17_质量冻结明细_模拟#quality_freeze#FZ-0011",
+      "source_table": "17_质量冻结明细_模拟",
+      "source_record_id": "FZ-0011",
+      "semantic_field": "decision_event_id",
+      "normalized_value": "EVT-0027",
+      "normalized_data_type": "str",
+      "normalized_unit": "",
+      "display_format": "",
+      "value_consumption_status": "usable",
+      "provenance_ref": {
+        "source_field": "EventID",
+        "raw_value": "EVT-0027",
+        "raw_value_status": "available",
+        "source_data_type": "str",
+        "source_unit": "",
+        "transformation_rule_id": "TR-DIRECT",
+        "mapping_ref": {
+          "approval_rule_version": "MAP-v1.0.1",
+          "match_method": "approved_contract",
+          "semantic_model_version": "SEM-v1.1.1",
+          "inherited_approval": true
+        },
+        "evidence_locator": {
+          "source_file_sha256": "57317ccc234aa66407c989f3d5c41090924a030d9ae0588afe6a95a765cbd086",
+          "source_table": "17_质量冻结明细_模拟",
+          "source_row_number": 35,
+          "source_column_name": "EventID",
+          "source_column_index": 2
+        },
+        "note": "raw_value 为源始值，仅供审计追溯；normalized_value 为消费者业务值，两者不得互相替代"
+      }
+    },
+    {
+      "semantic_record_key": "17_质量冻结明细_模拟#quality_freeze#FZ-0014",
+      "source_table": "17_质量冻结明细_模拟",
+      "source_record_id": "FZ-0014",
+      "semantic_field": "decision_event_id",
+      "normalized_value": "EVT-0034",
+      "normalized_data_type": "str",
+      "normalized_unit": "",
+      "display_format": "",
+      "value_consumption_status": "usable",
+      "provenance_ref": {
+        "source_field": "EventID",
+        "raw_value": "EVT-0034",
+        "raw_value_status": "available",
+        "source_data_type": "str",
+        "source_unit": "",
+        "transformation_rule_id": "TR-DIRECT",
+        "mapping_ref": {
+          "approval_rule_version": "MAP-v1.0.1",
+          "match_method": "approved_contract",
+          "semantic_model_version": "SEM-v1.1.1",
+          "inherited_approval": true
+        },
+        "evidence_locator": {
+          "source_file_sha256": "57317ccc234aa66407c989f3d5c41090924a030d9ae0588afe6a95a765cbd086",
+          "source_table": "17_质量冻结明细_模拟",
+          "source_row_number": 36,
+          "source_column_name": "EventID",
+          "source_column_index": 2
+        },
+        "note": "raw_value 为源始值，仅供审计追溯；normalized_value 为消费者业务值，两者不得互相替代"
+      }
+    },
+    {
+      "semantic_record_key": "17_质量冻结明细_模拟#quality_freeze#FZ-0017",
+      "source_table": "17_质量冻结明细_模拟",
+      "source_record_id": "FZ-0017",
+      "semantic_field": "decision_event_id",
+      "normalized_value": "EVT-0041",
+      "normalized_data_type": "str",
+      "normalized_unit": "",
+      "display_format": "",
+      "value_consumption_status": "usable",
+      "provenance_ref": {
+        "source_field": "EventID",
+        "raw_value": "EVT-0041",
+        "raw_value_status": "available",
+        "source_data_type": "str",
+        "source_unit": "",
+        "transformation_rule_id": "TR-DIRECT",
+        "mapping_ref": {
+          "approval_rule_version": "MAP-v1.0.1",
+          "match_method": "approved_contract",
+          "semantic_model_version": "SEM-v1.1.1",
+          "inherited_approval": true
+        },
+        "evidence_locator": {
+          "source_file_sha256": "57317ccc234aa66407c989f3d5c41090924a030d9ae0588afe6a95a765cbd086",
+          "source_table": "17_质量冻结明细_模拟",
+          "source_row_number": 37,
+          "source_column_name": "EventID",
+          "source_column_index": 2
+        },
+        "note": "raw_value 为源始值，仅供审计追溯；normalized_value 为消费者业务值，两者不得互相替代"
+      }
+    },
+    {
+      "semantic_record_key": "17_质量冻结明细_模拟#quality_freeze#FZ-0020",
+      "source_table": "17_质量冻结明细_模拟",
+      "source_record_id": "FZ-0020",
+      "semantic_field": "decision_event_id",
+      "normalized_value": "EVT-0048",
+      "normalized_data_type": "str",
+      "normalized_unit": "",
+      "display_format": "",
+      "value_consumption_status": "usable",
+      "provenance_ref": {
+        "source_field": "EventID",
+        "raw_value": "EVT-0048",
+        "raw_value_status": "available",
+        "source_data_type": "str",
+        "source_unit": "",
+        "transformation_rule_id": "TR-DIRECT",
+        "mapping_ref": {
+          "approval_rule_version": "MAP-v1.0.1",
+          "match_method": "approved_contract",
+          "semantic_model_version": "SEM-v1.1.1",
+          "inherited_approval": true
+        },
+        "evidence_locator": {
+          "source_file_sha256": "57317ccc234aa66407c989f3d5c41090924a030d9ae0588afe6a95a765cbd086",
+          "source_table": "17_质量冻结明细_模拟",
+          "source_row_number": 38,
+          "source_column_name": "EventID",
+          "source_column_index": 2
+        },
+        "note": "raw_value 为源始值，仅供审计追溯；normalized_value 为消费者业务值，两者不得互相替代"
+      }
+    },
+    {
+      "semantic_record_key": "17_质量冻结明细_模拟#quality_freeze#FZ-0023",
+      "source_table": "17_质量冻结明细_模拟",
+      "source_record_id": "FZ-0023",
+      "semantic_field": "decision_event_id",
+      "normalized_value": "EVT-0055",
+      "normalized_data_type": "str",
+      "normalized_unit": "",
+      "display_format": "",
+      "value_consumption_status": "usable",
+      "provenance_ref": {
+        "source_field": "EventID",
+        "raw_value": "EVT-0055",
+        "raw_value_status": "available",
+        "source_data_type": "str",
+        "source_unit": "",
+        "transformation_rule_id": "TR-DIRECT",
+        "mapping_ref": {
+          "approval_rule_version": "MAP-v1.0.1",
+          "match_method": "approved_contract",
+          "semantic_model_version": "SEM-v1.1.1",
+          "inherited_approval": true
+        },
+        "evidence_locator": {
+          "source_file_sha256": "57317ccc234aa66407c989f3d5c41090924a030d9ae0588afe6a95a765cbd086",
+          "source_table": "17_质量冻结明细_模拟",
+          "source_row_number": 39,
+          "source_column_name": "EventID",
+          "source_column_index": 2
+        },
+        "note": "raw_value 为源始值，仅供审计追溯；normalized_value 为消费者业务值，两者不得互相替代"
+      }
+    },
+    {
+      "semantic_record_key": "17_质量冻结明细_模拟#quality_freeze#FZ-0026",
+      "source_table": "17_质量冻结明细_模拟",
+      "source_record_id": "FZ-0026",
+      "semantic_field": "decision_event_id",
+      "normalized_value": "EVT-0062",
+      "normalized_data_type": "str",
+      "normalized_unit": "",
+      "display_format": "",
+      "value_consumption_status": "usable",
+      "provenance_ref": {
+        "source_field": "EventID",
+        "raw_value": "EVT-0062",
+        "raw_value_status": "available",
+        "source_data_type": "str",
+        "source_unit": "",
+        "transformation_rule_id": "TR-DIRECT",
+        "mapping_ref": {
+          "approval_rule_version": "MAP-v1.0.1",
+          "match_method": "approved_contract",
+          "semantic_model_version": "SEM-v1.1.1",
+          "inherited_approval": true
+        },
+        "evidence_locator": {
+          "source_file_sha256": "57317ccc234aa66407c989f3d5c41090924a030d9ae0588afe6a95a765cbd086",
+          "source_table": "17_质量冻结明细_模拟",
+          "source_row_number": 40,
+          "source_column_name": "EventID",
+          "source_column_index": 2
+        },
+        "note": "raw_value 为源始值，仅供审计追溯；normalized_value 为消费者业务值，两者不得互相替代"
+      }
+    },
+    {
+      "semantic_record_key": "17_质量冻结明细_模拟#quality_freeze#FZ-0029",
+      "source_table": "17_质量冻结明细_模拟",
+      "source_record_id": "FZ-0029",
+      "semantic_field": "decision_event_id",
+      "normalized_value": "EVT-0069",
+      "normalized_data_type": "str",
+      "normalized_unit": "",
+      "display_format": "",
+      "value_consumption_status": "usable",
+      "provenance_ref": {
+        "source_field": "EventID",
+        "raw_value": "EVT-0069",
+        "raw_value_status": "available",
+        "source_data_type": "str",
+        "source_unit": "",
+        "transformation_rule_id": "TR-DIRECT",
+        "mapping_ref": {
+          "approval_rule_version": "MAP-v1.0.1",
+          "match_method": "approved_contract",
+          "semantic_model_version": "SEM-v1.1.1",
+          "inherited_approval": true
+        },
+        "evidence_locator": {
+          "source_file_sha256": "57317ccc234aa66407c989f3d5c41090924a030d9ae0588afe6a95a765cbd086",
+          "source_table": "17_质量冻结明细_模拟",
+          "source_row_number": 41,
+          "source_column_name": "EventID",
+          "source_column_index": 2
+        },
+        "note": "raw_value 为源始值，仅供审计追溯；normalized_value 为消费者业务值，两者不得互相替代"
+      }
+    },
+    {
+      "semantic_record_key": "17_质量冻结明细_模拟#quality_freeze#FZ-0032",
+      "source_table": "17_质量冻结明细_模拟",
+      "source_record_id": "FZ-0032",
+      "semantic_field": "decision_event_id",
+      "normalized_value": "EVT-0076",
+      "normalized_data_type": "str",
+      "normalized_unit": "",
+      "display_format": "",
+      "value_consumption_status": "usable",
+      "provenance_ref": {
+        "source_field": "EventID",
+        "raw_value": "EVT-0076",
+        "raw_value_status": "available",
+        "source_data_type": "str",
+        "source_unit": "",
+        "transformation_rule_id": "TR-DIRECT",
+        "mapping_ref": {
+          "approval_rule_version": "MAP-v1.0.1",
+          "match_method": "approved_contract",
+          "semantic_model_version": "SEM-v1.1.1",
+          "inherited_approval": true
+        },
+        "evidence_locator": {
+          "source_file_sha256": "57317ccc234aa66407c989f3d5c41090924a030d9ae0588afe6a95a765cbd086",
+          "source_table": "17_质量冻结明细_模拟",
+          "source_row_number": 42,
+          "source_column_name": "EventID",
+          "source_column_index": 2
+        },
+        "note": "raw_value 为源始值，仅供审计追溯；normalized_value 为消费者业务值，两者不得互相替代"
+      }
+    },
+    {
+      "semantic_record_key": "17_质量冻结明细_模拟#quality_freeze#FZ-0035",
+      "source_table": "17_质量冻结明细_模拟",
+      "source_record_id": "FZ-0035",
+      "semantic_field": "decision_event_id",
+      "normalized_value": "EVT-0083",
+      "normalized_data_type": "str",
+      "normalized_unit": "",
+      "display_format": "",
+      "value_consumption_status": "usable",
+      "provenance_ref": {
+        "source_field": "EventID",
+        "raw_value": "EVT-0083",
+        "raw_value_status": "available",
+        "source_data_type": "str",
+        "source_unit": "",
+        "transformation_rule_id": "TR-DIRECT",
+        "mapping_ref": {
+          "approval_rule_version": "MAP-v1.0.1",
+          "match_method": "approved_contract",
+          "semantic_model_version": "SEM-v1.1.1",
+          "inherited_approval": true
+        },
+        "evidence_locator": {
+          "source_file_sha256": "57317ccc234aa66407c989f3d5c41090924a030d9ae0588afe6a95a765cbd086",
+          "source_table": "17_质量冻结明细_模拟",
+          "source_row_number": 43,
+          "source_column_name": "EventID",
+          "source_column_index": 2
+        },
+        "note": "raw_value 为源始值，仅供审计追溯；normalized_value 为消费者业务值，两者不得互相替代"
+      }
+    },
+    {
+      "semantic_record_key": "17_质量冻结明细_模拟#quality_freeze#FZ-0038",
+      "source_table": "17_质量冻结明细_模拟",
+      "source_record_id": "FZ-0038",
+      "semantic_field": "decision_event_id",
+      "normalized_value": "EVT-0090",
+      "normalized_data_type": "str",
+      "normalized_unit": "",
+      "display_format": "",
+      "value_consumption_status": "usable",
+      "provenance_ref": {
+        "source_field": "EventID",
+        "raw_value": "EVT-0090",
+        "raw_value_status": "available",
+        "source_data_type": "str",
+        "source_unit": "",
+        "transformation_rule_id": "TR-DIRECT",
+        "mapping_ref": {
+          "approval_rule_version": "MAP-v1.0.1",
+          "match_method": "approved_contract",
+          "semantic_model_version": "SEM-v1.1.1",
+          "inherited_approval": true
+        },
+        "evidence_locator": {
+          "source_file_sha256": "57317ccc234aa66407c989f3d5c41090924a030d9ae0588afe6a95a765cbd086",
+          "source_table": "17_质量冻结明细_模拟",
+          "source_row_number": 44,
+          "source_column_name": "EventID",
+          "source_column_index": 2
+        },
+        "note": "raw_value 为源始值，仅供审计追溯；normalized_value 为消费者业务值，两者不得互相替代"
+      }
+    },
+    {
+      "semantic_record_key": "17_质量冻结明细_模拟#quality_freeze#FZ-0041",
+      "source_table": "17_质量冻结明细_模拟",
+      "source_record_id": "FZ-0041",
+      "semantic_field": "decision_event_id",
+      "normalized_value": "EVT-0097",
+      "normalized_data_type": "str",
+      "normalized_unit": "",
+      "display_format": "",
+      "value_consumption_status": "usable",
+      "provenance_ref": {
+        "source_field": "EventID",
+        "raw_value": "EVT-0097",
+        "raw_value_status": "available",
+        "source_data_type": "str",
+        "source_unit": "",
+        "transformation_rule_id": "TR-DIRECT",
+        "mapping_ref": {
+          "approval_rule_version": "MAP-v1.0.1",
+          "match_method": "approved_contract",
+          "semantic_model_version": "SEM-v1.1.1",
+          "inherited_approval": true
+        },
+        "evidence_locator": {
+          "source_file_sha256": "57317ccc234aa66407c989f3d5c41090924a030d9ae0588afe6a95a765cbd086",
+          "source_table": "17_质量冻结明细_模拟",
+          "source_row_number": 45,
+          "source_column_name": "EventID",
+          "source_column_index": 2
+        },
+        "note": "raw_value 为源始值，仅供审计追溯；normalized_value 为消费者业务值，两者不得互相替代"
+      }
+    },
+    {
+      "semantic_record_key": "17_质量冻结明细_模拟#quality_freeze#FZ-0044",
+      "source_table": "17_质量冻结明细_模拟",
+      "source_record_id": "FZ-0044",
+      "semantic_field": "decision_event_id",
+      "normalized_value": "EVT-0104",
+      "normalized_data_type": "str",
+      "normalized_unit": "",
+      "display_format": "",
+      "value_consumption_status": "usable",
+      "provenance_ref": {
+        "source_field": "EventID",
+        "raw_value": "EVT-0104",
+        "raw_value_status": "available",
+        "source_data_type": "str",
+        "source_unit": "",
+        "transformation_rule_id": "TR-DIRECT",
+        "mapping_ref": {
+          "approval_rule_version": "MAP-v1.0.1",
+          "match_method": "approved_contract",
+          "semantic_model_version": "SEM-v1.1.1",
+          "inherited_approval": true
+        },
+        "evidence_locator": {
+          "source_file_sha256": "57317ccc234aa66407c989f3d5c41090924a030d9ae0588afe6a95a765cbd086",
+          "source_table": "17_质量冻结明细_模拟",
+          "source_row_number": 46,
+          "source_column_name": "EventID",
+          "source_column_index": 2
+        },
+        "note": "raw_value 为源始值，仅供审计追溯；normalized_value 为消费者业务值，两者不得互相替代"
+      }
+    }
+  ],
+  "data_gaps": [],
+  "provenance_refs": [
+    {
+      "source_field": "EventID",
+      "raw_value": "EVT-0001",
+      "raw_value_status": "available",
+      "source_data_type": "str",
+      "source_unit": "",
+      "transformation_rule_id": "TR-DIRECT",
+      "mapping_ref": {
+        "approval_rule_version": "MAP-v1.0.1",
+        "match_method": "approved_contract",
+        "semantic_model_version": "SEM-v1.1.1",
+        "inherited_approval": true
+      },
+      "evidence_locator": {
+        "source_file_sha256": "57317ccc234aa66407c989f3d5c41090924a030d9ae0588afe6a95a765cbd086",
+        "source_table": "17_质量冻结明细_模拟",
+        "source_row_number": 2,
+        "source_column_name": "EventID",
+        "source_column_index": 2
+      },
+      "note": "raw_value 为源始值，仅供审计追溯；normalized_value 为消费者业务值，两者不得互相替代"
+    },
+    {
+      "source_field": "EventID",
+      "raw_value": "EVT-0008",
+      "raw_value_status": "available",
+      "source_data_type": "str",
+      "source_unit": "",
+      "transformation_rule_id": "TR-DIRECT",
+      "mapping_ref": {
+        "approval_rule_version": "MAP-v1.0.1",
+        "match_method": "approved_contract",
+        "semantic_model_version": "SEM-v1.1.1",
+        "inherited_approval": true
+      },
+      "evidence_locator": {
+        "source_file_sha256": "57317ccc234aa66407c989f3d5c41090924a030d9ae0588afe6a95a765cbd086",
+        "source_table": "17_质量冻结明细_模拟",
+        "source_row_number": 3,
+        "source_column_name": "EventID",
+        "source_column_index": 2
+      },
+      "note": "raw_value 为源始值，仅供审计追溯；normalized_value 为消费者业务值，两者不得互相替代"
+    },
+    {
+      "source_field": "EventID",
+      "raw_value": "EVT-0015",
+      "raw_value_status": "available",
+      "source_data_type": "str",
+      "source_unit": "",
+      "transformation_rule_id": "TR-DIRECT",
+      "mapping_ref": {
+        "approval_rule_version": "MAP-v1.0.1",
+        "match_method": "approved_contract",
+        "semantic_model_version": "SEM-v1.1.1",
+        "inherited_approval": true
+      },
+      "evidence_locator": {
+        "source_file_sha256": "57317ccc234aa66407c989f3d5c41090924a030d9ae0588afe6a95a765cbd086",
+        "source_table": "17_质量冻结明细_模拟",
+        "source_row_number": 4,
+        "source_column_name": "EventID",
+        "source_column_index": 2
+      },
+      "note": "raw_value 为源始值，仅供审计追溯；normalized_value 为消费者业务值，两者不得互相替代"
+    },
+    {
+      "source_field": "EventID",
+      "raw_value": "EVT-0022",
+      "raw_value_status": "available",
+      "source_data_type": "str",
+      "source_unit": "",
+      "transformation_rule_id": "TR-DIRECT",
+      "mapping_ref": {
+        "approval_rule_version": "MAP-v1.0.1",
+        "match_method": "approved_contract",
+        "semantic_model_version": "SEM-v1.1.1",
+        "inherited_approval": true
+      },
+      "evidence_locator": {
+        "source_file_sha256": "57317ccc234aa66407c989f3d5c41090924a030d9ae0588afe6a95a765cbd086",
+        "source_table": "17_质量冻结明细_模拟",
+        "source_row_number": 5,
+        "source_column_name": "EventID",
+        "source_column_index": 2
+      },
+      "note": "raw_value 为源始值，仅供审计追溯；normalized_value 为消费者业务值，两者不得互相替代"
+    },
+    {
+      "source_field": "EventID",
+      "raw_value": "EVT-0029",
+      "raw_value_status": "available",
+      "source_data_type": "str",
+      "source_unit": "",
+      "transformation_rule_id": "TR-DIRECT",
+      "mapping_ref": {
+        "approval_rule_version": "MAP-v1.0.1",
+        "match_method": "approved_contract",
+        "semantic_model_version": "SEM-v1.1.1",
+        "inherited_approval": true
+      },
+      "evidence_locator": {
+        "source_file_sha256": "57317ccc234aa66407c989f3d5c41090924a030d9ae0588afe6a95a765cbd086",
+        "source_table": "17_质量冻结明细_模拟",
+        "source_row_number": 6,
+        "source_column_name": "EventID",
+        "source_column_index": 2
+      },
+      "note": "raw_value 为源始值，仅供审计追溯；normalized_value 为消费者业务值，两者不得互相替代"
+    },
+    {
+      "source_field": "EventID",
+      "raw_value": "EVT-0036",
+      "raw_value_status": "available",
+      "source_data_type": "str",
+      "source_unit": "",
+      "transformation_rule_id": "TR-DIRECT",
+      "mapping_ref": {
+        "approval_rule_version": "MAP-v1.0.1",
+        "match_method": "approved_contract",
+        "semantic_model_version": "SEM-v1.1.1",
+        "inherited_approval": true
+      },
+      "evidence_locator": {
+        "source_file_sha256": "57317ccc234aa66407c989f3d5c41090924a030d9ae0588afe6a95a765cbd086",
+        "source_table": "17_质量冻结明细_模拟",
+        "source_row_number": 7,
+        "source_column_name": "EventID",
+        "source_column_index": 2
+      },
+      "note": "raw_value 为源始值，仅供审计追溯；normalized_value 为消费者业务值，两者不得互相替代"
+    },
+    {
+      "source_field": "EventID",
+      "raw_value": "EVT-0043",
+      "raw_value_status": "available",
+      "source_data_type": "str",
+      "source_unit": "",
+      "transformation_rule_id": "TR-DIRECT",
+      "mapping_ref": {
+        "approval_rule_version": "MAP-v1.0.1",
+        "match_method": "approved_contract",
+        "semantic_model_version": "SEM-v1.1.1",
+        "inherited_approval": true
+      },
+      "evidence_locator": {
+        "source_file_sha256": "57317ccc234aa66407c989f3d5c41090924a030d9ae0588afe6a95a765cbd086",
+        "source_table": "17_质量冻结明细_模拟",
+        "source_row_number": 8,
+        "source_column_name": "EventID",
+        "source_column_index": 2
+      },
+      "note": "raw_value 为源始值，仅供审计追溯；normalized_value 为消费者业务值，两者不得互相替代"
+    },
+    {
+      "source_field": "EventID",
+      "raw_value": "EVT-0050",
+      "raw_value_status": "available",
+      "source_data_type": "str",
+      "source_unit": "",
+      "transformation_rule_id": "TR-DIRECT",
+      "mapping_ref": {
+        "approval_rule_version": "MAP-v1.0.1",
+        "match_method": "approved_contract",
+        "semantic_model_version": "SEM-v1.1.1",
+        "inherited_approval": true
+      },
+      "evidence_locator": {
+        "source_file_sha256": "57317ccc234aa66407c989f3d5c41090924a030d9ae0588afe6a95a765cbd086",
+        "source_table": "17_质量冻结明细_模拟",
+        "source_row_number": 9,
+        "source_column_name": "EventID",
+        "source_column_index": 2
+      },
+      "note": "raw_value 为源始值，仅供审计追溯；normalized_value 为消费者业务值，两者不得互相替代"
+    },
+    {
+      "source_field": "EventID",
+      "raw_value": "EVT-0057",
+      "raw_value_status": "available",
+      "source_data_type": "str",
+      "source_unit": "",
+      "transformation_rule_id": "TR-DIRECT",
+      "mapping_ref": {
+        "approval_rule_version": "MAP-v1.0.1",
+        "match_method": "approved_contract",
+        "semantic_model_version": "SEM-v1.1.1",
+        "inherited_approval": true
+      },
+      "evidence_locator": {
+        "source_file_sha256": "57317ccc234aa66407c989f3d5c41090924a030d9ae0588afe6a95a765cbd086",
+        "source_table": "17_质量冻结明细_模拟",
+        "source_row_number": 10,
+        "source_column_name": "EventID",
+        "source_column_index": 2
+      },
+      "note": "raw_value 为源始值，仅供审计追溯；normalized_value 为消费者业务值，两者不得互相替代"
+    },
+    {
+      "source_field": "EventID",
+      "raw_value": "EVT-0064",
+      "raw_value_status": "available",
+      "source_data_type": "str",
+      "source_unit": "",
+      "transformation_rule_id": "TR-DIRECT",
+      "mapping_ref": {
+        "approval_rule_version": "MAP-v1.0.1",
+        "match_method": "approved_contract",
+        "semantic_model_version": "SEM-v1.1.1",
+        "inherited_approval": true
+      },
+      "evidence_locator": {
+        "source_file_sha256": "57317ccc234aa66407c989f3d5c41090924a030d9ae0588afe6a95a765cbd086",
+        "source_table": "17_质量冻结明细_模拟",
+        "source_row_number": 11,
+        "source_column_name": "EventID",
+        "source_column_index": 2
+      },
+      "note": "raw_value 为源始值，仅供审计追溯；normalized_value 为消费者业务值，两者不得互相替代"
+    },
+    {
+      "source_field": "EventID",
+      "raw_value": "EVT-0071",
+      "raw_value_status": "available",
+      "source_data_type": "str",
+      "source_unit": "",
+      "transformation_rule_id": "TR-DIRECT",
+      "mapping_ref": {
+        "approval_rule_version": "MAP-v1.0.1",
+        "match_method": "approved_contract",
+        "semantic_model_version": "SEM-v1.1.1",
+        "inherited_approval": true
+      },
+      "evidence_locator": {
+        "source_file_sha256": "57317ccc234aa66407c989f3d5c41090924a030d9ae0588afe6a95a765cbd086",
+        "source_table": "17_质量冻结明细_模拟",
+        "source_row_number": 12,
+        "source_column_name": "EventID",
+        "source_column_index": 2
+      },
+      "note": "raw_value 为源始值，仅供审计追溯；normalized_value 为消费者业务值，两者不得互相替代"
+    },
+    {
+      "source_field": "EventID",
+      "raw_value": "EVT-0078",
+      "raw_value_status": "available",
+      "source_data_type": "str",
+      "source_unit": "",
+      "transformation_rule_id": "TR-DIRECT",
+      "mapping_ref": {
+        "approval_rule_version": "MAP-v1.0.1",
+        "match_method": "approved_contract",
+        "semantic_model_version": "SEM-v1.1.1",
+        "inherited_approval": true
+      },
+      "evidence_locator": {
+        "source_file_sha256": "57317ccc234aa66407c989f3d5c41090924a030d9ae0588afe6a95a765cbd086",
+        "source_table": "17_质量冻结明细_模拟",
+        "source_row_number": 13,
+        "source_column_name": "EventID",
+        "source_column_index": 2
+      },
+      "note": "raw_value 为源始值，仅供审计追溯；normalized_value 为消费者业务值，两者不得互相替代"
+    },
+    {
+      "source_field": "EventID",
+      "raw_value": "EVT-0085",
+      "raw_value_status": "available",
+      "source_data_type": "str",
+      "source_unit": "",
+      "transformation_rule_id": "TR-DIRECT",
+      "mapping_ref": {
+        "approval_rule_version": "MAP-v1.0.1",
+        "match_method": "approved_contract",
+        "semantic_model_version": "SEM-v1.1.1",
+        "inherited_approval": true
+      },
+      "evidence_locator": {
+        "source_file_sha256": "57317ccc234aa66407c989f3d5c41090924a030d9ae0588afe6a95a765cbd086",
+        "source_table": "17_质量冻结明细_模拟",
+        "source_row_number": 14,
+        "source_column_name": "EventID",
+        "source_column_index": 2
+      },
+      "note": "raw_value 为源始值，仅供审计追溯；normalized_value 为消费者业务值，两者不得互相替代"
+    },
+    {
+      "source_field": "EventID",
+      "raw_value": "EVT-0092",
+      "raw_value_status": "available",
+      "source_data_type": "str",
+      "source_unit": "",
+      "transformation_rule_id": "TR-DIRECT",
+      "mapping_ref": {
+        "approval_rule_version": "MAP-v1.0.1",
+        "match_method": "approved_contract",
+        "semantic_model_version": "SEM-v1.1.1",
+        "inherited_approval": true
+      },
+      "evidence_locator": {
+        "source_file_sha256": "57317ccc234aa66407c989f3d5c41090924a030d9ae0588afe6a95a765cbd086",
+        "source_table": "17_质量冻结明细_模拟",
+        "source_row_number": 15,
+        "source_column_name": "EventID",
+        "source_column_index": 2
+      },
+      "note": "raw_value 为源始值，仅供审计追溯；normalized_value 为消费者业务值，两者不得互相替代"
+    },
+    {
+      "source_field": "EventID",
+      "raw_value": "EVT-0099",
+      "raw_value_status": "available",
+      "source_data_type": "str",
+      "source_unit": "",
+      "transformation_rule_id": "TR-DIRECT",
+      "mapping_ref": {
+        "approval_rule_version": "MAP-v1.0.1",
+        "match_method": "approved_contract",
+        "semantic_model_version": "SEM-v1.1.1",
+        "inherited_approval": true
+      },
+      "evidence_locator": {
+        "source_file_sha256": "57317ccc234aa66407c989f3d5c41090924a030d9ae0588afe6a95a765cbd086",
+        "source_table": "17_质量冻结明细_模拟",
+        "source_row_number": 16,
+        "source_column_name": "EventID",
+        "source_column_index": 2
+      },
+      "note": "raw_value 为源始值，仅供审计追溯；normalized_value 为消费者业务值，两者不得互相替代"
+    },
+    {
+      "source_field": "EventID",
+      "raw_value": "EVT-0007",
+      "raw_value_status": "available",
+      "source_data_type": "str",
+      "source_unit": "",
+      "transformation_rule_id": "TR-DIRECT",
+      "mapping_ref": {
+        "approval_rule_version": "MAP-v1.0.1",
+        "match_method": "approved_contract",
+        "semantic_model_version": "SEM-v1.1.1",
+        "inherited_approval": true
+      },
+      "evidence_locator": {
+        "source_file_sha256": "57317ccc234aa66407c989f3d5c41090924a030d9ae0588afe6a95a765cbd086",
+        "source_table": "17_质量冻结明细_模拟",
+        "source_row_number": 17,
+        "source_column_name": "EventID",
+        "source_column_index": 2
+      },
+      "note": "raw_value 为源始值，仅供审计追溯；normalized_value 为消费者业务值，两者不得互相替代"
+    },
+    {
+      "source_field": "EventID",
+      "raw_value": "EVT-0014",
+      "raw_value_status": "available",
+      "source_data_type": "str",
+      "source_unit": "",
+      "transformation_rule_id": "TR-DIRECT",
+      "mapping_ref": {
+        "approval_rule_version": "MAP-v1.0.1",
+        "match_method": "approved_contract",
+        "semantic_model_version": "SEM-v1.1.1",
+        "inherited_approval": true
+      },
+      "evidence_locator": {
+        "source_file_sha256": "57317ccc234aa66407c989f3d5c41090924a030d9ae0588afe6a95a765cbd086",
+        "source_table": "17_质量冻结明细_模拟",
+        "source_row_number": 18,
+        "source_column_name": "EventID",
+        "source_column_index": 2
+      },
+      "note": "raw_value 为源始值，仅供审计追溯；normalized_value 为消费者业务值，两者不得互相替代"
+    },
+    {
+      "source_field": "EventID",
+      "raw_value": "EVT-0021",
+      "raw_value_status": "available",
+      "source_data_type": "str",
+      "source_unit": "",
+      "transformation_rule_id": "TR-DIRECT",
+      "mapping_ref": {
+        "approval_rule_version": "MAP-v1.0.1",
+        "match_method": "approved_contract",
+        "semantic_model_version": "SEM-v1.1.1",
+        "inherited_approval": true
+      },
+      "evidence_locator": {
+        "source_file_sha256": "57317ccc234aa66407c989f3d5c41090924a030d9ae0588afe6a95a765cbd086",
+        "source_table": "17_质量冻结明细_模拟",
+        "source_row_number": 19,
+        "source_column_name": "EventID",
+        "source_column_index": 2
+      },
+      "note": "raw_value 为源始值，仅供审计追溯；normalized_value 为消费者业务值，两者不得互相替代"
+    },
+    {
+      "source_field": "EventID",
+      "raw_value": "EVT-0028",
+      "raw_value_status": "available",
+      "source_data_type": "str",
+      "source_unit": "",
+      "transformation_rule_id": "TR-DIRECT",
+      "mapping_ref": {
+        "approval_rule_version": "MAP-v1.0.1",
+        "match_method": "approved_contract",
+        "semantic_model_version": "SEM-v1.1.1",
+        "inherited_approval": true
+      },
+      "evidence_locator": {
+        "source_file_sha256": "57317ccc234aa66407c989f3d5c41090924a030d9ae0588afe6a95a765cbd086",
+        "source_table": "17_质量冻结明细_模拟",
+        "source_row_number": 20,
+        "source_column_name": "EventID",
+        "source_column_index": 2
+      },
+      "note": "raw_value 为源始值，仅供审计追溯；normalized_value 为消费者业务值，两者不得互相替代"
+    },
+    {
+      "source_field": "EventID",
+      "raw_value": "EVT-0035",
+      "raw_value_status": "available",
+      "source_data_type": "str",
+      "source_unit": "",
+      "transformation_rule_id": "TR-DIRECT",
+      "mapping_ref": {
+        "approval_rule_version": "MAP-v1.0.1",
+        "match_method": "approved_contract",
+        "semantic_model_version": "SEM-v1.1.1",
+        "inherited_approval": true
+      },
+      "evidence_locator": {
+        "source_file_sha256": "57317ccc234aa66407c989f3d5c41090924a030d9ae0588afe6a95a765cbd086",
+        "source_table": "17_质量冻结明细_模拟",
+        "source_row_number": 21,
+        "source_column_name": "EventID",
+        "source_column_index": 2
+      },
+      "note": "raw_value 为源始值，仅供审计追溯；normalized_value 为消费者业务值，两者不得互相替代"
+    },
+    {
+      "source_field": "EventID",
+      "raw_value": "EVT-0042",
+      "raw_value_status": "available",
+      "source_data_type": "str",
+      "source_unit": "",
+      "transformation_rule_id": "TR-DIRECT",
+      "mapping_ref": {
+        "approval_rule_version": "MAP-v1.0.1",
+        "match_method": "approved_contract",
+        "semantic_model_version": "SEM-v1.1.1",
+        "inherited_approval": true
+      },
+      "evidence_locator": {
+        "source_file_sha256": "57317ccc234aa66407c989f3d5c41090924a030d9ae0588afe6a95a765cbd086",
+        "source_table": "17_质量冻结明细_模拟",
+        "source_row_number": 22,
+        "source_column_name": "EventID",
+        "source_column_index": 2
+      },
+      "note": "raw_value 为源始值，仅供审计追溯；normalized_value 为消费者业务值，两者不得互相替代"
+    },
+    {
+      "source_field": "EventID",
+      "raw_value": "EVT-0049",
+      "raw_value_status": "available",
+      "source_data_type": "str",
+      "source_unit": "",
+      "transformation_rule_id": "TR-DIRECT",
+      "mapping_ref": {
+        "approval_rule_version": "MAP-v1.0.1",
+        "match_method": "approved_contract",
+        "semantic_model_version": "SEM-v1.1.1",
+        "inherited_approval": true
+      },
+      "evidence_locator": {
+        "source_file_sha256": "57317ccc234aa66407c989f3d5c41090924a030d9ae0588afe6a95a765cbd086",
+        "source_table": "17_质量冻结明细_模拟",
+        "source_row_number": 23,
+        "source_column_name": "EventID",
+        "source_column_index": 2
+      },
+      "note": "raw_value 为源始值，仅供审计追溯；normalized_value 为消费者业务值，两者不得互相替代"
+    },
+    {
+      "source_field": "EventID",
+      "raw_value": "EVT-0056",
+      "raw_value_status": "available",
+      "source_data_type": "str",
+      "source_unit": "",
+      "transformation_rule_id": "TR-DIRECT",
+      "mapping_ref": {
+        "approval_rule_version": "MAP-v1.0.1",
+        "match_method": "approved_contract",
+        "semantic_model_version": "SEM-v1.1.1",
+        "inherited_approval": true
+      },
+      "evidence_locator": {
+        "source_file_sha256": "57317ccc234aa66407c989f3d5c41090924a030d9ae0588afe6a95a765cbd086",
+        "source_table": "17_质量冻结明细_模拟",
+        "source_row_number": 24,
+        "source_column_name": "EventID",
+        "source_column_index": 2
+      },
+      "note": "raw_value 为源始值，仅供审计追溯；normalized_value 为消费者业务值，两者不得互相替代"
+    },
+    {
+      "source_field": "EventID",
+      "raw_value": "EVT-0063",
+      "raw_value_status": "available",
+      "source_data_type": "str",
+      "source_unit": "",
+      "transformation_rule_id": "TR-DIRECT",
+      "mapping_ref": {
+        "approval_rule_version": "MAP-v1.0.1",
+        "match_method": "approved_contract",
+        "semantic_model_version": "SEM-v1.1.1",
+        "inherited_approval": true
+      },
+      "evidence_locator": {
+        "source_file_sha256": "57317ccc234aa66407c989f3d5c41090924a030d9ae0588afe6a95a765cbd086",
+        "source_table": "17_质量冻结明细_模拟",
+        "source_row_number": 25,
+        "source_column_name": "EventID",
+        "source_column_index": 2
+      },
+      "note": "raw_value 为源始值，仅供审计追溯；normalized_value 为消费者业务值，两者不得互相替代"
+    },
+    {
+      "source_field": "EventID",
+      "raw_value": "EVT-0070",
+      "raw_value_status": "available",
+      "source_data_type": "str",
+      "source_unit": "",
+      "transformation_rule_id": "TR-DIRECT",
+      "mapping_ref": {
+        "approval_rule_version": "MAP-v1.0.1",
+        "match_method": "approved_contract",
+        "semantic_model_version": "SEM-v1.1.1",
+        "inherited_approval": true
+      },
+      "evidence_locator": {
+        "source_file_sha256": "57317ccc234aa66407c989f3d5c41090924a030d9ae0588afe6a95a765cbd086",
+        "source_table": "17_质量冻结明细_模拟",
+        "source_row_number": 26,
+        "source_column_name": "EventID",
+        "source_column_index": 2
+      },
+      "note": "raw_value 为源始值，仅供审计追溯；normalized_value 为消费者业务值，两者不得互相替代"
+    },
+    {
+      "source_field": "EventID",
+      "raw_value": "EVT-0077",
+      "raw_value_status": "available",
+      "source_data_type": "str",
+      "source_unit": "",
+      "transformation_rule_id": "TR-DIRECT",
+      "mapping_ref": {
+        "approval_rule_version": "MAP-v1.0.1",
+        "match_method": "approved_contract",
+        "semantic_model_version": "SEM-v1.1.1",
+        "inherited_approval": true
+      },
+      "evidence_locator": {
+        "source_file_sha256": "57317ccc234aa66407c989f3d5c41090924a030d9ae0588afe6a95a765cbd086",
+        "source_table": "17_质量冻结明细_模拟",
+        "source_row_number": 27,
+        "source_column_name": "EventID",
+        "source_column_index": 2
+      },
+      "note": "raw_value 为源始值，仅供审计追溯；normalized_value 为消费者业务值，两者不得互相替代"
+    },
+    {
+      "source_field": "EventID",
+      "raw_value": "EVT-0084",
+      "raw_value_status": "available",
+      "source_data_type": "str",
+      "source_unit": "",
+      "transformation_rule_id": "TR-DIRECT",
+      "mapping_ref": {
+        "approval_rule_version": "MAP-v1.0.1",
+        "match_method": "approved_contract",
+        "semantic_model_version": "SEM-v1.1.1",
+        "inherited_approval": true
+      },
+      "evidence_locator": {
+        "source_file_sha256": "57317ccc234aa66407c989f3d5c41090924a030d9ae0588afe6a95a765cbd086",
+        "source_table": "17_质量冻结明细_模拟",
+        "source_row_number": 28,
+        "source_column_name": "EventID",
+        "source_column_index": 2
+      },
+      "note": "raw_value 为源始值，仅供审计追溯；normalized_value 为消费者业务值，两者不得互相替代"
+    },
+    {
+      "source_field": "EventID",
+      "raw_value": "EVT-0091",
+      "raw_value_status": "available",
+      "source_data_type": "str",
+      "source_unit": "",
+      "transformation_rule_id": "TR-DIRECT",
+      "mapping_ref": {
+        "approval_rule_version": "MAP-v1.0.1",
+        "match_method": "approved_contract",
+        "semantic_model_version": "SEM-v1.1.1",
+        "inherited_approval": true
+      },
+      "evidence_locator": {
+        "source_file_sha256": "57317ccc234aa66407c989f3d5c41090924a030d9ae0588afe6a95a765cbd086",
+        "source_table": "17_质量冻结明细_模拟",
+        "source_row_number": 29,
+        "source_column_name": "EventID",
+        "source_column_index": 2
+      },
+      "note": "raw_value 为源始值，仅供审计追溯；normalized_value 为消费者业务值，两者不得互相替代"
+    },
+    {
+      "source_field": "EventID",
+      "raw_value": "EVT-0098",
+      "raw_value_status": "available",
+      "source_data_type": "str",
+      "source_unit": "",
+      "transformation_rule_id": "TR-DIRECT",
+      "mapping_ref": {
+        "approval_rule_version": "MAP-v1.0.1",
+        "match_method": "approved_contract",
+        "semantic_model_version": "SEM-v1.1.1",
+        "inherited_approval": true
+      },
+      "evidence_locator": {
+        "source_file_sha256": "57317ccc234aa66407c989f3d5c41090924a030d9ae0588afe6a95a765cbd086",
+        "source_table": "17_质量冻结明细_模拟",
+        "source_row_number": 30,
+        "source_column_name": "EventID",
+        "source_column_index": 2
+      },
+      "note": "raw_value 为源始值，仅供审计追溯；normalized_value 为消费者业务值，两者不得互相替代"
+    },
+    {
+      "source_field": "EventID",
+      "raw_value": "EVT-0105",
+      "raw_value_status": "available",
+      "source_data_type": "str",
+      "source_unit": "",
+      "transformation_rule_id": "TR-DIRECT",
+      "mapping_ref": {
+        "approval_rule_version": "MAP-v1.0.1",
+        "match_method": "approved_contract",
+        "semantic_model_version": "SEM-v1.1.1",
+        "inherited_approval": true
+      },
+      "evidence_locator": {
+        "source_file_sha256": "57317ccc234aa66407c989f3d5c41090924a030d9ae0588afe6a95a765cbd086",
+        "source_table": "17_质量冻结明细_模拟",
+        "source_row_number": 31,
+        "source_column_name": "EventID",
+        "source_column_index": 2
+      },
+      "note": "raw_value 为源始值，仅供审计追溯；normalized_value 为消费者业务值，两者不得互相替代"
+    },
+    {
+      "source_field": "EventID",
+      "raw_value": "EVT-0006",
+      "raw_value_status": "available",
+      "source_data_type": "str",
+      "source_unit": "",
+      "transformation_rule_id": "TR-DIRECT",
+      "mapping_ref": {
+        "approval_rule_version": "MAP-v1.0.1",
+        "match_method": "approved_contract",
+        "semantic_model_version": "SEM-v1.1.1",
+        "inherited_approval": true
+      },
+      "evidence_locator": {
+        "source_file_sha256": "57317ccc234aa66407c989f3d5c41090924a030d9ae0588afe6a95a765cbd086",
+        "source_table": "17_质量冻结明细_模拟",
+        "source_row_number": 32,
+        "source_column_name": "EventID",
+        "source_column_index": 2
+      },
+      "note": "raw_value 为源始值，仅供审计追溯；normalized_value 为消费者业务值，两者不得互相替代"
+    },
+    {
+      "source_field": "EventID",
+      "raw_value": "EVT-0013",
+      "raw_value_status": "available",
+      "source_data_type": "str",
+      "source_unit": "",
+      "transformation_rule_id": "TR-DIRECT",
+      "mapping_ref": {
+        "approval_rule_version": "MAP-v1.0.1",
+        "match_method": "approved_contract",
+        "semantic_model_version": "SEM-v1.1.1",
+        "inherited_approval": true
+      },
+      "evidence_locator": {
+        "source_file_sha256": "57317ccc234aa66407c989f3d5c41090924a030d9ae0588afe6a95a765cbd086",
+        "source_table": "17_质量冻结明细_模拟",
+        "source_row_number": 33,
+        "source_column_name": "EventID",
+        "source_column_index": 2
+      },
+      "note": "raw_value 为源始值，仅供审计追溯；normalized_value 为消费者业务值，两者不得互相替代"
+    },
+    {
+      "source_field": "EventID",
+      "raw_value": "EVT-0020",
+      "raw_value_status": "available",
+      "source_data_type": "str",
+      "source_unit": "",
+      "transformation_rule_id": "TR-DIRECT",
+      "mapping_ref": {
+        "approval_rule_version": "MAP-v1.0.1",
+        "match_method": "approved_contract",
+        "semantic_model_version": "SEM-v1.1.1",
+        "inherited_approval": true
+      },
+      "evidence_locator": {
+        "source_file_sha256": "57317ccc234aa66407c989f3d5c41090924a030d9ae0588afe6a95a765cbd086",
+        "source_table": "17_质量冻结明细_模拟",
+        "source_row_number": 34,
+        "source_column_name": "EventID",
+        "source_column_index": 2
+      },
+      "note": "raw_value 为源始值，仅供审计追溯；normalized_value 为消费者业务值，两者不得互相替代"
+    },
+    {
+      "source_field": "EventID",
+      "raw_value": "EVT-0027",
+      "raw_value_status": "available",
+      "source_data_type": "str",
+      "source_unit": "",
+      "transformation_rule_id": "TR-DIRECT",
+      "mapping_ref": {
+        "approval_rule_version": "MAP-v1.0.1",
+        "match_method": "approved_contract",
+        "semantic_model_version": "SEM-v1.1.1",
+        "inherited_approval": true
+      },
+      "evidence_locator": {
+        "source_file_sha256": "57317ccc234aa66407c989f3d5c41090924a030d9ae0588afe6a95a765cbd086",
+        "source_table": "17_质量冻结明细_模拟",
+        "source_row_number": 35,
+        "source_column_name": "EventID",
+        "source_column_index": 2
+      },
+      "note": "raw_value 为源始值，仅供审计追溯；normalized_value 为消费者业务值，两者不得互相替代"
+    },
+    {
+      "source_field": "EventID",
+      "raw_value": "EVT-0034",
+      "raw_value_status": "available",
+      "source_data_type": "str",
+      "source_unit": "",
+      "transformation_rule_id": "TR-DIRECT",
+      "mapping_ref": {
+        "approval_rule_version": "MAP-v1.0.1",
+        "match_method": "approved_contract",
+        "semantic_model_version": "SEM-v1.1.1",
+        "inherited_approval": true
+      },
+      "evidence_locator": {
+        "source_file_sha256": "57317ccc234aa66407c989f3d5c41090924a030d9ae0588afe6a95a765cbd086",
+        "source_table": "17_质量冻结明细_模拟",
+        "source_row_number": 36,
+        "source_column_name": "EventID",
+        "source_column_index": 2
+      },
+      "note": "raw_value 为源始值，仅供审计追溯；normalized_value 为消费者业务值，两者不得互相替代"
+    },
+    {
+      "source_field": "EventID",
+      "raw_value": "EVT-0041",
+      "raw_value_status": "available",
+      "source_data_type": "str",
+      "source_unit": "",
+      "transformation_rule_id": "TR-DIRECT",
+      "mapping_ref": {
+        "approval_rule_version": "MAP-v1.0.1",
+        "match_method": "approved_contract",
+        "semantic_model_version": "SEM-v1.1.1",
+        "inherited_approval": true
+      },
+      "evidence_locator": {
+        "source_file_sha256": "57317ccc234aa66407c989f3d5c41090924a030d9ae0588afe6a95a765cbd086",
+        "source_table": "17_质量冻结明细_模拟",
+        "source_row_number": 37,
+        "source_column_name": "EventID",
+        "source_column_index": 2
+      },
+      "note": "raw_value 为源始值，仅供审计追溯；normalized_value 为消费者业务值，两者不得互相替代"
+    },
+    {
+      "source_field": "EventID",
+      "raw_value": "EVT-0048",
+      "raw_value_status": "available",
+      "source_data_type": "str",
+      "source_unit": "",
+      "transformation_rule_id": "TR-DIRECT",
+      "mapping_ref": {
+        "approval_rule_version": "MAP-v1.0.1",
+        "match_method": "approved_contract",
+        "semantic_model_version": "SEM-v1.1.1",
+        "inherited_approval": true
+      },
+      "evidence_locator": {
+        "source_file_sha256": "57317ccc234aa66407c989f3d5c41090924a030d9ae0588afe6a95a765cbd086",
+        "source_table": "17_质量冻结明细_模拟",
+        "source_row_number": 38,
+        "source_column_name": "EventID",
+        "source_column_index": 2
+      },
+      "note": "raw_value 为源始值，仅供审计追溯；normalized_value 为消费者业务值，两者不得互相替代"
+    },
+    {
+      "source_field": "EventID",
+      "raw_value": "EVT-0055",
+      "raw_value_status": "available",
+      "source_data_type": "str",
+      "source_unit": "",
+      "transformation_rule_id": "TR-DIRECT",
+      "mapping_ref": {
+        "approval_rule_version": "MAP-v1.0.1",
+        "match_method": "approved_contract",
+        "semantic_model_version": "SEM-v1.1.1",
+        "inherited_approval": true
+      },
+      "evidence_locator": {
+        "source_file_sha256": "57317ccc234aa66407c989f3d5c41090924a030d9ae0588afe6a95a765cbd086",
+        "source_table": "17_质量冻结明细_模拟",
+        "source_row_number": 39,
+        "source_column_name": "EventID",
+        "source_column_index": 2
+      },
+      "note": "raw_value 为源始值，仅供审计追溯；normalized_value 为消费者业务值，两者不得互相替代"
+    },
+    {
+      "source_field": "EventID",
+      "raw_value": "EVT-0062",
+      "raw_value_status": "available",
+      "source_data_type": "str",
+      "source_unit": "",
+      "transformation_rule_id": "TR-DIRECT",
+      "mapping_ref": {
+        "approval_rule_version": "MAP-v1.0.1",
+        "match_method": "approved_contract",
+        "semantic_model_version": "SEM-v1.1.1",
+        "inherited_approval": true
+      },
+      "evidence_locator": {
+        "source_file_sha256": "57317ccc234aa66407c989f3d5c41090924a030d9ae0588afe6a95a765cbd086",
+        "source_table": "17_质量冻结明细_模拟",
+        "source_row_number": 40,
+        "source_column_name": "EventID",
+        "source_column_index": 2
+      },
+      "note": "raw_value 为源始值，仅供审计追溯；normalized_value 为消费者业务值，两者不得互相替代"
+    },
+    {
+      "source_field": "EventID",
+      "raw_value": "EVT-0069",
+      "raw_value_status": "available",
+      "source_data_type": "str",
+      "source_unit": "",
+      "transformation_rule_id": "TR-DIRECT",
+      "mapping_ref": {
+        "approval_rule_version": "MAP-v1.0.1",
+        "match_method": "approved_contract",
+        "semantic_model_version": "SEM-v1.1.1",
+        "inherited_approval": true
+      },
+      "evidence_locator": {
+        "source_file_sha256": "57317ccc234aa66407c989f3d5c41090924a030d9ae0588afe6a95a765cbd086",
+        "source_table": "17_质量冻结明细_模拟",
+        "source_row_number": 41,
+        "source_column_name": "EventID",
+        "source_column_index": 2
+      },
+      "note": "raw_value 为源始值，仅供审计追溯；normalized_value 为消费者业务值，两者不得互相替代"
+    },
+    {
+      "source_field": "EventID",
+      "raw_value": "EVT-0076",
+      "raw_value_status": "available",
+      "source_data_type": "str",
+      "source_unit": "",
+      "transformation_rule_id": "TR-DIRECT",
+      "mapping_ref": {
+        "approval_rule_version": "MAP-v1.0.1",
+        "match_method": "approved_contract",
+        "semantic_model_version": "SEM-v1.1.1",
+        "inherited_approval": true
+      },
+      "evidence_locator": {
+        "source_file_sha256": "57317ccc234aa66407c989f3d5c41090924a030d9ae0588afe6a95a765cbd086",
+        "source_table": "17_质量冻结明细_模拟",
+        "source_row_number": 42,
+        "source_column_name": "EventID",
+        "source_column_index": 2
+      },
+      "note": "raw_value 为源始值，仅供审计追溯；normalized_value 为消费者业务值，两者不得互相替代"
+    },
+    {
+      "source_field": "EventID",
+      "raw_value": "EVT-0083",
+      "raw_value_status": "available",
+      "source_data_type": "str",
+      "source_unit": "",
+      "transformation_rule_id": "TR-DIRECT",
+      "mapping_ref": {
+        "approval_rule_version": "MAP-v1.0.1",
+        "match_method": "approved_contract",
+        "semantic_model_version": "SEM-v1.1.1",
+        "inherited_approval": true
+      },
+      "evidence_locator": {
+        "source_file_sha256": "57317ccc234aa66407c989f3d5c41090924a030d9ae0588afe6a95a765cbd086",
+        "source_table": "17_质量冻结明细_模拟",
+        "source_row_number": 43,
+        "source_column_name": "EventID",
+        "source_column_index": 2
+      },
+      "note": "raw_value 为源始值，仅供审计追溯；normalized_value 为消费者业务值，两者不得互相替代"
+    },
+    {
+      "source_field": "EventID",
+      "raw_value": "EVT-0090",
+      "raw_value_status": "available",
+      "source_data_type": "str",
+      "source_unit": "",
+      "transformation_rule_id": "TR-DIRECT",
+      "mapping_ref": {
+        "approval_rule_version": "MAP-v1.0.1",
+        "match_method": "approved_contract",
+        "semantic_model_version": "SEM-v1.1.1",
+        "inherited_approval": true
+      },
+      "evidence_locator": {
+        "source_file_sha256": "57317ccc234aa66407c989f3d5c41090924a030d9ae0588afe6a95a765cbd086",
+        "source_table": "17_质量冻结明细_模拟",
+        "source_row_number": 44,
+        "source_column_name": "EventID",
+        "source_column_index": 2
+      },
+      "note": "raw_value 为源始值，仅供审计追溯；normalized_value 为消费者业务值，两者不得互相替代"
+    },
+    {
+      "source_field": "EventID",
+      "raw_value": "EVT-0097",
+      "raw_value_status": "available",
+      "source_data_type": "str",
+      "source_unit": "",
+      "transformation_rule_id": "TR-DIRECT",
+      "mapping_ref": {
+        "approval_rule_version": "MAP-v1.0.1",
+        "match_method": "approved_contract",
+        "semantic_model_version": "SEM-v1.1.1",
+        "inherited_approval": true
+      },
+      "evidence_locator": {
+        "source_file_sha256": "57317ccc234aa66407c989f3d5c41090924a030d9ae0588afe6a95a765cbd086",
+        "source_table": "17_质量冻结明细_模拟",
+        "source_row_number": 45,
+        "source_column_name": "EventID",
+        "source_column_index": 2
+      },
+      "note": "raw_value 为源始值，仅供审计追溯；normalized_value 为消费者业务值，两者不得互相替代"
+    },
+    {
+      "source_field": "EventID",
+      "raw_value": "EVT-0104",
+      "raw_value_status": "available",
+      "source_data_type": "str",
+      "source_unit": "",
+      "transformation_rule_id": "TR-DIRECT",
+      "mapping_ref": {
+        "approval_rule_version": "MAP-v1.0.1",
+        "match_method": "approved_contract",
+        "semantic_model_version": "SEM-v1.1.1",
+        "inherited_approval": true
+      },
+      "evidence_locator": {
+        "source_file_sha256": "57317ccc234aa66407c989f3d5c41090924a030d9ae0588afe6a95a765cbd086",
+        "source_table": "17_质量冻结明细_模拟",
+        "source_row_number": 46,
+        "source_column_name": "EventID",
+        "source_column_index": 2
+      },
+      "note": "raw_value 为源始值，仅供审计追溯；normalized_value 为消费者业务值，两者不得互相替代"
+    }
+  ],
+  "contract_versions": {
+    "semantic_model_version": "SEM-v1.1.1",
+    "mapping_rule_version": "MAP-v1.0.1",
+    "data_contract_version": "BIFROST-SEMANTIC-DATA-v0.1",
+    "query_contract_version": "BIFROST-CONSUMER-QUERY-v0.1",
+    "decision_input_contract_version": "BIFROST-DECISION-INPUT-v0.1",
+    "consumer_logical_version": "0.1.1"
+  },
+  "validation": {
+    "status": "passed",
+    "issues": [],
+    "normalized_facts_count": 45,
+    "data_gaps_count": 0,
+    "decision_usable_gate_enforced": true,
+    "read_only_enforced": true,
+    "no_cross_record_join": true,
+    "no_business_conclusion": true
+  },
+  "source_write_performed": false,
+  "actor_can_execute": false,
+  "generated_at": "2026-08-10T12:57:44.510695+00:00",
+  "local_trace_id": "CONSUMER-70301D74F1A3465E"
+}

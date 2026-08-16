@@ -1,0 +1,10 @@
+project:
+  name: BIFROST
+  description: 智能经营分析与决策闭环平台
+  version: OMP-01
+security:
+  external_credentials: none
+  skill_installation: forbidden
+  business_source_write: forbidden
+  payload_overwrite: forbidden
+  ui_baseline_overwrite: forbidden

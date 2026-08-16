@@ -1,0 +1,1330 @@
+{
+  "production_line": {
+    "line_id": {
+      "label_cn": "产线编号",
+      "type": "string",
+      "pk": true
+    },
+    "line_name": {
+      "label_cn": "产线名称",
+      "type": "string"
+    },
+    "scenario_profile": {
+      "label_cn": "场景画像",
+      "type": "string"
+    },
+    "product_family": {
+      "label_cn": "演示产品族",
+      "type": "string"
+    },
+    "target_oee": {
+      "label_cn": "目标OEE",
+      "type": "ratio_0_1",
+      "unit": "ratio"
+    },
+    "capacity_factor": {
+      "label_cn": "产能系数",
+      "type": "float"
+    },
+    "default_agent": {
+      "label_cn": "默认智能体",
+      "type": "string"
+    },
+    "sim_version": {
+      "label_cn": "模拟版本",
+      "type": "string"
+    }
+  },
+  "shift": {
+    "shift_id": {
+      "label_cn": "班次唯一键",
+      "type": "string",
+      "pk": true,
+      "note": "统一规范化班次主键；source/simulated/related 三元独立保留"
+    },
+    "source_shift_id": {
+      "label_cn": "来源班次ID",
+      "type": "string"
+    },
+    "line_id": {
+      "label_cn": "产线编号",
+      "type": "string",
+      "fk": "production_line.line_id"
+    },
+    "phase": {
+      "label_cn": "阶段（改善前/后）",
+      "type": "enum"
+    },
+    "shift_date": {
+      "label_cn": "班次日期",
+      "type": "date"
+    },
+    "planned_production_sec": {
+      "label_cn": "计划生产时间",
+      "type": "int",
+      "unit": "second"
+    },
+    "availability": {
+      "label_cn": "开动率",
+      "type": "ratio_0_1",
+      "unit": "ratio"
+    },
+    "quality_rate": {
+      "label_cn": "质量率（源）",
+      "type": "ratio_0_1",
+      "unit": "ratio"
+    },
+    "total_output": {
+      "label_cn": "总产量",
+      "type": "int",
+      "unit": "count"
+    },
+    "good_output": {
+      "label_cn": "良品数",
+      "type": "int",
+      "unit": "count"
+    },
+    "yield_recompute": {
+      "label_cn": "良率复算",
+      "type": "ratio_0_1",
+      "unit": "ratio"
+    },
+    "planned_downtime_sec": {
+      "label_cn": "计划停机时间",
+      "type": "int",
+      "unit": "second"
+    },
+    "unplanned_downtime_sec": {
+      "label_cn": "非计划停机时间",
+      "type": "int",
+      "unit": "second"
+    },
+    "full_speed_sec": {
+      "label_cn": "全速生产时间",
+      "type": "int",
+      "unit": "second"
+    },
+    "low_speed_sec": {
+      "label_cn": "低速生产时间",
+      "type": "int",
+      "unit": "second"
+    },
+    "ideal_production_qty": {
+      "label_cn": "理想生产数量",
+      "type": "float"
+    },
+    "risk_level": {
+      "label_cn": "风险等级",
+      "type": "enum"
+    },
+    "oee_deviation": {
+      "label_cn": "OEE偏差",
+      "type": "ratio_float",
+      "unit": "ratio",
+      "calculation": "oee_deviation = oee_recomputed − oee_source",
+      "note": "偏差依赖 oee_recomputed；can_recompute_oee=false 时偏差不可用"
+    },
+    "data_nature": {
+      "label_cn": "数据性质",
+      "type": "string"
+    },
+    "source_url": {
+      "label_cn": "来源链接",
+      "type": "url"
+    },
+    "sim_version": {
+      "label_cn": "模拟版本",
+      "type": "string"
+    },
+    "performance_rate_raw": {
+      "label_cn": "性能率原始值（不截断）",
+      "type": "ratio_float",
+      "unit": "ratio",
+      "rule": "保留原值；>1.0 不截断，由 validation_status 标记",
+      "allow_above_unity": true
+    },
+    "performance_rate_validation_status": {
+      "label_cn": "性能率校验状态",
+      "type": "enum",
+      "values": [
+        "normal",
+        "flagged_above_unity"
+      ],
+      "governed_by": "PERF-RATE-RULE-v1.0"
+    },
+    "performance_rate_calculation_rule": {
+      "label_cn": "性能率计算规则",
+      "type": "string",
+      "ref": "PERF-RATE-RULE-v1.0"
+    },
+    "rule_version": {
+      "label_cn": "性能率封顶治理版本",
+      "type": "string",
+      "ref": "PERF-RATE-RULE-v1.0",
+      "note": "是否封顶必须由规则版本决定，映射程序不得自行决定"
+    },
+    "oee_source": {
+      "label_cn": "OEE原值",
+      "type": "ratio_0_1",
+      "unit": "ratio",
+      "note": "数据源原值，不得被复算值覆盖"
+    },
+    "oee_recomputed": {
+      "label_cn": "OEE复算值",
+      "type": "ratio_0_1",
+      "unit": "ratio",
+      "calculation": "oee_recomputed = availability × performance_rate_raw × quality_factor_raw",
+      "note": "质量因子来源字段未被证明即OEE质量因子，can_recompute_oee=false，当前不得生成复算值"
+    },
+    "calculation_rule_version": "OEE-CALC-RULE-v1.1",
+    "simulated_shift_id": {
+      "label_cn": "模拟班次ID",
+      "type": "string",
+      "note": "不得与 source_shift_id 合并覆盖"
+    },
+    "related_shift_id": {
+      "label_cn": "关联班次ID",
+      "type": "string",
+      "note": "不得与 source_shift_id/simulated_shift_id 合并覆盖"
+    },
+    "availability_raw": {
+      "label_cn": "开动率原始值",
+      "type": "ratio_0_1",
+      "unit": "ratio",
+      "note": "OEE复算公式中的 availability_raw 对应现有 shift.availability（来源开动率）"
+    },
+    "quality_factor_raw": {
+      "label_cn": "OEE质量因子原始值",
+      "type": "ratio_float",
+      "unit": "ratio",
+      "note": "来源字段未被证明即OEE质量因子；当前无可用值"
+    },
+    "quality_factor_source_field": {
+      "label_cn": "OEE质量因子来源字段",
+      "type": "string",
+      "value": null,
+      "candidates": [
+        "01_OEE班次.质量率",
+        "12_多产线班次_模拟.质量率"
+      ],
+      "note": "源质量率≠OEE质量因子未被排除亦未被证明，需人工确认"
+    },
+    "quality_factor_mapping_status": "ambiguous",
+    "can_recompute_oee": false
+  },
+  "work_order": {
+    "work_order_id": {
+      "label_cn": "工单号",
+      "type": "string",
+      "pk": true
+    },
+    "shift_id": {
+      "label_cn": "班次ID",
+      "type": "string",
+      "fk": "shift.shift_id"
+    },
+    "order_no": {
+      "label_cn": "订单号",
+      "type": "string"
+    },
+    "product": {
+      "label_cn": "演示产品",
+      "type": "string"
+    },
+    "line_id": {
+      "label_cn": "产线编号",
+      "type": "string",
+      "fk": "production_line.line_id"
+    },
+    "production_date": {
+      "label_cn": "生产日期",
+      "type": "date"
+    },
+    "planned_qty": {
+      "label_cn": "计划数量",
+      "type": "int",
+      "unit": "count"
+    },
+    "actual_qty": {
+      "label_cn": "实际数量",
+      "type": "int",
+      "unit": "count"
+    },
+    "good_qty": {
+      "label_cn": "良品数量",
+      "type": "int",
+      "unit": "count"
+    },
+    "demand_date": {
+      "label_cn": "需求日期",
+      "type": "date"
+    },
+    "risk_level": {
+      "label_cn": "风险等级",
+      "type": "enum"
+    },
+    "data_nature": {
+      "label_cn": "数据性质",
+      "type": "string"
+    }
+  },
+  "downtime_event": {
+    "downtime_id": {
+      "label_cn": "停机事件ID",
+      "type": "string",
+      "pk": true
+    },
+    "source_downtime_id": {
+      "label_cn": "来源停机事件ID",
+      "type": "string"
+    },
+    "shift_id": {
+      "label_cn": "班次ID",
+      "type": "string",
+      "fk": "shift.shift_id",
+      "note": "统一规范化班次FK；source/simulated/related 三元独立保留"
+    },
+    "line_id": {
+      "label_cn": "产线编号",
+      "type": "string",
+      "fk": "production_line.line_id"
+    },
+    "phase": {
+      "label_cn": "阶段",
+      "type": "enum"
+    },
+    "event_date": {
+      "label_cn": "日期",
+      "type": "date"
+    },
+    "product_code": {
+      "label_cn": "产品编码",
+      "type": "string"
+    },
+    "downtime_group": {
+      "label_cn": "停机组",
+      "type": "enum"
+    },
+    "downtime_reason": {
+      "label_cn": "停机原因",
+      "type": "string"
+    },
+    "downtime_type": {
+      "label_cn": "停机类型",
+      "type": "string"
+    },
+    "start_time": {
+      "label_cn": "开始时间",
+      "type": "datetime"
+    },
+    "end_time": {
+      "label_cn": "结束时间",
+      "type": "datetime"
+    },
+    "duration_min": {
+      "label_cn": "持续时间",
+      "type": "float",
+      "unit": "minute"
+    },
+    "is_changeover": {
+      "label_cn": "是否换产事件",
+      "type": "enum"
+    },
+    "std_changeover_min": {
+      "label_cn": "标准换产时间",
+      "type": "float",
+      "unit": "minute"
+    },
+    "changeover_overtime_min": {
+      "label_cn": "换产超时",
+      "type": "float",
+      "unit": "minute"
+    },
+    "changeover_status": {
+      "label_cn": "换产达标状态",
+      "type": "enum"
+    },
+    "changeover_rule_id": {
+      "label_cn": "换产规则ID",
+      "type": "string"
+    },
+    "oee_inclusion": {
+      "label_cn": "OEE纳入状态",
+      "type": "string"
+    },
+    "scale_factor": {
+      "label_cn": "缩放系数",
+      "type": "float"
+    },
+    "data_nature": {
+      "label_cn": "数据性质",
+      "type": "string"
+    },
+    "sim_version": {
+      "label_cn": "模拟版本",
+      "type": "string"
+    },
+    "source_stop_location": {
+      "label_cn": "源停机位置",
+      "type": "string",
+      "data_source": "source"
+    },
+    "simulated_workstation": {
+      "label_cn": "模拟工位",
+      "type": "string",
+      "data_source": "simulated",
+      "note": "与 source_stop_location 同时保留，不得合并覆盖"
+    },
+    "source_shift_id": {
+      "label_cn": "来源班次ID",
+      "type": "string",
+      "data_source": "source"
+    },
+    "simulated_shift_id": {
+      "label_cn": "模拟班次ID",
+      "type": "string",
+      "data_source": "simulated"
+    },
+    "related_shift_id": {
+      "label_cn": "关联班次ID",
+      "type": "string"
+    }
+  },
+  "defect_detail": {
+    "defect_id": {
+      "label_cn": "不良明细ID",
+      "type": "string",
+      "pk": true
+    },
+    "sim_shift_id": {
+      "label_cn": "模拟班次ID",
+      "type": "string",
+      "fk": "shift.shift_id"
+    },
+    "line_id": {
+      "label_cn": "产线编号",
+      "type": "string",
+      "fk": "production_line.line_id"
+    },
+    "phase": {
+      "label_cn": "阶段",
+      "type": "enum"
+    },
+    "shift_date": {
+      "label_cn": "班次日期",
+      "type": "date"
+    },
+    "defect_type": {
+      "label_cn": "不良类型",
+      "type": "enum"
+    },
+    "defect_count": {
+      "label_cn": "不良数量",
+      "type": "int",
+      "unit": "count"
+    },
+    "defect_ratio": {
+      "label_cn": "不良占比",
+      "type": "ratio_0_1",
+      "unit": "ratio"
+    },
+    "inferred_station": {
+      "label_cn": "推定发生工位",
+      "type": "string"
+    },
+    "inferred_cause": {
+      "label_cn": "推定原因类别",
+      "type": "string"
+    },
+    "responsible_role": {
+      "label_cn": "责任岗位",
+      "type": "string"
+    },
+    "requires_confirmation": {
+      "label_cn": "需要人工确认",
+      "type": "enum"
+    },
+    "data_nature": {
+      "label_cn": "数据性质",
+      "type": "string"
+    },
+    "sim_version": {
+      "label_cn": "模拟版本",
+      "type": "string"
+    }
+  },
+  "material_detail": {
+    "business_key": {
+      "label_cn": "业务键",
+      "type": "string",
+      "pk": true
+    },
+    "event_id": {
+      "label_cn": "事件ID",
+      "type": "string",
+      "note": "统一规范化事件FK"
+    },
+    "work_order_id": {
+      "label_cn": "工单号",
+      "type": "string",
+      "fk": "work_order.work_order_id"
+    },
+    "order_no": {
+      "label_cn": "订单号",
+      "type": "string"
+    },
+    "order_line": {
+      "label_cn": "订单行",
+      "type": "int"
+    },
+    "material_code": {
+      "label_cn": "物料编码",
+      "type": "string"
+    },
+    "material_name": {
+      "label_cn": "物料名称",
+      "type": "string"
+    },
+    "demand_date": {
+      "label_cn": "需求日期",
+      "type": "date"
+    },
+    "planned_qty": {
+      "label_cn": "计划数量",
+      "type": "int",
+      "unit": "count"
+    },
+    "bom_usage": {
+      "label_cn": "BOM用量",
+      "type": "float"
+    },
+    "issued_qty": {
+      "label_cn": "已领料",
+      "type": "int",
+      "unit": "count"
+    },
+    "stock_on_hand": {
+      "label_cn": "现有库存",
+      "type": "int",
+      "unit": "count"
+    },
+    "reserved_qty": {
+      "label_cn": "已占用",
+      "type": "int",
+      "unit": "count"
+    },
+    "quality_freeze_qty": {
+      "label_cn": "质量冻结数量",
+      "type": "int",
+      "unit": "count"
+    },
+    "confirmed_arrival": {
+      "label_cn": "需求日前确认到货",
+      "type": "int",
+      "unit": "count"
+    },
+    "demand_qty": {
+      "label_cn": "需求量",
+      "type": "int",
+      "unit": "count"
+    },
+    "available_qty": {
+      "label_cn": "需求日前可用量",
+      "type": "int",
+      "unit": "count"
+    },
+    "material_gap": {
+      "label_cn": "物料缺口",
+      "type": "int",
+      "unit": "count"
+    },
+    "erp_promise_date": {
+      "label_cn": "ERP承诺日期",
+      "type": "date"
+    },
+    "srm_promise_date": {
+      "label_cn": "SRM承诺日期",
+      "type": "date"
+    },
+    "date_conflict": {
+      "label_cn": "日期冲突",
+      "type": "string"
+    },
+    "order_bom_version": {
+      "label_cn": "订单BOM版本",
+      "type": "string"
+    },
+    "wo_bom_version": {
+      "label_cn": "工单BOM版本",
+      "type": "string"
+    },
+    "bom_conflict": {
+      "label_cn": "BOM冲突",
+      "type": "string"
+    },
+    "risk_level": {
+      "label_cn": "风险等级",
+      "type": "enum"
+    },
+    "data_nature": {
+      "label_cn": "数据性质",
+      "type": "string"
+    },
+    "decision_event_id": {
+      "label_cn": "决策事件ID(EVT-*)",
+      "type": "string",
+      "note": "保留 EVT-* 前缀，通过 explicit_event_relation 与告警事件关联"
+    }
+  },
+  "quality_freeze": {
+    "freeze_id": {
+      "label_cn": "冻结单号",
+      "type": "string",
+      "pk": true
+    },
+    "business_key": {
+      "label_cn": "业务键",
+      "type": "string",
+      "fk": "material_detail.business_key"
+    },
+    "event_id": {
+      "label_cn": "事件ID",
+      "type": "string",
+      "note": "统一规范化事件FK"
+    },
+    "work_order_id": {
+      "label_cn": "工单号",
+      "type": "string",
+      "fk": "work_order.work_order_id"
+    },
+    "material_code": {
+      "label_cn": "物料编码",
+      "type": "string"
+    },
+    "material_name": {
+      "label_cn": "物料名称",
+      "type": "string"
+    },
+    "freeze_qty": {
+      "label_cn": "冻结数量",
+      "type": "int",
+      "unit": "count"
+    },
+    "batch_no": {
+      "label_cn": "批次号",
+      "type": "string"
+    },
+    "supplier_code": {
+      "label_cn": "供应商编码",
+      "type": "string"
+    },
+    "inspection_method": {
+      "label_cn": "检验方式",
+      "type": "enum"
+    },
+    "freeze_reason": {
+      "label_cn": "冻结原因",
+      "type": "string"
+    },
+    "related_defect_type": {
+      "label_cn": "关联不良类型",
+      "type": "string"
+    },
+    "inspection_result": {
+      "label_cn": "检验结论",
+      "type": "enum"
+    },
+    "disposal_suggestion": {
+      "label_cn": "处置建议",
+      "type": "string"
+    },
+    "responsible_role": {
+      "label_cn": "责任岗位",
+      "type": "string"
+    },
+    "status": {
+      "label_cn": "冻结状态",
+      "type": "enum"
+    },
+    "release_date": {
+      "label_cn": "解除冻结日期",
+      "type": "date"
+    },
+    "risk_level": {
+      "label_cn": "风险等级",
+      "type": "enum"
+    },
+    "requires_confirmation": {
+      "label_cn": "需要人工确认",
+      "type": "enum"
+    },
+    "confirmation_status": {
+      "label_cn": "确认状态",
+      "type": "enum"
+    },
+    "confirmer": {
+      "label_cn": "确认人",
+      "type": "string"
+    },
+    "confirm_time": {
+      "label_cn": "确认时间",
+      "type": "datetime"
+    },
+    "data_nature": {
+      "label_cn": "数据性质",
+      "type": "string"
+    },
+    "sim_version": {
+      "label_cn": "模拟版本",
+      "type": "string"
+    },
+    "decision_event_id": {
+      "label_cn": "决策事件ID(EVT-*)",
+      "type": "string",
+      "note": "保留 EVT-* 前缀，通过 explicit_event_relation 与告警事件关联"
+    }
+  },
+  "alert_event": {
+    "event_id": {
+      "label_cn": "告警事件ID",
+      "type": "string",
+      "pk": true,
+      "note": "统一规范化告警主键；source_alert_event_id 为原始 SIM-EVT-* 命名空间"
+    },
+    "line_id": {
+      "label_cn": "产线编号",
+      "type": "string",
+      "fk": "production_line.line_id"
+    },
+    "phase": {
+      "label_cn": "阶段",
+      "type": "enum"
+    },
+    "alert_date": {
+      "label_cn": "日期",
+      "type": "date"
+    },
+    "alert_type": {
+      "label_cn": "告警类型",
+      "type": "string"
+    },
+    "metric": {
+      "label_cn": "指标",
+      "type": "string"
+    },
+    "trigger_value": {
+      "label_cn": "触发值",
+      "type": "float"
+    },
+    "unit": {
+      "label_cn": "单位",
+      "type": "string"
+    },
+    "threshold": {
+      "label_cn": "阈值",
+      "type": "float"
+    },
+    "severity": {
+      "label_cn": "严重度",
+      "type": "enum"
+    },
+    "routed_agent": {
+      "label_cn": "路由智能体",
+      "type": "string"
+    },
+    "responsible_role": {
+      "label_cn": "责任岗位",
+      "type": "string"
+    },
+    "cause_hint": {
+      "label_cn": "原因提示",
+      "type": "string"
+    },
+    "push_method": {
+      "label_cn": "推送方式",
+      "type": "string"
+    },
+    "requires_confirmation": {
+      "label_cn": "需要人工确认",
+      "type": "enum"
+    },
+    "status": {
+      "label_cn": "状态",
+      "type": "enum"
+    },
+    "data_nature": {
+      "label_cn": "数据性质",
+      "type": "string"
+    },
+    "sim_version": {
+      "label_cn": "模拟版本",
+      "type": "string"
+    },
+    "source_alert_event_id": {
+      "label_cn": "告警事件ID(SIM-EVT-*)",
+      "type": "string",
+      "pk": true,
+      "note": "保留 SIM-EVT-* 前缀，不得修改或统一"
+    },
+    "decision_event_id": {
+      "label_cn": "关联决策事件ID(EVT-*)",
+      "type": "string",
+      "note": "通过 explicit_event_relation 建立显式关联，不直接合并"
+    },
+    "simulated_shift_id": {
+      "label_cn": "模拟班次ID",
+      "type": "string",
+      "fk": "shift.simulated_shift_id"
+    }
+  },
+  "decision": {
+    "task_id": {
+      "label_cn": "处置任务ID",
+      "type": "string",
+      "pk": true
+    },
+    "event_id": {
+      "label_cn": "事件ID",
+      "type": "string",
+      "fk": "alert_event.event_id",
+      "note": "统一规范化事件FK；decision_event_id 为原始 EVT-* 命名空间"
+    },
+    "work_order_id": {
+      "label_cn": "工单号",
+      "type": "string",
+      "fk": "work_order.work_order_id"
+    },
+    "action": {
+      "label_cn": "任务措施",
+      "type": "string"
+    },
+    "responsible_role": {
+      "label_cn": "责任岗位",
+      "type": "string"
+    },
+    "due_date": {
+      "label_cn": "截止日期",
+      "type": "date"
+    },
+    "status": {
+      "label_cn": "状态",
+      "type": "enum"
+    },
+    "result": {
+      "label_cn": "处理结果",
+      "type": "string"
+    },
+    "data_nature": {
+      "label_cn": "数据性质",
+      "type": "string"
+    },
+    "decision_event_id": {
+      "label_cn": "决策事件ID(EVT-*)",
+      "type": "string",
+      "pk": true,
+      "note": "保留 EVT-* 前缀，不得修改或统一"
+    },
+    "source_alert_event_id": {
+      "label_cn": "关联告警事件ID(SIM-EVT-*)",
+      "type": "string",
+      "note": "通过 explicit_event_relation 建立显式关联"
+    }
+  },
+  "confirmation": {
+    "freeze_id": {
+      "label_cn": "冻结单号",
+      "type": "string",
+      "fk": "quality_freeze.freeze_id"
+    },
+    "requires_confirmation": {
+      "label_cn": "需要人工确认",
+      "type": "enum"
+    },
+    "confirmation_status": {
+      "label_cn": "确认状态",
+      "type": "enum"
+    },
+    "confirmer": {
+      "label_cn": "确认人",
+      "type": "string"
+    },
+    "confirm_time": {
+      "label_cn": "确认时间",
+      "type": "datetime"
+    }
+  },
+  "rule_version": "SEM-v1.1",
+  "explicit_event_relation": {
+    "label_cn": "事件显式关联（合同定义）",
+    "type": "relation",
+    "fields": {
+      "decision_event_id": {
+        "label_cn": "决策事件ID(EVT-*)",
+        "type": "string",
+        "namespace": "EVT"
+      },
+      "source_alert_event_id": {
+        "label_cn": "告警事件ID(SIM-EVT-*)",
+        "type": "string",
+        "namespace": "SIM-EVT"
+      },
+      "relation_type": {
+        "label_cn": "关联类型",
+        "type": "enum",
+        "values": [
+          "explicit_bridge"
+        ]
+      },
+      "requires_human_confirmation": {
+        "label_cn": "需人工确认",
+        "type": "bool",
+        "default": true
+      },
+      "mapping_rule_version": {
+        "label_cn": "映射规则版本",
+        "type": "string",
+        "ref": "MAP-v1.0"
+      }
+    },
+    "rule": "EVT-* 与 SIM-EVT-* 保持不同命名空间；relation_contract_status=defined，relation_materialization_status=not_materialized；需人工基于真实字段确认后方可物化",
+    "relation_contract_status": "defined",
+    "relation_materialization_status": "not_materialized",
+    "materialization_note": "仅语义模型定义，无物理关系记录；唯一跨命名空间候选 08_处置任务.EventID→14_多产线告警.EventID 命中率 0% 已被 rejected，不得仅因 EVT/SIM-EVT 前缀相似建立关联；当前桥接关系尚未成立"
+  },
+  "mapping_rule_version": "MAP-v1.0.1",
+  "semantic_model_version": "SEM-v1.1.1",
+  "perf_rule_version": "PERF-RATE-RULE-v1.0",
+  "oee_rule_version": "OEE-CALC-RULE-v1.1",
+  "base_version": "SEM-v1.1",
+  "extension_policy": "incremental_append_only; SEM-v1.0.1 实体与字段完整继承，不删除、不改名、不覆盖",
+  "purchase_order": {
+    "_entity_meta": {
+      "label_cn": "采购订单",
+      "introduced_in_version": "SEM-v1.1",
+      "source_model": "official",
+      "lifecycle_status": "active",
+      "materialization_status": "materialized",
+      "primary_key": "po_number",
+      "approval_source": "USER_INSTRUCTION_04C3",
+      "approved_at": "2026-08-09",
+      "source_id": "GOERTEK_OFFICIAL_DEIDENTIFIED_TEST_DATA",
+      "source_family": "OFFICIAL_DEIDENTIFIED_SIMULATION",
+      "source_type": "OFFICIAL_DEIDENTIFIED_SIMULATION"
+    },
+    "po_number": {
+      "type": "string",
+      "role": "primary_key",
+      "source_field": "采购订单号"
+    },
+    "material_code": {
+      "type": "string",
+      "role": "business_reference_candidate",
+      "source_field": "物料编码",
+      "relation_status": "unconfirmed",
+      "requires_human_confirmation": true,
+      "note": "字段语义映射已确认，但跨实体外键关联未确认；不得声明为正式外键"
+    },
+    "material_name": {
+      "type": "string",
+      "source_field": "物料名称"
+    },
+    "supplier": {
+      "type": "string",
+      "source_field": "供应商"
+    },
+    "purchase_qty": {
+      "type": "number",
+      "unit": "来源单位",
+      "source_field": "采购数量"
+    },
+    "unit": {
+      "type": "string",
+      "source_field": "单位"
+    },
+    "order_date": {
+      "type": "date",
+      "source_field": "下单日期"
+    },
+    "promised_delivery_date": {
+      "type": "date",
+      "source_field": "承诺交期"
+    },
+    "actual_arrival_date": {
+      "type": "date",
+      "source_field": "实际到货日期"
+    },
+    "arrived_qty": {
+      "type": "number",
+      "source_field": "到货数量"
+    }
+  },
+  "inventory_snapshot": {
+    "_entity_meta": {
+      "label_cn": "库存快照",
+      "introduced_in_version": "SEM-v1.1",
+      "source_model": "official",
+      "lifecycle_status": "active",
+      "materialization_status": "view_projection_only",
+      "primary_key": null,
+      "snapshot_time_status": "data_gap",
+      "approval_source": "USER_INSTRUCTION_04C3",
+      "approved_at": "2026-08-09",
+      "source_id": "GOERTEK_OFFICIAL_DEIDENTIFIED_TEST_DATA",
+      "source_family": "OFFICIAL_DEIDENTIFIED_SIMULATION",
+      "source_type": "OFFICIAL_DEIDENTIFIED_SIMULATION",
+      "grain_status": "unresolved",
+      "candidate_grain": "purchase_order_row_observation",
+      "query_status": "data_ready_with_limitations",
+      "aggregation_allowed": false,
+      "deduplication_rule_status": "undefined"
+    },
+    "material_code": {
+      "type": "string",
+      "role": "non_unique_identifier",
+      "source_field": "物料编码",
+      "note": "物料编码非空记录59条，唯一值15，unique_rate=0.2542；不得作为主键，不得跨采购订单汇总"
+    },
+    "stock_on_hand": {
+      "type": "number",
+      "source_field": "当前库存"
+    },
+    "safety_stock": {
+      "type": "number",
+      "source_field": "安全库存"
+    },
+    "inventory_turnover_days": {
+      "type": "number",
+      "unit": "天",
+      "source_field": "库存周转天数"
+    },
+    "material_shortage_risk": {
+      "type": "string",
+      "source_field": "缺料风险等级"
+    },
+    "snapshot_time": {
+      "type": "datetime",
+      "status": "data_gap",
+      "source_field": null,
+      "note": "当前数据缺少独立快照时间，不得虚构"
+    },
+    "_grain_constraints": {
+      "non_null_material_code_records": 59,
+      "unique_material_code_values": 15,
+      "unique_rate": 0.254237,
+      "rules": [
+        "在快照时间与业务粒度未明确前，可展示来源行的库存水位和缺料风险",
+        "不得跨采购订单汇总同一物料库存",
+        "不得把多条重复物料记录当作多个独立库存快照相加",
+        "不得宣称已形成可审计的库存历史快照"
+      ]
+    }
+  },
+  "research_project": {
+    "_entity_meta": {
+      "label_cn": "研发项目",
+      "introduced_in_version": "SEM-v1.1",
+      "source_model": "official",
+      "lifecycle_status": "registered_not_active",
+      "materialization_status": "registered",
+      "primary_key": "project_id",
+      "approval_source": "USER_INSTRUCTION_04C3",
+      "approved_at": "2026-08-09",
+      "source_id": "GOERTEK_OFFICIAL_DEIDENTIFIED_TEST_DATA",
+      "source_family": "OFFICIAL_DEIDENTIFIED_SIMULATION",
+      "source_type": "OFFICIAL_DEIDENTIFIED_SIMULATION"
+    },
+    "project_id": {
+      "type": "string",
+      "role": "primary_key",
+      "source_field": "项目编号"
+    },
+    "project_phase": {
+      "type": "string",
+      "source_field": "项目阶段"
+    },
+    "start_date": {
+      "type": "date",
+      "source_field": "立项日期"
+    },
+    "planned_freeze_date": {
+      "type": "date",
+      "source_field": "计划冻结日期"
+    },
+    "actual_freeze_date": {
+      "type": "date",
+      "source_field": "实际冻结日期"
+    },
+    "change_count": {
+      "type": "integer",
+      "source_field": "设计变更次数",
+      "merge_from": "engineering_change"
+    },
+    "accumulated_manhours": {
+      "type": "number",
+      "unit": "人天",
+      "source_field": "累计工时(人天)"
+    },
+    "risk_level": {
+      "type": "string",
+      "source_field": "风险等级"
+    },
+    "project_status": {
+      "type": "string",
+      "source_field": "当前状态"
+    },
+    "project_manager": {
+      "type": "string",
+      "source_field": "项目经理"
+    }
+  },
+  "sales_order": {
+    "_entity_meta": {
+      "label_cn": "销售订单",
+      "introduced_in_version": "SEM-v1.1",
+      "source_model": "official",
+      "lifecycle_status": "registered_not_active",
+      "materialization_status": "registered",
+      "primary_key": "so_number",
+      "approval_source": "USER_INSTRUCTION_04C3",
+      "approved_at": "2026-08-09",
+      "source_id": "GOERTEK_OFFICIAL_DEIDENTIFIED_TEST_DATA",
+      "source_family": "OFFICIAL_DEIDENTIFIED_SIMULATION",
+      "source_type": "OFFICIAL_DEIDENTIFIED_SIMULATION"
+    },
+    "so_number": {
+      "type": "string",
+      "role": "primary_key",
+      "source_field": "销售订单号"
+    },
+    "customer_name": {
+      "type": "string",
+      "source_field": "客户名称"
+    },
+    "product_family_ref": {
+      "type": "string",
+      "source_field": "产品线",
+      "note": "映射 production_line.product_family，待确认"
+    },
+    "order_qty": {
+      "type": "number",
+      "source_field": "订单数量"
+    },
+    "order_amount": {
+      "type": "number",
+      "unit": "万元",
+      "source_field": "订单金额(万元)"
+    },
+    "order_date": {
+      "type": "date",
+      "source_field": "下单日期"
+    },
+    "promised_delivery_date": {
+      "type": "date",
+      "source_field": "承诺交期",
+      "merge_from": "delivery_commitment"
+    },
+    "actual_ship_date": {
+      "type": "date",
+      "source_field": "实际发货日期",
+      "merge_from": "delivery_commitment"
+    },
+    "delivery_deviation_days": {
+      "type": "number",
+      "unit": "天",
+      "source_field": "交付偏差(天)",
+      "merge_from": "delivery_commitment"
+    },
+    "delivery_status": {
+      "type": "string",
+      "source_field": "交付状态",
+      "merge_from": "delivery_commitment"
+    },
+    "payment_status": {
+      "type": "string",
+      "source_field": "回款状态",
+      "merge_from": "delivery_commitment"
+    },
+    "sales_owner": {
+      "type": "string",
+      "source_field": "销售负责人"
+    },
+    "priority": {
+      "type": "string",
+      "source_field": "优先级"
+    }
+  },
+  "customer_complaint": {
+    "_entity_meta": {
+      "label_cn": "客户投诉",
+      "introduced_in_version": "SEM-v1.1",
+      "source_model": "official",
+      "lifecycle_status": "registered_not_active",
+      "materialization_status": "registered",
+      "primary_key": "complaint_id",
+      "approval_source": "USER_INSTRUCTION_04C3",
+      "approved_at": "2026-08-09",
+      "source_id": "GOERTEK_OFFICIAL_DEIDENTIFIED_TEST_DATA",
+      "source_family": "OFFICIAL_DEIDENTIFIED_SIMULATION",
+      "source_type": "OFFICIAL_DEIDENTIFIED_SIMULATION"
+    },
+    "complaint_id": {
+      "type": "string",
+      "role": "primary_key",
+      "source_field": "客诉编号"
+    },
+    "customer_name": {
+      "type": "string",
+      "source_field": "客户名称"
+    },
+    "product_family_ref": {
+      "type": "string",
+      "source_field": "产品线",
+      "note": "映射 production_line.product_family，待确认"
+    },
+    "issue_type": {
+      "type": "string",
+      "source_field": "问题类型"
+    },
+    "severity": {
+      "type": "string",
+      "source_field": "严重等级"
+    },
+    "complaint_date": {
+      "type": "date",
+      "source_field": "客诉日期"
+    },
+    "first_response_date": {
+      "type": "date",
+      "source_field": "首次响应日期",
+      "merge_from": "after_sales_case"
+    },
+    "response_hours": {
+      "type": "number",
+      "unit": "小时",
+      "source_field": "响应时长(小时)",
+      "merge_from": "after_sales_case"
+    },
+    "root_cause": {
+      "type": "string",
+      "source_field": "根本原因",
+      "merge_from": "after_sales_case"
+    },
+    "corrective_action_summary": {
+      "type": "string",
+      "source_field": "整改措施",
+      "note": "corrective_action 未物化，仅文本摘要"
+    },
+    "eight_d_report_no": {
+      "type": "string",
+      "source_field": "8D报告编号",
+      "merge_from": "after_sales_case"
+    },
+    "closure_status": {
+      "type": "string",
+      "source_field": "闭环状态",
+      "merge_from": "after_sales_case"
+    },
+    "closure_date": {
+      "type": "date",
+      "source_field": "闭环日期",
+      "merge_from": "after_sales_case"
+    },
+    "customer_satisfaction": {
+      "type": "string",
+      "source_field": "客户满意度",
+      "merge_from": "after_sales_case"
+    },
+    "responsible_department": {
+      "type": "string",
+      "source_field": "责任部门"
+    }
+  },
+  "corrective_action": {
+    "_entity_meta": {
+      "label_cn": "整改措施",
+      "introduced_in_version": "SEM-v1.1",
+      "source_model": "official",
+      "lifecycle_status": "registered_not_active",
+      "materialization_status": "not_materialized",
+      "primary_key": null,
+      "relation_contract": "future: customer_complaint → corrective_action (defined, not_materialized)",
+      "approval_source": "USER_INSTRUCTION_04C3",
+      "approved_at": "2026-08-09",
+      "note": "当前数据缺少稳定的整改措施主键及一对多记录结构；只允许定义未来关系合同，不得生成不存在的整改措施实例",
+      "source_id": "GOERTEK_OFFICIAL_DEIDENTIFIED_TEST_DATA",
+      "source_family": "OFFICIAL_DEIDENTIFIED_SIMULATION",
+      "source_type": "OFFICIAL_DEIDENTIFIED_SIMULATION"
+    }
+  },
+  "_merged_entity_registry": {
+    "engineering_change": {
+      "decision": "merged_into",
+      "merge_target": "research_project",
+      "materialization_status": "not_materialized"
+    },
+    "delivery_commitment": {
+      "decision": "merged_into",
+      "merge_target": "sales_order",
+      "materialization_status": "merged"
+    },
+    "after_sales_case": {
+      "decision": "merged_into",
+      "merge_target": "customer_complaint",
+      "materialization_status": "merged"
+    }
+  },
+  "model_source_mode": "MIXED_SIMULATION_SOURCES",
+  "source_registry": {
+    "SIM_V2_2_TEAM_ENGINEERED": {
+      "source_family": "TEAM_ENGINEERED_SIMULATION",
+      "source_type": "TEAM_ENGINEERED_SIMULATION_STATIC_SNAPSHOT",
+      "description": "团队工程化模拟数据基线，覆盖 SEM-v1.0.1 既有实体与 MAP-v1.0.1",
+      "applies_to": [
+        "MAP-v1.0.1",
+        "SEM-v1.0.1",
+        "production_line",
+        "shift",
+        "work_order",
+        "downtime_event",
+        "defect_detail",
+        "material_detail",
+        "quality_freeze",
+        "alert_event",
+        "decision",
+        "confirmation"
+      ]
+    },
+    "GOERTEK_OFFICIAL_DEIDENTIFIED_TEST_DATA": {
+      "source_family": "OFFICIAL_DEIDENTIFIED_SIMULATION",
+      "source_type": "OFFICIAL_DEIDENTIFIED_SIMULATION",
+      "description": "官方比赛脱敏模拟数据，覆盖 MAP-OFFICIAL-v0.2.1 与 74 个官方源字段",
+      "applies_to": [
+        "MAP-OFFICIAL-v0.2.1",
+        "official_5_sheets_74_fields",
+        "purchase_order",
+        "inventory_snapshot",
+        "research_project",
+        "sales_order",
+        "customer_complaint",
+        "corrective_action"
+      ]
+    }
+  },
+  "_sim_entity_source": {
+    "source_family": "TEAM_ENGINEERED_SIMULATION",
+    "source_type": "TEAM_ENGINEERED_SIMULATION_STATIC_SNAPSHOT",
+    "applies_to_entities": [
+      "production_line",
+      "shift",
+      "work_order",
+      "downtime_event",
+      "defect_detail",
+      "material_detail",
+      "quality_freeze",
+      "alert_event",
+      "decision",
+      "confirmation"
+    ],
+    "note": "SEM-v1.0.1 既有实体来源为团队工程化模拟，不得改称官方数据"
+  }
+}

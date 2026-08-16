@@ -1,0 +1,34 @@
+{
+  "_comment": "黄金事件合成数值 — 仅用于测试夹具，不得写入正式生产代码。生产代码从 normalized_facts 动态读取所有业务值。",
+  "_knowledge_level": "D（团队模拟/项目设计）",
+  "event_id": "EVT-PROD-FIXTURE-001",
+  "line_id": "LINE-S03",
+  "shift_id": "LINE-S03-PRE-20251009",
+  "record_key": "REC-PROD-S03-001",
+  "values": {
+    "oee_source": 0.609567,
+    "availability": 0.85,
+    "performance_rate": 0.78,
+    "quality_factor": 0.912867,
+    "can_recompute_oee": true,
+    "total_output": 1200,
+    "good_output": 1095,
+    "defect_total": 105,
+    "yield_recompute": 0.9125,
+    "unplanned_downtime_minutes": 45,
+    "planned_downtime_minutes": 30,
+    "material_gap_qty": 200,
+    "material_gap_material_code": "MAT-003",
+    "changeover_event_flag": true,
+    "changeover_duration_minutes": 25,
+    "risk_level": "中",
+    "severity_rule_id": null
+  },
+  "second_shift": {
+    "record_key": "REC-PROD-S03-002",
+    "shift_id": "LINE-S03-PRE-20251010",
+    "shift_date": "2025-10-10",
+    "shift_sequence": 2,
+    "oee_source": 0.5821
+  }
+}

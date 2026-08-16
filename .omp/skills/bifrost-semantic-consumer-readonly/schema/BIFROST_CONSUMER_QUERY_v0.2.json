@@ -1,0 +1,67 @@
+{
+  "contract_name": "BIFROST_CONSUMER_QUERY_v0.2",
+  "version": "BIFROST-CONSUMER-QUERY-v0.2",
+  "supersedes": "BIFROST-CONSUMER-QUERY-v0.1",
+  "description": "04D.4B.1 升级：支持区间查询、多实体批量编排、结构化过滤、时间窗口、排序与限制。在保持 v0.1 单记录查询兼容的前提下新增能力。",
+  "access_mode": "readonly",
+  "consumer_agent": "BIFROST决策编排智能体",
+  "input_schema": {
+    "type": "object",
+    "required": ["consumer_agent_id", "role", "source_scope", "read_only"],
+    "properties": {
+      "consumer_agent_id": {"type": "string"},
+      "role": {"type": "string", "description": "factory/line/quality/equipment/process/supply"},
+      "source_scope": {"type": "string", "description": "P01/P02 等来源范围"},
+      "semantic_entity": {"type": "string", "description": "单实体查询时使用（v0.1 兼容）"},
+      "entities": {
+        "type": "array",
+        "description": "多实体批量查询时使用；每个元素含 semantic_entity / projection_fields / filters",
+        "items": {"type": "object"}
+      },
+      "requested_fields": {"type": "array", "items": {"type": "string"}, "description": "v0.1 兼容投影字段"},
+      "projection_fields": {"type": "array", "items": {"type": "string"}, "description": "v0.2 投影字段列表"},
+      "filters": {
+        "type": ["object", "array"],
+        "description": "结构化过滤条件；支持 eq/in/between/is_null/is_not_null；兼容 v0.1 {field:value} eq 格式"
+      },
+      "line_ids": {"type": "array", "items": {"type": "string"}},
+      "event_id": {"type": "string"},
+      "work_order_id": {"type": "string"},
+      "material_code": {"type": "string"},
+      "time_window": {
+        "type": "object",
+        "description": "last_n_records / last_n_shifts / date_range / all_available",
+        "properties": {
+          "type": {"type": "string", "enum": ["last_n_records", "last_n_shifts", "date_range", "all_available"]},
+          "n": {"type": "integer"},
+          "start": {"type": "string"},
+          "end": {"type": "string"},
+          "field": {"type": "string"}
+        }
+      },
+      "sort": {
+        "type": ["object", "array"],
+        "description": "排序条件 {field, order:asc|desc} 或其列表"
+      },
+      "limit": {"type": "integer"},
+      "read_only": {"type": "boolean", "const": true}
+    }
+  },
+  "filter_operators": ["eq", "in", "between", "is_null", "is_not_null"],
+  "time_window_types": ["last_n_records", "last_n_shifts", "date_range", "all_available"],
+  "rules": [
+    "查询结果只能返回 decision_usable=true 的字段。",
+    "不可用字段必须返回结构化 data_gap。",
+    "消费者不得绕过数据面补值。",
+    "查询不修改快照，不写入任何数据。",
+    "last_n_shifts 必须返回满足角色、产线和实体过滤后，按批准时间字段或批准班次顺序字段排序得到的真实 N 个不同班次。",
+    "不得把最新一条记录 + limit=N 表述为最近 N 个班次。",
+    "缺少批准时间字段或班次顺序字段时返回 data_gap(reason=missing_approved_temporal_order_field)。",
+    "不得根据 record_id、文件行号、字符串前缀或当前样本名称猜测时间顺序。",
+    "用户未指定 EventID 时不阻塞区间、趋势、工单或对象查询。",
+    "多实体请求每个实体分别执行权限、字段合同、decision_usable 和证据门控。",
+    "normalized_facts 按字段级事实唯一键去重。",
+    "evidence_refs 不得丢失、复制或改写。",
+    "relation_materialization_status 未确认时禁止跨实体关联。"
+  ]
+}

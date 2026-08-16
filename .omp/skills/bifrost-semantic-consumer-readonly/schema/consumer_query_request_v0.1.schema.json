@@ -1,0 +1,65 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "BIFROST_CONSUMER_QUERY_REQUEST_v0.1",
+  "description": "消费者只读查询请求合同",
+  "type": "object",
+  "required": [
+    "request_id",
+    "consumer_agent_id",
+    "role",
+    "source_scope",
+    "semantic_entity",
+    "requested_fields",
+    "filters",
+    "read_only"
+  ],
+  "properties": {
+    "request_id": {
+      "type": "string",
+      "description": "请求唯一标识"
+    },
+    "consumer_agent_id": {
+      "type": "string",
+      "description": "消费者智能体 ID"
+    },
+    "role": {
+      "type": "string",
+      "enum": ["factory", "line", "quality", "equipment", "process", "supply"],
+      "description": "消费者角色编码"
+    },
+    "source_scope": {
+      "type": "string",
+      "description": "来源范围，如 P01、P02"
+    },
+    "semantic_entity": {
+      "type": "string",
+      "description": "目标语义实体，如 purchase_order、shift"
+    },
+    "requested_fields": {
+      "type": "array",
+      "items": {"type": "string"},
+      "description": "请求的语义字段列表"
+    },
+    "filters": {
+      "type": "object",
+      "description": "过滤条件，键为字段名，值为期望的 normalized_value"
+    },
+    "time_window": {
+      "type": ["object", "null"],
+      "description": "可选时间窗口"
+    },
+    "limit": {
+      "type": ["integer", "null"],
+      "description": "可选结果数量限制"
+    },
+    "semantic_data_ref": {
+      "type": "object",
+      "description": "semantic_data_ref 引用描述符"
+    },
+    "read_only": {
+      "type": "boolean",
+      "const": true,
+      "description": "必须为 true，消费者只读"
+    }
+  }
+}

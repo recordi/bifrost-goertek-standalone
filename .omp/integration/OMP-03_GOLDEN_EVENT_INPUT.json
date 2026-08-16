@@ -1,0 +1,22 @@
+{
+  "event_id": "EVT-OMP-03-GOLDEN-0001",
+  "input_type": "local_test_fixture_manifest",
+  "knowledge_level": "D",
+  "scenario": "LINE-S03 良率异常的只读编排测试",
+  "line_id": "LINE-S03",
+  "shift_id": "LINE-S03-PRE-20251009",
+  "event_source_fixture": ".omp/skills/bifrost-production-diagnosis-readonly/tests/fixtures/golden_event_values.json",
+  "skill_fixture_paths": {
+    "production": ".omp/skills/bifrost-production-diagnosis-readonly/tests/test_production_diagnosis.py::make_full_decision_input",
+    "quality": ".omp/skills/bifrost-quality-diagnosis-readonly/tests/fixtures/valid_quality_input.json",
+    "supply": ".omp/skills/bifrost-supply-risk-readonly/tests/fixtures/01_compliant_purchase_order.json"
+  },
+  "required_subtasks": [
+    "production-specialist",
+    "quality-specialist",
+    "supply-specialist"
+  ],
+  "read_only": true,
+  "source_write_performed": false,
+  "actor_can_execute": false
+}

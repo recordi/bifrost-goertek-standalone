@@ -1,0 +1,224 @@
+{
+  "total": 43,
+  "passed": 42,
+  "failed": 0,
+  "skipped": 1,
+  "errors": 0,
+  "details": [
+    {
+      "test_id": "test_t01_logical_version",
+      "test_class": "TestVersionAndContract",
+      "status": "PASSED"
+    },
+    {
+      "test_id": "test_t02_contract_version",
+      "test_class": "TestVersionAndContract",
+      "status": "PASSED"
+    },
+    {
+      "test_id": "test_t03_valid_input_passes",
+      "test_class": "TestInputContractValidation",
+      "status": "PASSED"
+    },
+    {
+      "test_id": "test_t03b_contract_fail_input_blocked",
+      "test_class": "TestInputContractValidation",
+      "status": "PASSED"
+    },
+    {
+      "test_id": "test_t04_group_by_record",
+      "test_class": "TestGroupAndExtract",
+      "status": "PASSED"
+    },
+    {
+      "test_id": "test_t05_extract_metrics",
+      "test_class": "TestGroupAndExtract",
+      "status": "PASSED"
+    },
+    {
+      "test_id": "test_t06_conservation_pass",
+      "test_class": "TestDefectConservation",
+      "status": "PASSED"
+    },
+    {
+      "test_id": "test_t07_nonconservation_detected",
+      "test_class": "TestDefectConservation",
+      "status": "PASSED"
+    },
+    {
+      "test_id": "test_t08_no_spc_blocks_cpk",
+      "test_class": "TestSPC",
+      "status": "PASSED"
+    },
+    {
+      "test_id": "test_t09_with_spc_calculable",
+      "test_class": "TestSPC",
+      "status": "PASSED"
+    },
+    {
+      "test_id": "test_t10_freeze_no_relation_gap",
+      "test_class": "TestFreeze",
+      "status": "PASSED"
+    },
+    {
+      "test_id": "test_t11_terminal_freeze_excluded",
+      "test_class": "TestFreeze",
+      "status": "PASSED"
+    },
+    {
+      "test_id": "test_t12_no_trend_without_time",
+      "test_class": "TestNoTimeFieldNoTrend",
+      "status": "PASSED"
+    },
+    {
+      "test_id": "test_t13_correlation_not_root_cause",
+      "test_class": "TestCorrelationNotCausation",
+      "status": "PASSED"
+    },
+    {
+      "test_id": "test_t14_high_risk_needs_confirmation",
+      "test_class": "TestHighRiskGating",
+      "status": "PASSED"
+    },
+    {
+      "test_id": "test_t15_output_schema_byte_identical",
+      "test_class": "TestSharedContractV013",
+      "status": "PASSED"
+    },
+    {
+      "test_id": "test_t16_input_schema_byte_identical",
+      "test_class": "TestSharedContractV013",
+      "status": "PASSED"
+    },
+    {
+      "test_id": "test_t17_shared_validator_passes_valid",
+      "test_class": "TestSharedContractV013",
+      "status": "PASSED"
+    },
+    {
+      "test_id": "test_t18_against_input_passes",
+      "test_class": "TestSharedContractV013",
+      "status": "PASSED"
+    },
+    {
+      "test_id": "test_t19_old_output_schema_rejected",
+      "test_class": "TestSharedContractV013",
+      "status": "PASSED"
+    },
+    {
+      "test_id": "test_t20_illegal_status_rejected",
+      "test_class": "TestSharedContractV013",
+      "status": "PASSED"
+    },
+    {
+      "test_id": "test_t21_critical_severity_rejected",
+      "test_class": "TestSharedContractV013",
+      "status": "PASSED"
+    },
+    {
+      "test_id": "test_t22_actor_can_execute_true_rejected",
+      "test_class": "TestSharedContractV013",
+      "status": "PASSED"
+    },
+    {
+      "test_id": "test_t23_missing_evidence_rejected",
+      "test_class": "TestSharedContractV013",
+      "status": "PASSED"
+    },
+    {
+      "test_id": "test_t24_blocked_no_business_conclusion",
+      "test_class": "TestSharedContractV013",
+      "status": "PASSED"
+    },
+    {
+      "test_id": "test_t25_warning_has_data_gaps",
+      "test_class": "TestSharedContractV013",
+      "status": "PASSED"
+    },
+    {
+      "test_id": "test_t26_evrefs_are_canonical_form",
+      "test_class": "TestEVREFFieldLevel",
+      "status": "PASSED"
+    },
+    {
+      "test_id": "test_t27_bare_record_key_rejected",
+      "test_class": "TestEVREFFieldLevel",
+      "status": "PASSED"
+    },
+    {
+      "test_id": "test_t28_field_binding_enforced",
+      "test_class": "TestEVREFFieldLevel",
+      "status": "PASSED"
+    },
+    {
+      "test_id": "test_t29_same_record_multi_field_not_interchangeable",
+      "test_class": "TestEVREFFieldLevel",
+      "status": "PASSED"
+    },
+    {
+      "test_id": "test_t30_data_gaps_have_9_fields",
+      "test_class": "TestDataGapMerge",
+      "status": "PASSED"
+    },
+    {
+      "test_id": "test_t31_arc_le_occ",
+      "test_class": "TestDataGapMerge",
+      "status": "PASSED"
+    },
+    {
+      "test_id": "test_t32_no_duplicate_gaps",
+      "test_class": "TestDataGapMerge",
+      "status": "PASSED"
+    },
+    {
+      "test_id": "test_t33_mutation_defect_removal",
+      "test_class": "TestMutation",
+      "status": "PASSED"
+    },
+    {
+      "test_id": "test_t34_no_hardcoded_golden",
+      "test_class": "TestNoGoldenValues",
+      "status": "PASSED"
+    },
+    {
+      "test_id": "test_t35_real_success_scenario",
+      "test_class": "TestRealConsumerIntegration",
+      "status": "PASSED"
+    },
+    {
+      "test_id": "test_t36_real_data_gap_scenario",
+      "test_class": "TestRealConsumerIntegration",
+      "status": "PASSED"
+    },
+    {
+      "test_id": "test_t37_real_blocked_scenario",
+      "test_class": "TestRealConsumerIntegration",
+      "status": "PASSED"
+    },
+    {
+      "test_id": "test_t38_real_mutation_scenario",
+      "test_class": "TestRealConsumerIntegration",
+      "status": "PASSED"
+    },
+    {
+      "test_id": "test_t39_real_high_risk_scenario",
+      "test_class": "TestRealConsumerIntegration",
+      "status": "PASSED"
+    },
+    {
+      "test_id": "test_t40_no_pycache",
+      "test_class": "TestHygieneAndPackaging",
+      "status": "PASSED"
+    },
+    {
+      "test_id": "test_t41_manifest_consistency",
+      "test_class": "TestHygieneAndPackaging",
+      "status": "SKIPPED"
+    },
+    {
+      "test_id": "test_t42_real_data_warning_not_completed",
+      "test_class": "TestVerifiedVsUnverifiedCapabilities",
+      "status": "PASSED"
+    }
+  ]
+}

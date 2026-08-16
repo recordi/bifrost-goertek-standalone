@@ -1,0 +1,16 @@
+{
+  "defect_type": "duplicate_key",
+  "severity": "medium",
+  "affected_columns": ["date", "line_code", "sku_id"],
+  "description": "Composite key (date, line_code, sku_id) has 8 duplicate records forming 4 duplicate pairs. The data model expects unique records per date-line-sku combination, but rows [15,16], [38,39], [62,63], and [89,90] (0-based) share identical composite keys. This represents 6.7% duplicate rate (8/120 rows). Sampling shows duplicates have identical field values (produced_qty, defect_rate), indicating ETL duplicate extraction rather than legitimate versioned records. Single-column distinct_count checks would miss this as each individual column (date, line_code, sku_id) has acceptable cardinality; only the composite key reveals the duplication.",
+  "detection_hints": "d02-duplicate-key skill Step 3: After identifying that neither date, line_code, nor sku_id alone should be unique (time-series with multiple lines and SKUs), check composite key (date, line_code, sku_id) distinct count vs row_count. Duplicate rows have matching values across all fields, confirming redundant records rather than update/versioning scenario.",
+  "affected_rows": [15, 16, 38, 39, 62, 63, 89, 90],
+  "evidence": {
+    "composite_key": "(date, line_code, sku_id)",
+    "duplicate_pairs": [[15, 16], [38, 39], [62, 63], [89, 90]],
+    "duplicate_count": 8,
+    "total_rows": 120,
+    "duplicate_ratio": "6.7%",
+    "field_value_match": "all duplicate pairs have identical field values across all columns"
+  }
+}

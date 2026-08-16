@@ -1,0 +1,57 @@
+{
+  "contract_name": "BIFROST_DECISION_INPUT_v0.1",
+  "contract_version": "BIFROST-DECISION-INPUT-v0.1",
+  "request_id": "FIX-08",
+  "consumer_agent_id": "agent_test",
+  "role": "supply",
+  "query_context": {
+    "semantic_entity": "purchase_order",
+    "source_scope": "P01",
+    "read_only": true
+  },
+  "source_release_id": "REL-TEST",
+  "source_snapshot_id": "SNAP-TEST",
+  "normalized_facts": [
+    {
+      "semantic_record_key": "供-库存#inventory_snapshot#INV-001#row1",
+      "source_table": "test",
+      "source_record_id": "row1",
+      "semantic_field": "on_hand_qty",
+      "normalized_value": 500,
+      "normalized_data_type": "str",
+      "normalized_unit": "",
+      "display_format": "",
+      "value_consumption_status": "usable",
+      "provenance_ref": {
+        "source_field": "on_hand_qty",
+        "raw_value": 500,
+        "source_data_type": "str",
+        "evidence_locator": {
+          "source_file_sha256": "abc123",
+          "source_table": "test",
+          "source_row_number": 1,
+          "source_column_name": "on_hand_qty",
+          "source_column_index": 99
+        }
+      }
+    }
+  ],
+  "data_gaps": [],
+  "provenance_refs": [],
+  "contract_versions": {
+    "decision_input_contract_version": "BIFROST-DECISION-INPUT-v0.1"
+  },
+  "validation": {
+    "status": "passed",
+    "issues": [],
+    "normalized_facts_count": 1,
+    "data_gaps_count": 0,
+    "decision_usable_gate_enforced": true,
+    "read_only_enforced": true,
+    "no_cross_record_join": true,
+    "no_business_conclusion": true
+  },
+  "source_write_performed": false,
+  "actor_can_execute": false,
+  "local_trace_id": "TRACE-f442b68c2183"
+}

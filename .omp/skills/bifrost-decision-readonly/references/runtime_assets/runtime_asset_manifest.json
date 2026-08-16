@@ -1,0 +1,28 @@
+{
+  "manifest_version": "1.0.4",
+  "source_type": "TEAM_ENGINEERED_SIMULATION_STATIC_SNAPSHOT",
+  "assets": [
+    {
+      "original_filename": "BIFROST_OVERVIEW_PAYLOAD_v2.1.json",
+      "compressed_filename": "BIFROST_OVERVIEW_PAYLOAD_v2.1.json.gz",
+      "payload_version": "v2.1",
+      "analysis_version": null,
+      "dataset_id": "TEAM_ENGINEERED_SIMULATION",
+      "uncompressed_sha256": "2697683f461a555b954bd7e8bf7b0c37a4e9844d82cbcc20ffa1ed2300ef76bd",
+      "compressed_sha256": "0de996e4a3fb560c5c97c1f5c3f746aceeeb23fe077f0ff2082d592bbad71283",
+      "uncompressed_size_bytes": 938687,
+      "compressed_size_bytes": 46964
+    },
+    {
+      "original_filename": "BIFROST_EVENT_PAYLOAD_v1.4.json",
+      "compressed_filename": "BIFROST_EVENT_PAYLOAD_v1.4.json.gz",
+      "payload_version": "v1.4",
+      "analysis_version": "4",
+      "dataset_id": "TEAM_ENGINEERED_SIMULATION",
+      "uncompressed_sha256": "53fdc970d7f7ec7b0c46fe9d60f8ee472340ff16ed98a333719f996d67f0ad7b",
+      "compressed_sha256": "396c27a2eb0c49c1fecca96d30ef0d039b3638340cbfc364f5b1142ae4108d14",
+      "uncompressed_size_bytes": 185111,
+      "compressed_size_bytes": 10972
+    }
+  ]
+}

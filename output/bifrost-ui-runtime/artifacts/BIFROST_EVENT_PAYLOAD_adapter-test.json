@@ -1,0 +1,1579 @@
+{
+  "payload_version": "v1.4",
+  "payload_type": "event_detail",
+  "event_id": "EVT-20251009-0001",
+  "source_event_id": "SIM-EVT-00086",
+  "sim_shift_id": "LINE-S03-PRE-20251009",
+  "event_status": "待确认",
+  "analysis_version": 5,
+  "dataset_id": "OMP_LOCAL_ADAPTER_TEST",
+  "data_time": "2025-10-09",
+  "line_ids": [
+    "LINE-S03"
+  ],
+  "rule_version": "RULESET-v1.0",
+  "knowledge_version": "KNOWLEDGE-v1.0",
+  "generated_at": "2026-08-13T00:00:00Z",
+  "roles": [
+    {
+      "event_id": "EVT-20251009-0001",
+      "role": "factory",
+      "dataset_id": "OMP_LOCAL_ADAPTER_TEST",
+      "line_ids": [
+        "LINE-S03"
+      ],
+      "headline": "适配器测试：生产诊断需要人工确认，未执行高风险动作",
+      "kpis": [
+        {
+          "metric_code": "OEE",
+          "value": 0.605230821,
+          "value_type": "ratio",
+          "display_format": "0.0%",
+          "unit": "ratio",
+          "aggregation_scope": "adapter_test_fixture",
+          "evidence_refs": [
+            {
+              "semantic_table": "OMP适配器结果",
+              "source_table": "orchestration_test_results.json",
+              "record_key": "evidence_refs",
+              "record_id": "EVREF-v1:c3face5807ad5b1f8dc3ef82bedb46fe563c21720c47152cb915103a90e7e60f",
+              "source_type": "OMP_LOCAL_ADAPTER_TEST"
+            }
+          ]
+        }
+      ],
+      "charts": [],
+      "alerts": [],
+      "tasks": [
+        {
+          "task_id": "TASK-OMP-03-PROD",
+          "status": "needs_confirmation",
+          "title": "生产影响评估",
+          "description": "生产诊断完成，分析记录: REC-PROD-S03-001。 源OEE: 0.609567。 复算OEE: 0.605231（availability × performance_rate × quality_factor）。 OEE直接驱动因子: availability=0.85, performance_rate=0.78, quality_factor=0.912867。 非计划停机 45 分钟，为开动率下降证据。 严重度: unknown。 未提供批准的严重度阈值规则(missing_severity_rule)。 证据覆盖率(confidence): 1.0。"
+        }
+      ],
+      "decisions_required": [
+        {
+          "decision_id": "ADAPTER-TEST-CONFIRMATION",
+          "confirmation_id": "ADAPTER-TEST-CONFIRMATION",
+          "action": "仅生成测试确认草稿，不执行高风险动作",
+          "risk_level": "high",
+          "status": "待确认",
+          "evidence_refs": [
+            {
+              "semantic_table": "OMP适配器结果",
+              "source_table": "orchestration_test_results.json",
+              "record_key": "evidence_refs",
+              "record_id": "EVREF-v1:c3face5807ad5b1f8dc3ef82bedb46fe563c21720c47152cb915103a90e7e60f",
+              "source_type": "OMP_LOCAL_ADAPTER_TEST"
+            },
+            {
+              "semantic_table": "OMP适配器结果",
+              "source_table": "orchestration_test_results.json",
+              "record_key": "evidence_refs",
+              "record_id": "EVREF-v1:5ff4114f4c0d40b727908e1d120493ba1929519955bd736a6d61ed5b40f8bace",
+              "source_type": "OMP_LOCAL_ADAPTER_TEST"
+            },
+            {
+              "semantic_table": "OMP适配器结果",
+              "source_table": "orchestration_test_results.json",
+              "record_key": "evidence_refs",
+              "record_id": "EVREF-v1:6d7359295d824b418cc97ebf859fc801b88592a532cbe1fdcb5254f09f13ee36",
+              "source_type": "OMP_LOCAL_ADAPTER_TEST"
+            },
+            {
+              "semantic_table": "OMP适配器结果",
+              "source_table": "orchestration_test_results.json",
+              "record_key": "evidence_refs",
+              "record_id": "EVREF-v1:25af4b6d3356e3d5810e43303d4b62775d17a040d21541006ed08b3421e1c49a",
+              "source_type": "OMP_LOCAL_ADAPTER_TEST"
+            },
+            {
+              "semantic_table": "OMP适配器结果",
+              "source_table": "orchestration_test_results.json",
+              "record_key": "evidence_refs",
+              "record_id": "EVREF-v1:f96e0f3419d50da377aaa21cfc0c2784ad94548e1d46fea993fc0e089f72840a",
+              "source_type": "OMP_LOCAL_ADAPTER_TEST"
+            },
+            {
+              "semantic_table": "OMP适配器结果",
+              "source_table": "orchestration_test_results.json",
+              "record_key": "evidence_refs",
+              "record_id": "EVREF-v1:a8d0cd12b2c9a6a760e37df215ce8446da9a592d92138bc4e3c44fb6b9ac958f",
+              "source_type": "OMP_LOCAL_ADAPTER_TEST"
+            },
+            {
+              "semantic_table": "OMP适配器结果",
+              "source_table": "orchestration_test_results.json",
+              "record_key": "evidence_refs",
+              "record_id": "EVREF-v1:2e41c03a80d6b9fb13f0c38ae941c32707339d0b3f3c78950ded627173b19ce8",
+              "source_type": "OMP_LOCAL_ADAPTER_TEST"
+            },
+            {
+              "semantic_table": "OMP适配器结果",
+              "source_table": "orchestration_test_results.json",
+              "record_key": "evidence_refs",
+              "record_id": "EVREF-v1:9fb662ec899a3215a2d1ae3630346d74c9097cc618cb7cad379d3b5761e5b334",
+              "source_type": "OMP_LOCAL_ADAPTER_TEST"
+            }
+          ]
+        }
+      ],
+      "data_gaps": [
+        {
+          "semantic_entity": "shift",
+          "semantic_field": "mtbf_mttr",
+          "reason": "missing_equipment_fault_repair_evidence",
+          "value_consumption_status": "missing",
+          "source_locator": "REC-PROD-S03-001",
+          "required_resolution": "缺少 EquipmentID/故障码/维修工单，不得计算 MTBF/MTTR",
+          "affected_record_count": 1,
+          "occurrence_count": 1,
+          "sample_source_locators": [
+            "REC-PROD-S03-001"
+          ]
+        },
+        {
+          "semantic_entity": "shift",
+          "semantic_field": "shift_trend",
+          "reason": "insufficient_temporal_evidence",
+          "value_consumption_status": "missing",
+          "source_locator": "REC-PROD-S03-001",
+          "required_resolution": "缺少时间字段或记录顺序证据，不得制造趋势",
+          "affected_record_count": 1,
+          "occurrence_count": 1,
+          "sample_source_locators": [
+            "REC-PROD-S03-001"
+          ]
+        }
+      ],
+      "evidence_refs": [
+        {
+          "semantic_table": "OMP适配器结果",
+          "source_table": "orchestration_test_results.json",
+          "record_key": "evidence_refs",
+          "record_id": "EVREF-v1:c3face5807ad5b1f8dc3ef82bedb46fe563c21720c47152cb915103a90e7e60f",
+          "source_type": "OMP_LOCAL_ADAPTER_TEST"
+        },
+        {
+          "semantic_table": "OMP适配器结果",
+          "source_table": "orchestration_test_results.json",
+          "record_key": "evidence_refs",
+          "record_id": "EVREF-v1:5ff4114f4c0d40b727908e1d120493ba1929519955bd736a6d61ed5b40f8bace",
+          "source_type": "OMP_LOCAL_ADAPTER_TEST"
+        },
+        {
+          "semantic_table": "OMP适配器结果",
+          "source_table": "orchestration_test_results.json",
+          "record_key": "evidence_refs",
+          "record_id": "EVREF-v1:6d7359295d824b418cc97ebf859fc801b88592a532cbe1fdcb5254f09f13ee36",
+          "source_type": "OMP_LOCAL_ADAPTER_TEST"
+        },
+        {
+          "semantic_table": "OMP适配器结果",
+          "source_table": "orchestration_test_results.json",
+          "record_key": "evidence_refs",
+          "record_id": "EVREF-v1:25af4b6d3356e3d5810e43303d4b62775d17a040d21541006ed08b3421e1c49a",
+          "source_type": "OMP_LOCAL_ADAPTER_TEST"
+        },
+        {
+          "semantic_table": "OMP适配器结果",
+          "source_table": "orchestration_test_results.json",
+          "record_key": "evidence_refs",
+          "record_id": "EVREF-v1:f96e0f3419d50da377aaa21cfc0c2784ad94548e1d46fea993fc0e089f72840a",
+          "source_type": "OMP_LOCAL_ADAPTER_TEST"
+        },
+        {
+          "semantic_table": "OMP适配器结果",
+          "source_table": "orchestration_test_results.json",
+          "record_key": "evidence_refs",
+          "record_id": "EVREF-v1:a8d0cd12b2c9a6a760e37df215ce8446da9a592d92138bc4e3c44fb6b9ac958f",
+          "source_type": "OMP_LOCAL_ADAPTER_TEST"
+        },
+        {
+          "semantic_table": "OMP适配器结果",
+          "source_table": "orchestration_test_results.json",
+          "record_key": "evidence_refs",
+          "record_id": "EVREF-v1:2e41c03a80d6b9fb13f0c38ae941c32707339d0b3f3c78950ded627173b19ce8",
+          "source_type": "OMP_LOCAL_ADAPTER_TEST"
+        },
+        {
+          "semantic_table": "OMP适配器结果",
+          "source_table": "orchestration_test_results.json",
+          "record_key": "evidence_refs",
+          "record_id": "EVREF-v1:9fb662ec899a3215a2d1ae3630346d74c9097cc618cb7cad379d3b5761e5b334",
+          "source_type": "OMP_LOCAL_ADAPTER_TEST"
+        }
+      ],
+      "rule_version": "SKILL-CONTRACT-v0.1.3",
+      "knowledge_version": "OMP_LOCAL_ADAPTER_TEST",
+      "last_updated_at": "2026-08-13T00:00:00Z"
+    },
+    {
+      "event_id": "EVT-20251009-0001",
+      "role": "line",
+      "dataset_id": "OMP_LOCAL_ADAPTER_TEST",
+      "line_ids": [
+        "LINE-S03"
+      ],
+      "headline": "适配器测试：开动率85.0%，性能率78.0%，质量因子91.3%",
+      "kpis": [
+        {
+          "metric_code": "AVAILABILITY",
+          "value": 0.85,
+          "value_type": "ratio",
+          "display_format": "0.0%",
+          "unit": "ratio",
+          "aggregation_scope": "adapter_test_fixture",
+          "evidence_refs": [
+            {
+              "semantic_table": "OMP适配器结果",
+              "source_table": "orchestration_test_results.json",
+              "record_key": "evidence_refs",
+              "record_id": "EVREF-v1:5ff4114f4c0d40b727908e1d120493ba1929519955bd736a6d61ed5b40f8bace",
+              "source_type": "OMP_LOCAL_ADAPTER_TEST"
+            }
+          ]
+        },
+        {
+          "metric_code": "PERFORMANCE",
+          "value": 0.78,
+          "value_type": "ratio",
+          "display_format": "0.0%",
+          "unit": "ratio",
+          "aggregation_scope": "adapter_test_fixture",
+          "evidence_refs": [
+            {
+              "semantic_table": "OMP适配器结果",
+              "source_table": "orchestration_test_results.json",
+              "record_key": "evidence_refs",
+              "record_id": "EVREF-v1:6d7359295d824b418cc97ebf859fc801b88592a532cbe1fdcb5254f09f13ee36",
+              "source_type": "OMP_LOCAL_ADAPTER_TEST"
+            }
+          ]
+        },
+        {
+          "metric_code": "QUALITY",
+          "value": 0.912867,
+          "value_type": "ratio",
+          "display_format": "0.0%",
+          "unit": "ratio",
+          "aggregation_scope": "adapter_test_fixture",
+          "evidence_refs": [
+            {
+              "semantic_table": "OMP适配器结果",
+              "source_table": "orchestration_test_results.json",
+              "record_key": "evidence_refs",
+              "record_id": "EVREF-v1:25af4b6d3356e3d5810e43303d4b62775d17a040d21541006ed08b3421e1c49a",
+              "source_type": "OMP_LOCAL_ADAPTER_TEST"
+            }
+          ]
+        }
+      ],
+      "charts": [],
+      "alerts": [],
+      "tasks": [
+        {
+          "task_id": "TASK-OMP-03-PROD",
+          "status": "needs_confirmation",
+          "title": "生产影响评估",
+          "description": "生产诊断完成，分析记录: REC-PROD-S03-001。 源OEE: 0.609567。 复算OEE: 0.605231（availability × performance_rate × quality_factor）。 OEE直接驱动因子: availability=0.85, performance_rate=0.78, quality_factor=0.912867。 非计划停机 45 分钟，为开动率下降证据。 严重度: unknown。 未提供批准的严重度阈值规则(missing_severity_rule)。 证据覆盖率(confidence): 1.0。"
+        }
+      ],
+      "decisions_required": [
+        {
+          "decision_id": "ADAPTER-TEST-CONFIRMATION",
+          "confirmation_id": "ADAPTER-TEST-CONFIRMATION",
+          "action": "仅生成测试确认草稿，不执行高风险动作",
+          "risk_level": "high",
+          "status": "待确认",
+          "evidence_refs": [
+            {
+              "semantic_table": "OMP适配器结果",
+              "source_table": "orchestration_test_results.json",
+              "record_key": "evidence_refs",
+              "record_id": "EVREF-v1:c3face5807ad5b1f8dc3ef82bedb46fe563c21720c47152cb915103a90e7e60f",
+              "source_type": "OMP_LOCAL_ADAPTER_TEST"
+            },
+            {
+              "semantic_table": "OMP适配器结果",
+              "source_table": "orchestration_test_results.json",
+              "record_key": "evidence_refs",
+              "record_id": "EVREF-v1:5ff4114f4c0d40b727908e1d120493ba1929519955bd736a6d61ed5b40f8bace",
+              "source_type": "OMP_LOCAL_ADAPTER_TEST"
+            },
+            {
+              "semantic_table": "OMP适配器结果",
+              "source_table": "orchestration_test_results.json",
+              "record_key": "evidence_refs",
+              "record_id": "EVREF-v1:6d7359295d824b418cc97ebf859fc801b88592a532cbe1fdcb5254f09f13ee36",
+              "source_type": "OMP_LOCAL_ADAPTER_TEST"
+            },
+            {
+              "semantic_table": "OMP适配器结果",
+              "source_table": "orchestration_test_results.json",
+              "record_key": "evidence_refs",
+              "record_id": "EVREF-v1:25af4b6d3356e3d5810e43303d4b62775d17a040d21541006ed08b3421e1c49a",
+              "source_type": "OMP_LOCAL_ADAPTER_TEST"
+            },
+            {
+              "semantic_table": "OMP适配器结果",
+              "source_table": "orchestration_test_results.json",
+              "record_key": "evidence_refs",
+              "record_id": "EVREF-v1:f96e0f3419d50da377aaa21cfc0c2784ad94548e1d46fea993fc0e089f72840a",
+              "source_type": "OMP_LOCAL_ADAPTER_TEST"
+            },
+            {
+              "semantic_table": "OMP适配器结果",
+              "source_table": "orchestration_test_results.json",
+              "record_key": "evidence_refs",
+              "record_id": "EVREF-v1:a8d0cd12b2c9a6a760e37df215ce8446da9a592d92138bc4e3c44fb6b9ac958f",
+              "source_type": "OMP_LOCAL_ADAPTER_TEST"
+            },
+            {
+              "semantic_table": "OMP适配器结果",
+              "source_table": "orchestration_test_results.json",
+              "record_key": "evidence_refs",
+              "record_id": "EVREF-v1:2e41c03a80d6b9fb13f0c38ae941c32707339d0b3f3c78950ded627173b19ce8",
+              "source_type": "OMP_LOCAL_ADAPTER_TEST"
+            },
+            {
+              "semantic_table": "OMP适配器结果",
+              "source_table": "orchestration_test_results.json",
+              "record_key": "evidence_refs",
+              "record_id": "EVREF-v1:9fb662ec899a3215a2d1ae3630346d74c9097cc618cb7cad379d3b5761e5b334",
+              "source_type": "OMP_LOCAL_ADAPTER_TEST"
+            }
+          ]
+        }
+      ],
+      "data_gaps": [
+        {
+          "semantic_entity": "shift",
+          "semantic_field": "mtbf_mttr",
+          "reason": "missing_equipment_fault_repair_evidence",
+          "value_consumption_status": "missing",
+          "source_locator": "REC-PROD-S03-001",
+          "required_resolution": "缺少 EquipmentID/故障码/维修工单，不得计算 MTBF/MTTR",
+          "affected_record_count": 1,
+          "occurrence_count": 1,
+          "sample_source_locators": [
+            "REC-PROD-S03-001"
+          ]
+        },
+        {
+          "semantic_entity": "shift",
+          "semantic_field": "shift_trend",
+          "reason": "insufficient_temporal_evidence",
+          "value_consumption_status": "missing",
+          "source_locator": "REC-PROD-S03-001",
+          "required_resolution": "缺少时间字段或记录顺序证据，不得制造趋势",
+          "affected_record_count": 1,
+          "occurrence_count": 1,
+          "sample_source_locators": [
+            "REC-PROD-S03-001"
+          ]
+        }
+      ],
+      "evidence_refs": [
+        {
+          "semantic_table": "OMP适配器结果",
+          "source_table": "orchestration_test_results.json",
+          "record_key": "evidence_refs",
+          "record_id": "EVREF-v1:c3face5807ad5b1f8dc3ef82bedb46fe563c21720c47152cb915103a90e7e60f",
+          "source_type": "OMP_LOCAL_ADAPTER_TEST"
+        },
+        {
+          "semantic_table": "OMP适配器结果",
+          "source_table": "orchestration_test_results.json",
+          "record_key": "evidence_refs",
+          "record_id": "EVREF-v1:5ff4114f4c0d40b727908e1d120493ba1929519955bd736a6d61ed5b40f8bace",
+          "source_type": "OMP_LOCAL_ADAPTER_TEST"
+        },
+        {
+          "semantic_table": "OMP适配器结果",
+          "source_table": "orchestration_test_results.json",
+          "record_key": "evidence_refs",
+          "record_id": "EVREF-v1:6d7359295d824b418cc97ebf859fc801b88592a532cbe1fdcb5254f09f13ee36",
+          "source_type": "OMP_LOCAL_ADAPTER_TEST"
+        },
+        {
+          "semantic_table": "OMP适配器结果",
+          "source_table": "orchestration_test_results.json",
+          "record_key": "evidence_refs",
+          "record_id": "EVREF-v1:25af4b6d3356e3d5810e43303d4b62775d17a040d21541006ed08b3421e1c49a",
+          "source_type": "OMP_LOCAL_ADAPTER_TEST"
+        },
+        {
+          "semantic_table": "OMP适配器结果",
+          "source_table": "orchestration_test_results.json",
+          "record_key": "evidence_refs",
+          "record_id": "EVREF-v1:f96e0f3419d50da377aaa21cfc0c2784ad94548e1d46fea993fc0e089f72840a",
+          "source_type": "OMP_LOCAL_ADAPTER_TEST"
+        },
+        {
+          "semantic_table": "OMP适配器结果",
+          "source_table": "orchestration_test_results.json",
+          "record_key": "evidence_refs",
+          "record_id": "EVREF-v1:a8d0cd12b2c9a6a760e37df215ce8446da9a592d92138bc4e3c44fb6b9ac958f",
+          "source_type": "OMP_LOCAL_ADAPTER_TEST"
+        },
+        {
+          "semantic_table": "OMP适配器结果",
+          "source_table": "orchestration_test_results.json",
+          "record_key": "evidence_refs",
+          "record_id": "EVREF-v1:2e41c03a80d6b9fb13f0c38ae941c32707339d0b3f3c78950ded627173b19ce8",
+          "source_type": "OMP_LOCAL_ADAPTER_TEST"
+        },
+        {
+          "semantic_table": "OMP适配器结果",
+          "source_table": "orchestration_test_results.json",
+          "record_key": "evidence_refs",
+          "record_id": "EVREF-v1:9fb662ec899a3215a2d1ae3630346d74c9097cc618cb7cad379d3b5761e5b334",
+          "source_type": "OMP_LOCAL_ADAPTER_TEST"
+        }
+      ],
+      "rule_version": "SKILL-CONTRACT-v0.1.3",
+      "knowledge_version": "OMP_LOCAL_ADAPTER_TEST",
+      "last_updated_at": "2026-08-13T00:00:00Z"
+    },
+    {
+      "event_id": "EVT-20251009-0001",
+      "role": "quality",
+      "dataset_id": "OMP_LOCAL_ADAPTER_TEST",
+      "line_ids": [
+        "LINE-S03"
+      ],
+      "headline": "适配器测试：良率95.0%，不良50件；SPC数据缺失",
+      "kpis": [
+        {
+          "metric_code": "QUALITY",
+          "value": 0.95,
+          "value_type": "ratio",
+          "display_format": "0.0%",
+          "unit": "ratio",
+          "aggregation_scope": "adapter_test_fixture",
+          "evidence_refs": [
+            {
+              "semantic_table": "OMP适配器结果",
+              "source_table": "orchestration_test_results.json",
+              "record_key": "evidence_refs",
+              "record_id": "EVREF-v1:5208d666bf141e2f72ff83a290a82bd3f44cb3a8b966273f79d8b85c3e73b0ef",
+              "source_type": "OMP_LOCAL_ADAPTER_TEST"
+            }
+          ]
+        },
+        {
+          "metric_code": "DEFECT_TOTAL",
+          "value": 50,
+          "value_type": "integer",
+          "display_format": "0",
+          "unit": "件",
+          "aggregation_scope": "adapter_test_fixture",
+          "evidence_refs": [
+            {
+              "semantic_table": "OMP适配器结果",
+              "source_table": "orchestration_test_results.json",
+              "record_key": "evidence_refs",
+              "record_id": "EVREF-v1:7e32579d6ade4195e27b2513d371c67c427ae5607c4f59ec7f05cae5074cbece",
+              "source_type": "OMP_LOCAL_ADAPTER_TEST"
+            }
+          ]
+        }
+      ],
+      "charts": [],
+      "alerts": [],
+      "tasks": [
+        {
+          "task_id": "TASK-OMP-03-QUAL",
+          "status": "warning",
+          "title": "质量与良率评估",
+          "description": "良率字段 yield=0.95（记录: 质-不良明细#defect_detail#LINE-S03-001）; 不良类型分布: 2 种不良类型; 不良总数=50; 不良分布统计守恒检查通过; 缺少 SPC 数据，Cpk 不可计算; 无时间字段，不生成趋势结论"
+        }
+      ],
+      "decisions_required": [],
+      "data_gaps": [
+        {
+          "semantic_entity": "defect_detail",
+          "semantic_field": "spc_measurement_points",
+          "reason": "GAP-SPC-MEASUREMENT",
+          "value_consumption_status": "missing",
+          "source_locator": "missing_fields=lsl,spc_measurement_points,usl",
+          "required_resolution": "缺少 SPC 原始测量点/规格限(USL/LSL)/抽样规则，不得计算 Cpk/Cp，不得判断 SPC 越界",
+          "affected_record_count": 1,
+          "occurrence_count": 1,
+          "sample_source_locators": [
+            "missing_fields=lsl,spc_measurement_points,usl"
+          ]
+        },
+        {
+          "semantic_entity": "defect_detail",
+          "semantic_field": "sample_rule",
+          "reason": "missing_sample_rule",
+          "value_consumption_status": "missing",
+          "source_locator": null,
+          "required_resolution": "缺少抽样规则定义，SPC 判定结果不可靠",
+          "affected_record_count": 1,
+          "occurrence_count": 1,
+          "sample_source_locators": []
+        }
+      ],
+      "evidence_refs": [
+        {
+          "semantic_table": "OMP适配器结果",
+          "source_table": "orchestration_test_results.json",
+          "record_key": "evidence_refs",
+          "record_id": "EVREF-v1:5208d666bf141e2f72ff83a290a82bd3f44cb3a8b966273f79d8b85c3e73b0ef",
+          "source_type": "OMP_LOCAL_ADAPTER_TEST"
+        },
+        {
+          "semantic_table": "OMP适配器结果",
+          "source_table": "orchestration_test_results.json",
+          "record_key": "evidence_refs",
+          "record_id": "EVREF-v1:7e32579d6ade4195e27b2513d371c67c427ae5607c4f59ec7f05cae5074cbece",
+          "source_type": "OMP_LOCAL_ADAPTER_TEST"
+        },
+        {
+          "semantic_table": "OMP适配器结果",
+          "source_table": "orchestration_test_results.json",
+          "record_key": "evidence_refs",
+          "record_id": "EVREF-v1:3ae85957ba607c7a2daa666dd06edca0ab015a8a40061547d143eacd650909b8",
+          "source_type": "OMP_LOCAL_ADAPTER_TEST"
+        },
+        {
+          "semantic_table": "OMP适配器结果",
+          "source_table": "orchestration_test_results.json",
+          "record_key": "evidence_refs",
+          "record_id": "EVREF-v1:48c90c3a270d5b2265448f96168fa879f774d8523d346b765cf2fd0b4f1cca7e",
+          "source_type": "OMP_LOCAL_ADAPTER_TEST"
+        }
+      ],
+      "rule_version": "SKILL-CONTRACT-v0.1.3",
+      "knowledge_version": "OMP_LOCAL_ADAPTER_TEST",
+      "last_updated_at": "2026-08-13T00:00:00Z"
+    },
+    {
+      "event_id": "EVT-20251009-0001",
+      "role": "equipment",
+      "dataset_id": "OMP_LOCAL_ADAPTER_TEST",
+      "line_ids": [
+        "LINE-S03"
+      ],
+      "headline": "适配器测试：非计划停机45分钟；未计算MTBF/MTTR",
+      "kpis": [
+        {
+          "metric_code": "UNPLANNED_DOWNTIME_MINUTES",
+          "value": 45,
+          "value_type": "integer",
+          "display_format": "0",
+          "unit": "分钟",
+          "aggregation_scope": "adapter_test_fixture",
+          "evidence_refs": [
+            {
+              "semantic_table": "OMP适配器结果",
+              "source_table": "orchestration_test_results.json",
+              "record_key": "evidence_refs",
+              "record_id": "EVREF-v1:f96e0f3419d50da377aaa21cfc0c2784ad94548e1d46fea993fc0e089f72840a",
+              "source_type": "OMP_LOCAL_ADAPTER_TEST"
+            }
+          ]
+        }
+      ],
+      "charts": [],
+      "alerts": [],
+      "tasks": [
+        {
+          "task_id": "TASK-OMP-03-PROD",
+          "status": "needs_confirmation",
+          "title": "生产影响评估",
+          "description": "生产诊断完成，分析记录: REC-PROD-S03-001。 源OEE: 0.609567。 复算OEE: 0.605231（availability × performance_rate × quality_factor）。 OEE直接驱动因子: availability=0.85, performance_rate=0.78, quality_factor=0.912867。 非计划停机 45 分钟，为开动率下降证据。 严重度: unknown。 未提供批准的严重度阈值规则(missing_severity_rule)。 证据覆盖率(confidence): 1.0。"
+        }
+      ],
+      "decisions_required": [
+        {
+          "decision_id": "ADAPTER-TEST-CONFIRMATION",
+          "confirmation_id": "ADAPTER-TEST-CONFIRMATION",
+          "action": "仅生成测试确认草稿，不执行高风险动作",
+          "risk_level": "high",
+          "status": "待确认",
+          "evidence_refs": [
+            {
+              "semantic_table": "OMP适配器结果",
+              "source_table": "orchestration_test_results.json",
+              "record_key": "evidence_refs",
+              "record_id": "EVREF-v1:c3face5807ad5b1f8dc3ef82bedb46fe563c21720c47152cb915103a90e7e60f",
+              "source_type": "OMP_LOCAL_ADAPTER_TEST"
+            },
+            {
+              "semantic_table": "OMP适配器结果",
+              "source_table": "orchestration_test_results.json",
+              "record_key": "evidence_refs",
+              "record_id": "EVREF-v1:5ff4114f4c0d40b727908e1d120493ba1929519955bd736a6d61ed5b40f8bace",
+              "source_type": "OMP_LOCAL_ADAPTER_TEST"
+            },
+            {
+              "semantic_table": "OMP适配器结果",
+              "source_table": "orchestration_test_results.json",
+              "record_key": "evidence_refs",
+              "record_id": "EVREF-v1:6d7359295d824b418cc97ebf859fc801b88592a532cbe1fdcb5254f09f13ee36",
+              "source_type": "OMP_LOCAL_ADAPTER_TEST"
+            },
+            {
+              "semantic_table": "OMP适配器结果",
+              "source_table": "orchestration_test_results.json",
+              "record_key": "evidence_refs",
+              "record_id": "EVREF-v1:25af4b6d3356e3d5810e43303d4b62775d17a040d21541006ed08b3421e1c49a",
+              "source_type": "OMP_LOCAL_ADAPTER_TEST"
+            },
+            {
+              "semantic_table": "OMP适配器结果",
+              "source_table": "orchestration_test_results.json",
+              "record_key": "evidence_refs",
+              "record_id": "EVREF-v1:f96e0f3419d50da377aaa21cfc0c2784ad94548e1d46fea993fc0e089f72840a",
+              "source_type": "OMP_LOCAL_ADAPTER_TEST"
+            },
+            {
+              "semantic_table": "OMP适配器结果",
+              "source_table": "orchestration_test_results.json",
+              "record_key": "evidence_refs",
+              "record_id": "EVREF-v1:a8d0cd12b2c9a6a760e37df215ce8446da9a592d92138bc4e3c44fb6b9ac958f",
+              "source_type": "OMP_LOCAL_ADAPTER_TEST"
+            },
+            {
+              "semantic_table": "OMP适配器结果",
+              "source_table": "orchestration_test_results.json",
+              "record_key": "evidence_refs",
+              "record_id": "EVREF-v1:2e41c03a80d6b9fb13f0c38ae941c32707339d0b3f3c78950ded627173b19ce8",
+              "source_type": "OMP_LOCAL_ADAPTER_TEST"
+            },
+            {
+              "semantic_table": "OMP适配器结果",
+              "source_table": "orchestration_test_results.json",
+              "record_key": "evidence_refs",
+              "record_id": "EVREF-v1:9fb662ec899a3215a2d1ae3630346d74c9097cc618cb7cad379d3b5761e5b334",
+              "source_type": "OMP_LOCAL_ADAPTER_TEST"
+            }
+          ]
+        }
+      ],
+      "data_gaps": [
+        {
+          "semantic_entity": "shift",
+          "semantic_field": "mtbf_mttr",
+          "reason": "missing_equipment_fault_repair_evidence",
+          "value_consumption_status": "missing",
+          "source_locator": "REC-PROD-S03-001",
+          "required_resolution": "缺少 EquipmentID/故障码/维修工单，不得计算 MTBF/MTTR",
+          "affected_record_count": 1,
+          "occurrence_count": 1,
+          "sample_source_locators": [
+            "REC-PROD-S03-001"
+          ]
+        },
+        {
+          "semantic_entity": "shift",
+          "semantic_field": "shift_trend",
+          "reason": "insufficient_temporal_evidence",
+          "value_consumption_status": "missing",
+          "source_locator": "REC-PROD-S03-001",
+          "required_resolution": "缺少时间字段或记录顺序证据，不得制造趋势",
+          "affected_record_count": 1,
+          "occurrence_count": 1,
+          "sample_source_locators": [
+            "REC-PROD-S03-001"
+          ]
+        }
+      ],
+      "evidence_refs": [
+        {
+          "semantic_table": "OMP适配器结果",
+          "source_table": "orchestration_test_results.json",
+          "record_key": "evidence_refs",
+          "record_id": "EVREF-v1:c3face5807ad5b1f8dc3ef82bedb46fe563c21720c47152cb915103a90e7e60f",
+          "source_type": "OMP_LOCAL_ADAPTER_TEST"
+        },
+        {
+          "semantic_table": "OMP适配器结果",
+          "source_table": "orchestration_test_results.json",
+          "record_key": "evidence_refs",
+          "record_id": "EVREF-v1:5ff4114f4c0d40b727908e1d120493ba1929519955bd736a6d61ed5b40f8bace",
+          "source_type": "OMP_LOCAL_ADAPTER_TEST"
+        },
+        {
+          "semantic_table": "OMP适配器结果",
+          "source_table": "orchestration_test_results.json",
+          "record_key": "evidence_refs",
+          "record_id": "EVREF-v1:6d7359295d824b418cc97ebf859fc801b88592a532cbe1fdcb5254f09f13ee36",
+          "source_type": "OMP_LOCAL_ADAPTER_TEST"
+        },
+        {
+          "semantic_table": "OMP适配器结果",
+          "source_table": "orchestration_test_results.json",
+          "record_key": "evidence_refs",
+          "record_id": "EVREF-v1:25af4b6d3356e3d5810e43303d4b62775d17a040d21541006ed08b3421e1c49a",
+          "source_type": "OMP_LOCAL_ADAPTER_TEST"
+        },
+        {
+          "semantic_table": "OMP适配器结果",
+          "source_table": "orchestration_test_results.json",
+          "record_key": "evidence_refs",
+          "record_id": "EVREF-v1:f96e0f3419d50da377aaa21cfc0c2784ad94548e1d46fea993fc0e089f72840a",
+          "source_type": "OMP_LOCAL_ADAPTER_TEST"
+        },
+        {
+          "semantic_table": "OMP适配器结果",
+          "source_table": "orchestration_test_results.json",
+          "record_key": "evidence_refs",
+          "record_id": "EVREF-v1:a8d0cd12b2c9a6a760e37df215ce8446da9a592d92138bc4e3c44fb6b9ac958f",
+          "source_type": "OMP_LOCAL_ADAPTER_TEST"
+        },
+        {
+          "semantic_table": "OMP适配器结果",
+          "source_table": "orchestration_test_results.json",
+          "record_key": "evidence_refs",
+          "record_id": "EVREF-v1:2e41c03a80d6b9fb13f0c38ae941c32707339d0b3f3c78950ded627173b19ce8",
+          "source_type": "OMP_LOCAL_ADAPTER_TEST"
+        },
+        {
+          "semantic_table": "OMP适配器结果",
+          "source_table": "orchestration_test_results.json",
+          "record_key": "evidence_refs",
+          "record_id": "EVREF-v1:9fb662ec899a3215a2d1ae3630346d74c9097cc618cb7cad379d3b5761e5b334",
+          "source_type": "OMP_LOCAL_ADAPTER_TEST"
+        }
+      ],
+      "rule_version": "SKILL-CONTRACT-v0.1.3",
+      "knowledge_version": "OMP_LOCAL_ADAPTER_TEST",
+      "last_updated_at": "2026-08-13T00:00:00Z",
+      "downtime_events": [],
+      "downtime_summary": {
+        "unplanned_minutes": 45
+      }
+    },
+    {
+      "event_id": "EVT-20251009-0001",
+      "role": "process",
+      "dataset_id": "OMP_LOCAL_ADAPTER_TEST",
+      "line_ids": [
+        "LINE-S03"
+      ],
+      "headline": "适配器测试：性能率78.0%；缺少时序证据，不生成趋势",
+      "kpis": [
+        {
+          "metric_code": "PERFORMANCE",
+          "value": 0.78,
+          "value_type": "ratio",
+          "display_format": "0.0%",
+          "unit": "ratio",
+          "aggregation_scope": "adapter_test_fixture",
+          "evidence_refs": [
+            {
+              "semantic_table": "OMP适配器结果",
+              "source_table": "orchestration_test_results.json",
+              "record_key": "evidence_refs",
+              "record_id": "EVREF-v1:6d7359295d824b418cc97ebf859fc801b88592a532cbe1fdcb5254f09f13ee36",
+              "source_type": "OMP_LOCAL_ADAPTER_TEST"
+            }
+          ]
+        }
+      ],
+      "charts": [],
+      "alerts": [],
+      "tasks": [
+        {
+          "task_id": "TASK-OMP-03-PROD",
+          "status": "needs_confirmation",
+          "title": "生产影响评估",
+          "description": "生产诊断完成，分析记录: REC-PROD-S03-001。 源OEE: 0.609567。 复算OEE: 0.605231（availability × performance_rate × quality_factor）。 OEE直接驱动因子: availability=0.85, performance_rate=0.78, quality_factor=0.912867。 非计划停机 45 分钟，为开动率下降证据。 严重度: unknown。 未提供批准的严重度阈值规则(missing_severity_rule)。 证据覆盖率(confidence): 1.0。"
+        }
+      ],
+      "decisions_required": [
+        {
+          "decision_id": "ADAPTER-TEST-CONFIRMATION",
+          "confirmation_id": "ADAPTER-TEST-CONFIRMATION",
+          "action": "仅生成测试确认草稿，不执行高风险动作",
+          "risk_level": "high",
+          "status": "待确认",
+          "evidence_refs": [
+            {
+              "semantic_table": "OMP适配器结果",
+              "source_table": "orchestration_test_results.json",
+              "record_key": "evidence_refs",
+              "record_id": "EVREF-v1:c3face5807ad5b1f8dc3ef82bedb46fe563c21720c47152cb915103a90e7e60f",
+              "source_type": "OMP_LOCAL_ADAPTER_TEST"
+            },
+            {
+              "semantic_table": "OMP适配器结果",
+              "source_table": "orchestration_test_results.json",
+              "record_key": "evidence_refs",
+              "record_id": "EVREF-v1:5ff4114f4c0d40b727908e1d120493ba1929519955bd736a6d61ed5b40f8bace",
+              "source_type": "OMP_LOCAL_ADAPTER_TEST"
+            },
+            {
+              "semantic_table": "OMP适配器结果",
+              "source_table": "orchestration_test_results.json",
+              "record_key": "evidence_refs",
+              "record_id": "EVREF-v1:6d7359295d824b418cc97ebf859fc801b88592a532cbe1fdcb5254f09f13ee36",
+              "source_type": "OMP_LOCAL_ADAPTER_TEST"
+            },
+            {
+              "semantic_table": "OMP适配器结果",
+              "source_table": "orchestration_test_results.json",
+              "record_key": "evidence_refs",
+              "record_id": "EVREF-v1:25af4b6d3356e3d5810e43303d4b62775d17a040d21541006ed08b3421e1c49a",
+              "source_type": "OMP_LOCAL_ADAPTER_TEST"
+            },
+            {
+              "semantic_table": "OMP适配器结果",
+              "source_table": "orchestration_test_results.json",
+              "record_key": "evidence_refs",
+              "record_id": "EVREF-v1:f96e0f3419d50da377aaa21cfc0c2784ad94548e1d46fea993fc0e089f72840a",
+              "source_type": "OMP_LOCAL_ADAPTER_TEST"
+            },
+            {
+              "semantic_table": "OMP适配器结果",
+              "source_table": "orchestration_test_results.json",
+              "record_key": "evidence_refs",
+              "record_id": "EVREF-v1:a8d0cd12b2c9a6a760e37df215ce8446da9a592d92138bc4e3c44fb6b9ac958f",
+              "source_type": "OMP_LOCAL_ADAPTER_TEST"
+            },
+            {
+              "semantic_table": "OMP适配器结果",
+              "source_table": "orchestration_test_results.json",
+              "record_key": "evidence_refs",
+              "record_id": "EVREF-v1:2e41c03a80d6b9fb13f0c38ae941c32707339d0b3f3c78950ded627173b19ce8",
+              "source_type": "OMP_LOCAL_ADAPTER_TEST"
+            },
+            {
+              "semantic_table": "OMP适配器结果",
+              "source_table": "orchestration_test_results.json",
+              "record_key": "evidence_refs",
+              "record_id": "EVREF-v1:9fb662ec899a3215a2d1ae3630346d74c9097cc618cb7cad379d3b5761e5b334",
+              "source_type": "OMP_LOCAL_ADAPTER_TEST"
+            }
+          ]
+        }
+      ],
+      "data_gaps": [
+        {
+          "semantic_entity": "shift",
+          "semantic_field": "mtbf_mttr",
+          "reason": "missing_equipment_fault_repair_evidence",
+          "value_consumption_status": "missing",
+          "source_locator": "REC-PROD-S03-001",
+          "required_resolution": "缺少 EquipmentID/故障码/维修工单，不得计算 MTBF/MTTR",
+          "affected_record_count": 1,
+          "occurrence_count": 1,
+          "sample_source_locators": [
+            "REC-PROD-S03-001"
+          ]
+        },
+        {
+          "semantic_entity": "shift",
+          "semantic_field": "shift_trend",
+          "reason": "insufficient_temporal_evidence",
+          "value_consumption_status": "missing",
+          "source_locator": "REC-PROD-S03-001",
+          "required_resolution": "缺少时间字段或记录顺序证据，不得制造趋势",
+          "affected_record_count": 1,
+          "occurrence_count": 1,
+          "sample_source_locators": [
+            "REC-PROD-S03-001"
+          ]
+        }
+      ],
+      "evidence_refs": [
+        {
+          "semantic_table": "OMP适配器结果",
+          "source_table": "orchestration_test_results.json",
+          "record_key": "evidence_refs",
+          "record_id": "EVREF-v1:c3face5807ad5b1f8dc3ef82bedb46fe563c21720c47152cb915103a90e7e60f",
+          "source_type": "OMP_LOCAL_ADAPTER_TEST"
+        },
+        {
+          "semantic_table": "OMP适配器结果",
+          "source_table": "orchestration_test_results.json",
+          "record_key": "evidence_refs",
+          "record_id": "EVREF-v1:5ff4114f4c0d40b727908e1d120493ba1929519955bd736a6d61ed5b40f8bace",
+          "source_type": "OMP_LOCAL_ADAPTER_TEST"
+        },
+        {
+          "semantic_table": "OMP适配器结果",
+          "source_table": "orchestration_test_results.json",
+          "record_key": "evidence_refs",
+          "record_id": "EVREF-v1:6d7359295d824b418cc97ebf859fc801b88592a532cbe1fdcb5254f09f13ee36",
+          "source_type": "OMP_LOCAL_ADAPTER_TEST"
+        },
+        {
+          "semantic_table": "OMP适配器结果",
+          "source_table": "orchestration_test_results.json",
+          "record_key": "evidence_refs",
+          "record_id": "EVREF-v1:25af4b6d3356e3d5810e43303d4b62775d17a040d21541006ed08b3421e1c49a",
+          "source_type": "OMP_LOCAL_ADAPTER_TEST"
+        },
+        {
+          "semantic_table": "OMP适配器结果",
+          "source_table": "orchestration_test_results.json",
+          "record_key": "evidence_refs",
+          "record_id": "EVREF-v1:f96e0f3419d50da377aaa21cfc0c2784ad94548e1d46fea993fc0e089f72840a",
+          "source_type": "OMP_LOCAL_ADAPTER_TEST"
+        },
+        {
+          "semantic_table": "OMP适配器结果",
+          "source_table": "orchestration_test_results.json",
+          "record_key": "evidence_refs",
+          "record_id": "EVREF-v1:a8d0cd12b2c9a6a760e37df215ce8446da9a592d92138bc4e3c44fb6b9ac958f",
+          "source_type": "OMP_LOCAL_ADAPTER_TEST"
+        },
+        {
+          "semantic_table": "OMP适配器结果",
+          "source_table": "orchestration_test_results.json",
+          "record_key": "evidence_refs",
+          "record_id": "EVREF-v1:2e41c03a80d6b9fb13f0c38ae941c32707339d0b3f3c78950ded627173b19ce8",
+          "source_type": "OMP_LOCAL_ADAPTER_TEST"
+        },
+        {
+          "semantic_table": "OMP适配器结果",
+          "source_table": "orchestration_test_results.json",
+          "record_key": "evidence_refs",
+          "record_id": "EVREF-v1:9fb662ec899a3215a2d1ae3630346d74c9097cc618cb7cad379d3b5761e5b334",
+          "source_type": "OMP_LOCAL_ADAPTER_TEST"
+        }
+      ],
+      "rule_version": "SKILL-CONTRACT-v0.1.3",
+      "knowledge_version": "OMP_LOCAL_ADAPTER_TEST",
+      "last_updated_at": "2026-08-13T00:00:00Z"
+    },
+    {
+      "event_id": "EVT-20251009-0001",
+      "role": "supply",
+      "dataset_id": "OMP_LOCAL_ADAPTER_TEST",
+      "line_ids": [
+        "LINE-S03"
+      ],
+      "headline": "适配器测试：采购与到货数量均为1000，未检测到供应连续性风险",
+      "kpis": [
+        {
+          "metric_code": "PURCHASE_QTY",
+          "value": 1000.0,
+          "value_type": "integer",
+          "display_format": "#,##0",
+          "unit": "件",
+          "aggregation_scope": "adapter_test_fixture",
+          "evidence_refs": [
+            {
+              "semantic_table": "OMP适配器结果",
+              "source_table": "orchestration_test_results.json",
+              "record_key": "evidence_refs",
+              "record_id": "EVREF-v1:553e0295c0a085d3151d6cdbe5d279d3ec371745b51a35d16d7261133bd9ea3b",
+              "source_type": "OMP_LOCAL_ADAPTER_TEST"
+            }
+          ]
+        },
+        {
+          "metric_code": "ARRIVED_QTY",
+          "value": 1000.0,
+          "value_type": "integer",
+          "display_format": "#,##0",
+          "unit": "件",
+          "aggregation_scope": "adapter_test_fixture",
+          "evidence_refs": [
+            {
+              "semantic_table": "OMP适配器结果",
+              "source_table": "orchestration_test_results.json",
+              "record_key": "evidence_refs",
+              "record_id": "EVREF-v1:389d4a1da99ca49798af2868b17b35d4debd29cee1904bbd4a9659b8c5fd419d",
+              "source_type": "OMP_LOCAL_ADAPTER_TEST"
+            }
+          ]
+        }
+      ],
+      "charts": [],
+      "alerts": [],
+      "tasks": [
+        {
+          "task_id": "TASK-OMP-03-SUPPLY",
+          "status": "completed",
+          "title": "供应连续性评估",
+          "description": "未检测到供应连续性风险信号"
+        }
+      ],
+      "decisions_required": [],
+      "data_gaps": [],
+      "evidence_refs": [
+        {
+          "semantic_table": "OMP适配器结果",
+          "source_table": "orchestration_test_results.json",
+          "record_key": "evidence_refs",
+          "record_id": "EVREF-v1:b81c7e9e48e3818b4149d0e4c7f9669be26d215228cc89474f2e82cdb0150f99",
+          "source_type": "OMP_LOCAL_ADAPTER_TEST"
+        },
+        {
+          "semantic_table": "OMP适配器结果",
+          "source_table": "orchestration_test_results.json",
+          "record_key": "evidence_refs",
+          "record_id": "EVREF-v1:553e0295c0a085d3151d6cdbe5d279d3ec371745b51a35d16d7261133bd9ea3b",
+          "source_type": "OMP_LOCAL_ADAPTER_TEST"
+        },
+        {
+          "semantic_table": "OMP适配器结果",
+          "source_table": "orchestration_test_results.json",
+          "record_key": "evidence_refs",
+          "record_id": "EVREF-v1:389d4a1da99ca49798af2868b17b35d4debd29cee1904bbd4a9659b8c5fd419d",
+          "source_type": "OMP_LOCAL_ADAPTER_TEST"
+        },
+        {
+          "semantic_table": "OMP适配器结果",
+          "source_table": "orchestration_test_results.json",
+          "record_key": "evidence_refs",
+          "record_id": "EVREF-v1:8cc0db0e01432eec066fa2e42a2498d30e7d4848dd1c0a87ff01d67678fbef10",
+          "source_type": "OMP_LOCAL_ADAPTER_TEST"
+        },
+        {
+          "semantic_table": "OMP适配器结果",
+          "source_table": "orchestration_test_results.json",
+          "record_key": "evidence_refs",
+          "record_id": "EVREF-v1:8e0d77e29cf72ec779803314fa771cfdf69d3d92a918b5bd998e3bcc82faa7c2",
+          "source_type": "OMP_LOCAL_ADAPTER_TEST"
+        }
+      ],
+      "rule_version": "SKILL-CONTRACT-v0.1.3",
+      "knowledge_version": "OMP_LOCAL_ADAPTER_TEST",
+      "last_updated_at": "2026-08-13T00:00:00Z"
+    }
+  ],
+  "control_table_refs": {
+    "bf_events": {
+      "table_id": "tblBCVCDY0j2Nv64",
+      "record_id": "recvrBGIhE6SFL",
+      "event_status": "待确认",
+      "analysis_version": 4
+    },
+    "bf_subtasks": {
+      "TASK-20251009-0001": "recvrBGSQJ45zR",
+      "TASK-20251009-0002": "recvrBGSQJf8Fe",
+      "TASK-20251009-0003": "recvrBGSQJt0Yg",
+      "TASK-20251009-0004": "recvrBGSQJQTb2"
+    },
+    "bf_human_confirmations": {
+      "CONF-20251009-0001": {
+        "record_id": "recvrBGUIfliU8",
+        "status": "撤回"
+      },
+      "CONF-20251009-0002": {
+        "record_id": "recvrC7dF49ZOb",
+        "status": "待确认"
+      },
+      "CONF-20251009-0003": {
+        "record_id": "recvrCyOpQkaQH",
+        "status": "待确认"
+      }
+    },
+    "bf_agent_runs": {
+      "RUN-CORRECT-002": "recvrC7dE58q7c",
+      "RUN-CORRECT-003": "pending_creation",
+      "RUN-CORRECT-004": "recvrCyT2v5JBq"
+    }
+  },
+  "materialization": {
+    "adapter_test": true,
+    "oee_recompute": 0.605230821,
+    "oee_gap": null,
+    "total_output": 1200,
+    "good_output": 1095,
+    "defect_total": 105
+  },
+  "audit_trail": {
+    "previous_analysis": {
+      "status": "superseded",
+      "superseded_by_run_id": "RUN-CORRECT-002",
+      "errors_corrected": [
+        "OEE原值0.693已纠正为0.4591115012",
+        "不良总数原值84721已纠正为1349（错误聚合范围）",
+        "冻结记录FZ-0001/FZ-0004/FZ-0007已移除与黄金事件的关联",
+        "原确认记录CONF-20251009-0001已在BF_HUMAN_CONFIRMATIONS中标记为撤回"
+      ]
+    },
+    "correction_run": {
+      "run_id": "RUN-CORRECT-002",
+      "record_id": "recvrC7dE58q7c",
+      "description": "SIM-v2.2适配纠偏运行",
+      "timestamp": "2026-08-07T12:39:23Z"
+    }
+  },
+  "evidence_ref_summary": {
+    "occurrence_count": 160,
+    "deduplicated_physical_record_count": 27,
+    "deduplicated_records": [
+      "03_工单映射_模拟:WO-20251009-013",
+      "04_订单物料_模拟:SO-2413-1-M-DISPLAY",
+      "04_订单物料_模拟:SO-2413-2-M-PCBA",
+      "04_订单物料_模拟:SO-2413-3-M-HOUSING",
+      "12_多产线班次_模拟:LINE-S03-PRE-20251009",
+      "13_多产线停机_模拟:SIM-STOP-00336",
+      "13_多产线停机_模拟:SIM-STOP-00339",
+      "13_多产线停机_模拟:SIM-STOP-00342",
+      "13_多产线停机_模拟:SIM-STOP-00345",
+      "13_多产线停机_模拟:SIM-STOP-00348",
+      "13_多产线停机_模拟:SIM-STOP-00351",
+      "13_多产线停机_模拟:SIM-STOP-00354",
+      "13_多产线停机_模拟:SIM-STOP-00357",
+      "13_多产线停机_模拟:SIM-STOP-00360",
+      "13_多产线停机_模拟:SIM-STOP-00363",
+      "13_多产线停机_模拟:SIM-STOP-00366",
+      "13_多产线停机_模拟:SIM-STOP-00369",
+      "13_多产线停机_模拟:SIM-STOP-00372",
+      "13_多产线停机_模拟:SIM-STOP-00375",
+      "13_多产线停机_模拟:SIM-STOP-00378",
+      "14_多产线告警_模拟:SIM-EVT-00086",
+      "16_不良类型_模拟:DEF-00191",
+      "16_不良类型_模拟:DEF-00192",
+      "16_不良类型_模拟:DEF-00193",
+      "16_不良类型_模拟:DEF-00194",
+      "16_不良类型_模拟:DEF-00195",
+      "17_质量冻结明细_模拟:FZ-0005"
+    ]
+  },
+  "validation_contract": {
+    "version": "v1.4-validation-contract",
+    "rules": [
+      {
+        "rule_id": "VR-001",
+        "description": "DecisionID必须唯一",
+        "check": "all decision_id values across roles must be unique (after normalization)"
+      },
+      {
+        "rule_id": "VR-002",
+        "description": "每个需要人工确认的DecisionID必须绑定一个真实存在的ConfirmationID",
+        "check": "for each decision with status=待确认: decision.confirmation_id must exist in BF_HUMAN_CONFIRMATIONS"
+      },
+      {
+        "rule_id": "VR-003",
+        "description": "一个ConfirmationID只能对应一个规范化决策动作",
+        "check": "one confirmation_id maps to exactly one canonical decision_id (1:1)"
+      },
+      {
+        "rule_id": "VR-004",
+        "description": "同一个决策可在多个角色视图重复展示，但DecisionID、ConfirmationID、Action必须完全一致",
+        "check": "if same decision_id appears in multiple roles, all fields must match"
+      },
+      {
+        "rule_id": "VR-005",
+        "description": "ConfirmationID的控制表状态必须与载荷状态一致",
+        "check": "confirmation.confirmation_status in BF_HUMAN_CONFIRMATIONS === decision.status in payload"
+      }
+    ],
+    "machine_check_pseudocode": "\nfor each canonical decision:\n  assert decision.confirmation_id exists in BF_HUMAN_CONFIRMATIONS\n  assert confirmation.event_id === decision.event_id\n  assert confirmation.action === decision.action\n  assert one confirmation_id maps to one canonical decision_id\n"
+  },
+  "validation_results": {
+    "all_passed": true,
+    "rules": [
+      {
+        "rule_id": "VR-001",
+        "passed": true,
+        "detail": "DecisionIDs: ['DEC-20251009-0002', 'DEC-20251009-0003'], duplicates: none"
+      },
+      {
+        "rule_id": "VR-002",
+        "passed": true,
+        "detail": "DEC-20251009-0002.CONF-20251009-0002 → exists=True, record_id=recvrC7dF49ZOb; DEC-20251009-0003.CONF-20251009-0003 → exists=True, record_id=recvrCyOpQkaQH"
+      },
+      {
+        "rule_id": "VR-003",
+        "passed": true,
+        "detail": "CONF-20251009-0002 → DEC-20251009-0002 (1:1 OK); CONF-20251009-0003 → DEC-20251009-0003 (1:1 OK)"
+      },
+      {
+        "rule_id": "VR-004",
+        "passed": true,
+        "detail": "No decision_id appears in multiple roles (vacuously true)"
+      },
+      {
+        "rule_id": "VR-005",
+        "passed": true,
+        "detail": "CONF-20251009-0002: control=待确认, payload=待确认, match=True; CONF-20251009-0003: control=待确认, payload=待确认, match=True"
+      }
+    ],
+    "decision_confirmation_map": [
+      {
+        "role": "factory",
+        "decision_id": "DEC-20251009-0002",
+        "confirmation_id": "CONF-20251009-0002",
+        "action": "对LINE-S03-PRE-20251009当班产品启动隔离与100%复检",
+        "event_id": "EVT-20251009-0001",
+        "status": "待确认",
+        "risk_level": "high"
+      },
+      {
+        "role": "supply",
+        "decision_id": "DEC-20251009-0003",
+        "confirmation_id": "CONF-20251009-0003",
+        "action": "确认M-DISPLAY 250件缺口的加急到货/替代料方案",
+        "event_id": "EVT-20251009-0001",
+        "status": "待确认",
+        "risk_level": "high"
+      }
+    ],
+    "pending_confirmation_count": 2
+  },
+  "runtime_mode": "adapter-test",
+  "adapter_event_id": "EVT-OMP-03-GOLDEN-0001",
+  "data_gaps": 4,
+  "adapter_checks": {
+    "golden_event": {
+      "status": "PASS",
+      "errors": []
+    },
+    "governance_gate": {
+      "status": "PASS",
+      "errors": []
+    },
+    "decision_quality_gate": {
+      "status": "PASS",
+      "errors": [],
+      "reviewed_result_count": 3
+    },
+    "supply_insufficient": {
+      "status": "PASS",
+      "observed_status": "warning",
+      "blocked_gap_count": 1
+    },
+    "high_risk_confirmation": {
+      "status": "PASS",
+      "observed_status": "needs_confirmation"
+    },
+    "spc_missing": {
+      "status": "PASS",
+      "observed_status": "warning"
+    },
+    "stop_defect_variation": {
+      "status": "PASS",
+      "downtime_removed": true,
+      "defect_effect": true
+    },
+    "readonly_boundary": {
+      "status": "PASS",
+      "input_hashes_unchanged": true,
+      "all_tasks_non_writing": true,
+      "input_file_count": 3
+    }
+  },
+  "formal_derived_insights": {
+    "promotion_status": "approved",
+    "formal_integration_status": "attached_additive",
+    "derived_insights": [
+      {
+        "insight_id": "DERIVED-EVT-OMP-03-GOLDEN-0001-TASK-OMP-03-PROD-a01-oee-loss-tree",
+        "skill_id": "a01-oee-loss-tree",
+        "authority": "bifrost_derived",
+        "status": "approved",
+        "metric_effect": "none",
+        "does_not_replace_authoritative_metrics": true,
+        "promotion_scope": "formal-derived",
+        "evidence_provenance": "authoritative_task_evidence",
+        "source_payload_sha256": "ff0e5b869ab9bdeb3f7f5198630e9aedd539fdf6ef1689730314d76ea1f44b60",
+        "event_id": "EVT-OMP-03-GOLDEN-0001",
+        "task_id": "TASK-OMP-03-PROD",
+        "approval": {
+          "approval_id": "USER-INSTRUCTION-PEER-PROMOTION",
+          "approved_by": "project-owner",
+          "approval_source": "explicit_user_request",
+          "event_id": "EVT-OMP-03-GOLDEN-0001",
+          "approved_skill_ids": [
+            "a01-oee-loss-tree",
+            "a07-yield-funnel",
+            "a08-supply-chain-gap"
+          ]
+        },
+        "evidence_refs": [
+          "EVREF-v1:25af4b6d3356e3d5810e43303d4b62775d17a040d21541006ed08b3421e1c49a",
+          "EVREF-v1:2e41c03a80d6b9fb13f0c38ae941c32707339d0b3f3c78950ded627173b19ce8",
+          "EVREF-v1:5ff4114f4c0d40b727908e1d120493ba1929519955bd736a6d61ed5b40f8bace",
+          "EVREF-v1:6d7359295d824b418cc97ebf859fc801b88592a532cbe1fdcb5254f09f13ee36",
+          "EVREF-v1:9fb662ec899a3215a2d1ae3630346d74c9097cc618cb7cad379d3b5761e5b334",
+          "EVREF-v1:a8d0cd12b2c9a6a760e37df215ce8446da9a592d92138bc4e3c44fb6b9ac958f",
+          "EVREF-v1:c3face5807ad5b1f8dc3ef82bedb46fe563c21720c47152cb915103a90e7e60f",
+          "EVREF-v1:f96e0f3419d50da377aaa21cfc0c2784ad94548e1d46fea993fc0e089f72840a"
+        ],
+        "physical_evidence_refs": [],
+        "evidence_binding_hash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "payload": {
+          "contract_version": "BIFROST_PEER_SKILL_OUTPUT_v1",
+          "skill_id": "a01-oee-loss-tree",
+          "status": "available",
+          "event_id": "EVT-OMP-03-GOLDEN-0001",
+          "task_id": "TASK-OMP-03-PROD",
+          "evidence_refs": [
+            "EVREF-v1:25af4b6d3356e3d5810e43303d4b62775d17a040d21541006ed08b3421e1c49a",
+            "EVREF-v1:2e41c03a80d6b9fb13f0c38ae941c32707339d0b3f3c78950ded627173b19ce8",
+            "EVREF-v1:5ff4114f4c0d40b727908e1d120493ba1929519955bd736a6d61ed5b40f8bace",
+            "EVREF-v1:6d7359295d824b418cc97ebf859fc801b88592a532cbe1fdcb5254f09f13ee36",
+            "EVREF-v1:9fb662ec899a3215a2d1ae3630346d74c9097cc618cb7cad379d3b5761e5b334",
+            "EVREF-v1:a8d0cd12b2c9a6a760e37df215ce8446da9a592d92138bc4e3c44fb6b9ac958f",
+            "EVREF-v1:c3face5807ad5b1f8dc3ef82bedb46fe563c21720c47152cb915103a90e7e60f",
+            "EVREF-v1:f96e0f3419d50da377aaa21cfc0c2784ad94548e1d46fea993fc0e089f72840a"
+          ],
+          "data_gaps": [
+            "mtbf_mttr",
+            "shift_trend"
+          ],
+          "insights": [],
+          "evidence_gate": {
+            "status": "passed",
+            "required": true,
+            "evidence_refs": [
+              "EVREF-v1:25af4b6d3356e3d5810e43303d4b62775d17a040d21541006ed08b3421e1c49a",
+              "EVREF-v1:2e41c03a80d6b9fb13f0c38ae941c32707339d0b3f3c78950ded627173b19ce8",
+              "EVREF-v1:5ff4114f4c0d40b727908e1d120493ba1929519955bd736a6d61ed5b40f8bace",
+              "EVREF-v1:6d7359295d824b418cc97ebf859fc801b88592a532cbe1fdcb5254f09f13ee36",
+              "EVREF-v1:9fb662ec899a3215a2d1ae3630346d74c9097cc618cb7cad379d3b5761e5b334",
+              "EVREF-v1:a8d0cd12b2c9a6a760e37df215ce8446da9a592d92138bc4e3c44fb6b9ac958f",
+              "EVREF-v1:c3face5807ad5b1f8dc3ef82bedb46fe563c21720c47152cb915103a90e7e60f",
+              "EVREF-v1:f96e0f3419d50da377aaa21cfc0c2784ad94548e1d46fea993fc0e089f72840a"
+            ],
+            "missing_fields": [],
+            "source": "fixed_adapter_payload"
+          },
+          "display_descriptor": {
+            "language": "zh-CN",
+            "source": "peer_skill_executor",
+            "title_zh": "OEE损失树",
+            "chart_type": "loss_tree"
+          },
+          "does_not_replace_authoritative_metrics": true,
+          "oee_loss_tree": {
+            "availability": [
+              {
+                "cause_type": "direct_driver",
+                "semantic_field": "availability",
+                "value": 0.85,
+                "unit": "ratio",
+                "evidence_refs": [
+                  "EVREF-v1:5ff4114f4c0d40b727908e1d120493ba1929519955bd736a6d61ed5b40f8bace"
+                ]
+              },
+              {
+                "cause_type": "observed_cause",
+                "category": "availability_loss",
+                "statement": "非计划停机 45 分钟，为开动率下降证据（OEE直接驱动 availability 的证据）",
+                "evidence_refs": [
+                  "EVREF-v1:f96e0f3419d50da377aaa21cfc0c2784ad94548e1d46fea993fc0e089f72840a"
+                ]
+              }
+            ],
+            "performance": [
+              {
+                "cause_type": "direct_driver",
+                "semantic_field": "performance_rate",
+                "value": 0.78,
+                "unit": "ratio",
+                "evidence_refs": [
+                  "EVREF-v1:6d7359295d824b418cc97ebf859fc801b88592a532cbe1fdcb5254f09f13ee36"
+                ]
+              }
+            ],
+            "quality": [
+              {
+                "cause_type": "direct_driver",
+                "semantic_field": "quality_factor",
+                "value": 0.912867,
+                "unit": "ratio",
+                "evidence_refs": [
+                  "EVREF-v1:25af4b6d3356e3d5810e43303d4b62775d17a040d21541006ed08b3421e1c49a"
+                ]
+              }
+            ]
+          },
+          "validation_errors": []
+        }
+      },
+      {
+        "insight_id": "DERIVED-EVT-OMP-03-GOLDEN-0001-TASK-OMP-03-QUAL-a07-yield-funnel",
+        "skill_id": "a07-yield-funnel",
+        "authority": "bifrost_derived",
+        "status": "approved",
+        "metric_effect": "none",
+        "does_not_replace_authoritative_metrics": true,
+        "promotion_scope": "formal-derived",
+        "evidence_provenance": "authoritative_task_evidence",
+        "source_payload_sha256": "ff0e5b869ab9bdeb3f7f5198630e9aedd539fdf6ef1689730314d76ea1f44b60",
+        "event_id": "EVT-OMP-03-GOLDEN-0001",
+        "task_id": "TASK-OMP-03-QUAL",
+        "approval": {
+          "approval_id": "USER-INSTRUCTION-PEER-PROMOTION",
+          "approved_by": "project-owner",
+          "approval_source": "explicit_user_request",
+          "event_id": "EVT-OMP-03-GOLDEN-0001",
+          "approved_skill_ids": [
+            "a01-oee-loss-tree",
+            "a07-yield-funnel",
+            "a08-supply-chain-gap"
+          ]
+        },
+        "evidence_refs": [
+          "EVREF-v1:3ae85957ba607c7a2daa666dd06edca0ab015a8a40061547d143eacd650909b8",
+          "EVREF-v1:48c90c3a270d5b2265448f96168fa879f774d8523d346b765cf2fd0b4f1cca7e",
+          "EVREF-v1:5208d666bf141e2f72ff83a290a82bd3f44cb3a8b966273f79d8b85c3e73b0ef",
+          "EVREF-v1:7e32579d6ade4195e27b2513d371c67c427ae5607c4f59ec7f05cae5074cbece"
+        ],
+        "physical_evidence_refs": [],
+        "evidence_binding_hash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "payload": {
+          "contract_version": "BIFROST_PEER_SKILL_OUTPUT_v1",
+          "skill_id": "a07-yield-funnel",
+          "status": "available",
+          "event_id": "EVT-OMP-03-GOLDEN-0001",
+          "task_id": "TASK-OMP-03-QUAL",
+          "evidence_refs": [
+            "EVREF-v1:3ae85957ba607c7a2daa666dd06edca0ab015a8a40061547d143eacd650909b8",
+            "EVREF-v1:48c90c3a270d5b2265448f96168fa879f774d8523d346b765cf2fd0b4f1cca7e",
+            "EVREF-v1:5208d666bf141e2f72ff83a290a82bd3f44cb3a8b966273f79d8b85c3e73b0ef",
+            "EVREF-v1:7e32579d6ade4195e27b2513d371c67c427ae5607c4f59ec7f05cae5074cbece"
+          ],
+          "data_gaps": [
+            "sample_rule",
+            "spc_measurement_points"
+          ],
+          "insights": [],
+          "evidence_gate": {
+            "status": "passed",
+            "required": true,
+            "evidence_refs": [
+              "EVREF-v1:3ae85957ba607c7a2daa666dd06edca0ab015a8a40061547d143eacd650909b8",
+              "EVREF-v1:48c90c3a270d5b2265448f96168fa879f774d8523d346b765cf2fd0b4f1cca7e",
+              "EVREF-v1:5208d666bf141e2f72ff83a290a82bd3f44cb3a8b966273f79d8b85c3e73b0ef",
+              "EVREF-v1:7e32579d6ade4195e27b2513d371c67c427ae5607c4f59ec7f05cae5074cbece"
+            ],
+            "missing_fields": [],
+            "source": "fixed_adapter_payload"
+          },
+          "display_descriptor": {
+            "language": "zh-CN",
+            "source": "peer_skill_executor",
+            "title_zh": "良率漏斗",
+            "chart_type": "funnel"
+          },
+          "does_not_replace_authoritative_metrics": true,
+          "yield_funnel": {
+            "stages": [
+              {
+                "semantic_field": "defect_total",
+                "value": 50,
+                "unit": null,
+                "evidence_refs": [
+                  "EVREF-v1:7e32579d6ade4195e27b2513d371c67c427ae5607c4f59ec7f05cae5074cbece"
+                ]
+              },
+              {
+                "semantic_field": "yield",
+                "value": 0.95,
+                "unit": null,
+                "evidence_refs": [
+                  "EVREF-v1:5208d666bf141e2f72ff83a290a82bd3f44cb3a8b966273f79d8b85c3e73b0ef"
+                ]
+              }
+            ]
+          },
+          "validation_errors": []
+        }
+      },
+      {
+        "insight_id": "DERIVED-EVT-OMP-03-GOLDEN-0001-TASK-OMP-03-SUPPLY-a08-supply-chain-gap",
+        "skill_id": "a08-supply-chain-gap",
+        "authority": "bifrost_derived",
+        "status": "approved",
+        "metric_effect": "none",
+        "does_not_replace_authoritative_metrics": true,
+        "promotion_scope": "formal-derived",
+        "evidence_provenance": "authoritative_task_evidence",
+        "source_payload_sha256": "ff0e5b869ab9bdeb3f7f5198630e9aedd539fdf6ef1689730314d76ea1f44b60",
+        "event_id": "EVT-OMP-03-GOLDEN-0001",
+        "task_id": "TASK-OMP-03-SUPPLY",
+        "approval": {
+          "approval_id": "USER-INSTRUCTION-PEER-PROMOTION",
+          "approved_by": "project-owner",
+          "approval_source": "explicit_user_request",
+          "event_id": "EVT-OMP-03-GOLDEN-0001",
+          "approved_skill_ids": [
+            "a01-oee-loss-tree",
+            "a07-yield-funnel",
+            "a08-supply-chain-gap"
+          ]
+        },
+        "evidence_refs": [
+          "EVREF-v1:389d4a1da99ca49798af2868b17b35d4debd29cee1904bbd4a9659b8c5fd419d",
+          "EVREF-v1:553e0295c0a085d3151d6cdbe5d279d3ec371745b51a35d16d7261133bd9ea3b",
+          "EVREF-v1:8cc0db0e01432eec066fa2e42a2498d30e7d4848dd1c0a87ff01d67678fbef10",
+          "EVREF-v1:8e0d77e29cf72ec779803314fa771cfdf69d3d92a918b5bd998e3bcc82faa7c2",
+          "EVREF-v1:b81c7e9e48e3818b4149d0e4c7f9669be26d215228cc89474f2e82cdb0150f99"
+        ],
+        "physical_evidence_refs": [],
+        "evidence_binding_hash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "payload": {
+          "contract_version": "BIFROST_PEER_SKILL_OUTPUT_v1",
+          "skill_id": "a08-supply-chain-gap",
+          "status": "available",
+          "event_id": "EVT-OMP-03-GOLDEN-0001",
+          "task_id": "TASK-OMP-03-SUPPLY",
+          "evidence_refs": [
+            "EVREF-v1:389d4a1da99ca49798af2868b17b35d4debd29cee1904bbd4a9659b8c5fd419d",
+            "EVREF-v1:553e0295c0a085d3151d6cdbe5d279d3ec371745b51a35d16d7261133bd9ea3b",
+            "EVREF-v1:8cc0db0e01432eec066fa2e42a2498d30e7d4848dd1c0a87ff01d67678fbef10",
+            "EVREF-v1:8e0d77e29cf72ec779803314fa771cfdf69d3d92a918b5bd998e3bcc82faa7c2",
+            "EVREF-v1:b81c7e9e48e3818b4149d0e4c7f9669be26d215228cc89474f2e82cdb0150f99"
+          ],
+          "data_gaps": [],
+          "insights": [],
+          "evidence_gate": {
+            "status": "passed",
+            "required": true,
+            "evidence_refs": [
+              "EVREF-v1:389d4a1da99ca49798af2868b17b35d4debd29cee1904bbd4a9659b8c5fd419d",
+              "EVREF-v1:553e0295c0a085d3151d6cdbe5d279d3ec371745b51a35d16d7261133bd9ea3b",
+              "EVREF-v1:8cc0db0e01432eec066fa2e42a2498d30e7d4848dd1c0a87ff01d67678fbef10",
+              "EVREF-v1:8e0d77e29cf72ec779803314fa771cfdf69d3d92a918b5bd998e3bcc82faa7c2",
+              "EVREF-v1:b81c7e9e48e3818b4149d0e4c7f9669be26d215228cc89474f2e82cdb0150f99"
+            ],
+            "missing_fields": [],
+            "source": "fixed_adapter_payload"
+          },
+          "display_descriptor": {
+            "language": "zh-CN",
+            "source": "peer_skill_executor",
+            "title_zh": "供应缺口",
+            "chart_type": "table"
+          },
+          "does_not_replace_authoritative_metrics": true,
+          "supply_gap": {
+            "metrics": [
+              {
+                "metric_id": "M-SUP-001",
+                "label": "PO-TEST-0001#row1 采购数量",
+                "value": 1000.0,
+                "display_format": "#,##0",
+                "semantic_field": "purchase_qty",
+                "evidence_refs": [
+                  "EVREF-v1:553e0295c0a085d3151d6cdbe5d279d3ec371745b51a35d16d7261133bd9ea3b"
+                ]
+              },
+              {
+                "metric_id": "M-SUP-002",
+                "label": "PO-TEST-0001#row1 到货数量",
+                "value": 1000.0,
+                "display_format": "#,##0",
+                "semantic_field": "arrived_qty",
+                "evidence_refs": [
+                  "EVREF-v1:389d4a1da99ca49798af2868b17b35d4debd29cee1904bbd4a9659b8c5fd419d"
+                ]
+              }
+            ],
+            "oee_attribution": "forbidden"
+          },
+          "oee_attribution": "forbidden",
+          "validation_errors": []
+        }
+      }
+    ],
+    "requires_human_confirmation": false
+  }
+}

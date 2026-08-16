@@ -1,0 +1,72 @@
+{
+  "fixture_type": "golden_event_test_values",
+  "purpose": "测试专用夹具：存放黄金事件的固定数值，供测试断言使用。不得作为知识库规则引用，不得进入正式知识库。",
+  "note": "04A.2 修订：yield_recompute 修正为 Event v1.4 载荷原始值 0.9128626（04A.1 误写为 0.9128672，已作为数据质量问题 DQ-YIELD-001 登记）。",
+  "golden_event": {
+    "event_id": "EVT-20251009-0001",
+    "source_event_id": "SIM-EVT-00086",
+    "sim_shift_id": "LINE-S03-PRE-20251009",
+    "data_time": "2025-10-09",
+    "oee": 0.4591115012,
+    "oee_gap": -0.3009,
+    "oee_quality_factor": 0.912867,
+    "availability": 0.609567,
+    "performance": 0.825067,
+    "defect_total": 1349,
+    "good_output": 14135,
+    "total_output": 15484,
+    "yield_recompute": 0.9128626,
+    "risk_level": "高",
+    "downtime": {
+      "event_count": 15,
+      "total_minutes": 211.7,
+      "unplanned_events": 10,
+      "unplanned_minutes": 100.5,
+      "changeover_events": 5,
+      "max_mechanical_failure_minutes": 43.1,
+      "max_changeover_minutes": 49.0
+    },
+    "material": {
+      "work_order": "WO-20251009-013",
+      "material_count": 3,
+      "gap_material": "M-DISPLAY",
+      "gap_qty": 250,
+      "freeze_material": "M-HOUSING",
+      "freeze_id": "FZ-0005",
+      "freeze_qty": 200,
+      "freeze_status": "待复检"
+    },
+    "confirmations": {
+      "CONF-20251009-0001": "撤回",
+      "CONF-20251009-0002": "待确认",
+      "CONF-20251009-0003": "待确认"
+    }
+  },
+  "anti_hardcode_modified_values": {
+    "oee": 0.62,
+    "defect_total": 800,
+    "downtime_events": 8,
+    "unplanned_downtime_minutes": 50.0,
+    "material_gap": 400
+  },
+  "data_quality_issues": [
+    {
+      "dq_id": "DQ-YIELD-001",
+      "title": "质量因子、物化复算率和整数复算率不一致",
+      "status": "open",
+      "registered": "2026-08-08",
+      "source": "04A.2 用户纠偏指令",
+      "values": {
+        "oee_quality_factor": 0.912867,
+        "oee_quality_factor_source": "OEE 计算使用的质量因子（line role KPI: QUALITY），OEE 计算继续采用此值",
+        "event_yield_recompute": 0.9128626,
+        "event_yield_recompute_source": "Event v1.4 载荷 materialization.yield_recompute 原始值",
+        "integer_yield_recompute": 0.9128778093515887,
+        "integer_yield_recompute_source": "整数良品复算 good_output/total_output = 14135/15484（quality role KPI）"
+      },
+      "discrepancy": "三个口径数值互不相等（最大偏差约 1.5e-5），来源分别为 KPI 因子、物化复算与整数良品复算，需业务方确认口径归属。",
+      "resolution_rule": "在口径统一前：OEE 计算暂继续使用载荷明确提供的 0.912867；夹具 yield_recompute 只存 Event v1.4 原始值 0.9128626；禁止创造第四个数值。",
+      "fixture_correction": "04A.1 夹具误写 yield_recompute=0.9128672（既非载荷值也非复算值），04A.2 已修正为载荷原始值 0.9128626。"
+    }
+  ]
+}

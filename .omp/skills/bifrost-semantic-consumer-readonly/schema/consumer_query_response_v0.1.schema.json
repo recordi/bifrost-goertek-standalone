@@ -1,0 +1,32 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "BIFROST_CONSUMER_QUERY_RESPONSE_v0.1",
+  "description": "消费者只读查询响应合同（中间层，非最终decision_input）",
+  "type": "object",
+  "required": ["valid", "blocked_code", "result_count", "results", "data_gaps", "consumer_cannot_bypass"],
+  "properties": {
+    "valid": {"type": "boolean"},
+    "blocked_code": {"type": ["string", "null"]},
+    "result_count": {"type": "integer"},
+    "results": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "semantic_record_key": {"type": "string"},
+          "source_table": {"type": "string"},
+          "fields": {"type": "object"}
+        }
+      }
+    },
+    "data_gap_count": {"type": "integer"},
+    "data_gaps": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["semantic_entity", "semantic_field", "reason", "value_consumption_status", "source_locator", "required_resolution"]
+      }
+    },
+    "consumer_cannot_bypass": {"type": "boolean", "const": true}
+  }
+}

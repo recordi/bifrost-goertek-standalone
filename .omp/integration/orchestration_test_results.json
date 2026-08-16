@@ -1,0 +1,600 @@
+{
+  "tasks": [
+    {
+      "contract_version": "BIFROST-SPECIALIST-RESULT-v0.1.3",
+      "event_id": "EVT-OMP-03-GOLDEN-0001",
+      "task_id": "TASK-OMP-03-PROD",
+      "agent_id": "production-specialist",
+      "objective": "生产影响评估",
+      "status": "needs_confirmation",
+      "conclusion": "生产诊断完成，分析记录: REC-PROD-S03-001。 源OEE: 0.609567。 复算OEE: 0.605231（availability × performance_rate × quality_factor）。 OEE直接驱动因子: availability=0.85, performance_rate=0.78, quality_factor=0.912867。 非计划停机 45 分钟，为开动率下降证据。 严重度: unknown。 未提供批准的严重度阈值规则(missing_severity_rule)。 证据覆盖率(confidence): 1.0。",
+      "severity": "unknown",
+      "confidence": 1.0,
+      "metrics": [
+        {
+          "metric_id": "METRIC-0000-oee_source",
+          "label": "oee_source",
+          "value": 0.609567,
+          "display_format": "0.0%",
+          "semantic_field": "oee_source",
+          "evidence_refs": [
+            "EVREF-v1:c3face5807ad5b1f8dc3ef82bedb46fe563c21720c47152cb915103a90e7e60f"
+          ]
+        },
+        {
+          "metric_id": "METRIC-0001-availability",
+          "label": "availability",
+          "value": 0.85,
+          "display_format": "0.0%",
+          "semantic_field": "availability",
+          "evidence_refs": [
+            "EVREF-v1:5ff4114f4c0d40b727908e1d120493ba1929519955bd736a6d61ed5b40f8bace"
+          ]
+        },
+        {
+          "metric_id": "METRIC-0002-performance_rate",
+          "label": "performance_rate",
+          "value": 0.78,
+          "display_format": "0.0%",
+          "semantic_field": "performance_rate",
+          "evidence_refs": [
+            "EVREF-v1:6d7359295d824b418cc97ebf859fc801b88592a532cbe1fdcb5254f09f13ee36"
+          ]
+        },
+        {
+          "metric_id": "METRIC-0003-quality_factor",
+          "label": "quality_factor",
+          "value": 0.912867,
+          "display_format": "0.0%",
+          "semantic_field": "quality_factor",
+          "evidence_refs": [
+            "EVREF-v1:25af4b6d3356e3d5810e43303d4b62775d17a040d21541006ed08b3421e1c49a"
+          ]
+        },
+        {
+          "metric_id": "METRIC-0004-total_output",
+          "label": "total_output",
+          "value": 1200,
+          "display_format": "0",
+          "semantic_field": "total_output",
+          "evidence_refs": [
+            "EVREF-v1:a8d0cd12b2c9a6a760e37df215ce8446da9a592d92138bc4e3c44fb6b9ac958f"
+          ]
+        },
+        {
+          "metric_id": "METRIC-0005-good_output",
+          "label": "good_output",
+          "value": 1095,
+          "display_format": "0",
+          "semantic_field": "good_output",
+          "evidence_refs": [
+            "EVREF-v1:2e41c03a80d6b9fb13f0c38ae941c32707339d0b3f3c78950ded627173b19ce8"
+          ]
+        },
+        {
+          "metric_id": "METRIC-0006-defect_total",
+          "label": "defect_total",
+          "value": 105,
+          "display_format": "0",
+          "semantic_field": "defect_total",
+          "evidence_refs": [
+            "EVREF-v1:9fb662ec899a3215a2d1ae3630346d74c9097cc618cb7cad379d3b5761e5b334"
+          ]
+        },
+        {
+          "metric_id": "METRIC-0007-unplanned_downtime_minutes",
+          "label": "unplanned_downtime_minutes",
+          "value": 45,
+          "display_format": "0",
+          "semantic_field": "unplanned_downtime_minutes",
+          "evidence_refs": [
+            "EVREF-v1:f96e0f3419d50da377aaa21cfc0c2784ad94548e1d46fea993fc0e089f72840a"
+          ]
+        }
+      ],
+      "causes": [
+        {
+          "cause_id": "CAUSE-0000",
+          "category": "oee_direct_driver",
+          "statement": "availability=0.85，OEE直接驱动因子",
+          "causal_evidence_level": "direct_verified",
+          "evidence_refs": [
+            "EVREF-v1:5ff4114f4c0d40b727908e1d120493ba1929519955bd736a6d61ed5b40f8bace"
+          ]
+        },
+        {
+          "cause_id": "CAUSE-0001",
+          "category": "oee_direct_driver",
+          "statement": "performance_rate=0.78，OEE直接驱动因子",
+          "causal_evidence_level": "direct_verified",
+          "evidence_refs": [
+            "EVREF-v1:6d7359295d824b418cc97ebf859fc801b88592a532cbe1fdcb5254f09f13ee36"
+          ]
+        },
+        {
+          "cause_id": "CAUSE-0002",
+          "category": "oee_direct_driver",
+          "statement": "quality_factor=0.912867，OEE直接驱动因子",
+          "causal_evidence_level": "direct_verified",
+          "evidence_refs": [
+            "EVREF-v1:25af4b6d3356e3d5810e43303d4b62775d17a040d21541006ed08b3421e1c49a"
+          ]
+        },
+        {
+          "cause_id": "CAUSE-0003",
+          "category": "availability_loss",
+          "statement": "非计划停机 45 分钟，为开动率下降证据（OEE直接驱动 availability 的证据）",
+          "causal_evidence_level": "direct_verified",
+          "evidence_refs": [
+            "EVREF-v1:f96e0f3419d50da377aaa21cfc0c2784ad94548e1d46fea993fc0e089f72840a"
+          ]
+        }
+      ],
+      "affected_objects": [
+        {
+          "type": "production_line",
+          "id": "LINE-S03"
+        },
+        {
+          "type": "shift",
+          "id": "LINE-S03-PRE-20251009"
+        }
+      ],
+      "recommended_actions": [
+        {
+          "action_id": "ACTION-0000",
+          "action": "建议排查非计划停机根因，确认是否影响开动率",
+          "priority": "medium",
+          "is_high_risk": false,
+          "needs_human_confirmation": false,
+          "prohibited_auto_execute": true,
+          "actor_can_execute": false,
+          "affected_object": "LINE-S03",
+          "evidence_refs": [
+            "EVREF-v1:f96e0f3419d50da377aaa21cfc0c2784ad94548e1d46fea993fc0e089f72840a"
+          ]
+        },
+        {
+          "action_id": "ACTION-0001",
+          "action": "如需调整排产计划，须由授权人员在业务系统中确认后执行",
+          "priority": "high",
+          "is_high_risk": true,
+          "needs_human_confirmation": true,
+          "prohibited_auto_execute": true,
+          "actor_can_execute": false,
+          "affected_object": "LINE-S03",
+          "evidence_refs": [
+            "EVREF-v1:c3face5807ad5b1f8dc3ef82bedb46fe563c21720c47152cb915103a90e7e60f"
+          ]
+        }
+      ],
+      "needs_human_confirmation": true,
+      "evidence_refs": [
+        "EVREF-v1:c3face5807ad5b1f8dc3ef82bedb46fe563c21720c47152cb915103a90e7e60f",
+        "EVREF-v1:5ff4114f4c0d40b727908e1d120493ba1929519955bd736a6d61ed5b40f8bace",
+        "EVREF-v1:6d7359295d824b418cc97ebf859fc801b88592a532cbe1fdcb5254f09f13ee36",
+        "EVREF-v1:25af4b6d3356e3d5810e43303d4b62775d17a040d21541006ed08b3421e1c49a",
+        "EVREF-v1:f96e0f3419d50da377aaa21cfc0c2784ad94548e1d46fea993fc0e089f72840a",
+        "EVREF-v1:a8d0cd12b2c9a6a760e37df215ce8446da9a592d92138bc4e3c44fb6b9ac958f",
+        "EVREF-v1:2e41c03a80d6b9fb13f0c38ae941c32707339d0b3f3c78950ded627173b19ce8",
+        "EVREF-v1:9fb662ec899a3215a2d1ae3630346d74c9097cc618cb7cad379d3b5761e5b334"
+      ],
+      "data_gaps": [
+        {
+          "semantic_entity": "shift",
+          "semantic_field": "mtbf_mttr",
+          "reason": "missing_equipment_fault_repair_evidence",
+          "value_consumption_status": "missing",
+          "source_locator": "REC-PROD-S03-001",
+          "required_resolution": "缺少 EquipmentID/故障码/维修工单，不得计算 MTBF/MTTR",
+          "affected_record_count": 1,
+          "occurrence_count": 1,
+          "sample_source_locators": [
+            "REC-PROD-S03-001"
+          ]
+        },
+        {
+          "semantic_entity": "shift",
+          "semantic_field": "shift_trend",
+          "reason": "insufficient_temporal_evidence",
+          "value_consumption_status": "missing",
+          "source_locator": "REC-PROD-S03-001",
+          "required_resolution": "缺少时间字段或记录顺序证据，不得制造趋势",
+          "affected_record_count": 1,
+          "occurrence_count": 1,
+          "sample_source_locators": [
+            "REC-PROD-S03-001"
+          ]
+        }
+      ],
+      "source_write_performed": false,
+      "actor_can_execute": false
+    },
+    {
+      "contract_version": "BIFROST-SPECIALIST-RESULT-v0.1.3",
+      "event_id": "EVT-OMP-03-GOLDEN-0001",
+      "task_id": "TASK-OMP-03-QUAL",
+      "agent_id": "quality-specialist",
+      "objective": "质量与良率评估",
+      "status": "warning",
+      "conclusion": "良率字段 yield=0.95（记录: 质-不良明细#defect_detail#LINE-S03-001）; 不良类型分布: 2 种不良类型; 不良总数=50; 不良分布统计守恒检查通过; 缺少 SPC 数据，Cpk 不可计算; 无时间字段，不生成趋势结论",
+      "severity": "unknown",
+      "confidence": 1.0,
+      "metrics": [
+        {
+          "metric_id": "M-QUAL-001",
+          "label": "yield",
+          "value": 0.95,
+          "display_format": "0.0%",
+          "semantic_field": "yield",
+          "evidence_refs": [
+            "EVREF-v1:5208d666bf141e2f72ff83a290a82bd3f44cb3a8b966273f79d8b85c3e73b0ef"
+          ]
+        },
+        {
+          "metric_id": "M-QUAL-002",
+          "label": "defect_total",
+          "value": 50,
+          "display_format": "0",
+          "semantic_field": "defect_total",
+          "evidence_refs": [
+            "EVREF-v1:7e32579d6ade4195e27b2513d371c67c427ae5607c4f59ec7f05cae5074cbece"
+          ]
+        }
+      ],
+      "causes": [
+        {
+          "cause_id": "C-QUAL-001",
+          "category": "associated_defect_type",
+          "statement": "不良类型「外观不良」为关联现象，证据级别为关联（correlation_not_causation）",
+          "causal_evidence_level": "associated_risk",
+          "evidence_refs": [
+            "EVREF-v1:3ae85957ba607c7a2daa666dd06edca0ab015a8a40061547d143eacd650909b8"
+          ]
+        },
+        {
+          "cause_id": "C-QUAL-002",
+          "category": "associated_defect_type",
+          "statement": "不良类型「尺寸超差」为关联现象，证据级别为关联（correlation_not_causation）",
+          "causal_evidence_level": "associated_risk",
+          "evidence_refs": [
+            "EVREF-v1:48c90c3a270d5b2265448f96168fa879f774d8523d346b765cf2fd0b4f1cca7e"
+          ]
+        }
+      ],
+      "affected_objects": [],
+      "recommended_actions": [],
+      "needs_human_confirmation": false,
+      "evidence_refs": [
+        "EVREF-v1:5208d666bf141e2f72ff83a290a82bd3f44cb3a8b966273f79d8b85c3e73b0ef",
+        "EVREF-v1:7e32579d6ade4195e27b2513d371c67c427ae5607c4f59ec7f05cae5074cbece",
+        "EVREF-v1:3ae85957ba607c7a2daa666dd06edca0ab015a8a40061547d143eacd650909b8",
+        "EVREF-v1:48c90c3a270d5b2265448f96168fa879f774d8523d346b765cf2fd0b4f1cca7e"
+      ],
+      "data_gaps": [
+        {
+          "semantic_entity": "defect_detail",
+          "semantic_field": "spc_measurement_points",
+          "reason": "GAP-SPC-MEASUREMENT",
+          "value_consumption_status": "missing",
+          "source_locator": "missing_fields=lsl,spc_measurement_points,usl",
+          "required_resolution": "缺少 SPC 原始测量点/规格限(USL/LSL)/抽样规则，不得计算 Cpk/Cp，不得判断 SPC 越界",
+          "affected_record_count": 1,
+          "occurrence_count": 1,
+          "sample_source_locators": [
+            "missing_fields=lsl,spc_measurement_points,usl"
+          ]
+        },
+        {
+          "semantic_entity": "defect_detail",
+          "semantic_field": "sample_rule",
+          "reason": "missing_sample_rule",
+          "value_consumption_status": "missing",
+          "source_locator": null,
+          "required_resolution": "缺少抽样规则定义，SPC 判定结果不可靠",
+          "affected_record_count": 1,
+          "occurrence_count": 1,
+          "sample_source_locators": []
+        }
+      ],
+      "source_write_performed": false,
+      "actor_can_execute": false
+    },
+    {
+      "contract_version": "BIFROST-SPECIALIST-RESULT-v0.1.3",
+      "event_id": "EVT-OMP-03-GOLDEN-0001",
+      "task_id": "TASK-OMP-03-SUPPLY",
+      "agent_id": "supply-specialist",
+      "objective": "供应连续性评估",
+      "status": "completed",
+      "conclusion": "未检测到供应连续性风险信号",
+      "severity": "unknown",
+      "confidence": 1.0,
+      "metrics": [
+        {
+          "metric_id": "M-SUP-001",
+          "label": "PO-TEST-0001#row1 采购数量",
+          "value": 1000.0,
+          "display_format": "#,##0",
+          "semantic_field": "purchase_qty",
+          "evidence_refs": [
+            "EVREF-v1:553e0295c0a085d3151d6cdbe5d279d3ec371745b51a35d16d7261133bd9ea3b"
+          ]
+        },
+        {
+          "metric_id": "M-SUP-002",
+          "label": "PO-TEST-0001#row1 到货数量",
+          "value": 1000.0,
+          "display_format": "#,##0",
+          "semantic_field": "arrived_qty",
+          "evidence_refs": [
+            "EVREF-v1:389d4a1da99ca49798af2868b17b35d4debd29cee1904bbd4a9659b8c5fd419d"
+          ]
+        }
+      ],
+      "causes": [],
+      "affected_objects": [
+        {
+          "object_type": "purchase_order",
+          "object_id": "PO-TEST-0001#row1"
+        }
+      ],
+      "recommended_actions": [],
+      "needs_human_confirmation": false,
+      "evidence_refs": [
+        "EVREF-v1:b81c7e9e48e3818b4149d0e4c7f9669be26d215228cc89474f2e82cdb0150f99",
+        "EVREF-v1:553e0295c0a085d3151d6cdbe5d279d3ec371745b51a35d16d7261133bd9ea3b",
+        "EVREF-v1:389d4a1da99ca49798af2868b17b35d4debd29cee1904bbd4a9659b8c5fd419d",
+        "EVREF-v1:8cc0db0e01432eec066fa2e42a2498d30e7d4848dd1c0a87ff01d67678fbef10",
+        "EVREF-v1:8e0d77e29cf72ec779803314fa771cfdf69d3d92a918b5bd998e3bcc82faa7c2"
+      ],
+      "data_gaps": [],
+      "source_write_performed": false,
+      "actor_can_execute": false
+    }
+  ],
+  "event": {
+    "event_id": "EVT-OMP-03-GOLDEN-0001",
+    "status": "needs_confirmation",
+    "task_count": 3,
+    "evidence_ref_count": 17,
+    "data_gap_count": 4,
+    "human_confirmation_required": true
+  },
+  "role_projections": {
+    "factory": {
+      "event_id": "EVT-OMP-03-GOLDEN-0001",
+      "task_count": 3,
+      "status": "needs_confirmation"
+    },
+    "line": {
+      "production_status": "needs_confirmation",
+      "metrics": [
+        {
+          "metric_id": "METRIC-0000-oee_source",
+          "label": "oee_source",
+          "value": 0.609567,
+          "display_format": "0.0%",
+          "semantic_field": "oee_source",
+          "evidence_refs": [
+            "EVREF-v1:c3face5807ad5b1f8dc3ef82bedb46fe563c21720c47152cb915103a90e7e60f"
+          ]
+        },
+        {
+          "metric_id": "METRIC-0001-availability",
+          "label": "availability",
+          "value": 0.85,
+          "display_format": "0.0%",
+          "semantic_field": "availability",
+          "evidence_refs": [
+            "EVREF-v1:5ff4114f4c0d40b727908e1d120493ba1929519955bd736a6d61ed5b40f8bace"
+          ]
+        },
+        {
+          "metric_id": "METRIC-0002-performance_rate",
+          "label": "performance_rate",
+          "value": 0.78,
+          "display_format": "0.0%",
+          "semantic_field": "performance_rate",
+          "evidence_refs": [
+            "EVREF-v1:6d7359295d824b418cc97ebf859fc801b88592a532cbe1fdcb5254f09f13ee36"
+          ]
+        },
+        {
+          "metric_id": "METRIC-0003-quality_factor",
+          "label": "quality_factor",
+          "value": 0.912867,
+          "display_format": "0.0%",
+          "semantic_field": "quality_factor",
+          "evidence_refs": [
+            "EVREF-v1:25af4b6d3356e3d5810e43303d4b62775d17a040d21541006ed08b3421e1c49a"
+          ]
+        },
+        {
+          "metric_id": "METRIC-0004-total_output",
+          "label": "total_output",
+          "value": 1200,
+          "display_format": "0",
+          "semantic_field": "total_output",
+          "evidence_refs": [
+            "EVREF-v1:a8d0cd12b2c9a6a760e37df215ce8446da9a592d92138bc4e3c44fb6b9ac958f"
+          ]
+        },
+        {
+          "metric_id": "METRIC-0005-good_output",
+          "label": "good_output",
+          "value": 1095,
+          "display_format": "0",
+          "semantic_field": "good_output",
+          "evidence_refs": [
+            "EVREF-v1:2e41c03a80d6b9fb13f0c38ae941c32707339d0b3f3c78950ded627173b19ce8"
+          ]
+        },
+        {
+          "metric_id": "METRIC-0006-defect_total",
+          "label": "defect_total",
+          "value": 105,
+          "display_format": "0",
+          "semantic_field": "defect_total",
+          "evidence_refs": [
+            "EVREF-v1:9fb662ec899a3215a2d1ae3630346d74c9097cc618cb7cad379d3b5761e5b334"
+          ]
+        },
+        {
+          "metric_id": "METRIC-0007-unplanned_downtime_minutes",
+          "label": "unplanned_downtime_minutes",
+          "value": 45,
+          "display_format": "0",
+          "semantic_field": "unplanned_downtime_minutes",
+          "evidence_refs": [
+            "EVREF-v1:f96e0f3419d50da377aaa21cfc0c2784ad94548e1d46fea993fc0e089f72840a"
+          ]
+        }
+      ]
+    },
+    "quality": {
+      "status": "warning",
+      "metrics": [
+        {
+          "metric_id": "M-QUAL-001",
+          "label": "yield",
+          "value": 0.95,
+          "display_format": "0.0%",
+          "semantic_field": "yield",
+          "evidence_refs": [
+            "EVREF-v1:5208d666bf141e2f72ff83a290a82bd3f44cb3a8b966273f79d8b85c3e73b0ef"
+          ]
+        },
+        {
+          "metric_id": "M-QUAL-002",
+          "label": "defect_total",
+          "value": 50,
+          "display_format": "0",
+          "semantic_field": "defect_total",
+          "evidence_refs": [
+            "EVREF-v1:7e32579d6ade4195e27b2513d371c67c427ae5607c4f59ec7f05cae5074cbece"
+          ]
+        }
+      ]
+    },
+    "equipment": {
+      "causes": [
+        {
+          "cause_id": "CAUSE-0000",
+          "category": "oee_direct_driver",
+          "statement": "availability=0.85，OEE直接驱动因子",
+          "causal_evidence_level": "direct_verified",
+          "evidence_refs": [
+            "EVREF-v1:5ff4114f4c0d40b727908e1d120493ba1929519955bd736a6d61ed5b40f8bace"
+          ]
+        },
+        {
+          "cause_id": "CAUSE-0001",
+          "category": "oee_direct_driver",
+          "statement": "performance_rate=0.78，OEE直接驱动因子",
+          "causal_evidence_level": "direct_verified",
+          "evidence_refs": [
+            "EVREF-v1:6d7359295d824b418cc97ebf859fc801b88592a532cbe1fdcb5254f09f13ee36"
+          ]
+        },
+        {
+          "cause_id": "CAUSE-0002",
+          "category": "oee_direct_driver",
+          "statement": "quality_factor=0.912867，OEE直接驱动因子",
+          "causal_evidence_level": "direct_verified",
+          "evidence_refs": [
+            "EVREF-v1:25af4b6d3356e3d5810e43303d4b62775d17a040d21541006ed08b3421e1c49a"
+          ]
+        },
+        {
+          "cause_id": "CAUSE-0003",
+          "category": "availability_loss",
+          "statement": "非计划停机 45 分钟，为开动率下降证据（OEE直接驱动 availability 的证据）",
+          "causal_evidence_level": "direct_verified",
+          "evidence_refs": [
+            "EVREF-v1:f96e0f3419d50da377aaa21cfc0c2784ad94548e1d46fea993fc0e089f72840a"
+          ]
+        }
+      ]
+    },
+    "process": {
+      "data_gaps": [
+        {
+          "semantic_entity": "shift",
+          "semantic_field": "mtbf_mttr",
+          "reason": "missing_equipment_fault_repair_evidence",
+          "value_consumption_status": "missing",
+          "source_locator": "REC-PROD-S03-001",
+          "required_resolution": "缺少 EquipmentID/故障码/维修工单，不得计算 MTBF/MTTR",
+          "affected_record_count": 1,
+          "occurrence_count": 1,
+          "sample_source_locators": [
+            "REC-PROD-S03-001"
+          ]
+        },
+        {
+          "semantic_entity": "shift",
+          "semantic_field": "shift_trend",
+          "reason": "insufficient_temporal_evidence",
+          "value_consumption_status": "missing",
+          "source_locator": "REC-PROD-S03-001",
+          "required_resolution": "缺少时间字段或记录顺序证据，不得制造趋势",
+          "affected_record_count": 1,
+          "occurrence_count": 1,
+          "sample_source_locators": [
+            "REC-PROD-S03-001"
+          ]
+        }
+      ]
+    },
+    "supply": {
+      "status": "completed",
+      "data_gaps": []
+    }
+  },
+  "input_hashes_sha256": {
+    "BIFROST_飞书导入数据包_v3_P0修复版_SIM-v2.2.xlsx": "57317ccc234aa66407c989f3d5c41090924a030d9ae0588afe6a95a765cbd086",
+    "README.md": "76e4fa92634eb9403abda42815a52906725cdd839ea90c720ef38d585d2de51e",
+    "歌尔可脱敏企业测试数据集.xlsx": "2906f6e7d3c57834a939d5e17acd8ea89585abaffac5000c1ecfa83bc176fd92"
+  },
+  "checks": {
+    "golden_event": {
+      "status": "PASS",
+      "errors": []
+    },
+    "governance_gate": {
+      "status": "PASS",
+      "errors": []
+    },
+    "decision_quality_gate": {
+      "status": "PASS",
+      "errors": [],
+      "reviewed_result_count": 3
+    },
+    "supply_insufficient": {
+      "status": "PASS",
+      "observed_status": "warning",
+      "blocked_gap_count": 1
+    },
+    "high_risk_confirmation": {
+      "status": "PASS",
+      "observed_status": "needs_confirmation"
+    },
+    "spc_missing": {
+      "status": "PASS",
+      "observed_status": "warning"
+    },
+    "stop_defect_variation": {
+      "status": "PASS",
+      "downtime_removed": true,
+      "defect_effect": true
+    },
+    "readonly_boundary": {
+      "status": "PASS",
+      "input_hashes_unchanged": true,
+      "all_tasks_non_writing": true,
+      "input_file_count": 3
+    }
+  },
+  "overall_status": "PASS"
+}

@@ -1,0 +1,1056 @@
+{
+  "S1": {
+    "contract_name": "BIFROST_SPECIALIST_RESULT_v0.1",
+    "contract_version": "BIFROST-SPECIALIST-RESULT-v0.1.3",
+    "specialist_type": "production",
+    "status": "needs_confirmation",
+    "request_id": "REQ-PROD-INT-3219",
+    "source_release_id": "BIFROST-SEMANTIC-DATA-PLANE-v0.2-HOTFIX-04C.5B.2",
+    "source_snapshot_id": "SDS-P02_SIM-20260810-113856",
+    "conclusion": "生产诊断完成，分析记录: 01_OEE班次#shift#SHIFT-PRE-20250922。 源OEE: 0.8254。 OEE复算未执行: can_recompute_oee 不为 true，不得复算。 三因子不完整，未识别OEE直接驱动因子。 严重度: unknown。 未提供批准的严重度阈值规则(missing_severity_rule)。 证据覆盖率(confidence): 0.125。",
+    "severity": "unknown",
+    "confidence": 0.125,
+    "metrics": [
+      {
+        "metric_id": "METRIC-0000-oee_source",
+        "label": "oee_source",
+        "value": 0.8254,
+        "display_format": "ratio",
+        "semantic_field": "oee_source",
+        "evidence_refs": [
+          "EVREF-v1:ae30a04d61832c9a7b5f07ad6a47b775b80977d28b0609f0f7b58a77e98481e7"
+        ]
+      }
+    ],
+    "causes": [],
+    "affected_objects": [],
+    "recommended_actions": [
+      {
+        "action_id": "ACTION-0000",
+        "action": "如需调整排产计划，须由授权人员在业务系统中确认后执行",
+        "priority": "high",
+        "is_high_risk": true,
+        "needs_human_confirmation": true,
+        "prohibited_auto_execute": true,
+        "actor_can_execute": false,
+        "affected_object": "01_OEE班次#shift#SHIFT-PRE-20250922",
+        "evidence_refs": [
+          "EVREF-v1:ae30a04d61832c9a7b5f07ad6a47b775b80977d28b0609f0f7b58a77e98481e7"
+        ]
+      }
+    ],
+    "needs_human_confirmation": true,
+    "evidence_refs": [
+      "EVREF-v1:ae30a04d61832c9a7b5f07ad6a47b775b80977d28b0609f0f7b58a77e98481e7"
+    ],
+    "data_gaps": [
+      {
+        "semantic_entity": "shift",
+        "semantic_field": "oee_source",
+        "reason": "field_not_available_in_record",
+        "value_consumption_status": "missing",
+        "source_locator": "{\"source_record_id\": \"LINE-S01-PRE-20250922\", \"source_table\": \"12_多产线班次_模拟\"}",
+        "required_resolution": "该字段在匹配记录中不存在，不得跨记录拼接或从其他记录补值",
+        "affected_record_count": 315,
+        "occurrence_count": 315,
+        "sample_source_locators": [
+          "{\"source_record_id\": \"LINE-S01-PRE-20250922\", \"source_table\": \"12_多产线班次_模拟\"}",
+          "{\"source_record_id\": \"LINE-S02-PRE-20250922\", \"source_table\": \"12_多产线班次_模拟\"}",
+          "{\"source_record_id\": \"LINE-S03-PRE-20250922\", \"source_table\": \"12_多产线班次_模拟\"}"
+        ]
+      },
+      {
+        "semantic_entity": "shift",
+        "semantic_field": "oee_recomputed",
+        "reason": "recompute_not_permitted",
+        "value_consumption_status": "missing",
+        "source_locator": "01_OEE班次#shift#SHIFT-PRE-20250922",
+        "required_resolution": "can_recompute_oee 未置 true，不得自行复算 OEE",
+        "affected_record_count": 1,
+        "occurrence_count": 1,
+        "sample_source_locators": [
+          "01_OEE班次#shift#SHIFT-PRE-20250922"
+        ]
+      },
+      {
+        "semantic_entity": "shift",
+        "semantic_field": "availability",
+        "reason": "factor_absent_for_oee_driver",
+        "value_consumption_status": "missing",
+        "source_locator": "01_OEE班次#shift#SHIFT-PRE-20250922",
+        "required_resolution": "缺少 OEE 直接驱动因子，无法识别为直接驱动",
+        "affected_record_count": 1,
+        "occurrence_count": 1,
+        "sample_source_locators": [
+          "01_OEE班次#shift#SHIFT-PRE-20250922"
+        ]
+      },
+      {
+        "semantic_entity": "shift",
+        "semantic_field": "performance_rate",
+        "reason": "factor_absent_for_oee_driver",
+        "value_consumption_status": "missing",
+        "source_locator": "01_OEE班次#shift#SHIFT-PRE-20250922",
+        "required_resolution": "缺少 OEE 直接驱动因子，无法识别为直接驱动",
+        "affected_record_count": 1,
+        "occurrence_count": 1,
+        "sample_source_locators": [
+          "01_OEE班次#shift#SHIFT-PRE-20250922"
+        ]
+      },
+      {
+        "semantic_entity": "shift",
+        "semantic_field": "quality_factor",
+        "reason": "factor_absent_for_oee_driver",
+        "value_consumption_status": "missing",
+        "source_locator": "01_OEE班次#shift#SHIFT-PRE-20250922",
+        "required_resolution": "缺少 OEE 直接驱动因子，无法识别为直接驱动",
+        "affected_record_count": 1,
+        "occurrence_count": 1,
+        "sample_source_locators": [
+          "01_OEE班次#shift#SHIFT-PRE-20250922"
+        ]
+      },
+      {
+        "semantic_entity": "shift",
+        "semantic_field": "mtbf_mttr",
+        "reason": "missing_equipment_fault_repair_evidence",
+        "value_consumption_status": "missing",
+        "source_locator": "01_OEE班次#shift#SHIFT-PRE-20250922",
+        "required_resolution": "缺少 EquipmentID/故障码/维修工单，不得计算 MTBF/MTTR",
+        "affected_record_count": 1,
+        "occurrence_count": 1,
+        "sample_source_locators": [
+          "01_OEE班次#shift#SHIFT-PRE-20250922"
+        ]
+      },
+      {
+        "semantic_entity": "shift",
+        "semantic_field": "shift_trend",
+        "reason": "insufficient_temporal_evidence",
+        "value_consumption_status": "missing",
+        "source_locator": "01_OEE班次#shift#SHIFT-PRE-20250922",
+        "required_resolution": "缺少时间字段或记录顺序证据，不得制造趋势",
+        "affected_record_count": 1,
+        "occurrence_count": 1,
+        "sample_source_locators": [
+          "01_OEE班次#shift#SHIFT-PRE-20250922"
+        ]
+      }
+    ],
+    "actor_can_execute": false,
+    "contract_versions": {
+      "specialist_result_contract_version": "BIFROST-SPECIALIST-RESULT-v0.1.3",
+      "decision_input_contract_version": "BIFROST-DECISION-INPUT-v0.1",
+      "semantic_model_version": "SEM-v1.1.1",
+      "mapping_rule_version": "MAP-v1.0.1",
+      "specialist_logical_version": "0.1.2"
+    },
+    "validation": {
+      "status": "passed",
+      "issues": [],
+      "warnings": [
+        "存在 7 个归并后 data_gaps",
+        "存在高风险动作，状态为 needs_confirmation"
+      ],
+      "input_contract_valid": true,
+      "evidence_contract_valid": true,
+      "output_contract_valid": true
+    },
+    "local_trace_id": "PROD-BF6529F140BF4CB4",
+    "specialist_details": {
+      "oee_analysis": {
+        "oee_source": {
+          "value": 0.8254,
+          "display_format": "ratio",
+          "evidence_evref": "EVREF-v1:ae30a04d61832c9a7b5f07ad6a47b775b80977d28b0609f0f7b58a77e98481e7"
+        },
+        "oee_recomputed": null,
+        "recompute_performed": false,
+        "recompute_blocked_reason": "can_recompute_oee 不为 true，不得复算",
+        "direct_drivers_count": 0
+      },
+      "downtime_analysis": {
+        "downtime_evidence_count": 0,
+        "material_continuity_risk": null,
+        "material_as_oee_cause": false,
+        "material_cause_blocked_reason": null,
+        "mtbf_mttr": null,
+        "mtbf_mttr_blocked_reason": "缺少 MTBF/MTTR 必需证据: ['equipment_id', 'fault_code', 'repair_work_order']，不得计算"
+      },
+      "trend_analysis": {
+        "trend_supported": false,
+        "trend": null,
+        "blocked_reason": "有序记录数 0 < 2，缺少时间字段或记录顺序证据，不得声称形成趋势"
+      },
+      "missing_severity_rule": true
+    }
+  },
+  "S2": {
+    "contract_name": "BIFROST_SPECIALIST_RESULT_v0.1",
+    "contract_version": "BIFROST-SPECIALIST-RESULT-v0.1.3",
+    "specialist_type": "production",
+    "status": "needs_confirmation",
+    "request_id": "REQ-PROD-INT-3219",
+    "source_release_id": "BIFROST-SEMANTIC-DATA-PLANE-v0.2-HOTFIX-04C.5B.2",
+    "source_snapshot_id": "SDS-P02_SIM-20260810-113856",
+    "conclusion": "生产诊断完成，分析记录: 01_OEE班次#shift#SHIFT-PRE-20250922。 源OEE: 0.8254。 OEE复算未执行: can_recompute_oee 不为 true，不得复算。 三因子不完整，未识别OEE直接驱动因子。 严重度: unknown。 未提供批准的严重度阈值规则(missing_severity_rule)。 证据覆盖率(confidence): 0.125。",
+    "severity": "unknown",
+    "confidence": 0.125,
+    "metrics": [
+      {
+        "metric_id": "METRIC-0000-oee_source",
+        "label": "oee_source",
+        "value": 0.8254,
+        "display_format": "ratio",
+        "semantic_field": "oee_source",
+        "evidence_refs": [
+          "EVREF-v1:ae30a04d61832c9a7b5f07ad6a47b775b80977d28b0609f0f7b58a77e98481e7"
+        ]
+      }
+    ],
+    "causes": [],
+    "affected_objects": [],
+    "recommended_actions": [
+      {
+        "action_id": "ACTION-0000",
+        "action": "如需调整排产计划，须由授权人员在业务系统中确认后执行",
+        "priority": "high",
+        "is_high_risk": true,
+        "needs_human_confirmation": true,
+        "prohibited_auto_execute": true,
+        "actor_can_execute": false,
+        "affected_object": "01_OEE班次#shift#SHIFT-PRE-20250922",
+        "evidence_refs": [
+          "EVREF-v1:ae30a04d61832c9a7b5f07ad6a47b775b80977d28b0609f0f7b58a77e98481e7"
+        ]
+      }
+    ],
+    "needs_human_confirmation": true,
+    "evidence_refs": [
+      "EVREF-v1:ae30a04d61832c9a7b5f07ad6a47b775b80977d28b0609f0f7b58a77e98481e7"
+    ],
+    "data_gaps": [
+      {
+        "semantic_entity": "shift",
+        "semantic_field": "oee_source",
+        "reason": "field_not_available_in_record",
+        "value_consumption_status": "missing",
+        "source_locator": "{\"source_record_id\": \"LINE-S01-PRE-20250922\", \"source_table\": \"12_多产线班次_模拟\"}",
+        "required_resolution": "该字段在匹配记录中不存在，不得跨记录拼接或从其他记录补值",
+        "affected_record_count": 315,
+        "occurrence_count": 315,
+        "sample_source_locators": [
+          "{\"source_record_id\": \"LINE-S01-PRE-20250922\", \"source_table\": \"12_多产线班次_模拟\"}",
+          "{\"source_record_id\": \"LINE-S02-PRE-20250922\", \"source_table\": \"12_多产线班次_模拟\"}",
+          "{\"source_record_id\": \"LINE-S03-PRE-20250922\", \"source_table\": \"12_多产线班次_模拟\"}"
+        ]
+      },
+      {
+        "semantic_entity": "shift",
+        "semantic_field": "oee_recomputed",
+        "reason": "null_value_unavailable",
+        "value_consumption_status": "missing",
+        "source_locator": "{\"source_column_name\": \"OEE复算\", \"source_record_id\": \"SHIFT-PRE-20250922\", \"source_table\": \"01_OEE班次\"}",
+        "required_resolution": "源数据为空，需业务系统补录后重新物化",
+        "affected_record_count": 420,
+        "occurrence_count": 420,
+        "sample_source_locators": [
+          "{\"source_column_name\": \"OEE复算\", \"source_record_id\": \"SHIFT-PRE-20250922\", \"source_table\": \"01_OEE班次\"}",
+          "{\"source_column_name\": \"OEE复算\", \"source_record_id\": \"SHIFT-PRE-20250923\", \"source_table\": \"01_OEE班次\"}",
+          "{\"source_column_name\": \"OEE复算\", \"source_record_id\": \"SHIFT-PRE-20250924\", \"source_table\": \"01_OEE班次\"}"
+        ]
+      },
+      {
+        "semantic_entity": "shift",
+        "semantic_field": "oee_recomputed",
+        "reason": "recompute_not_permitted",
+        "value_consumption_status": "missing",
+        "source_locator": "01_OEE班次#shift#SHIFT-PRE-20250922",
+        "required_resolution": "can_recompute_oee 未置 true，不得自行复算 OEE",
+        "affected_record_count": 1,
+        "occurrence_count": 1,
+        "sample_source_locators": [
+          "01_OEE班次#shift#SHIFT-PRE-20250922"
+        ]
+      },
+      {
+        "semantic_entity": "shift",
+        "semantic_field": "availability",
+        "reason": "factor_absent_for_oee_driver",
+        "value_consumption_status": "missing",
+        "source_locator": "01_OEE班次#shift#SHIFT-PRE-20250922",
+        "required_resolution": "缺少 OEE 直接驱动因子，无法识别为直接驱动",
+        "affected_record_count": 1,
+        "occurrence_count": 1,
+        "sample_source_locators": [
+          "01_OEE班次#shift#SHIFT-PRE-20250922"
+        ]
+      },
+      {
+        "semantic_entity": "shift",
+        "semantic_field": "performance_rate",
+        "reason": "factor_absent_for_oee_driver",
+        "value_consumption_status": "missing",
+        "source_locator": "01_OEE班次#shift#SHIFT-PRE-20250922",
+        "required_resolution": "缺少 OEE 直接驱动因子，无法识别为直接驱动",
+        "affected_record_count": 1,
+        "occurrence_count": 1,
+        "sample_source_locators": [
+          "01_OEE班次#shift#SHIFT-PRE-20250922"
+        ]
+      },
+      {
+        "semantic_entity": "shift",
+        "semantic_field": "quality_factor",
+        "reason": "factor_absent_for_oee_driver",
+        "value_consumption_status": "missing",
+        "source_locator": "01_OEE班次#shift#SHIFT-PRE-20250922",
+        "required_resolution": "缺少 OEE 直接驱动因子，无法识别为直接驱动",
+        "affected_record_count": 1,
+        "occurrence_count": 1,
+        "sample_source_locators": [
+          "01_OEE班次#shift#SHIFT-PRE-20250922"
+        ]
+      },
+      {
+        "semantic_entity": "shift",
+        "semantic_field": "mtbf_mttr",
+        "reason": "missing_equipment_fault_repair_evidence",
+        "value_consumption_status": "missing",
+        "source_locator": "01_OEE班次#shift#SHIFT-PRE-20250922",
+        "required_resolution": "缺少 EquipmentID/故障码/维修工单，不得计算 MTBF/MTTR",
+        "affected_record_count": 1,
+        "occurrence_count": 1,
+        "sample_source_locators": [
+          "01_OEE班次#shift#SHIFT-PRE-20250922"
+        ]
+      },
+      {
+        "semantic_entity": "shift",
+        "semantic_field": "shift_trend",
+        "reason": "insufficient_temporal_evidence",
+        "value_consumption_status": "missing",
+        "source_locator": "01_OEE班次#shift#SHIFT-PRE-20250922",
+        "required_resolution": "缺少时间字段或记录顺序证据，不得制造趋势",
+        "affected_record_count": 1,
+        "occurrence_count": 1,
+        "sample_source_locators": [
+          "01_OEE班次#shift#SHIFT-PRE-20250922"
+        ]
+      }
+    ],
+    "actor_can_execute": false,
+    "contract_versions": {
+      "specialist_result_contract_version": "BIFROST-SPECIALIST-RESULT-v0.1.3",
+      "decision_input_contract_version": "BIFROST-DECISION-INPUT-v0.1",
+      "semantic_model_version": "SEM-v1.1.1",
+      "mapping_rule_version": "MAP-v1.0.1",
+      "specialist_logical_version": "0.1.2"
+    },
+    "validation": {
+      "status": "passed",
+      "issues": [],
+      "warnings": [
+        "存在 8 个归并后 data_gaps",
+        "存在高风险动作，状态为 needs_confirmation"
+      ],
+      "input_contract_valid": true,
+      "evidence_contract_valid": true,
+      "output_contract_valid": true
+    },
+    "local_trace_id": "PROD-3FE1CABC8FE246E4",
+    "specialist_details": {
+      "oee_analysis": {
+        "oee_source": {
+          "value": 0.8254,
+          "display_format": "ratio",
+          "evidence_evref": "EVREF-v1:ae30a04d61832c9a7b5f07ad6a47b775b80977d28b0609f0f7b58a77e98481e7"
+        },
+        "oee_recomputed": null,
+        "recompute_performed": false,
+        "recompute_blocked_reason": "can_recompute_oee 不为 true，不得复算",
+        "direct_drivers_count": 0
+      },
+      "downtime_analysis": {
+        "downtime_evidence_count": 0,
+        "material_continuity_risk": null,
+        "material_as_oee_cause": false,
+        "material_cause_blocked_reason": null,
+        "mtbf_mttr": null,
+        "mtbf_mttr_blocked_reason": "缺少 MTBF/MTTR 必需证据: ['equipment_id', 'fault_code', 'repair_work_order']，不得计算"
+      },
+      "trend_analysis": {
+        "trend_supported": false,
+        "trend": null,
+        "blocked_reason": "有序记录数 0 < 2，缺少时间字段或记录顺序证据，不得声称形成趋势"
+      },
+      "missing_severity_rule": true
+    }
+  },
+  "S3": {
+    "contract_name": "BIFROST_SPECIALIST_RESULT_v0.1",
+    "contract_version": "BIFROST-SPECIALIST-RESULT-v0.1.3",
+    "specialist_type": "production",
+    "status": "blocked",
+    "request_id": "REQ-PROD-INT-3219",
+    "source_release_id": "BIFROST-SEMANTIC-DATA-PLANE-v0.2-HOTFIX-04C.5B.2",
+    "source_snapshot_id": "SDS-P02_SIM-20260810-113856",
+    "conclusion": "",
+    "severity": "unknown",
+    "confidence": 0.0,
+    "metrics": [],
+    "causes": [],
+    "affected_objects": [],
+    "recommended_actions": [],
+    "needs_human_confirmation": false,
+    "evidence_refs": [],
+    "data_gaps": [],
+    "actor_can_execute": false,
+    "contract_versions": {
+      "specialist_result_contract_version": "BIFROST-SPECIALIST-RESULT-v0.1.3",
+      "decision_input_contract_version": "BIFROST-DECISION-INPUT-v0.1",
+      "semantic_model_version": "SEM-v1.1.1",
+      "mapping_rule_version": "MAP-v1.0.1",
+      "specialist_logical_version": "0.1.2"
+    },
+    "validation": {
+      "status": "failed",
+      "issues": [
+        "contract_name 不是 BIFROST_DECISION_INPUT_v0.1，实际: 'WRONG_CONTRACT'"
+      ],
+      "warnings": [],
+      "input_contract_valid": false,
+      "evidence_contract_valid": false,
+      "output_contract_valid": true
+    },
+    "local_trace_id": "PROD-D33947F7D4B34745",
+    "specialist_details": {
+      "blocked_code": "BLOCKED_INPUT_CONTRACT",
+      "blocked_errors": [
+        "contract_name 不是 BIFROST_DECISION_INPUT_v0.1，实际: 'WRONG_CONTRACT'"
+      ],
+      "missing_severity_rule": true
+    }
+  },
+  "S4_original": {
+    "contract_name": "BIFROST_SPECIALIST_RESULT_v0.1",
+    "contract_version": "BIFROST-SPECIALIST-RESULT-v0.1.3",
+    "specialist_type": "production",
+    "status": "needs_confirmation",
+    "request_id": "REQ-PROD-INT-3219",
+    "source_release_id": "BIFROST-SEMANTIC-DATA-PLANE-v0.2-HOTFIX-04C.5B.2",
+    "source_snapshot_id": "SDS-P02_SIM-20260810-113856",
+    "conclusion": "生产诊断完成，分析记录: 01_OEE班次#shift#SHIFT-PRE-20250922。 源OEE: 0.8254。 OEE复算未执行: can_recompute_oee 不为 true，不得复算。 三因子不完整，未识别OEE直接驱动因子。 严重度: unknown。 未提供批准的严重度阈值规则(missing_severity_rule)。 证据覆盖率(confidence): 0.125。",
+    "severity": "unknown",
+    "confidence": 0.125,
+    "metrics": [
+      {
+        "metric_id": "METRIC-0000-oee_source",
+        "label": "oee_source",
+        "value": 0.8254,
+        "display_format": "ratio",
+        "semantic_field": "oee_source",
+        "evidence_refs": [
+          "EVREF-v1:ae30a04d61832c9a7b5f07ad6a47b775b80977d28b0609f0f7b58a77e98481e7"
+        ]
+      }
+    ],
+    "causes": [],
+    "affected_objects": [],
+    "recommended_actions": [
+      {
+        "action_id": "ACTION-0000",
+        "action": "如需调整排产计划，须由授权人员在业务系统中确认后执行",
+        "priority": "high",
+        "is_high_risk": true,
+        "needs_human_confirmation": true,
+        "prohibited_auto_execute": true,
+        "actor_can_execute": false,
+        "affected_object": "01_OEE班次#shift#SHIFT-PRE-20250922",
+        "evidence_refs": [
+          "EVREF-v1:ae30a04d61832c9a7b5f07ad6a47b775b80977d28b0609f0f7b58a77e98481e7"
+        ]
+      }
+    ],
+    "needs_human_confirmation": true,
+    "evidence_refs": [
+      "EVREF-v1:ae30a04d61832c9a7b5f07ad6a47b775b80977d28b0609f0f7b58a77e98481e7"
+    ],
+    "data_gaps": [
+      {
+        "semantic_entity": "shift",
+        "semantic_field": "oee_source",
+        "reason": "field_not_available_in_record",
+        "value_consumption_status": "missing",
+        "source_locator": "{\"source_record_id\": \"LINE-S01-PRE-20250922\", \"source_table\": \"12_多产线班次_模拟\"}",
+        "required_resolution": "该字段在匹配记录中不存在，不得跨记录拼接或从其他记录补值",
+        "affected_record_count": 315,
+        "occurrence_count": 315,
+        "sample_source_locators": [
+          "{\"source_record_id\": \"LINE-S01-PRE-20250922\", \"source_table\": \"12_多产线班次_模拟\"}",
+          "{\"source_record_id\": \"LINE-S02-PRE-20250922\", \"source_table\": \"12_多产线班次_模拟\"}",
+          "{\"source_record_id\": \"LINE-S03-PRE-20250922\", \"source_table\": \"12_多产线班次_模拟\"}"
+        ]
+      },
+      {
+        "semantic_entity": "shift",
+        "semantic_field": "oee_recomputed",
+        "reason": "recompute_not_permitted",
+        "value_consumption_status": "missing",
+        "source_locator": "01_OEE班次#shift#SHIFT-PRE-20250922",
+        "required_resolution": "can_recompute_oee 未置 true，不得自行复算 OEE",
+        "affected_record_count": 1,
+        "occurrence_count": 1,
+        "sample_source_locators": [
+          "01_OEE班次#shift#SHIFT-PRE-20250922"
+        ]
+      },
+      {
+        "semantic_entity": "shift",
+        "semantic_field": "availability",
+        "reason": "factor_absent_for_oee_driver",
+        "value_consumption_status": "missing",
+        "source_locator": "01_OEE班次#shift#SHIFT-PRE-20250922",
+        "required_resolution": "缺少 OEE 直接驱动因子，无法识别为直接驱动",
+        "affected_record_count": 1,
+        "occurrence_count": 1,
+        "sample_source_locators": [
+          "01_OEE班次#shift#SHIFT-PRE-20250922"
+        ]
+      },
+      {
+        "semantic_entity": "shift",
+        "semantic_field": "performance_rate",
+        "reason": "factor_absent_for_oee_driver",
+        "value_consumption_status": "missing",
+        "source_locator": "01_OEE班次#shift#SHIFT-PRE-20250922",
+        "required_resolution": "缺少 OEE 直接驱动因子，无法识别为直接驱动",
+        "affected_record_count": 1,
+        "occurrence_count": 1,
+        "sample_source_locators": [
+          "01_OEE班次#shift#SHIFT-PRE-20250922"
+        ]
+      },
+      {
+        "semantic_entity": "shift",
+        "semantic_field": "quality_factor",
+        "reason": "factor_absent_for_oee_driver",
+        "value_consumption_status": "missing",
+        "source_locator": "01_OEE班次#shift#SHIFT-PRE-20250922",
+        "required_resolution": "缺少 OEE 直接驱动因子，无法识别为直接驱动",
+        "affected_record_count": 1,
+        "occurrence_count": 1,
+        "sample_source_locators": [
+          "01_OEE班次#shift#SHIFT-PRE-20250922"
+        ]
+      },
+      {
+        "semantic_entity": "shift",
+        "semantic_field": "mtbf_mttr",
+        "reason": "missing_equipment_fault_repair_evidence",
+        "value_consumption_status": "missing",
+        "source_locator": "01_OEE班次#shift#SHIFT-PRE-20250922",
+        "required_resolution": "缺少 EquipmentID/故障码/维修工单，不得计算 MTBF/MTTR",
+        "affected_record_count": 1,
+        "occurrence_count": 1,
+        "sample_source_locators": [
+          "01_OEE班次#shift#SHIFT-PRE-20250922"
+        ]
+      },
+      {
+        "semantic_entity": "shift",
+        "semantic_field": "shift_trend",
+        "reason": "insufficient_temporal_evidence",
+        "value_consumption_status": "missing",
+        "source_locator": "01_OEE班次#shift#SHIFT-PRE-20250922",
+        "required_resolution": "缺少时间字段或记录顺序证据，不得制造趋势",
+        "affected_record_count": 1,
+        "occurrence_count": 1,
+        "sample_source_locators": [
+          "01_OEE班次#shift#SHIFT-PRE-20250922"
+        ]
+      }
+    ],
+    "actor_can_execute": false,
+    "contract_versions": {
+      "specialist_result_contract_version": "BIFROST-SPECIALIST-RESULT-v0.1.3",
+      "decision_input_contract_version": "BIFROST-DECISION-INPUT-v0.1",
+      "semantic_model_version": "SEM-v1.1.1",
+      "mapping_rule_version": "MAP-v1.0.1",
+      "specialist_logical_version": "0.1.2"
+    },
+    "validation": {
+      "status": "passed",
+      "issues": [],
+      "warnings": [
+        "存在 7 个归并后 data_gaps",
+        "存在高风险动作，状态为 needs_confirmation"
+      ],
+      "input_contract_valid": true,
+      "evidence_contract_valid": true,
+      "output_contract_valid": true
+    },
+    "local_trace_id": "PROD-3F858329DE814CBE",
+    "specialist_details": {
+      "oee_analysis": {
+        "oee_source": {
+          "value": 0.8254,
+          "display_format": "ratio",
+          "evidence_evref": "EVREF-v1:ae30a04d61832c9a7b5f07ad6a47b775b80977d28b0609f0f7b58a77e98481e7"
+        },
+        "oee_recomputed": null,
+        "recompute_performed": false,
+        "recompute_blocked_reason": "can_recompute_oee 不为 true，不得复算",
+        "direct_drivers_count": 0
+      },
+      "downtime_analysis": {
+        "downtime_evidence_count": 0,
+        "material_continuity_risk": null,
+        "material_as_oee_cause": false,
+        "material_cause_blocked_reason": null,
+        "mtbf_mttr": null,
+        "mtbf_mttr_blocked_reason": "缺少 MTBF/MTTR 必需证据: ['equipment_id', 'fault_code', 'repair_work_order']，不得计算"
+      },
+      "trend_analysis": {
+        "trend_supported": false,
+        "trend": null,
+        "blocked_reason": "有序记录数 0 < 2，缺少时间字段或记录顺序证据，不得声称形成趋势"
+      },
+      "missing_severity_rule": true
+    }
+  },
+  "S4_mutated": {
+    "contract_name": "BIFROST_SPECIALIST_RESULT_v0.1",
+    "contract_version": "BIFROST-SPECIALIST-RESULT-v0.1.3",
+    "specialist_type": "production",
+    "status": "warning",
+    "request_id": "REQ-PROD-INT-3219",
+    "source_release_id": "BIFROST-SEMANTIC-DATA-PLANE-v0.2-HOTFIX-04C.5B.2",
+    "source_snapshot_id": "SDS-P02_SIM-20260810-113856",
+    "conclusion": "",
+    "severity": "unknown",
+    "confidence": 0.0,
+    "metrics": [],
+    "causes": [],
+    "affected_objects": [],
+    "recommended_actions": [],
+    "needs_human_confirmation": false,
+    "evidence_refs": [],
+    "data_gaps": [
+      {
+        "semantic_entity": "shift",
+        "semantic_field": "oee_source",
+        "reason": "field_not_available_in_record",
+        "value_consumption_status": "missing",
+        "source_locator": "{\"source_record_id\": \"LINE-S01-PRE-20250922\", \"source_table\": \"12_多产线班次_模拟\"}",
+        "required_resolution": "该字段在匹配记录中不存在，不得跨记录拼接或从其他记录补值",
+        "affected_record_count": 315,
+        "occurrence_count": 315,
+        "sample_source_locators": [
+          "{\"source_record_id\": \"LINE-S01-PRE-20250922\", \"source_table\": \"12_多产线班次_模拟\"}",
+          "{\"source_record_id\": \"LINE-S02-PRE-20250922\", \"source_table\": \"12_多产线班次_模拟\"}",
+          "{\"source_record_id\": \"LINE-S03-PRE-20250922\", \"source_table\": \"12_多产线班次_模拟\"}"
+        ]
+      },
+      {
+        "semantic_entity": "shift",
+        "semantic_field": "oee_source",
+        "reason": "source_value_absent",
+        "value_consumption_status": "missing",
+        "source_locator": "01_OEE班次#shift#SHIFT-PRE-20250922",
+        "required_resolution": "oee_source 值缺失，无法对比来源值与复算值",
+        "affected_record_count": 1,
+        "occurrence_count": 1,
+        "sample_source_locators": [
+          "01_OEE班次#shift#SHIFT-PRE-20250922"
+        ]
+      },
+      {
+        "semantic_entity": "shift",
+        "semantic_field": "oee_recomputed",
+        "reason": "recompute_not_permitted",
+        "value_consumption_status": "missing",
+        "source_locator": "01_OEE班次#shift#SHIFT-PRE-20250922",
+        "required_resolution": "can_recompute_oee 未置 true，不得自行复算 OEE",
+        "affected_record_count": 1,
+        "occurrence_count": 1,
+        "sample_source_locators": [
+          "01_OEE班次#shift#SHIFT-PRE-20250922"
+        ]
+      },
+      {
+        "semantic_entity": "shift",
+        "semantic_field": "availability",
+        "reason": "factor_absent_for_oee_driver",
+        "value_consumption_status": "missing",
+        "source_locator": "01_OEE班次#shift#SHIFT-PRE-20250922",
+        "required_resolution": "缺少 OEE 直接驱动因子，无法识别为直接驱动",
+        "affected_record_count": 1,
+        "occurrence_count": 1,
+        "sample_source_locators": [
+          "01_OEE班次#shift#SHIFT-PRE-20250922"
+        ]
+      },
+      {
+        "semantic_entity": "shift",
+        "semantic_field": "performance_rate",
+        "reason": "factor_absent_for_oee_driver",
+        "value_consumption_status": "missing",
+        "source_locator": "01_OEE班次#shift#SHIFT-PRE-20250922",
+        "required_resolution": "缺少 OEE 直接驱动因子，无法识别为直接驱动",
+        "affected_record_count": 1,
+        "occurrence_count": 1,
+        "sample_source_locators": [
+          "01_OEE班次#shift#SHIFT-PRE-20250922"
+        ]
+      },
+      {
+        "semantic_entity": "shift",
+        "semantic_field": "quality_factor",
+        "reason": "factor_absent_for_oee_driver",
+        "value_consumption_status": "missing",
+        "source_locator": "01_OEE班次#shift#SHIFT-PRE-20250922",
+        "required_resolution": "缺少 OEE 直接驱动因子，无法识别为直接驱动",
+        "affected_record_count": 1,
+        "occurrence_count": 1,
+        "sample_source_locators": [
+          "01_OEE班次#shift#SHIFT-PRE-20250922"
+        ]
+      },
+      {
+        "semantic_entity": "shift",
+        "semantic_field": "mtbf_mttr",
+        "reason": "missing_equipment_fault_repair_evidence",
+        "value_consumption_status": "missing",
+        "source_locator": "01_OEE班次#shift#SHIFT-PRE-20250922",
+        "required_resolution": "缺少 EquipmentID/故障码/维修工单，不得计算 MTBF/MTTR",
+        "affected_record_count": 1,
+        "occurrence_count": 1,
+        "sample_source_locators": [
+          "01_OEE班次#shift#SHIFT-PRE-20250922"
+        ]
+      },
+      {
+        "semantic_entity": "shift",
+        "semantic_field": "shift_trend",
+        "reason": "insufficient_temporal_evidence",
+        "value_consumption_status": "missing",
+        "source_locator": "01_OEE班次#shift#SHIFT-PRE-20250922",
+        "required_resolution": "缺少时间字段或记录顺序证据，不得制造趋势",
+        "affected_record_count": 1,
+        "occurrence_count": 1,
+        "sample_source_locators": [
+          "01_OEE班次#shift#SHIFT-PRE-20250922"
+        ]
+      }
+    ],
+    "actor_can_execute": false,
+    "contract_versions": {
+      "specialist_result_contract_version": "BIFROST-SPECIALIST-RESULT-v0.1.3",
+      "decision_input_contract_version": "BIFROST-DECISION-INPUT-v0.1",
+      "semantic_model_version": "SEM-v1.1.1",
+      "mapping_rule_version": "MAP-v1.0.1",
+      "specialist_logical_version": "0.1.2"
+    },
+    "validation": {
+      "status": "warning",
+      "issues": [],
+      "warnings": [
+        "存在 8 个归并后 data_gaps"
+      ],
+      "input_contract_valid": true,
+      "evidence_contract_valid": true,
+      "output_contract_valid": true
+    },
+    "local_trace_id": "PROD-88584A40325C4325",
+    "specialist_details": {
+      "oee_analysis": {
+        "oee_source": null,
+        "oee_recomputed": null,
+        "recompute_performed": false,
+        "recompute_blocked_reason": "can_recompute_oee 不为 true，不得复算",
+        "direct_drivers_count": 0
+      },
+      "downtime_analysis": {
+        "downtime_evidence_count": 0,
+        "material_continuity_risk": null,
+        "material_as_oee_cause": false,
+        "material_cause_blocked_reason": null,
+        "mtbf_mttr": null,
+        "mtbf_mttr_blocked_reason": "缺少 MTBF/MTTR 必需证据: ['equipment_id', 'fault_code', 'repair_work_order']，不得计算"
+      },
+      "trend_analysis": {
+        "trend_supported": false,
+        "trend": null,
+        "blocked_reason": "有序记录数 0 < 2，缺少时间字段或记录顺序证据，不得声称形成趋势"
+      },
+      "missing_severity_rule": true
+    }
+  },
+  "S5": {
+    "contract_name": "BIFROST_SPECIALIST_RESULT_v0.1",
+    "contract_version": "BIFROST-SPECIALIST-RESULT-v0.1.3",
+    "specialist_type": "production",
+    "status": "needs_confirmation",
+    "request_id": "REQ-S5-HIGH-RISK",
+    "source_release_id": "SYNTHETIC-FIXTURE",
+    "source_snapshot_id": "SYNTHETIC-S5",
+    "conclusion": "生产诊断完成，分析记录: REC-PROD-S03-001。 源OEE: 0.609567。 复算OEE: 0.605231（availability × performance_rate × quality_factor）。 OEE直接驱动因子: availability=0.85, performance_rate=0.78, quality_factor=0.912867。 非计划停机 45 分钟，为开动率下降证据。 严重度: unknown。 未提供批准的严重度阈值规则(missing_severity_rule)。 证据覆盖率(confidence): 1.0。",
+    "severity": "unknown",
+    "confidence": 1.0,
+    "metrics": [
+      {
+        "metric_id": "METRIC-0000-oee_source",
+        "label": "oee_source",
+        "value": 0.609567,
+        "display_format": "0.0%",
+        "semantic_field": "oee_source",
+        "evidence_refs": [
+          "EVREF-v1:c3face5807ad5b1f8dc3ef82bedb46fe563c21720c47152cb915103a90e7e60f"
+        ]
+      },
+      {
+        "metric_id": "METRIC-0001-availability",
+        "label": "availability",
+        "value": 0.85,
+        "display_format": "0.0%",
+        "semantic_field": "availability",
+        "evidence_refs": [
+          "EVREF-v1:5ff4114f4c0d40b727908e1d120493ba1929519955bd736a6d61ed5b40f8bace"
+        ]
+      },
+      {
+        "metric_id": "METRIC-0002-performance_rate",
+        "label": "performance_rate",
+        "value": 0.78,
+        "display_format": "0.0%",
+        "semantic_field": "performance_rate",
+        "evidence_refs": [
+          "EVREF-v1:6d7359295d824b418cc97ebf859fc801b88592a532cbe1fdcb5254f09f13ee36"
+        ]
+      },
+      {
+        "metric_id": "METRIC-0003-quality_factor",
+        "label": "quality_factor",
+        "value": 0.912867,
+        "display_format": "0.0%",
+        "semantic_field": "quality_factor",
+        "evidence_refs": [
+          "EVREF-v1:25af4b6d3356e3d5810e43303d4b62775d17a040d21541006ed08b3421e1c49a"
+        ]
+      },
+      {
+        "metric_id": "METRIC-0004-total_output",
+        "label": "total_output",
+        "value": 1200,
+        "display_format": "",
+        "semantic_field": "total_output",
+        "evidence_refs": [
+          "EVREF-v1:a8d0cd12b2c9a6a760e37df215ce8446da9a592d92138bc4e3c44fb6b9ac958f"
+        ]
+      },
+      {
+        "metric_id": "METRIC-0005-good_output",
+        "label": "good_output",
+        "value": 1095,
+        "display_format": "",
+        "semantic_field": "good_output",
+        "evidence_refs": [
+          "EVREF-v1:2e41c03a80d6b9fb13f0c38ae941c32707339d0b3f3c78950ded627173b19ce8"
+        ]
+      },
+      {
+        "metric_id": "METRIC-0006-defect_total",
+        "label": "defect_total",
+        "value": 105,
+        "display_format": "",
+        "semantic_field": "defect_total",
+        "evidence_refs": [
+          "EVREF-v1:9fb662ec899a3215a2d1ae3630346d74c9097cc618cb7cad379d3b5761e5b334"
+        ]
+      },
+      {
+        "metric_id": "METRIC-0007-unplanned_downtime_minutes",
+        "label": "unplanned_downtime_minutes",
+        "value": 45,
+        "display_format": "",
+        "semantic_field": "unplanned_downtime_minutes",
+        "evidence_refs": [
+          "EVREF-v1:f96e0f3419d50da377aaa21cfc0c2784ad94548e1d46fea993fc0e089f72840a"
+        ]
+      }
+    ],
+    "causes": [
+      {
+        "cause_id": "CAUSE-0000",
+        "category": "oee_direct_driver",
+        "statement": "availability=0.85，OEE直接驱动因子",
+        "causal_evidence_level": "direct_verified",
+        "evidence_refs": [
+          "EVREF-v1:5ff4114f4c0d40b727908e1d120493ba1929519955bd736a6d61ed5b40f8bace"
+        ]
+      },
+      {
+        "cause_id": "CAUSE-0001",
+        "category": "oee_direct_driver",
+        "statement": "performance_rate=0.78，OEE直接驱动因子",
+        "causal_evidence_level": "direct_verified",
+        "evidence_refs": [
+          "EVREF-v1:6d7359295d824b418cc97ebf859fc801b88592a532cbe1fdcb5254f09f13ee36"
+        ]
+      },
+      {
+        "cause_id": "CAUSE-0002",
+        "category": "oee_direct_driver",
+        "statement": "quality_factor=0.912867，OEE直接驱动因子",
+        "causal_evidence_level": "direct_verified",
+        "evidence_refs": [
+          "EVREF-v1:25af4b6d3356e3d5810e43303d4b62775d17a040d21541006ed08b3421e1c49a"
+        ]
+      },
+      {
+        "cause_id": "CAUSE-0003",
+        "category": "availability_loss",
+        "statement": "非计划停机 45 分钟，为开动率下降证据（OEE直接驱动 availability 的证据）",
+        "causal_evidence_level": "direct_verified",
+        "evidence_refs": [
+          "EVREF-v1:f96e0f3419d50da377aaa21cfc0c2784ad94548e1d46fea993fc0e089f72840a"
+        ]
+      }
+    ],
+    "affected_objects": [
+      {
+        "type": "production_line",
+        "id": "LINE-S03"
+      },
+      {
+        "type": "shift",
+        "id": "LINE-S03-PRE-20251009"
+      }
+    ],
+    "recommended_actions": [
+      {
+        "action_id": "ACTION-0000",
+        "action": "建议排查非计划停机根因，确认是否影响开动率",
+        "priority": "medium",
+        "is_high_risk": false,
+        "needs_human_confirmation": false,
+        "prohibited_auto_execute": true,
+        "actor_can_execute": false,
+        "affected_object": "LINE-S03",
+        "evidence_refs": [
+          "EVREF-v1:f96e0f3419d50da377aaa21cfc0c2784ad94548e1d46fea993fc0e089f72840a"
+        ]
+      },
+      {
+        "action_id": "ACTION-0001",
+        "action": "如需调整排产计划，须由授权人员在业务系统中确认后执行",
+        "priority": "high",
+        "is_high_risk": true,
+        "needs_human_confirmation": true,
+        "prohibited_auto_execute": true,
+        "actor_can_execute": false,
+        "affected_object": "LINE-S03",
+        "evidence_refs": [
+          "EVREF-v1:c3face5807ad5b1f8dc3ef82bedb46fe563c21720c47152cb915103a90e7e60f"
+        ]
+      }
+    ],
+    "needs_human_confirmation": true,
+    "evidence_refs": [
+      "EVREF-v1:c3face5807ad5b1f8dc3ef82bedb46fe563c21720c47152cb915103a90e7e60f",
+      "EVREF-v1:5ff4114f4c0d40b727908e1d120493ba1929519955bd736a6d61ed5b40f8bace",
+      "EVREF-v1:6d7359295d824b418cc97ebf859fc801b88592a532cbe1fdcb5254f09f13ee36",
+      "EVREF-v1:25af4b6d3356e3d5810e43303d4b62775d17a040d21541006ed08b3421e1c49a",
+      "EVREF-v1:f96e0f3419d50da377aaa21cfc0c2784ad94548e1d46fea993fc0e089f72840a",
+      "EVREF-v1:a8d0cd12b2c9a6a760e37df215ce8446da9a592d92138bc4e3c44fb6b9ac958f",
+      "EVREF-v1:2e41c03a80d6b9fb13f0c38ae941c32707339d0b3f3c78950ded627173b19ce8",
+      "EVREF-v1:9fb662ec899a3215a2d1ae3630346d74c9097cc618cb7cad379d3b5761e5b334"
+    ],
+    "data_gaps": [
+      {
+        "semantic_entity": "shift",
+        "semantic_field": "mtbf_mttr",
+        "reason": "missing_equipment_fault_repair_evidence",
+        "value_consumption_status": "missing",
+        "source_locator": "REC-PROD-S03-001",
+        "required_resolution": "缺少 EquipmentID/故障码/维修工单，不得计算 MTBF/MTTR",
+        "affected_record_count": 1,
+        "occurrence_count": 1,
+        "sample_source_locators": [
+          "REC-PROD-S03-001"
+        ]
+      },
+      {
+        "semantic_entity": "shift",
+        "semantic_field": "shift_trend",
+        "reason": "insufficient_temporal_evidence",
+        "value_consumption_status": "missing",
+        "source_locator": "REC-PROD-S03-001",
+        "required_resolution": "缺少时间字段或记录顺序证据，不得制造趋势",
+        "affected_record_count": 1,
+        "occurrence_count": 1,
+        "sample_source_locators": [
+          "REC-PROD-S03-001"
+        ]
+      }
+    ],
+    "actor_can_execute": false,
+    "contract_versions": {
+      "specialist_result_contract_version": "BIFROST-SPECIALIST-RESULT-v0.1.3",
+      "decision_input_contract_version": "BIFROST-DECISION-INPUT-v0.1",
+      "semantic_model_version": "SEM-v1.1.1",
+      "mapping_rule_version": "MAP-v1.0.1",
+      "specialist_logical_version": "0.1.2"
+    },
+    "validation": {
+      "status": "passed",
+      "issues": [],
+      "warnings": [
+        "存在 2 个归并后 data_gaps",
+        "存在高风险动作，状态为 needs_confirmation"
+      ],
+      "input_contract_valid": true,
+      "evidence_contract_valid": true,
+      "output_contract_valid": true
+    },
+    "local_trace_id": "PROD-4BFE7AE9001847EF",
+    "specialist_details": {
+      "oee_analysis": {
+        "oee_source": {
+          "value": 0.609567,
+          "display_format": "0.0%",
+          "evidence_evref": "EVREF-v1:c3face5807ad5b1f8dc3ef82bedb46fe563c21720c47152cb915103a90e7e60f"
+        },
+        "oee_recomputed": {
+          "value": 0.605231,
+          "formula": "availability × performance_rate × quality_factor",
+          "inputs": {
+            "availability": 0.85,
+            "performance_rate": 0.78,
+            "quality_factor": 0.912867
+          },
+          "evidence": "deterministic_recompute_from_three_factors"
+        },
+        "recompute_performed": true,
+        "recompute_blocked_reason": null,
+        "direct_drivers_count": 3
+      },
+      "downtime_analysis": {
+        "downtime_evidence_count": 1,
+        "material_continuity_risk": null,
+        "material_as_oee_cause": false,
+        "material_cause_blocked_reason": null,
+        "mtbf_mttr": null,
+        "mtbf_mttr_blocked_reason": "缺少 MTBF/MTTR 必需证据: ['equipment_id', 'fault_code', 'repair_work_order']，不得计算"
+      },
+      "trend_analysis": {
+        "trend_supported": false,
+        "trend": null,
+        "blocked_reason": "有序记录数 0 < 2，缺少时间字段或记录顺序证据，不得声称形成趋势"
+      },
+      "missing_severity_rule": true
+    }
+  }
+}

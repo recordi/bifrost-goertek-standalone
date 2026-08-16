@@ -1,0 +1,301 @@
+{
+  "test_suite": "BIFROST_SUPPLY_RISK_v0.1.2_REGRESSION_36_PLUS_V013_INTEGRATION",
+  "run_at": "2026-08-10T12:56:36Z",
+  "exit_code": 0,
+  "summary": {
+    "total": 36,
+    "passed": 36,
+    "failed": 0,
+    "skipped": 0
+  },
+  "status": "ALL_PASSED",
+  "summary_line": "============================== 36 passed in 5.44s ==============================",
+  "tests": [
+    {
+      "test": "tests/test_supply_risk_analyzer.py::InputContractTests::test_01_compliant_purchase_order",
+      "status": "PASSED"
+    },
+    {
+      "test": "tests/test_supply_risk_analyzer.py::InputContractTests::test_02_input_contract_fail",
+      "status": "PASSED"
+    },
+    {
+      "test": "tests/test_supply_risk_analyzer.py::InputContractTests::test_03_source_write_blocked",
+      "status": "PASSED"
+    },
+    {
+      "test": "tests/test_supply_risk_analyzer.py::InputContractTests::test_04_no_evidence_blocked",
+      "status": "PASSED"
+    },
+    {
+      "test": "tests/test_supply_risk_analyzer.py::ArrivalTests::test_05_no_arrival_no_overdue",
+      "status": "PASSED"
+    },
+    {
+      "test": "tests/test_supply_risk_analyzer.py::ArrivalTests::test_06_arrival_overdue_judged",
+      "status": "PASSED"
+    },
+    {
+      "test": "tests/test_supply_risk_analyzer.py::InventoryGrainTests::test_07_inventory_aggregation_blocked",
+      "status": "PASSED"
+    },
+    {
+      "test": "tests/test_supply_risk_analyzer.py::InventoryGrainTests::test_08_inventory_per_record_allowed",
+      "status": "PASSED"
+    },
+    {
+      "test": "tests/test_supply_risk_analyzer.py::ShortageFreezeTests::test_09_shortage_freeze_not_merged",
+      "status": "PASSED"
+    },
+    {
+      "test": "tests/test_supply_risk_analyzer.py::ShortageFreezeTests::test_10_no_materialized_relation_no_join",
+      "status": "PASSED"
+    },
+    {
+      "test": "tests/test_supply_risk_analyzer.py::ShortageFreezeTests::test_11_shortage_as_continuity_risk",
+      "status": "PASSED"
+    },
+    {
+      "test": "tests/test_supply_risk_analyzer.py::AmountTests::test_12_unregistered_currency_to_gap",
+      "status": "PASSED"
+    },
+    {
+      "test": "tests/test_supply_risk_analyzer.py::AmountTests::test_13_negative_amount_excluded",
+      "status": "PASSED"
+    },
+    {
+      "test": "tests/test_supply_risk_analyzer.py::HighRiskTests::test_14_high_risk_confirmation_only",
+      "status": "PASSED"
+    },
+    {
+      "test": "tests/test_supply_risk_analyzer.py::HighRiskTests::test_15_freeze_only_high_risk",
+      "status": "PASSED"
+    },
+    {
+      "test": "tests/test_supply_risk_analyzer.py::MutationTests::test_mutation_delete_shortage",
+      "status": "PASSED"
+    },
+    {
+      "test": "tests/test_supply_risk_analyzer.py::MutationTests::test_no_fixed_values_in_source",
+      "status": "PASSED"
+    },
+    {
+      "test": "tests/test_supply_risk_analyzer.py::ContractSchemaTests::test_02_input_schema_byte_identical",
+      "status": "PASSED"
+    },
+    {
+      "test": "tests/test_supply_risk_analyzer.py::ContractSchemaTests::test_03_output_passes_shared_validator",
+      "status": "PASSED"
+    },
+    {
+      "test": "tests/test_supply_risk_analyzer.py::ContractSchemaTests::test_04_old_output_schema_rejected",
+      "status": "PASSED"
+    },
+    {
+      "test": "tests/test_supply_risk_analyzer.py::ContractSchemaTests::test_05_v011_sample_passes",
+      "status": "PASSED"
+    },
+    {
+      "test": "tests/test_supply_risk_analyzer.py::ContractSchemaTests::test_06_illegal_status_fails",
+      "status": "PASSED"
+    },
+    {
+      "test": "tests/test_supply_risk_analyzer.py::ContractSchemaTests::test_07_critical_severity_fails",
+      "status": "PASSED"
+    },
+    {
+      "test": "tests/test_supply_risk_analyzer.py::ContractSchemaTests::test_08_actor_can_execute_true_fails",
+      "status": "PASSED"
+    },
+    {
+      "test": "tests/test_supply_risk_analyzer.py::ContractSchemaTests::test_09_missing_evidence_ref_fails",
+      "status": "PASSED"
+    },
+    {
+      "test": "tests/test_supply_risk_analyzer.py::ContractSchemaTests::test_10_high_risk_gate_violation_fails",
+      "status": "PASSED"
+    },
+    {
+      "test": "tests/test_supply_risk_analyzer.py::ContractSchemaTests::test_11_blocked_with_conclusion_fails",
+      "status": "PASSED"
+    },
+    {
+      "test": "tests/test_supply_risk_analyzer.py::ContractSchemaTests::test_12_warning_without_data_gap_fails",
+      "status": "PASSED"
+    },
+    {
+      "test": "tests/test_supply_risk_analyzer.py::ContractSchemaTests::test_13_completed_with_data_gap_fails",
+      "status": "PASSED"
+    },
+    {
+      "test": "tests/test_supply_risk_analyzer.py::ContractSchemaTests::test_14_mutation_causes_actions_disappear",
+      "status": "PASSED"
+    },
+    {
+      "test": "tests/test_supply_risk_analyzer.py::ContractSchemaTests::test_15_no_golden_values_in_source",
+      "status": "PASSED"
+    },
+    {
+      "test": "tests/test_supply_risk_analyzer.py::RealConsumerIntegrationTests::test_high_risk_gate_scenario",
+      "status": "PASSED"
+    },
+    {
+      "test": "tests/test_supply_risk_analyzer.py::RealConsumerIntegrationTests::test_real_data_gap_scenario",
+      "status": "PASSED"
+    },
+    {
+      "test": "tests/test_supply_risk_analyzer.py::RealConsumerIntegrationTests::test_real_evidence_deleted_scenario",
+      "status": "PASSED"
+    },
+    {
+      "test": "tests/test_supply_risk_analyzer.py::RealConsumerIntegrationTests::test_real_input_blocked_scenario",
+      "status": "PASSED"
+    },
+    {
+      "test": "tests/test_supply_risk_analyzer.py::RealConsumerIntegrationTests::test_real_success_scenario",
+      "status": "PASSED"
+    }
+  ],
+  "integration": {
+    "started_at": "2026-08-10T12:55:36Z",
+    "tests": [
+      {
+        "name": "data_plane_zip_sha256_approved",
+        "passed": true,
+        "detail": {
+          "actual": "81a8e5947a28ffe1dcabe123f54e00815ec4a06ca876e0f070ca59a88cf01b42",
+          "approved": "81a8e5947a28ffe1dcabe123f54e00815ec4a06ca876e0f070ca59a88cf01b42"
+        }
+      },
+      {
+        "name": "consumer_scenario_a_success",
+        "passed": true,
+        "detail": {
+          "decision_input_saved": "/home/gem/.aily/workdir/task_7672311040410963230/build/integration/di_success.json",
+          "facts_count": 20,
+          "data_gaps_count": 1
+        }
+      },
+      {
+        "name": "specialist_analysis_completed",
+        "passed": true,
+        "detail": {
+          "status": "warning",
+          "causes": 2,
+          "metrics": 8,
+          "actions": 0,
+          "data_gaps": 4,
+          "evidence_refs": 20,
+          "result_saved": "/home/gem/.aily/workdir/task_7672311040410963230/build/integration/specialist_result.json"
+        }
+      },
+      {
+        "name": "external_validator_passed",
+        "passed": true,
+        "detail": {}
+      },
+      {
+        "name": "actor_can_execute_false",
+        "passed": true,
+        "detail": {}
+      },
+      {
+        "name": "high_risk_needs_confirmation",
+        "passed": true,
+        "detail": {
+          "high_risk_count": 0
+        }
+      },
+      {
+        "name": "evidence_refs_evref_v1_format",
+        "passed": true,
+        "detail": {
+          "count": 20,
+          "sample": [
+            "EVREF-v1:e05afa6bcff45226df6d39bd3cc22edf8316b4f6fe30707660ceb7ae6db0c1a2",
+            "EVREF-v1:2659f3b6913f74275c30898fab3324ac48f753bbed709eca2502c6f35a1d7f5a"
+          ]
+        }
+      },
+      {
+        "name": "data_gaps_have_merge_fields",
+        "passed": true,
+        "detail": {
+          "gap_count": 4
+        }
+      },
+      {
+        "name": "entity_not_present_gap_honest",
+        "passed": true,
+        "detail": {
+          "gap_reasons": [
+            "null_value_unavailable",
+            "missing_actual_or_expected_arrival_date",
+            "未登记批准的供应连续性风险严重度阈值规则",
+            "entity_not_present_in_data_plane"
+          ]
+        }
+      },
+      {
+        "name": "blocked_on_source_write",
+        "passed": true,
+        "detail": {
+          "status": "blocked",
+          "conclusion_empty": true,
+          "metrics_empty": true,
+          "actions_empty": true
+        }
+      },
+      {
+        "name": "blocked_on_evidence_deleted",
+        "passed": true,
+        "detail": {
+          "status": "blocked"
+        }
+      },
+      {
+        "name": "consumer_scenario_b_datagap",
+        "passed": true,
+        "detail": {
+          "note": "真实数据面无 material_shortage/quality_freeze，复用 di_success",
+          "facts_count": 20
+        }
+      },
+      {
+        "name": "datagap_analysis_valid",
+        "passed": true,
+        "detail": {
+          "status": "warning",
+          "data_gaps": 4
+        }
+      },
+      {
+        "name": "datagap_has_gaps",
+        "passed": true,
+        "detail": {
+          "gap_count": 4,
+          "gap_reasons": [
+            "null_value_unavailable",
+            "missing_actual_or_expected_arrival_date",
+            "未登记批准的供应连续性风险严重度阈值规则",
+            "entity_not_present_in_data_plane"
+          ]
+        }
+      },
+      {
+        "name": "datagap_entity_not_present",
+        "passed": true,
+        "detail": {
+          "entity_gap_count": 1
+        }
+      }
+    ],
+    "summary": {
+      "total": 15,
+      "passed": 15,
+      "failed": 0,
+      "skipped": 0
+    },
+    "finished_at": "2026-08-10T12:55:40Z"
+  }
+}

@@ -1,0 +1,113 @@
+{
+  "contract_name": "BIFROST_DECISION_INPUT_v0.1",
+  "contract_version": "BIFROST-DECISION-INPUT-v0.1",
+  "request_id": "FIX-22",
+  "consumer_agent_id": "agent_test",
+  "role": "supply",
+  "query_context": {
+    "semantic_entity": "material_shortage",
+    "source_scope": "P01",
+    "read_only": true
+  },
+  "source_release_id": "REL-TEST",
+  "source_snapshot_id": "SNAP-TEST",
+  "source_write_performed": false,
+  "actor_can_execute": false,
+  "validation": {
+    "status": "passed"
+  },
+  "normalized_facts": [
+    {
+      "semantic_record_key": "供-采购订单与库存#material_shortage#MS-FIX-0001#row1",
+      "source_table": "test",
+      "source_record_id": "row1",
+      "semantic_field": "material_code",
+      "normalized_value": "MAT-S22",
+      "normalized_data_type": "str",
+      "normalized_unit": "",
+      "display_format": "",
+      "value_consumption_status": "usable",
+      "provenance_ref": {
+        "source_field": "material_code",
+        "raw_value": "MAT-S22",
+        "source_data_type": "str",
+        "evidence_locator": {
+          "source_file_sha256": "fix_material_code_1",
+          "source_table": "test",
+          "source_row_number": 1,
+          "source_column_name": "material_code",
+          "source_column_index": 1
+        }
+      }
+    },
+    {
+      "semantic_record_key": "供-采购订单与库存#material_shortage#MS-FIX-0001#row1",
+      "source_table": "test",
+      "source_record_id": "row1",
+      "semantic_field": "demand_qty",
+      "normalized_value": 1000,
+      "normalized_data_type": "float",
+      "normalized_unit": "",
+      "display_format": "",
+      "value_consumption_status": "usable",
+      "provenance_ref": {
+        "source_field": "demand_qty",
+        "raw_value": 1000,
+        "source_data_type": "float",
+        "evidence_locator": {
+          "source_file_sha256": "fix_demand_qty_2",
+          "source_table": "test",
+          "source_row_number": 1,
+          "source_column_name": "demand_qty",
+          "source_column_index": 2
+        }
+      }
+    },
+    {
+      "semantic_record_key": "供-采购订单与库存#material_shortage#MS-FIX-0001#row1",
+      "source_table": "test",
+      "source_record_id": "row1",
+      "semantic_field": "available_qty",
+      "normalized_value": 600,
+      "normalized_data_type": "float",
+      "normalized_unit": "",
+      "display_format": "",
+      "value_consumption_status": "usable",
+      "provenance_ref": {
+        "source_field": "available_qty",
+        "raw_value": 600,
+        "source_data_type": "float",
+        "evidence_locator": {
+          "source_file_sha256": "fix_available_qty_3",
+          "source_table": "test",
+          "source_row_number": 1,
+          "source_column_name": "available_qty",
+          "source_column_index": 3
+        }
+      }
+    },
+    {
+      "semantic_record_key": "供-采购订单与库存#material_shortage#MS-FIX-0001#row1",
+      "source_table": "test",
+      "source_record_id": "row1",
+      "semantic_field": "shortage_qty",
+      "normalized_value": 400,
+      "normalized_data_type": "float",
+      "normalized_unit": "",
+      "display_format": "",
+      "value_consumption_status": "usable",
+      "provenance_ref": {
+        "source_field": "shortage_qty",
+        "raw_value": 400,
+        "source_data_type": "float",
+        "evidence_locator": {
+          "source_file_sha256": "fix_shortage_qty_4",
+          "source_table": "test",
+          "source_row_number": 1,
+          "source_column_name": "shortage_qty",
+          "source_column_index": 4
+        }
+      }
+    }
+  ]
+}

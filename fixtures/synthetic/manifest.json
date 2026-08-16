@@ -1,0 +1,58 @@
+{
+  "version": "1.0",
+  "dataset": "production-daily",
+  "description": "合成的日粒度生产宽表，覆盖 knowledge/metrics.yml 全部 28 个 allowed_columns。用于打通「导入 → 画像 → 分析 → 看板」链路，非缺陷夹具（缺陷夹具见 fixtures/goertek/）。",
+  "file": "production-daily.csv",
+  "grain": "prod_date × line_code × shift",
+  "row_count": 2160,
+  "date_range": {
+    "start": "2026-04-01",
+    "end": "2026-07-29"
+  },
+  "columns": [
+    "prod_date",
+    "line_code",
+    "shift",
+    "product_model",
+    "material_code",
+    "supplier_code",
+    "process_step",
+    "status",
+    "data_label",
+    "input_qty",
+    "good_qty",
+    "defect_qty",
+    "first_pass_qty",
+    "actual_output",
+    "target_output",
+    "available_time",
+    "planned_time",
+    "actual_run_time",
+    "downtime_minutes",
+    "ideal_cycle_time",
+    "revenue_amount",
+    "cogs",
+    "net_profit_amount",
+    "available_stock",
+    "inventory_value",
+    "forecast_qty",
+    "actual_qty",
+    "on_time_qty",
+    "total_delivery_qty"
+  ],
+  "metadata": {
+    "synthetic": true,
+    "data_label": "SYNTHETIC_GOERTEK_PRODUCTION",
+    "seed": 20260809,
+    "generator": "scripts/generate-production-dataset.ts",
+    "note": "全部数据由固定种子的 PRNG 生成，不代表任何真实歌尔业务数据。重跑生成器得到字节一致的结果。"
+  },
+  "invariants": [
+    "input_qty = good_qty + defect_qty",
+    "first_pass_qty <= good_qty",
+    "actual_run_time = planned_time - downtime_minutes",
+    "planned_time <= available_time",
+    "on_time_qty <= total_delivery_qty",
+    "sum(good_qty * ideal_cycle_time) / sum(planned_time) 落在 [0,1]（oee 口径）"
+  ]
+}

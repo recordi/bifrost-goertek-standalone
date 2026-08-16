@@ -1,0 +1,26 @@
+{
+  "runtime_package": "BIFROST_UI_RUNTIME",
+  "ui_baseline": "v3.2.1",
+  "payload_mode": "approved_payload_plus_adapter_test",
+  "omp_adapter_connected": false,
+  "warning": "此运行包验证 UI 与 Overview/Event 合同兼容；OMP 动态结果尚未替换企业载荷。",
+  "payloads": {
+    "BIFROST_OVERVIEW_PAYLOAD_v2.1.json": {
+      "sha256": "2697683f461a555b954bd7e8bf7b0c37a4e9844d82cbcc20ffa1ed2300ef76bd",
+      "payload_version": "v2.1",
+      "payload_type": "overview"
+    },
+    "BIFROST_EVENT_PAYLOAD_v1.4.json": {
+      "sha256": "53fdc970d7f7ec7b0c46fe9d60f8ee472340ff16ed98a333719f996d67f0ad7b",
+      "payload_version": "v1.4",
+      "payload_type": "event_detail"
+    }
+  },
+  "peer_overlay": {
+    "file": "BIFROST_PEER_OVERLAY_adapter-test.json",
+    "sha256": "53f5ec439ee9bfe263710ef7d66266320eccb37a459db16e6e4147e7eb7a6207",
+    "mode": "adapter-test-only"
+  },
+  "source_payload_sha256": "ff0e5b869ab9bdeb3f7f5198630e9aedd539fdf6ef1689730314d76ea1f44b60",
+  "adapter_test_mode": "?mode=adapter-test"
+}

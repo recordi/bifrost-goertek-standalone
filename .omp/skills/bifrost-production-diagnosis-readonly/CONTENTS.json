@@ -1,0 +1,109 @@
+{
+  "package_name": "bifrost-production-diagnosis-readonly_v0.1.2",
+  "logical_version": "0.1.2",
+  "contract_version": "BIFROST-SPECIALIST-RESULT-v0.1.3",
+  "status": "LOCALLY_VALIDATED_NOT_DEPLOYED",
+  "files": [
+    {
+      "path": "README.md",
+      "sha256": "368b1c52632603131124b4b29d51994fabe8a5ee58a0daf599be2a9878882eb4",
+      "size": 2963
+    },
+    {
+      "path": "SKILL.md",
+      "sha256": "5445e6bb01eefea6ae09b1462ceb79f4eace0bd76eb48eee7304dd6a88b5f404",
+      "size": 4217
+    },
+    {
+      "path": "docs/acceptance_report.md",
+      "sha256": "ac947fe6bb823f7cf0914589d5dd49ea5c844fec373bf82c7e8c7b56a33bd474",
+      "size": 4950
+    },
+    {
+      "path": "docs/migration_notes_v0.1.2.md",
+      "sha256": "96a2dfce54d27c23c56093199000b95abbd42997fcb234961849e14791449891",
+      "size": 1433
+    },
+    {
+      "path": "references/production_rules.md",
+      "sha256": "8970df8e6251d5d3e614f52fe7c6474e90b896de8774bca7c74504c60acc4d92",
+      "size": 2447
+    },
+    {
+      "path": "schema/BIFROST_DECISION_INPUT_v0.1.schema.json",
+      "sha256": "b899167f8fd282c3e1992a063bda8ffd5ba0d2b64cde82b13e6f946c7dfc9862",
+      "size": 4752
+    },
+    {
+      "path": "schema/BIFROST_SPECIALIST_RESULT_v0.1.3.schema.json",
+      "sha256": "bc2c043ceb72db5904e6b5abc252cbb53779125ce49e5f938f57befc04711c0b",
+      "size": 10744
+    },
+    {
+      "path": "scripts/__init__.py",
+      "sha256": "7b62774ad777c797db7c1ef52a9422a1fb0d1c59d14606adea60f7d5ca36a918",
+      "size": 51
+    },
+    {
+      "path": "scripts/production_constants.py",
+      "sha256": "f386eb62b30b9b6382da9ad49beb043c1620c9fdeb63cf8d4a268bd6479a5172",
+      "size": 5321
+    },
+    {
+      "path": "scripts/production_diagnosis.py",
+      "sha256": "2fd513674902aee4992b029a1972b3a6a2b5ae859900643da2fefbc7a8002367",
+      "size": 51203
+    },
+    {
+      "path": "tests/fixtures/golden_event_values.json",
+      "sha256": "647ef472c8516eb13791b12a8640236d8b2a45a46bd805fec43ef31ddbe68ce7",
+      "size": 1101
+    },
+    {
+      "path": "tests/results/decision_input_saved.json",
+      "sha256": "22e8e8b585d746fea45638dc84541d6c8c26ae031f469f99fbc6a2c8c18b85f0",
+      "size": 4943778
+    },
+    {
+      "path": "tests/results/integration_test_results.json",
+      "sha256": "a2278bcd7922b3b74c2bd6ed6a7441345a15579d0b79b1323d2f14323d37de8c",
+      "size": 7406
+    },
+    {
+      "path": "tests/results/specialist_result_saved.json",
+      "sha256": "3f7c84978da0a2f312e4bf987c57d7e0ae969be09f325eb7aabcfaa34629ce0e",
+      "size": 42176
+    },
+    {
+      "path": "tests/test_production_diagnosis.py",
+      "sha256": "7a32bcc9dead8b08f3ea5e752f0ff52a8967afd7d36d2f4e1f646fdf9bb11c9f",
+      "size": 20790
+    },
+    {
+      "path": "tests/test_real_consumer_integration.py",
+      "sha256": "62b0f748d6b584566448f215705c89492df73d91ddcb2a2902cd433c7aa40528",
+      "size": 25201
+    },
+    {
+      "path": "validator/production_validator.py",
+      "sha256": "11b2e9fb462eb5b3dcaebe8c701d9b1afc8f9d11078ab41eba3b0090600f2909",
+      "size": 14220
+    },
+    {
+      "path": "validator/specialist_contract_validator.py",
+      "sha256": "048191df4dbba441278987659697fc8b6e078859febb73690eca314c4d20a020",
+      "size": 36325
+    },
+    {
+      "path": "MANIFEST.sha256",
+      "sha256": "c69da317408620843d85f6c805bede612855e49c7828c074efb273f818e4b95b",
+      "size": 1877
+    },
+    {
+      "path": "CONTENTS.json",
+      "sha256": null,
+      "size": 3422
+    }
+  ],
+  "total_files": 20
+}

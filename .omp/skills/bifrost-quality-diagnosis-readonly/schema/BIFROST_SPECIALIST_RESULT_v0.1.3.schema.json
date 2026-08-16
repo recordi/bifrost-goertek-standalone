@@ -1,0 +1,349 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://bifrost/internal/specialist-result/v0.1.3.schema.json",
+  "title": "BIFROST_SPECIALIST_RESULT_v0.1",
+  "description": "BIFROST 专业诊断 Skill 统一输出合同 v0.1.3（字段级 EvidenceRef 收口版）。在 v0.1.2 基础上收口：EvidenceRef 从记录级升级为字段事实级（EVREF-v1:<SHA256>）、metrics 证据字段绑定、data_gap affected_record_count 按唯一 source_locator 计数并新增 occurrence_count。保留 v0.1.2 全部能力：状态优先级双向强制、条件化顶层 evidence_refs、占位证据禁止、data_gap 归并、blocked 语义。所有 production/quality/supply 专业诊断 Skill 必须逐字段遵守本合同，不得各自改写。本合同为只读合同：禁止自动执行任何高风险动作，actor_can_execute 恒为 false。",
+  "type": "object",
+  "required": [
+    "contract_name",
+    "contract_version",
+    "specialist_type",
+    "status",
+    "request_id",
+    "source_release_id",
+    "source_snapshot_id",
+    "conclusion",
+    "severity",
+    "confidence",
+    "metrics",
+    "causes",
+    "affected_objects",
+    "recommended_actions",
+    "needs_human_confirmation",
+    "evidence_refs",
+    "data_gaps",
+    "actor_can_execute",
+    "contract_versions",
+    "validation",
+    "local_trace_id"
+  ],
+  "properties": {
+    "contract_name": {
+      "type": "string",
+      "const": "BIFROST_SPECIALIST_RESULT_v0.1"
+    },
+    "contract_version": {
+      "type": "string",
+      "const": "BIFROST-SPECIALIST-RESULT-v0.1.3"
+    },
+    "specialist_type": {
+      "type": "string",
+      "enum": ["production", "quality", "supply"]
+    },
+    "status": {
+      "type": "string",
+      "enum": ["completed", "warning", "blocked", "needs_confirmation"]
+    },
+    "request_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "source_release_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "source_snapshot_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "conclusion": {
+      "type": "string"
+    },
+    "severity": {
+      "type": "string",
+      "enum": ["unknown", "low", "medium", "high"]
+    },
+    "confidence": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "metrics": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "metric_id",
+          "label",
+          "value",
+          "display_format",
+          "semantic_field",
+          "evidence_refs"
+        ],
+        "properties": {
+          "metric_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "label": {
+            "type": "string",
+            "minLength": 1
+          },
+          "value": {
+            "description": "指标原始值；比例类指标按 display_format 格式化后对外展示，禁止直接展示原始小数。"
+          },
+          "display_format": {
+            "type": "string",
+            "minLength": 1
+          },
+          "semantic_field": {
+            "type": "string",
+            "minLength": 1
+          },
+          "evidence_refs": {
+            "type": "array",
+            "items": {"type": "string", "minLength": 1},
+            "minItems": 1
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "causes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "cause_id",
+          "category",
+          "statement",
+          "causal_evidence_level",
+          "evidence_refs"
+        ],
+        "properties": {
+          "cause_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "category": {
+            "type": "string",
+            "minLength": 1
+          },
+          "statement": {
+            "type": "string",
+            "minLength": 1
+          },
+          "causal_evidence_level": {
+            "type": "string",
+            "enum": ["direct_verified", "indirect_verified", "associated_risk", "insufficient"]
+          },
+          "evidence_refs": {
+            "type": "array",
+            "items": {"type": "string", "minLength": 1},
+            "minItems": 1
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "affected_objects": {
+      "type": "array",
+      "items": {"type": "object"}
+    },
+    "recommended_actions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "action_id",
+          "action",
+          "priority",
+          "is_high_risk",
+          "needs_human_confirmation",
+          "prohibited_auto_execute",
+          "actor_can_execute",
+          "affected_object",
+          "evidence_refs"
+        ],
+        "properties": {
+          "action_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "action": {
+            "type": "string",
+            "minLength": 1
+          },
+          "priority": {
+            "type": "string",
+            "enum": ["low", "medium", "high"]
+          },
+          "is_high_risk": {
+            "type": "boolean"
+          },
+          "needs_human_confirmation": {
+            "type": "boolean"
+          },
+          "prohibited_auto_execute": {
+            "type": "boolean"
+          },
+          "actor_can_execute": {
+            "type": "boolean",
+            "const": false
+          },
+          "affected_object": {
+            "type": "string"
+          },
+          "evidence_refs": {
+            "type": "array",
+            "items": {"type": "string", "minLength": 1},
+            "minItems": 1
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "needs_human_confirmation": {
+      "type": "boolean"
+    },
+    "evidence_refs": {
+      "type": "array",
+      "items": {"type": "string", "minLength": 1},
+      "description": "顶层证据引用（字段事实级，规范形式 EVREF-v1:<SHA256>）。条件化：有业务指标/原因/建议或非空 conclusion 时必须非空；blocked 或仅报告 data_gap、无业务事实的 warning 允许为空。每条引用必须可由输入 usable normalized_fact 经 build_canonical_evidence_ref 解析；不得使用裸 semantic_record_key。具体由独立验证器语义门控强制。"
+    },
+    "data_gaps": {
+      "type": "array",
+      "description": "确定性归并后的数据缺口列表。按 semantic_entity + semantic_field + reason + value_consumption_status + required_resolution 去重；affected_record_count 按唯一 source_locator 计数，occurrence_count 表示原始出现次数；每项最多 3 条 sample_source_locators，不得直接输出数百/数千条重复缺口。",
+      "items": {
+        "type": "object",
+        "required": [
+          "semantic_entity",
+          "semantic_field",
+          "reason",
+          "value_consumption_status",
+          "source_locator",
+          "required_resolution",
+          "affected_record_count",
+          "occurrence_count",
+          "sample_source_locators"
+        ],
+        "properties": {
+          "semantic_entity": {
+            "type": "string",
+            "minLength": 1
+          },
+          "semantic_field": {
+            "type": "string",
+            "minLength": 1
+          },
+          "reason": {
+            "type": "string",
+            "minLength": 1
+          },
+          "value_consumption_status": {
+            "type": "string",
+            "enum": ["usable", "unusable", "missing", "blocked", "pending"]
+          },
+          "source_locator": {
+            "type": ["string", "null"]
+          },
+          "required_resolution": {
+            "type": "string",
+            "minLength": 1
+          },
+          "affected_record_count": {
+            "type": "integer",
+            "minimum": 1,
+            "description": "被该缺口影响的唯一 source_locator 数（归并后按唯一定位计数，不得按重复缺口条目累计）。"
+          },
+          "occurrence_count": {
+            "type": "integer",
+            "minimum": 1,
+            "description": "该缺口归并前的原始出现次数（原始缺口条目数）。"
+          },
+          "sample_source_locators": {
+            "type": "array",
+            "items": {"type": "string", "minLength": 1},
+            "maxItems": 3,
+            "description": "最多 3 条样例源定位串，用于人工抽检；不得展开全部记录。"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "actor_can_execute": {
+      "type": "boolean",
+      "const": false
+    },
+    "contract_versions": {
+      "type": "object",
+      "required": [
+        "specialist_result_contract_version",
+        "decision_input_contract_version"
+      ],
+      "properties": {
+        "specialist_result_contract_version": {
+          "type": "string",
+          "const": "BIFROST-SPECIALIST-RESULT-v0.1.3"
+        },
+        "decision_input_contract_version": {
+          "type": "string",
+          "const": "BIFROST-DECISION-INPUT-v0.1"
+        },
+        "semantic_model_version": {"type": "string"},
+        "mapping_rule_version": {"type": "string"},
+        "specialist_logical_version": {"type": "string"}
+      },
+      "additionalProperties": true
+    },
+    "validation": {
+      "type": "object",
+      "required": [
+        "status",
+        "issues",
+        "warnings",
+        "input_contract_valid",
+        "evidence_contract_valid",
+        "output_contract_valid"
+      ],
+      "properties": {
+        "status": {
+          "type": "string",
+          "enum": ["passed", "warning", "failed", "blocked_by_evidence"]
+        },
+        "issues": {
+          "type": "array",
+          "items": {"type": "string"}
+        },
+        "warnings": {
+          "type": "array",
+          "items": {"type": "string"}
+        },
+        "input_contract_valid": {"type": "boolean"},
+        "evidence_contract_valid": {"type": "boolean"},
+        "output_contract_valid": {"type": "boolean"}
+      },
+      "additionalProperties": false
+    },
+    "local_trace_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "specialist_details": {
+      "type": "object",
+      "description": "各专业额外分析内容统一放入此字段，禁止在顶层自行增加 yield_analysis_summary、blocked_status、missing_severity_rule 等互不兼容字段。",
+      "additionalProperties": true
+    }
+  },
+  "additionalProperties": false,
+  "not": {
+    "anyOf": [
+      {"required": ["confirmation_id"]},
+      {"required": ["ConfirmationID"]},
+      {"required": ["auto_execute_command"]},
+      {"required": ["executed_action_id"]},
+      {"required": ["DecisionID"]},
+      {"required": ["RunID"]}
+    ]
+  }
+}

@@ -1,0 +1,131 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "BIFROST_DECISION_INPUT_v0.1",
+  "description": "消费者决策输入合同输出——只生成可信事实输入，不直接生成业务结论或执行动作",
+  "type": "object",
+  "required": [
+    "contract_name",
+    "contract_version",
+    "request_id",
+    "consumer_agent_id",
+    "role",
+    "query_context",
+    "source_release_id",
+    "source_snapshot_id",
+    "normalized_facts",
+    "data_gaps",
+    "provenance_refs",
+    "contract_versions",
+    "validation",
+    "source_write_performed",
+    "actor_can_execute"
+  ],
+  "properties": {
+    "contract_name": {"type": "string", "const": "BIFROST_DECISION_INPUT_v0.1"},
+    "contract_version": {"type": "string", "const": "BIFROST-DECISION-INPUT-v0.1"},
+    "request_id": {"type": "string"},
+    "consumer_agent_id": {"type": "string"},
+    "role": {"type": "string"},
+    "query_context": {
+      "type": "object",
+      "properties": {
+        "semantic_entity": {"type": "string"},
+        "source_scope": {"type": "string"},
+        "requested_fields": {"type": "array", "items": {"type": "string"}},
+        "filters": {"type": "object"},
+        "time_window": {"type": ["object", "null"]},
+        "limit": {"type": ["integer", "null"]},
+        "semantic_data_ref": {"type": "object"},
+        "read_only": {"type": "boolean", "const": true}
+      }
+    },
+    "source_release_id": {"type": "string"},
+    "source_snapshot_id": {"type": "string"},
+    "normalized_facts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["semantic_record_key", "source_table", "semantic_field", "normalized_value", "provenance_ref"],
+        "properties": {
+          "semantic_record_key": {"type": "string"},
+          "source_table": {"type": "string"},
+          "source_record_id": {"type": "string"},
+          "semantic_field": {"type": "string"},
+          "normalized_value": {"description": "不得为 null"},
+          "normalized_data_type": {"type": "string"},
+          "normalized_unit": {"type": "string"},
+          "display_format": {"type": "string"},
+          "value_consumption_status": {"type": "string"},
+          "provenance_ref": {
+            "type": "object",
+            "properties": {
+              "source_field": {"type": "string"},
+              "raw_value": {"description": "仅供审计追溯，不得作为消费者业务值"},
+              "source_data_type": {"type": "string"},
+              "transformation_rule_id": {"type": "string"},
+              "mapping_ref": {"type": "object"},
+              "evidence_locator": {"type": "object"},
+              "note": {"type": "string"}
+            }
+          }
+        }
+      }
+    },
+    "data_gaps": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["semantic_entity", "semantic_field", "reason", "value_consumption_status"],
+        "properties": {
+          "semantic_entity": {"type": "string"},
+          "semantic_field": {"type": "string"},
+          "reason": {"type": "string"},
+          "value_consumption_status": {"type": "string"},
+          "source_locator": {"type": ["object", "null"]},
+          "required_resolution": {"type": "string"}
+        }
+      }
+    },
+    "provenance_refs": {
+      "type": "array",
+      "items": {"type": "object"}
+    },
+    "contract_versions": {
+      "type": "object",
+      "properties": {
+        "semantic_model_version": {"type": "string"},
+        "mapping_rule_version": {"type": "string"},
+        "data_contract_version": {"type": "string"},
+        "query_contract_version": {"type": "string"},
+        "decision_input_contract_version": {"type": "string"},
+        "consumer_logical_version": {"type": "string"}
+      }
+    },
+    "validation": {
+      "type": "object",
+      "properties": {
+        "status": {"type": "string"},
+        "issues": {"type": "array", "items": {"type": "string"}},
+        "normalized_facts_count": {"type": "integer"},
+        "data_gaps_count": {"type": "integer"},
+        "decision_usable_gate_enforced": {"type": "boolean"},
+        "read_only_enforced": {"type": "boolean"},
+        "no_cross_record_join": {"type": "boolean"},
+        "no_business_conclusion": {"type": "boolean"}
+      }
+    },
+    "source_write_performed": {"type": "boolean", "const": false},
+    "actor_can_execute": {"type": "boolean", "const": false},
+    "generated_at": {"type": "string"},
+    "local_trace_id": {"type": "string"}
+  },
+  "not": {
+    "anyOf": [
+      {"required": ["conclusion"]},
+      {"required": ["root_cause"]},
+      {"required": ["recommended_actions"]},
+      {"required": ["confirmation_draft"]},
+      {"required": ["auto_execute_command"]}
+    ]
+  }
+}

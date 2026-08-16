@@ -1,0 +1,175 @@
+{
+  "contract_name": "BIFROST_SPECIALIST_RESULT_v0.1",
+  "contract_version": "BIFROST-SPECIALIST-RESULT-v0.1.3",
+  "specialist_type": "quality",
+  "status": "warning",
+  "request_id": "QUAL-REAL-A",
+  "source_release_id": "BIFROST-SEMANTIC-DATA-PLANE-v0.2-HOTFIX-04C.5B.2",
+  "source_snapshot_id": "SDS-P02_SIM-20260810-113856",
+  "conclusion": "",
+  "severity": "unknown",
+  "confidence": 0.0,
+  "metrics": [],
+  "causes": [],
+  "affected_objects": [],
+  "recommended_actions": [],
+  "needs_human_confirmation": false,
+  "evidence_refs": [],
+  "data_gaps": [
+    {
+      "semantic_entity": "defect_detail",
+      "semantic_field": "spc_measurement_points",
+      "reason": "GAP-SPC-MEASUREMENT",
+      "value_consumption_status": "missing",
+      "source_locator": "missing_fields=lsl,spc_measurement_points,usl",
+      "required_resolution": "缺少 SPC 原始测量点/规格限(USL/LSL)/抽样规则，不得计算 Cpk/Cp，不得判断 SPC 越界",
+      "affected_record_count": 1,
+      "occurrence_count": 1,
+      "sample_source_locators": [
+        "missing_fields=lsl,spc_measurement_points,usl"
+      ]
+    },
+    {
+      "semantic_entity": "defect_detail",
+      "semantic_field": "sample_rule",
+      "reason": "missing_sample_rule",
+      "value_consumption_status": "missing",
+      "source_locator": null,
+      "required_resolution": "缺少抽样规则定义，SPC 判定结果不可靠",
+      "affected_record_count": 1,
+      "occurrence_count": 1,
+      "sample_source_locators": []
+    },
+    {
+      "semantic_entity": "defect_detail",
+      "semantic_field": "defect_type",
+      "reason": "missing_defect_type_for_defect_analysis",
+      "value_consumption_status": "missing",
+      "source_locator": "source_table=16_不良类型_模拟,record_key=16_不良类型_模拟#defect_detail#DEF-00001,row=2",
+      "required_resolution": "defect_detail 实体缺少 defect_type 字段，无法执行不良分布分析",
+      "affected_record_count": 1575,
+      "occurrence_count": 1575,
+      "sample_source_locators": [
+        "source_table=16_不良类型_模拟,record_key=16_不良类型_模拟#defect_detail#DEF-00001,row=2",
+        "source_table=16_不良类型_模拟,record_key=16_不良类型_模拟#defect_detail#DEF-00002,row=3",
+        "source_table=16_不良类型_模拟,record_key=16_不良类型_模拟#defect_detail#DEF-00003,row=4"
+      ]
+    },
+    {
+      "semantic_entity": "defect_detail",
+      "semantic_field": "defect_count",
+      "reason": "missing_defect_count_for_defect_analysis",
+      "value_consumption_status": "missing",
+      "source_locator": "source_table=16_不良类型_模拟,record_key=16_不良类型_模拟#defect_detail#DEF-00001,row=2",
+      "required_resolution": "defect_detail 实体缺少 defect_count 字段，无法执行不良分布分析",
+      "affected_record_count": 1575,
+      "occurrence_count": 1575,
+      "sample_source_locators": [
+        "source_table=16_不良类型_模拟,record_key=16_不良类型_模拟#defect_detail#DEF-00001,row=2",
+        "source_table=16_不良类型_模拟,record_key=16_不良类型_模拟#defect_detail#DEF-00002,row=3",
+        "source_table=16_不良类型_模拟,record_key=16_不良类型_模拟#defect_detail#DEF-00003,row=4"
+      ]
+    },
+    {
+      "semantic_entity": "defect_detail",
+      "semantic_field": "defect_ratio",
+      "reason": "missing_defect_ratio_for_defect_analysis",
+      "value_consumption_status": "missing",
+      "source_locator": "source_table=16_不良类型_模拟,record_key=16_不良类型_模拟#defect_detail#DEF-00001,row=2",
+      "required_resolution": "defect_detail 实体缺少 defect_ratio 字段，无法执行不良分布分析",
+      "affected_record_count": 1575,
+      "occurrence_count": 1575,
+      "sample_source_locators": [
+        "source_table=16_不良类型_模拟,record_key=16_不良类型_模拟#defect_detail#DEF-00001,row=2",
+        "source_table=16_不良类型_模拟,record_key=16_不良类型_模拟#defect_detail#DEF-00002,row=3",
+        "source_table=16_不良类型_模拟,record_key=16_不良类型_模拟#defect_detail#DEF-00003,row=4"
+      ]
+    },
+    {
+      "semantic_entity": "quality_yield",
+      "semantic_field": "yield",
+      "reason": "missing_yield_fields_globally",
+      "value_consumption_status": "missing",
+      "source_locator": null,
+      "required_resolution": "全局未检出良率相关字段(yield/yield_rate/quality_rate/good_output/total_output)，无法执行良率分析",
+      "affected_record_count": 1,
+      "occurrence_count": 1,
+      "sample_source_locators": []
+    }
+  ],
+  "actor_can_execute": false,
+  "contract_versions": {
+    "specialist_result_contract_version": "BIFROST-SPECIALIST-RESULT-v0.1.3",
+    "decision_input_contract_version": "BIFROST-DECISION-INPUT-v0.1",
+    "semantic_model_version": "SEM-v1.1.1",
+    "mapping_rule_version": "MAP-v1.0.1",
+    "specialist_logical_version": "QUAL-LOGIC-v0.1.2"
+  },
+  "validation": {
+    "status": "warning",
+    "issues": [],
+    "warnings": [
+      "存在 6 个数据缺口"
+    ],
+    "input_contract_valid": true,
+    "evidence_contract_valid": true,
+    "output_contract_valid": true
+  },
+  "local_trace_id": "QUALITY-AE53A559406A4B65",
+  "specialist_details": {
+    "yield_analysis_summary": {
+      "yield_metrics_count": 0,
+      "defect_distribution_count": 0,
+      "defect_total": null,
+      "conservation_conserved": null,
+      "trend_available": false,
+      "has_time_field": false
+    },
+    "freeze_analysis_summary": {
+      "freeze_records_count": 0,
+      "active_freezes_count": 0,
+      "terminal_freezes_count": 0,
+      "relation_materialized": false,
+      "pending_confirmations_count": 0
+    },
+    "spc_analysis_summary": {
+      "spc_data_available": false,
+      "cpk_calculable": false,
+      "blocked_calculations": [
+        {
+          "calculation": "Cpk/Cp",
+          "reason": "缺少 SPC 必需字段",
+          "missing_fields": [
+            "lsl",
+            "spc_measurement_points",
+            "usl"
+          ]
+        },
+        {
+          "calculation": "SPC_control_limit_breach",
+          "reason": "缺少 SPC 测量点数据",
+          "missing_fields": [
+            "lsl",
+            "spc_measurement_points",
+            "usl"
+          ]
+        }
+      ]
+    },
+    "risk_classification": {
+      "severity": "unknown",
+      "confidence": 0.0,
+      "missing_severity_rule": true,
+      "risk_factors": [
+        {
+          "factor": "spc_data_missing",
+          "description": "缺少 SPC 数据，无法评估过程能力"
+        }
+      ]
+    },
+    "input_validation": {
+      "valid": true,
+      "blocked_code": null
+    }
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "defect_type": "unit_inconsistent",
+  "severity": "high",
+  "affected_columns": ["unit_price_cny"],
+  "description": "PLANT-03 records unit_price in 万元 (ten-thousands) scale while other plants use 元 (yuan) scale in the same column. 15 out of 90 rows (16.7%) have unit prices in 0.08-0.14 range (万元) versus 800-1400 range (元) for other plants. This represents a 10,000x magnitude difference. The defect creates a bimodal distribution with peaks separated by exactly 10,000x factor, matching the 元/万元 conversion ratio. Affects total_cost_cny calculation and any cross-plant price analysis.",
+  "detection_hints": "d01-unit-inconsistent skill detects via Step 2 (bimodal distribution) and Step 3 (magnitude difference by dimension). ColumnProfile shows p50/p95/max ratio exceeding 100. Group by plant_code reveals PLANT-03 mean is ~1/10000 of other plants' mean.",
+  "affected_rows": [2, 5, 8, 11, 14, 17, 20, 23, 26, 29, 32, 35, 38, 41, 44],
+  "evidence": {
+    "defect_plant": "PLANT-03",
+    "defect_magnitude": "万元 (0.08-0.14 range)",
+    "normal_magnitude": "元 (800-1400 range)",
+    "conversion_factor": 10000,
+    "defect_ratio": "15/90 = 16.7%"
+  }
+}

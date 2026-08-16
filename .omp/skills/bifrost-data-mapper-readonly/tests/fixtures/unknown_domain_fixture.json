@@ -1,0 +1,42 @@
+[
+  {
+    "planet": "PL-0",
+    "gravity": 9.8
+  },
+  {
+    "planet": "PL-1",
+    "gravity": 9.8
+  },
+  {
+    "planet": "PL-2",
+    "gravity": 9.8
+  },
+  {
+    "planet": "PL-3",
+    "gravity": 9.8
+  },
+  {
+    "planet": "PL-4",
+    "gravity": 9.8
+  },
+  {
+    "planet": "PL-5",
+    "gravity": 9.8
+  },
+  {
+    "planet": "PL-6",
+    "gravity": 9.8
+  },
+  {
+    "planet": "PL-7",
+    "gravity": 9.8
+  },
+  {
+    "planet": "PL-8",
+    "gravity": 9.8
+  },
+  {
+    "planet": "PL-9",
+    "gravity": 9.8
+  }
+]

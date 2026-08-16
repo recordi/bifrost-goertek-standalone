@@ -1,0 +1,22 @@
+{
+  "defect_type": "out_of_domain",
+  "severity": "high",
+  "affected_columns": ["yield_rate", "utilization_rate"],
+  "description": "Ratio columns contain impossible values outside [0, 1] domain. yield_rate has 5 out-of-domain values: rows 12 (1.12), 27 (-0.03), 45 (1.08), 68 (1.15), 83 (-0.01) — representing 5% defect rate. utilization_rate has 2 out-of-domain values: rows 34 (1.23), 71 (-0.05) — representing 2% defect rate. Yield >1.0 is physically impossible (output cannot exceed input). Negative ratios are also impossible for production metrics. These violate semantic: ratio constraints and indicate data entry errors or calculation bugs.",
+  "detection_hints": "Profiling module detects semantic: ratio columns and checks [0,1] domain via ColumnProfile.min/max. Sets quality_flags with out_of_domain:N where N is count of violating rows. d01 skill references this for unit inconsistency ruling out, but out_of_domain is a distinct defect type caught earlier in profiling.",
+  "affected_rows": [12, 27, 34, 45, 68, 71, 83],
+  "evidence": {
+    "yield_rate_violations": {
+      "rows": [12, 27, 45, 68, 83],
+      "values": [1.12, -0.03, 1.08, 1.15, -0.01],
+      "count": 5,
+      "ratio": "5%"
+    },
+    "utilization_rate_violations": {
+      "rows": [34, 71],
+      "values": [1.23, -0.05],
+      "count": 2,
+      "ratio": "2%"
+    }
+  }
+}

@@ -1,0 +1,170 @@
+{
+  "contract_name": "BIFROST_SPECIALIST_RESULT_v0.1",
+  "contract_version": "BIFROST-SPECIALIST-RESULT-v0.1.3",
+  "specialist_type": "quality",
+  "status": "needs_confirmation",
+  "request_id": "FIX-UNFREEZE-REQ-010",
+  "source_release_id": "BIFROST-SEMANTIC-DATA-PLANE-v0.2-TEST",
+  "source_snapshot_id": "SDS-P02-TEST",
+  "conclusion": "质量冻结记录: 1 条（活跃: 1, 终态: 0）; 缺少 SPC 数据，Cpk 不可计算; 无时间字段，不生成趋势结论",
+  "severity": "unknown",
+  "confidence": 1.0,
+  "metrics": [],
+  "causes": [],
+  "affected_objects": [
+    {
+      "object_type": "quality_freeze",
+      "object_id": "FR-2026-004",
+      "status": "active",
+      "quantity": 800,
+      "material_code": "MAT-002"
+    }
+  ],
+  "recommended_actions": [
+    {
+      "action_id": "A-QUAL-001",
+      "action": "冻结 FR-2026-004 处于活跃状态，需人工确认是否需要解除",
+      "priority": "high",
+      "is_high_risk": true,
+      "needs_human_confirmation": true,
+      "prohibited_auto_execute": true,
+      "actor_can_execute": false,
+      "affected_object": "FR-2026-004",
+      "evidence_refs": [
+        "EVREF-v1:cfd7813b22b172b0f545d07581ce368214b027c64acec89e961f83b48a736f61"
+      ]
+    }
+  ],
+  "needs_human_confirmation": true,
+  "evidence_refs": [
+    "EVREF-v1:cfd7813b22b172b0f545d07581ce368214b027c64acec89e961f83b48a736f61"
+  ],
+  "data_gaps": [
+    {
+      "semantic_entity": "quality_freeze",
+      "semantic_field": "quality_event_id",
+      "reason": "no_materialized_relation_to_quality_event",
+      "value_consumption_status": "missing",
+      "source_locator": null,
+      "required_resolution": "冻结记录与质量事件之间无已物化关联字段，不得按日期/产品名/文本相似度自行关联",
+      "affected_record_count": 1,
+      "occurrence_count": 1,
+      "sample_source_locators": []
+    },
+    {
+      "semantic_entity": "defect_detail",
+      "semantic_field": "spc_measurement_points",
+      "reason": "GAP-SPC-MEASUREMENT",
+      "value_consumption_status": "missing",
+      "source_locator": "missing_fields=lsl,spc_measurement_points,usl",
+      "required_resolution": "缺少 SPC 原始测量点/规格限(USL/LSL)/抽样规则，不得计算 Cpk/Cp，不得判断 SPC 越界",
+      "affected_record_count": 1,
+      "occurrence_count": 1,
+      "sample_source_locators": [
+        "missing_fields=lsl,spc_measurement_points,usl"
+      ]
+    },
+    {
+      "semantic_entity": "defect_detail",
+      "semantic_field": "sample_rule",
+      "reason": "missing_sample_rule",
+      "value_consumption_status": "missing",
+      "source_locator": null,
+      "required_resolution": "缺少抽样规则定义，SPC 判定结果不可靠",
+      "affected_record_count": 1,
+      "occurrence_count": 1,
+      "sample_source_locators": []
+    },
+    {
+      "semantic_entity": "quality_yield",
+      "semantic_field": "yield",
+      "reason": "missing_yield_fields_globally",
+      "value_consumption_status": "missing",
+      "source_locator": null,
+      "required_resolution": "全局未检出良率相关字段(yield/yield_rate/quality_rate/good_output/total_output)，无法执行良率分析",
+      "affected_record_count": 1,
+      "occurrence_count": 1,
+      "sample_source_locators": []
+    }
+  ],
+  "actor_can_execute": false,
+  "contract_versions": {
+    "specialist_result_contract_version": "BIFROST-SPECIALIST-RESULT-v0.1.3",
+    "decision_input_contract_version": "BIFROST-DECISION-INPUT-v0.1",
+    "semantic_model_version": "SEM-v1.1.1",
+    "mapping_rule_version": "MAP-v1.0.1",
+    "specialist_logical_version": "QUAL-LOGIC-v0.1.2"
+  },
+  "validation": {
+    "status": "warning",
+    "issues": [],
+    "warnings": [
+      "存在 4 个数据缺口"
+    ],
+    "input_contract_valid": true,
+    "evidence_contract_valid": true,
+    "output_contract_valid": true
+  },
+  "local_trace_id": "QUALITY-843B509D662541FE",
+  "specialist_details": {
+    "yield_analysis_summary": {
+      "yield_metrics_count": 0,
+      "defect_distribution_count": 0,
+      "defect_total": null,
+      "conservation_conserved": null,
+      "trend_available": false,
+      "has_time_field": false
+    },
+    "freeze_analysis_summary": {
+      "freeze_records_count": 1,
+      "active_freezes_count": 1,
+      "terminal_freezes_count": 0,
+      "relation_materialized": false,
+      "pending_confirmations_count": 1
+    },
+    "spc_analysis_summary": {
+      "spc_data_available": false,
+      "cpk_calculable": false,
+      "blocked_calculations": [
+        {
+          "calculation": "Cpk/Cp",
+          "reason": "缺少 SPC 必需字段",
+          "missing_fields": [
+            "lsl",
+            "spc_measurement_points",
+            "usl"
+          ]
+        },
+        {
+          "calculation": "SPC_control_limit_breach",
+          "reason": "缺少 SPC 测量点数据",
+          "missing_fields": [
+            "lsl",
+            "spc_measurement_points",
+            "usl"
+          ]
+        }
+      ]
+    },
+    "risk_classification": {
+      "severity": "unknown",
+      "confidence": 1.0,
+      "missing_severity_rule": true,
+      "risk_factors": [
+        {
+          "factor": "active_quality_freeze",
+          "count": 1,
+          "description": "存在 1 个活跃质量冻结"
+        },
+        {
+          "factor": "spc_data_missing",
+          "description": "缺少 SPC 数据，无法评估过程能力"
+        }
+      ]
+    },
+    "input_validation": {
+      "valid": true,
+      "blocked_code": null
+    }
+  }
+}

@@ -1,0 +1,139 @@
+{
+  "matrix_version": "BIFROST-SKILL-COMPAT-v1.0",
+  "purpose": "Integrate peer capabilities without creating a second business truth.",
+  "authority": {
+    "metric_owner": "BIFROST authoritative readonly skills",
+    "authoritative_skills": [
+      "bifrost-data-mapper-readonly",
+      "bifrost-semantic-consumer-readonly",
+      "bifrost-production-diagnosis-readonly",
+      "bifrost-quality-diagnosis-readonly",
+      "bifrost-supply-risk-readonly",
+      "bifrost-decision-readonly"
+    ],
+    "required_evidence": ["EventID", "TaskID", "EvidenceRef", "RecordID"],
+    "missing_data_policy": "Never fill missing data with zero; emit data_gap or not_observed.",
+    "safety_policy": "High-risk actions are draft-only until human confirmation."
+  },
+  "entries": [
+    {
+      "ids": ["bifrost-data-mapper-readonly", "bifrost-semantic-consumer-readonly"],
+      "source": "bifrost",
+      "layer": "semantic_data",
+      "integration_mode": "authoritative",
+      "owner": "bifrost",
+      "input": "overview_or_event_payload",
+      "output": "canonical_semantic_fields",
+      "gate": "Every field resolves to one source record.",
+      "roles": ["factory", "line", "quality", "equipment", "process", "supply"],
+      "status": "approved"
+    },
+    {
+      "ids": ["bifrost-production-diagnosis-readonly", "bifrost-quality-diagnosis-readonly", "bifrost-supply-risk-readonly", "bifrost-decision-readonly"],
+      "source": "bifrost",
+      "layer": "business_diagnosis",
+      "integration_mode": "authoritative",
+      "owner": "bifrost",
+      "input": "canonical_semantic_fields",
+      "output": "contract_bound_specialist_result",
+      "gate": "No metric without evidence; supply shortage is not an OEE cause.",
+      "roles": ["factory", "line", "quality", "equipment", "process", "supply"],
+      "status": "approved"
+    },
+    {
+      "ids": ["a01-oee-loss-tree", "a02-pareto", "a04-correlation-heatmap", "a05-time-series-decomposition", "a07-yield-funnel"],
+      "source": "peer",
+      "layer": "analysis_enhancement",
+      "integration_mode": "readonly_postprocessor",
+      "owner": "bifrost_contract",
+      "input": "validated_specialist_result_with_evidence",
+      "output": "analysis_view_without_metric_mutation",
+      "gate": "Must not recalculate authoritative OEE, yield, or supply metrics.",
+      "roles": ["factory", "line", "quality", "equipment", "process", "supply"],
+      "status": "candidate"
+    },
+    {
+      "ids": ["a03-spc-rules", "a06-control-limits"],
+      "source": "peer",
+      "layer": "quality_analysis",
+      "integration_mode": "gated_readonly_postprocessor",
+      "owner": "bifrost_quality_contract",
+      "input": "quality_result_with_measurement_points_usl_lsl_sample_rule",
+      "output": "spc_result_or_data_gap",
+      "gate": "Without all SPC inputs, no Cpk and no out_of_control claim.",
+      "roles": ["quality", "process"],
+      "status": "candidate_blocked_until_data"
+    },
+    {
+      "ids": ["a08-supply-chain-gap"],
+      "source": "peer",
+      "layer": "supply_analysis",
+      "integration_mode": "readonly_postprocessor",
+      "owner": "bifrost_supply_contract",
+      "input": "supply_result_with_join_evidence",
+      "output": "shortage_freeze_and_coverage_analysis",
+      "gate": "Requires an auditable join path; cannot attribute shortage directly to OEE.",
+      "roles": ["supply", "factory", "line"],
+      "status": "candidate"
+    },
+    {
+      "ids": ["d01-unit-inconsistent", "d02-duplicate-key", "d03-temporal-gap", "d04-referential-broken", "d05-business-exception"],
+      "source": "peer",
+      "layer": "data_governance_preflight",
+      "integration_mode": "readonly_preflight_adapter",
+      "owner": "bifrost_data_governance_contract",
+      "input": "raw_or_semantic_data",
+      "output": "defect_severity_evidence_and_impact",
+      "gate": "Defects are surfaced, not silently cleaned; impact is traceable.",
+      "roles": ["factory", "line", "quality", "equipment", "process", "supply"],
+      "status": "candidate"
+    },
+    {
+      "ids": ["c01-pyramid-principle", "c02-executive-summary", "c03-shift-report"],
+      "source": "peer",
+      "layer": "narrative",
+      "integration_mode": "contract_renderer",
+      "owner": "bifrost_response_formatter",
+      "input": "reviewed_event_contract_and_role_projection",
+      "output": "localized_summary_and_draft_actions",
+      "gate": "May change wording only; cannot add facts or remove evidence and gaps.",
+      "roles": ["factory", "line", "quality", "equipment", "process", "supply"],
+      "status": "candidate"
+    },
+    {
+      "ids": ["b01-b07"],
+      "source": "peer",
+      "layer": "presentation",
+      "integration_mode": "render_spec_only",
+      "owner": "bifrost_ui_baseline",
+      "input": "overview_event_payload_and_role_projection",
+      "output": "chart_kpi_and_layout_spec",
+      "gate": "Must preserve frozen UI baseline routes, navigation, payloads, and roles.",
+      "roles": ["factory", "line", "quality", "equipment", "process", "supply"],
+      "status": "candidate"
+    }
+  ],
+  "prohibited_duplication": [
+    "second_production_metric_chain",
+    "second_quality_or_spc_metric_chain",
+    "second_supply_shortage_metric_chain",
+    "six_business_compute_agents",
+    "natural_language_overwriting_evidence_refs"
+  ],
+  "integration_order": [
+    "data_governance_preflight",
+    "semantic_data",
+    "business_diagnosis",
+    "contract_review",
+    "analysis_enhancement",
+    "role_projection",
+    "narrative",
+    "presentation",
+    "workflow_regression"
+  ],
+  "review": {
+    "candidate_source": "custom-grok/grok-4.6",
+    "human_adjudication": "codex_reviewed",
+    "file_policy": "This matrix is an integration checklist; candidates are not enabled by default."
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "contract_version": "relation-status-v1.0",
+  "description": "关联候选状态枚举与确认规则合同",
+  "allowed_status": [
+    "validated_candidate",
+    "ambiguous",
+    "rejected",
+    "confirmed"
+  ],
+  "rules": {
+    "skill_version_0_1_0_cannot_confirm_new_relations": true,
+    "can_only_inherit_explicitly_approved_confirmed": true,
+    "sim_registry_confirmed_count": 0,
+    "official_registry_confirmed_count": 0,
+    "all_new_relations_must_not_be_confirmed": true
+  },
+  "sim_registry": {
+    "total_candidates": 16,
+    "confirmed_count": 0
+  },
+  "official_registry": {
+    "total_candidates": 7,
+    "confirmed_count": 0
+  }
+}

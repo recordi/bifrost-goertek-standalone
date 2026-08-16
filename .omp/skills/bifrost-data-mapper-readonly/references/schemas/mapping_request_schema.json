@@ -1,0 +1,65 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "BIFROST 字段整合只读映射请求 Schema",
+  "type": "object",
+  "required": ["request_id", "source_file", "file_format", "read_only"],
+  "properties": {
+    "request_id": {
+      "type": "string",
+      "description": "外部请求ID"
+    },
+    "source_id": {
+      "type": "string",
+      "description": "数据源ID"
+    },
+    "source_name": {
+      "type": "string",
+      "description": "数据源名称"
+    },
+    "source_file": {
+      "type": "string",
+      "description": "附件或只读文件路径"
+    },
+    "file_format": {
+      "type": "string",
+      "enum": ["xlsx", "csv", "json"],
+      "description": "文件格式"
+    },
+    "declared_source_family": {
+      "type": ["string", "null"],
+      "description": "可选：声明的来源族"
+    },
+    "declared_source_type": {
+      "type": ["string", "null"],
+      "description": "可选：声明的来源类型"
+    },
+    "mapping_mode": {
+      "type": "string",
+      "enum": ["approved_contract", "baseline_assisted", "zero_shot"],
+      "description": "映射模式"
+    },
+    "semantic_model_version": {
+      "type": "string",
+      "description": "语义模型版本"
+    },
+    "mapping_rule_version": {
+      "type": ["string", "null"],
+      "description": "可选：映射规则版本"
+    },
+    "allowed_domains": {
+      "type": "array",
+      "items": {"type": "string"},
+      "description": "允许的域"
+    },
+    "sample_limit": {
+      "type": "integer",
+      "minimum": 1,
+      "default": 20
+    },
+    "read_only": {
+      "type": "boolean",
+      "enum": [true],
+      "description": "必须为 true"
+    }
+  }
+}

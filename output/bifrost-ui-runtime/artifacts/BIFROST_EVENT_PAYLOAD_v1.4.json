@@ -1,0 +1,5481 @@
+{
+  "payload_version": "v1.4",
+  "payload_type": "event_detail",
+  "event_id": "EVT-20251009-0001",
+  "source_event_id": "SIM-EVT-00086",
+  "sim_shift_id": "LINE-S03-PRE-20251009",
+  "event_status": "待确认",
+  "analysis_version": 4,
+  "dataset_id": "TEAM_ENGINEERED_SIMULATION",
+  "data_time": "2025-10-09",
+  "line_ids": [
+    "LINE-S03"
+  ],
+  "rule_version": "RULESET-v1.0",
+  "knowledge_version": "KNOWLEDGE-v1.0",
+  "generated_at": "2026-08-07T14:26:28Z",
+  "roles": [
+    {
+      "event_id": "EVT-20251009-0001",
+      "role": "factory",
+      "dataset_id": "TEAM_ENGINEERED_SIMULATION",
+      "line_ids": [
+        "LINE-S03"
+      ],
+      "headline": "LINE-S03 当班OEE 45.91%，低于目标30.09个百分点，建议启动隔离复检",
+      "kpis": [
+        {
+          "metric_code": "OEE",
+          "value": 0.4591115012,
+          "value_type": "ratio",
+          "display_format": "0.0%",
+          "unit": "ratio",
+          "target": 0.76,
+          "absolute_gap": -0.3008884988,
+          "relative_gap": -0.3959059194,
+          "aggregation_scope": "single_shift",
+          "evidence_refs": [
+            {
+              "dataset_id": "TEAM_ENGINEERED_SIMULATION",
+              "semantic_table": "oee_shift",
+              "source_table": "12_多产线班次_模拟",
+              "record_key": "SimShiftID",
+              "record_id": "LINE-S03-PRE-20251009",
+              "field_names": [
+                "开动率",
+                "性能率",
+                "质量率",
+                "OEE复算",
+                "目标OEE"
+              ],
+              "semantic_fields": [
+                "availability",
+                "performance",
+                "quality",
+                "oee",
+                "target_oee"
+              ],
+              "source_object_id": "LINE-S03-PRE-20251009",
+              "data_time": "2025-10-09",
+              "source_type": "TEAM_ENGINEERED_SIMULATION"
+            }
+          ]
+        }
+      ],
+      "charts": [],
+      "alerts": [
+        {
+          "alert_id": "ALERT-OEE-001",
+          "severity": "critical",
+          "message": "OEE 45.91% 低于目标 76.00%，绝对差距 -30.09 个百分点",
+          "evidence_refs": [
+            {
+              "dataset_id": "TEAM_ENGINEERED_SIMULATION",
+              "semantic_table": "oee_shift",
+              "source_table": "12_多产线班次_模拟",
+              "record_key": "SimShiftID",
+              "record_id": "LINE-S03-PRE-20251009",
+              "field_names": [
+                "OEE复算",
+                "目标OEE"
+              ],
+              "semantic_fields": [
+                "oee",
+                "target_oee"
+              ],
+              "source_object_id": "LINE-S03-PRE-20251009",
+              "data_time": "2025-10-09",
+              "source_type": "TEAM_ENGINEERED_SIMULATION"
+            }
+          ]
+        }
+      ],
+      "tasks": [
+        {
+          "task_id": "TASK-20251009-0002",
+          "view_action_id": "VA-FACTORY-REVIEW",
+          "description": "厂长审阅LINE-S03当班OEE异常及隔离复检决策",
+          "status": "已完成",
+          "evidence_refs": [
+            {
+              "dataset_id": "TEAM_ENGINEERED_SIMULATION",
+              "semantic_table": "oee_shift",
+              "source_table": "12_多产线班次_模拟",
+              "record_key": "SimShiftID",
+              "record_id": "LINE-S03-PRE-20251009",
+              "field_names": [
+                "OEE复算"
+              ],
+              "semantic_fields": [
+                "oee"
+              ],
+              "source_object_id": "LINE-S03-PRE-20251009",
+              "data_time": "2025-10-09",
+              "source_type": "TEAM_ENGINEERED_SIMULATION"
+            }
+          ]
+        }
+      ],
+      "decisions_required": [
+        {
+          "decision_id": "DEC-20251009-0002",
+          "confirmation_id": "CONF-20251009-0002",
+          "event_id": "EVT-20251009-0001",
+          "action": "对LINE-S03-PRE-20251009当班产品启动隔离与100%复检",
+          "risk_level": "high",
+          "status": "待确认",
+          "evidence_refs": [
+            {
+              "dataset_id": "TEAM_ENGINEERED_SIMULATION",
+              "semantic_table": "oee_shift",
+              "source_table": "12_多产线班次_模拟",
+              "record_key": "SimShiftID",
+              "record_id": "LINE-S03-PRE-20251009",
+              "field_names": [
+                "OEE复算"
+              ],
+              "semantic_fields": [
+                "oee"
+              ],
+              "source_object_id": "LINE-S03-PRE-20251009",
+              "data_time": "2025-10-09",
+              "source_type": "TEAM_ENGINEERED_SIMULATION"
+            },
+            {
+              "dataset_id": "TEAM_ENGINEERED_SIMULATION",
+              "semantic_table": "defect_detail",
+              "source_table": "16_不良类型_模拟",
+              "record_key": "DefectDetailID",
+              "record_id": "DEF-00191",
+              "field_names": [
+                "不良类型",
+                "不良数量",
+                "不良占比"
+              ],
+              "semantic_fields": [
+                "defect_type",
+                "count",
+                "ratio"
+              ],
+              "source_object_id": "LINE-S03-PRE-20251009",
+              "data_time": "2025-10-09",
+              "source_type": "TEAM_ENGINEERED_SIMULATION"
+            },
+            {
+              "dataset_id": "TEAM_ENGINEERED_SIMULATION",
+              "semantic_table": "defect_detail",
+              "source_table": "16_不良类型_模拟",
+              "record_key": "DefectDetailID",
+              "record_id": "DEF-00192",
+              "field_names": [
+                "不良类型",
+                "不良数量",
+                "不良占比"
+              ],
+              "semantic_fields": [
+                "defect_type",
+                "count",
+                "ratio"
+              ],
+              "source_object_id": "LINE-S03-PRE-20251009",
+              "data_time": "2025-10-09",
+              "source_type": "TEAM_ENGINEERED_SIMULATION"
+            },
+            {
+              "dataset_id": "TEAM_ENGINEERED_SIMULATION",
+              "semantic_table": "defect_detail",
+              "source_table": "16_不良类型_模拟",
+              "record_key": "DefectDetailID",
+              "record_id": "DEF-00193",
+              "field_names": [
+                "不良类型",
+                "不良数量",
+                "不良占比"
+              ],
+              "semantic_fields": [
+                "defect_type",
+                "count",
+                "ratio"
+              ],
+              "source_object_id": "LINE-S03-PRE-20251009",
+              "data_time": "2025-10-09",
+              "source_type": "TEAM_ENGINEERED_SIMULATION"
+            },
+            {
+              "dataset_id": "TEAM_ENGINEERED_SIMULATION",
+              "semantic_table": "defect_detail",
+              "source_table": "16_不良类型_模拟",
+              "record_key": "DefectDetailID",
+              "record_id": "DEF-00194",
+              "field_names": [
+                "不良类型",
+                "不良数量",
+                "不良占比"
+              ],
+              "semantic_fields": [
+                "defect_type",
+                "count",
+                "ratio"
+              ],
+              "source_object_id": "LINE-S03-PRE-20251009",
+              "data_time": "2025-10-09",
+              "source_type": "TEAM_ENGINEERED_SIMULATION"
+            },
+            {
+              "dataset_id": "TEAM_ENGINEERED_SIMULATION",
+              "semantic_table": "defect_detail",
+              "source_table": "16_不良类型_模拟",
+              "record_key": "DefectDetailID",
+              "record_id": "DEF-00195",
+              "field_names": [
+                "不良类型",
+                "不良数量",
+                "不良占比"
+              ],
+              "semantic_fields": [
+                "defect_type",
+                "count",
+                "ratio"
+              ],
+              "source_object_id": "LINE-S03-PRE-20251009",
+              "data_time": "2025-10-09",
+              "source_type": "TEAM_ENGINEERED_SIMULATION"
+            }
+          ]
+        }
+      ],
+      "data_gaps": [],
+      "evidence_refs": [
+        {
+          "dataset_id": "TEAM_ENGINEERED_SIMULATION",
+          "semantic_table": "oee_shift",
+          "source_table": "12_多产线班次_模拟",
+          "record_key": "SimShiftID",
+          "record_id": "LINE-S03-PRE-20251009",
+          "field_names": [
+            "开动率",
+            "性能率",
+            "质量率",
+            "OEE复算"
+          ],
+          "semantic_fields": [
+            "availability",
+            "performance",
+            "quality",
+            "oee"
+          ],
+          "source_object_id": "LINE-S03-PRE-20251009",
+          "data_time": "2025-10-09",
+          "source_type": "TEAM_ENGINEERED_SIMULATION"
+        }
+      ],
+      "rule_version": "RULESET-v1.0",
+      "knowledge_version": "KNOWLEDGE-v1.0",
+      "last_updated_at": "2026-08-07T14:26:28Z"
+    },
+    {
+      "event_id": "EVT-20251009-0001",
+      "role": "line",
+      "dataset_id": "TEAM_ENGINEERED_SIMULATION",
+      "line_ids": [
+        "LINE-S03"
+      ],
+      "headline": "LINE-S03 当班开动率60.96%偏低，性能率82.51%，质量率91.29%",
+      "kpis": [
+        {
+          "metric_code": "AVAILABILITY",
+          "value": 0.609567,
+          "value_type": "ratio",
+          "display_format": "0.0%",
+          "unit": "ratio",
+          "aggregation_scope": "single_shift",
+          "evidence_refs": [
+            {
+              "dataset_id": "TEAM_ENGINEERED_SIMULATION",
+              "semantic_table": "oee_shift",
+              "source_table": "12_多产线班次_模拟",
+              "record_key": "SimShiftID",
+              "record_id": "LINE-S03-PRE-20251009",
+              "field_names": [
+                "开动率"
+              ],
+              "semantic_fields": [
+                "availability"
+              ],
+              "source_object_id": "LINE-S03-PRE-20251009",
+              "data_time": "2025-10-09",
+              "source_type": "TEAM_ENGINEERED_SIMULATION"
+            }
+          ]
+        },
+        {
+          "metric_code": "PERFORMANCE",
+          "value": 0.825067,
+          "value_type": "ratio",
+          "display_format": "0.0%",
+          "unit": "ratio",
+          "aggregation_scope": "single_shift",
+          "evidence_refs": [
+            {
+              "dataset_id": "TEAM_ENGINEERED_SIMULATION",
+              "semantic_table": "oee_shift",
+              "source_table": "12_多产线班次_模拟",
+              "record_key": "SimShiftID",
+              "record_id": "LINE-S03-PRE-20251009",
+              "field_names": [
+                "性能率"
+              ],
+              "semantic_fields": [
+                "performance"
+              ],
+              "source_object_id": "LINE-S03-PRE-20251009",
+              "data_time": "2025-10-09",
+              "source_type": "TEAM_ENGINEERED_SIMULATION"
+            }
+          ]
+        },
+        {
+          "metric_code": "QUALITY",
+          "value": 0.912867,
+          "value_type": "ratio",
+          "display_format": "0.0%",
+          "unit": "ratio",
+          "aggregation_scope": "single_shift",
+          "evidence_refs": [
+            {
+              "dataset_id": "TEAM_ENGINEERED_SIMULATION",
+              "semantic_table": "oee_shift",
+              "source_table": "12_多产线班次_模拟",
+              "record_key": "SimShiftID",
+              "record_id": "LINE-S03-PRE-20251009",
+              "field_names": [
+                "质量率"
+              ],
+              "semantic_fields": [
+                "quality"
+              ],
+              "source_object_id": "LINE-S03-PRE-20251009",
+              "data_time": "2025-10-09",
+              "source_type": "TEAM_ENGINEERED_SIMULATION"
+            }
+          ]
+        },
+        {
+          "metric_code": "OEE",
+          "value": 0.4591115012,
+          "value_type": "ratio",
+          "display_format": "0.0%",
+          "unit": "ratio",
+          "target": 0.76,
+          "absolute_gap": -0.3008884988,
+          "relative_gap": -0.3959059194,
+          "aggregation_scope": "single_shift",
+          "evidence_refs": [
+            {
+              "dataset_id": "TEAM_ENGINEERED_SIMULATION",
+              "semantic_table": "oee_shift",
+              "source_table": "12_多产线班次_模拟",
+              "record_key": "SimShiftID",
+              "record_id": "LINE-S03-PRE-20251009",
+              "field_names": [
+                "OEE复算"
+              ],
+              "semantic_fields": [
+                "oee"
+              ],
+              "source_object_id": "LINE-S03-PRE-20251009",
+              "data_time": "2025-10-09",
+              "source_type": "TEAM_ENGINEERED_SIMULATION"
+            }
+          ]
+        }
+      ],
+      "charts": [
+        {
+          "chart_id": "CHART-OEE-DECOMP",
+          "type": "waterfall",
+          "title": "OEE 分解（开动率×性能率×质量率）",
+          "data": {
+            "availability": 0.609567,
+            "performance": 0.825067,
+            "quality": 0.912867,
+            "oee": 0.4591115012
+          },
+          "evidence_refs": [
+            {
+              "dataset_id": "TEAM_ENGINEERED_SIMULATION",
+              "semantic_table": "oee_shift",
+              "source_table": "12_多产线班次_模拟",
+              "record_key": "SimShiftID",
+              "record_id": "LINE-S03-PRE-20251009",
+              "field_names": [
+                "开动率",
+                "性能率",
+                "质量率",
+                "OEE复算"
+              ],
+              "semantic_fields": [
+                "availability",
+                "performance",
+                "quality",
+                "oee"
+              ],
+              "source_object_id": "LINE-S03-PRE-20251009",
+              "data_time": "2025-10-09",
+              "source_type": "TEAM_ENGINEERED_SIMULATION"
+            }
+          ]
+        }
+      ],
+      "alerts": [
+        {
+          "alert_id": "ALERT-AVAIL-001",
+          "severity": "critical",
+          "message": "开动率 60.96% 异常偏低，需排查停机原因",
+          "evidence_refs": [
+            {
+              "dataset_id": "TEAM_ENGINEERED_SIMULATION",
+              "semantic_table": "oee_shift",
+              "source_table": "12_多产线班次_模拟",
+              "record_key": "SimShiftID",
+              "record_id": "LINE-S03-PRE-20251009",
+              "field_names": [
+                "开动率",
+                "非计划停机_秒"
+              ],
+              "semantic_fields": [
+                "availability",
+                "unplanned_downtime_sec"
+              ],
+              "source_object_id": "LINE-S03-PRE-20251009",
+              "data_time": "2025-10-09",
+              "source_type": "TEAM_ENGINEERED_SIMULATION"
+            }
+          ]
+        }
+      ],
+      "tasks": [
+        {
+          "task_id": "TASK-20251009-0002",
+          "status": "已完成",
+          "description": "评估OEE产出停线影响"
+        }
+      ],
+      "decisions_required": [],
+      "data_gaps": [],
+      "evidence_refs": [
+        {
+          "dataset_id": "TEAM_ENGINEERED_SIMULATION",
+          "semantic_table": "oee_shift",
+          "source_table": "12_多产线班次_模拟",
+          "record_key": "SimShiftID",
+          "record_id": "LINE-S03-PRE-20251009",
+          "field_names": [
+            "开动率",
+            "性能率",
+            "质量率",
+            "OEE复算"
+          ],
+          "semantic_fields": [
+            "availability",
+            "performance",
+            "quality",
+            "oee"
+          ],
+          "source_object_id": "LINE-S03-PRE-20251009",
+          "data_time": "2025-10-09",
+          "source_type": "TEAM_ENGINEERED_SIMULATION"
+        }
+      ],
+      "rule_version": "RULESET-v1.0",
+      "knowledge_version": "KNOWLEDGE-v1.0",
+      "last_updated_at": "2026-08-07T14:26:28Z"
+    },
+    {
+      "event_id": "EVT-20251009-0001",
+      "role": "quality",
+      "dataset_id": "TEAM_ENGINEERED_SIMULATION",
+      "line_ids": [
+        "LINE-S03"
+      ],
+      "headline": "当班不良1349件，外观不良(32.0%)与尺寸超差(30.0%)合计占比62.0%",
+      "kpis": [
+        {
+          "metric_code": "QUALITY",
+          "value": 0.912867,
+          "value_type": "ratio",
+          "display_format": "0.0%",
+          "unit": "ratio",
+          "aggregation_scope": "single_shift",
+          "evidence_refs": [
+            {
+              "dataset_id": "TEAM_ENGINEERED_SIMULATION",
+              "semantic_table": "oee_shift",
+              "source_table": "12_多产线班次_模拟",
+              "record_key": "SimShiftID",
+              "record_id": "LINE-S03-PRE-20251009",
+              "field_names": [
+                "质量率"
+              ],
+              "semantic_fields": [
+                "quality"
+              ],
+              "source_object_id": "LINE-S03-PRE-20251009",
+              "data_time": "2025-10-09",
+              "source_type": "TEAM_ENGINEERED_SIMULATION"
+            }
+          ]
+        },
+        {
+          "metric_code": "DEFECT_TOTAL",
+          "value": 1349,
+          "value_type": "integer",
+          "display_format": "#,##0",
+          "unit": "件",
+          "aggregation_scope": "single_shift",
+          "evidence_refs": [
+            {
+              "dataset_id": "TEAM_ENGINEERED_SIMULATION",
+              "semantic_table": "defect_detail",
+              "source_table": "16_不良类型_模拟",
+              "record_key": "DefectDetailID",
+              "record_id": "DEF-00191",
+              "field_names": [
+                "不良类型",
+                "不良数量",
+                "不良占比"
+              ],
+              "semantic_fields": [
+                "defect_type",
+                "count",
+                "ratio"
+              ],
+              "source_object_id": "LINE-S03-PRE-20251009",
+              "data_time": "2025-10-09",
+              "source_type": "TEAM_ENGINEERED_SIMULATION"
+            },
+            {
+              "dataset_id": "TEAM_ENGINEERED_SIMULATION",
+              "semantic_table": "defect_detail",
+              "source_table": "16_不良类型_模拟",
+              "record_key": "DefectDetailID",
+              "record_id": "DEF-00192",
+              "field_names": [
+                "不良类型",
+                "不良数量",
+                "不良占比"
+              ],
+              "semantic_fields": [
+                "defect_type",
+                "count",
+                "ratio"
+              ],
+              "source_object_id": "LINE-S03-PRE-20251009",
+              "data_time": "2025-10-09",
+              "source_type": "TEAM_ENGINEERED_SIMULATION"
+            },
+            {
+              "dataset_id": "TEAM_ENGINEERED_SIMULATION",
+              "semantic_table": "defect_detail",
+              "source_table": "16_不良类型_模拟",
+              "record_key": "DefectDetailID",
+              "record_id": "DEF-00193",
+              "field_names": [
+                "不良类型",
+                "不良数量",
+                "不良占比"
+              ],
+              "semantic_fields": [
+                "defect_type",
+                "count",
+                "ratio"
+              ],
+              "source_object_id": "LINE-S03-PRE-20251009",
+              "data_time": "2025-10-09",
+              "source_type": "TEAM_ENGINEERED_SIMULATION"
+            },
+            {
+              "dataset_id": "TEAM_ENGINEERED_SIMULATION",
+              "semantic_table": "defect_detail",
+              "source_table": "16_不良类型_模拟",
+              "record_key": "DefectDetailID",
+              "record_id": "DEF-00194",
+              "field_names": [
+                "不良类型",
+                "不良数量",
+                "不良占比"
+              ],
+              "semantic_fields": [
+                "defect_type",
+                "count",
+                "ratio"
+              ],
+              "source_object_id": "LINE-S03-PRE-20251009",
+              "data_time": "2025-10-09",
+              "source_type": "TEAM_ENGINEERED_SIMULATION"
+            },
+            {
+              "dataset_id": "TEAM_ENGINEERED_SIMULATION",
+              "semantic_table": "defect_detail",
+              "source_table": "16_不良类型_模拟",
+              "record_key": "DefectDetailID",
+              "record_id": "DEF-00195",
+              "field_names": [
+                "不良类型",
+                "不良数量",
+                "不良占比"
+              ],
+              "semantic_fields": [
+                "defect_type",
+                "count",
+                "ratio"
+              ],
+              "source_object_id": "LINE-S03-PRE-20251009",
+              "data_time": "2025-10-09",
+              "source_type": "TEAM_ENGINEERED_SIMULATION"
+            }
+          ]
+        },
+        {
+          "metric_code": "GOOD_OUTPUT",
+          "value": 14135,
+          "value_type": "integer",
+          "display_format": "#,##0",
+          "unit": "件",
+          "aggregation_scope": "single_shift",
+          "evidence_refs": [
+            {
+              "dataset_id": "TEAM_ENGINEERED_SIMULATION",
+              "semantic_table": "oee_shift",
+              "source_table": "12_多产线班次_模拟",
+              "record_key": "SimShiftID",
+              "record_id": "LINE-S03-PRE-20251009",
+              "field_names": [
+                "良品数"
+              ],
+              "semantic_fields": [
+                "good_output"
+              ],
+              "source_object_id": "LINE-S03-PRE-20251009",
+              "data_time": "2025-10-09",
+              "source_type": "TEAM_ENGINEERED_SIMULATION"
+            }
+          ]
+        },
+        {
+          "metric_code": "TOTAL_OUTPUT",
+          "value": 15484,
+          "value_type": "integer",
+          "display_format": "#,##0",
+          "unit": "件",
+          "aggregation_scope": "single_shift",
+          "evidence_refs": [
+            {
+              "dataset_id": "TEAM_ENGINEERED_SIMULATION",
+              "semantic_table": "oee_shift",
+              "source_table": "12_多产线班次_模拟",
+              "record_key": "SimShiftID",
+              "record_id": "LINE-S03-PRE-20251009",
+              "field_names": [
+                "总产量"
+              ],
+              "semantic_fields": [
+                "total_output"
+              ],
+              "source_object_id": "LINE-S03-PRE-20251009",
+              "data_time": "2025-10-09",
+              "source_type": "TEAM_ENGINEERED_SIMULATION"
+            }
+          ]
+        }
+      ],
+      "charts": [
+        {
+          "chart_id": "CHART-DEFECT-PARETO",
+          "type": "pareto",
+          "title": "不良帕累托图（LINE-S03-PRE-20251009）",
+          "data": [
+            {
+              "defect_type": "外观不良",
+              "count": 432,
+              "ratio": 0.3202372128
+            },
+            {
+              "defect_type": "尺寸超差",
+              "count": 405,
+              "ratio": 0.300222387
+            },
+            {
+              "defect_type": "功能失效",
+              "count": 202,
+              "ratio": 0.1497405486
+            },
+            {
+              "defect_type": "电气不良",
+              "count": 175,
+              "ratio": 0.1297257228
+            },
+            {
+              "defect_type": "其他不良",
+              "count": 135,
+              "ratio": 0.100074129
+            }
+          ],
+          "evidence_refs": [
+            {
+              "dataset_id": "TEAM_ENGINEERED_SIMULATION",
+              "semantic_table": "defect_detail",
+              "source_table": "16_不良类型_模拟",
+              "record_key": "DefectDetailID",
+              "record_id": "DEF-00191",
+              "field_names": [
+                "不良类型",
+                "不良数量",
+                "不良占比"
+              ],
+              "semantic_fields": [
+                "defect_type",
+                "count",
+                "ratio"
+              ],
+              "source_object_id": "LINE-S03-PRE-20251009",
+              "data_time": "2025-10-09",
+              "source_type": "TEAM_ENGINEERED_SIMULATION"
+            },
+            {
+              "dataset_id": "TEAM_ENGINEERED_SIMULATION",
+              "semantic_table": "defect_detail",
+              "source_table": "16_不良类型_模拟",
+              "record_key": "DefectDetailID",
+              "record_id": "DEF-00192",
+              "field_names": [
+                "不良类型",
+                "不良数量",
+                "不良占比"
+              ],
+              "semantic_fields": [
+                "defect_type",
+                "count",
+                "ratio"
+              ],
+              "source_object_id": "LINE-S03-PRE-20251009",
+              "data_time": "2025-10-09",
+              "source_type": "TEAM_ENGINEERED_SIMULATION"
+            },
+            {
+              "dataset_id": "TEAM_ENGINEERED_SIMULATION",
+              "semantic_table": "defect_detail",
+              "source_table": "16_不良类型_模拟",
+              "record_key": "DefectDetailID",
+              "record_id": "DEF-00193",
+              "field_names": [
+                "不良类型",
+                "不良数量",
+                "不良占比"
+              ],
+              "semantic_fields": [
+                "defect_type",
+                "count",
+                "ratio"
+              ],
+              "source_object_id": "LINE-S03-PRE-20251009",
+              "data_time": "2025-10-09",
+              "source_type": "TEAM_ENGINEERED_SIMULATION"
+            },
+            {
+              "dataset_id": "TEAM_ENGINEERED_SIMULATION",
+              "semantic_table": "defect_detail",
+              "source_table": "16_不良类型_模拟",
+              "record_key": "DefectDetailID",
+              "record_id": "DEF-00194",
+              "field_names": [
+                "不良类型",
+                "不良数量",
+                "不良占比"
+              ],
+              "semantic_fields": [
+                "defect_type",
+                "count",
+                "ratio"
+              ],
+              "source_object_id": "LINE-S03-PRE-20251009",
+              "data_time": "2025-10-09",
+              "source_type": "TEAM_ENGINEERED_SIMULATION"
+            },
+            {
+              "dataset_id": "TEAM_ENGINEERED_SIMULATION",
+              "semantic_table": "defect_detail",
+              "source_table": "16_不良类型_模拟",
+              "record_key": "DefectDetailID",
+              "record_id": "DEF-00195",
+              "field_names": [
+                "不良类型",
+                "不良数量",
+                "不良占比"
+              ],
+              "semantic_fields": [
+                "defect_type",
+                "count",
+                "ratio"
+              ],
+              "source_object_id": "LINE-S03-PRE-20251009",
+              "data_time": "2025-10-09",
+              "source_type": "TEAM_ENGINEERED_SIMULATION"
+            }
+          ]
+        }
+      ],
+      "alerts": [
+        {
+          "alert_id": "ALERT-DEFECT-001",
+          "severity": "high",
+          "message": "外观不良432件(32.0%) + 尺寸超差405件(30.0%)，合计占比62.0%，需优先排查",
+          "evidence_refs": [
+            {
+              "dataset_id": "TEAM_ENGINEERED_SIMULATION",
+              "semantic_table": "defect_detail",
+              "source_table": "16_不良类型_模拟",
+              "record_key": "DefectDetailID",
+              "record_id": "DEF-00191",
+              "field_names": [
+                "不良类型",
+                "不良数量",
+                "不良占比"
+              ],
+              "semantic_fields": [
+                "defect_type",
+                "count",
+                "ratio"
+              ],
+              "source_object_id": "LINE-S03-PRE-20251009",
+              "data_time": "2025-10-09",
+              "source_type": "TEAM_ENGINEERED_SIMULATION"
+            },
+            {
+              "dataset_id": "TEAM_ENGINEERED_SIMULATION",
+              "semantic_table": "defect_detail",
+              "source_table": "16_不良类型_模拟",
+              "record_key": "DefectDetailID",
+              "record_id": "DEF-00192",
+              "field_names": [
+                "不良类型",
+                "不良数量",
+                "不良占比"
+              ],
+              "semantic_fields": [
+                "defect_type",
+                "count",
+                "ratio"
+              ],
+              "source_object_id": "LINE-S03-PRE-20251009",
+              "data_time": "2025-10-09",
+              "source_type": "TEAM_ENGINEERED_SIMULATION"
+            }
+          ]
+        },
+        {
+          "alert_id": "ALERT-QUALITY-001",
+          "severity": "high",
+          "message": "质量率91.29%低于阈值98%",
+          "evidence_refs": [
+            {
+              "dataset_id": "TEAM_ENGINEERED_SIMULATION",
+              "semantic_table": "alert",
+              "source_table": "14_多产线告警_模拟",
+              "record_key": "EventID",
+              "record_id": "SIM-EVT-00086",
+              "field_names": [
+                "触发值",
+                "阈值",
+                "指标"
+              ],
+              "semantic_fields": [
+                "trigger_value",
+                "threshold",
+                "metric"
+              ],
+              "source_object_id": "LINE-S03-PRE-20251009",
+              "data_time": "2025-10-09",
+              "source_type": "TEAM_ENGINEERED_SIMULATION"
+            }
+          ]
+        }
+      ],
+      "tasks": [
+        {
+          "task_id": "TASK-20251009-0001",
+          "status": "已完成",
+          "description": "验证良率异常分析不良分布与质量冻结"
+        }
+      ],
+      "decisions_required": [],
+      "data_gaps": [],
+      "evidence_refs": [
+        {
+          "dataset_id": "TEAM_ENGINEERED_SIMULATION",
+          "semantic_table": "defect_detail",
+          "source_table": "16_不良类型_模拟",
+          "record_key": "DefectDetailID",
+          "record_id": "DEF-00191",
+          "field_names": [
+            "不良类型",
+            "不良数量",
+            "不良占比"
+          ],
+          "semantic_fields": [
+            "defect_type",
+            "count",
+            "ratio"
+          ],
+          "source_object_id": "LINE-S03-PRE-20251009",
+          "data_time": "2025-10-09",
+          "source_type": "TEAM_ENGINEERED_SIMULATION"
+        },
+        {
+          "dataset_id": "TEAM_ENGINEERED_SIMULATION",
+          "semantic_table": "defect_detail",
+          "source_table": "16_不良类型_模拟",
+          "record_key": "DefectDetailID",
+          "record_id": "DEF-00192",
+          "field_names": [
+            "不良类型",
+            "不良数量",
+            "不良占比"
+          ],
+          "semantic_fields": [
+            "defect_type",
+            "count",
+            "ratio"
+          ],
+          "source_object_id": "LINE-S03-PRE-20251009",
+          "data_time": "2025-10-09",
+          "source_type": "TEAM_ENGINEERED_SIMULATION"
+        },
+        {
+          "dataset_id": "TEAM_ENGINEERED_SIMULATION",
+          "semantic_table": "defect_detail",
+          "source_table": "16_不良类型_模拟",
+          "record_key": "DefectDetailID",
+          "record_id": "DEF-00193",
+          "field_names": [
+            "不良类型",
+            "不良数量",
+            "不良占比"
+          ],
+          "semantic_fields": [
+            "defect_type",
+            "count",
+            "ratio"
+          ],
+          "source_object_id": "LINE-S03-PRE-20251009",
+          "data_time": "2025-10-09",
+          "source_type": "TEAM_ENGINEERED_SIMULATION"
+        },
+        {
+          "dataset_id": "TEAM_ENGINEERED_SIMULATION",
+          "semantic_table": "defect_detail",
+          "source_table": "16_不良类型_模拟",
+          "record_key": "DefectDetailID",
+          "record_id": "DEF-00194",
+          "field_names": [
+            "不良类型",
+            "不良数量",
+            "不良占比"
+          ],
+          "semantic_fields": [
+            "defect_type",
+            "count",
+            "ratio"
+          ],
+          "source_object_id": "LINE-S03-PRE-20251009",
+          "data_time": "2025-10-09",
+          "source_type": "TEAM_ENGINEERED_SIMULATION"
+        },
+        {
+          "dataset_id": "TEAM_ENGINEERED_SIMULATION",
+          "semantic_table": "defect_detail",
+          "source_table": "16_不良类型_模拟",
+          "record_key": "DefectDetailID",
+          "record_id": "DEF-00195",
+          "field_names": [
+            "不良类型",
+            "不良数量",
+            "不良占比"
+          ],
+          "semantic_fields": [
+            "defect_type",
+            "count",
+            "ratio"
+          ],
+          "source_object_id": "LINE-S03-PRE-20251009",
+          "data_time": "2025-10-09",
+          "source_type": "TEAM_ENGINEERED_SIMULATION"
+        }
+      ],
+      "rule_version": "RULESET-v1.0",
+      "knowledge_version": "KNOWLEDGE-v1.0",
+      "last_updated_at": "2026-08-07T14:26:28Z"
+    },
+    {
+      "event_id": "EVT-20251009-0001",
+      "role": "equipment",
+      "dataset_id": "TEAM_ENGINEERED_SIMULATION",
+      "line_ids": [
+        "LINE-S03"
+      ],
+      "headline": "LINE-S03 当班15条事件级停机记录，累计211.7分钟，非计划停机100.5分钟",
+      "kpis": [
+        {
+          "metric_code": "DOWNTIME_EVENT_COUNT",
+          "value": 15,
+          "value_type": "integer",
+          "display_format": "#,##0",
+          "unit": "条",
+          "aggregation_scope": "single_shift",
+          "evidence_refs": [
+            {
+              "dataset_id": "TEAM_ENGINEERED_SIMULATION",
+              "semantic_table": "downtime_event",
+              "source_table": "13_多产线停机_模拟",
+              "record_key": "SimStopEventID",
+              "record_id": "SIM-STOP-00336",
+              "field_names": [
+                "源停机组",
+                "停机类型",
+                "源停机位置",
+                "模拟工位",
+                "源停机原因",
+                "开始时间",
+                "结束时间",
+                "持续时间_分钟",
+                "是否换产事件"
+              ],
+              "semantic_fields": [
+                "stop_group",
+                "stop_type",
+                "stop_position",
+                "sim_station",
+                "stop_reason",
+                "start_time",
+                "end_time",
+                "duration_min",
+                "is_changeover"
+              ],
+              "source_object_id": "SIM-STOP-00336",
+              "data_time": "2025-10-09",
+              "source_type": "TEAM_ENGINEERED_SIMULATION"
+            },
+            {
+              "dataset_id": "TEAM_ENGINEERED_SIMULATION",
+              "semantic_table": "downtime_event",
+              "source_table": "13_多产线停机_模拟",
+              "record_key": "SimStopEventID",
+              "record_id": "SIM-STOP-00339",
+              "field_names": [
+                "源停机组",
+                "停机类型",
+                "源停机位置",
+                "模拟工位",
+                "源停机原因",
+                "开始时间",
+                "结束时间",
+                "持续时间_分钟",
+                "是否换产事件"
+              ],
+              "semantic_fields": [
+                "stop_group",
+                "stop_type",
+                "stop_position",
+                "sim_station",
+                "stop_reason",
+                "start_time",
+                "end_time",
+                "duration_min",
+                "is_changeover"
+              ],
+              "source_object_id": "SIM-STOP-00339",
+              "data_time": "2025-10-09",
+              "source_type": "TEAM_ENGINEERED_SIMULATION"
+            },
+            {
+              "dataset_id": "TEAM_ENGINEERED_SIMULATION",
+              "semantic_table": "downtime_event",
+              "source_table": "13_多产线停机_模拟",
+              "record_key": "SimStopEventID",
+              "record_id": "SIM-STOP-00342",
+              "field_names": [
+                "源停机组",
+                "停机类型",
+                "源停机位置",
+                "模拟工位",
+                "源停机原因",
+                "开始时间",
+                "结束时间",
+                "持续时间_分钟",
+                "是否换产事件"
+              ],
+              "semantic_fields": [
+                "stop_group",
+                "stop_type",
+                "stop_position",
+                "sim_station",
+                "stop_reason",
+                "start_time",
+                "end_time",
+                "duration_min",
+                "is_changeover"
+              ],
+              "source_object_id": "SIM-STOP-00342",
+              "data_time": "2025-10-09",
+              "source_type": "TEAM_ENGINEERED_SIMULATION"
+            },
+            {
+              "dataset_id": "TEAM_ENGINEERED_SIMULATION",
+              "semantic_table": "downtime_event",
+              "source_table": "13_多产线停机_模拟",
+              "record_key": "SimStopEventID",
+              "record_id": "SIM-STOP-00345",
+              "field_names": [
+                "源停机组",
+                "停机类型",
+                "源停机位置",
+                "模拟工位",
+                "源停机原因",
+                "开始时间",
+                "结束时间",
+                "持续时间_分钟",
+                "是否换产事件"
+              ],
+              "semantic_fields": [
+                "stop_group",
+                "stop_type",
+                "stop_position",
+                "sim_station",
+                "stop_reason",
+                "start_time",
+                "end_time",
+                "duration_min",
+                "is_changeover"
+              ],
+              "source_object_id": "SIM-STOP-00345",
+              "data_time": "2025-10-09",
+              "source_type": "TEAM_ENGINEERED_SIMULATION"
+            },
+            {
+              "dataset_id": "TEAM_ENGINEERED_SIMULATION",
+              "semantic_table": "downtime_event",
+              "source_table": "13_多产线停机_模拟",
+              "record_key": "SimStopEventID",
+              "record_id": "SIM-STOP-00348",
+              "field_names": [
+                "源停机组",
+                "停机类型",
+                "源停机位置",
+                "模拟工位",
+                "源停机原因",
+                "开始时间",
+                "结束时间",
+                "持续时间_分钟",
+                "是否换产事件"
+              ],
+              "semantic_fields": [
+                "stop_group",
+                "stop_type",
+                "stop_position",
+                "sim_station",
+                "stop_reason",
+                "start_time",
+                "end_time",
+                "duration_min",
+                "is_changeover"
+              ],
+              "source_object_id": "SIM-STOP-00348",
+              "data_time": "2025-10-09",
+              "source_type": "TEAM_ENGINEERED_SIMULATION"
+            },
+            {
+              "dataset_id": "TEAM_ENGINEERED_SIMULATION",
+              "semantic_table": "downtime_event",
+              "source_table": "13_多产线停机_模拟",
+              "record_key": "SimStopEventID",
+              "record_id": "SIM-STOP-00351",
+              "field_names": [
+                "源停机组",
+                "停机类型",
+                "源停机位置",
+                "模拟工位",
+                "源停机原因",
+                "开始时间",
+                "结束时间",
+                "持续时间_分钟",
+                "是否换产事件"
+              ],
+              "semantic_fields": [
+                "stop_group",
+                "stop_type",
+                "stop_position",
+                "sim_station",
+                "stop_reason",
+                "start_time",
+                "end_time",
+                "duration_min",
+                "is_changeover"
+              ],
+              "source_object_id": "SIM-STOP-00351",
+              "data_time": "2025-10-09",
+              "source_type": "TEAM_ENGINEERED_SIMULATION"
+            },
+            {
+              "dataset_id": "TEAM_ENGINEERED_SIMULATION",
+              "semantic_table": "downtime_event",
+              "source_table": "13_多产线停机_模拟",
+              "record_key": "SimStopEventID",
+              "record_id": "SIM-STOP-00354",
+              "field_names": [
+                "源停机组",
+                "停机类型",
+                "源停机位置",
+                "模拟工位",
+                "源停机原因",
+                "开始时间",
+                "结束时间",
+                "持续时间_分钟",
+                "是否换产事件"
+              ],
+              "semantic_fields": [
+                "stop_group",
+                "stop_type",
+                "stop_position",
+                "sim_station",
+                "stop_reason",
+                "start_time",
+                "end_time",
+                "duration_min",
+                "is_changeover"
+              ],
+              "source_object_id": "SIM-STOP-00354",
+              "data_time": "2025-10-09",
+              "source_type": "TEAM_ENGINEERED_SIMULATION"
+            },
+            {
+              "dataset_id": "TEAM_ENGINEERED_SIMULATION",
+              "semantic_table": "downtime_event",
+              "source_table": "13_多产线停机_模拟",
+              "record_key": "SimStopEventID",
+              "record_id": "SIM-STOP-00357",
+              "field_names": [
+                "源停机组",
+                "停机类型",
+                "源停机位置",
+                "模拟工位",
+                "源停机原因",
+                "开始时间",
+                "结束时间",
+                "持续时间_分钟",
+                "是否换产事件"
+              ],
+              "semantic_fields": [
+                "stop_group",
+                "stop_type",
+                "stop_position",
+                "sim_station",
+                "stop_reason",
+                "start_time",
+                "end_time",
+                "duration_min",
+                "is_changeover"
+              ],
+              "source_object_id": "SIM-STOP-00357",
+              "data_time": "2025-10-09",
+              "source_type": "TEAM_ENGINEERED_SIMULATION"
+            },
+            {
+              "dataset_id": "TEAM_ENGINEERED_SIMULATION",
+              "semantic_table": "downtime_event",
+              "source_table": "13_多产线停机_模拟",
+              "record_key": "SimStopEventID",
+              "record_id": "SIM-STOP-00360",
+              "field_names": [
+                "源停机组",
+                "停机类型",
+                "源停机位置",
+                "模拟工位",
+                "源停机原因",
+                "开始时间",
+                "结束时间",
+                "持续时间_分钟",
+                "是否换产事件"
+              ],
+              "semantic_fields": [
+                "stop_group",
+                "stop_type",
+                "stop_position",
+                "sim_station",
+                "stop_reason",
+                "start_time",
+                "end_time",
+                "duration_min",
+                "is_changeover"
+              ],
+              "source_object_id": "SIM-STOP-00360",
+              "data_time": "2025-10-09",
+              "source_type": "TEAM_ENGINEERED_SIMULATION"
+            },
+            {
+              "dataset_id": "TEAM_ENGINEERED_SIMULATION",
+              "semantic_table": "downtime_event",
+              "source_table": "13_多产线停机_模拟",
+              "record_key": "SimStopEventID",
+              "record_id": "SIM-STOP-00363",
+              "field_names": [
+                "源停机组",
+                "停机类型",
+                "源停机位置",
+                "模拟工位",
+                "源停机原因",
+                "开始时间",
+                "结束时间",
+                "持续时间_分钟",
+                "是否换产事件"
+              ],
+              "semantic_fields": [
+                "stop_group",
+                "stop_type",
+                "stop_position",
+                "sim_station",
+                "stop_reason",
+                "start_time",
+                "end_time",
+                "duration_min",
+                "is_changeover"
+              ],
+              "source_object_id": "SIM-STOP-00363",
+              "data_time": "2025-10-09",
+              "source_type": "TEAM_ENGINEERED_SIMULATION"
+            },
+            {
+              "dataset_id": "TEAM_ENGINEERED_SIMULATION",
+              "semantic_table": "downtime_event",
+              "source_table": "13_多产线停机_模拟",
+              "record_key": "SimStopEventID",
+              "record_id": "SIM-STOP-00366",
+              "field_names": [
+                "源停机组",
+                "停机类型",
+                "源停机位置",
+                "模拟工位",
+                "源停机原因",
+                "开始时间",
+                "结束时间",
+                "持续时间_分钟",
+                "是否换产事件"
+              ],
+              "semantic_fields": [
+                "stop_group",
+                "stop_type",
+                "stop_position",
+                "sim_station",
+                "stop_reason",
+                "start_time",
+                "end_time",
+                "duration_min",
+                "is_changeover"
+              ],
+              "source_object_id": "SIM-STOP-00366",
+              "data_time": "2025-10-09",
+              "source_type": "TEAM_ENGINEERED_SIMULATION"
+            },
+            {
+              "dataset_id": "TEAM_ENGINEERED_SIMULATION",
+              "semantic_table": "downtime_event",
+              "source_table": "13_多产线停机_模拟",
+              "record_key": "SimStopEventID",
+              "record_id": "SIM-STOP-00369",
+              "field_names": [
+                "源停机组",
+                "停机类型",
+                "源停机位置",
+                "模拟工位",
+                "源停机原因",
+                "开始时间",
+                "结束时间",
+                "持续时间_分钟",
+                "是否换产事件"
+              ],
+              "semantic_fields": [
+                "stop_group",
+                "stop_type",
+                "stop_position",
+                "sim_station",
+                "stop_reason",
+                "start_time",
+                "end_time",
+                "duration_min",
+                "is_changeover"
+              ],
+              "source_object_id": "SIM-STOP-00369",
+              "data_time": "2025-10-09",
+              "source_type": "TEAM_ENGINEERED_SIMULATION"
+            },
+            {
+              "dataset_id": "TEAM_ENGINEERED_SIMULATION",
+              "semantic_table": "downtime_event",
+              "source_table": "13_多产线停机_模拟",
+              "record_key": "SimStopEventID",
+              "record_id": "SIM-STOP-00372",
+              "field_names": [
+                "源停机组",
+                "停机类型",
+                "源停机位置",
+                "模拟工位",
+                "源停机原因",
+                "开始时间",
+                "结束时间",
+                "持续时间_分钟",
+                "是否换产事件"
+              ],
+              "semantic_fields": [
+                "stop_group",
+                "stop_type",
+                "stop_position",
+                "sim_station",
+                "stop_reason",
+                "start_time",
+                "end_time",
+                "duration_min",
+                "is_changeover"
+              ],
+              "source_object_id": "SIM-STOP-00372",
+              "data_time": "2025-10-09",
+              "source_type": "TEAM_ENGINEERED_SIMULATION"
+            },
+            {
+              "dataset_id": "TEAM_ENGINEERED_SIMULATION",
+              "semantic_table": "downtime_event",
+              "source_table": "13_多产线停机_模拟",
+              "record_key": "SimStopEventID",
+              "record_id": "SIM-STOP-00375",
+              "field_names": [
+                "源停机组",
+                "停机类型",
+                "源停机位置",
+                "模拟工位",
+                "源停机原因",
+                "开始时间",
+                "结束时间",
+                "持续时间_分钟",
+                "是否换产事件"
+              ],
+              "semantic_fields": [
+                "stop_group",
+                "stop_type",
+                "stop_position",
+                "sim_station",
+                "stop_reason",
+                "start_time",
+                "end_time",
+                "duration_min",
+                "is_changeover"
+              ],
+              "source_object_id": "SIM-STOP-00375",
+              "data_time": "2025-10-09",
+              "source_type": "TEAM_ENGINEERED_SIMULATION"
+            },
+            {
+              "dataset_id": "TEAM_ENGINEERED_SIMULATION",
+              "semantic_table": "downtime_event",
+              "source_table": "13_多产线停机_模拟",
+              "record_key": "SimStopEventID",
+              "record_id": "SIM-STOP-00378",
+              "field_names": [
+                "源停机组",
+                "停机类型",
+                "源停机位置",
+                "模拟工位",
+                "源停机原因",
+                "开始时间",
+                "结束时间",
+                "持续时间_分钟",
+                "是否换产事件"
+              ],
+              "semantic_fields": [
+                "stop_group",
+                "stop_type",
+                "stop_position",
+                "sim_station",
+                "stop_reason",
+                "start_time",
+                "end_time",
+                "duration_min",
+                "is_changeover"
+              ],
+              "source_object_id": "SIM-STOP-00378",
+              "data_time": "2025-10-09",
+              "source_type": "TEAM_ENGINEERED_SIMULATION"
+            }
+          ]
+        },
+        {
+          "metric_code": "DOWNTIME_TOTAL_MINUTES",
+          "value": 211.7,
+          "value_type": "decimal",
+          "display_format": "#,##0.0",
+          "unit": "分钟",
+          "aggregation_scope": "single_shift",
+          "evidence_refs": [
+            {
+              "dataset_id": "TEAM_ENGINEERED_SIMULATION",
+              "semantic_table": "downtime_event",
+              "source_table": "13_多产线停机_模拟",
+              "record_key": "SimStopEventID",
+              "record_id": "SIM-STOP-00336",
+              "field_names": [
+                "源停机组",
+                "停机类型",
+                "源停机位置",
+                "模拟工位",
+                "源停机原因",
+                "开始时间",
+                "结束时间",
+                "持续时间_分钟",
+                "是否换产事件"
+              ],
+              "semantic_fields": [
+                "stop_group",
+                "stop_type",
+                "stop_position",
+                "sim_station",
+                "stop_reason",
+                "start_time",
+                "end_time",
+                "duration_min",
+                "is_changeover"
+              ],
+              "source_object_id": "SIM-STOP-00336",
+              "data_time": "2025-10-09",
+              "source_type": "TEAM_ENGINEERED_SIMULATION"
+            },
+            {
+              "dataset_id": "TEAM_ENGINEERED_SIMULATION",
+              "semantic_table": "downtime_event",
+              "source_table": "13_多产线停机_模拟",
+              "record_key": "SimStopEventID",
+              "record_id": "SIM-STOP-00339",
+              "field_names": [
+                "源停机组",
+                "停机类型",
+                "源停机位置",
+                "模拟工位",
+                "源停机原因",
+                "开始时间",
+                "结束时间",
+                "持续时间_分钟",
+                "是否换产事件"
+              ],
+              "semantic_fields": [
+                "stop_group",
+                "stop_type",
+                "stop_position",
+                "sim_station",
+                "stop_reason",
+                "start_time",
+                "end_time",
+                "duration_min",
+                "is_changeover"
+              ],
+              "source_object_id": "SIM-STOP-00339",
+              "data_time": "2025-10-09",
+              "source_type": "TEAM_ENGINEERED_SIMULATION"
+            },
+            {
+              "dataset_id": "TEAM_ENGINEERED_SIMULATION",
+              "semantic_table": "downtime_event",
+              "source_table": "13_多产线停机_模拟",
+              "record_key": "SimStopEventID",
+              "record_id": "SIM-STOP-00342",
+              "field_names": [
+                "源停机组",
+                "停机类型",
+                "源停机位置",
+                "模拟工位",
+                "源停机原因",
+                "开始时间",
+                "结束时间",
+                "持续时间_分钟",
+                "是否换产事件"
+              ],
+              "semantic_fields": [
+                "stop_group",
+                "stop_type",
+                "stop_position",
+                "sim_station",
+                "stop_reason",
+                "start_time",
+                "end_time",
+                "duration_min",
+                "is_changeover"
+              ],
+              "source_object_id": "SIM-STOP-00342",
+              "data_time": "2025-10-09",
+              "source_type": "TEAM_ENGINEERED_SIMULATION"
+            },
+            {
+              "dataset_id": "TEAM_ENGINEERED_SIMULATION",
+              "semantic_table": "downtime_event",
+              "source_table": "13_多产线停机_模拟",
+              "record_key": "SimStopEventID",
+              "record_id": "SIM-STOP-00345",
+              "field_names": [
+                "源停机组",
+                "停机类型",
+                "源停机位置",
+                "模拟工位",
+                "源停机原因",
+                "开始时间",
+                "结束时间",
+                "持续时间_分钟",
+                "是否换产事件"
+              ],
+              "semantic_fields": [
+                "stop_group",
+                "stop_type",
+                "stop_position",
+                "sim_station",
+                "stop_reason",
+                "start_time",
+                "end_time",
+                "duration_min",
+                "is_changeover"
+              ],
+              "source_object_id": "SIM-STOP-00345",
+              "data_time": "2025-10-09",
+              "source_type": "TEAM_ENGINEERED_SIMULATION"
+            },
+            {
+              "dataset_id": "TEAM_ENGINEERED_SIMULATION",
+              "semantic_table": "downtime_event",
+              "source_table": "13_多产线停机_模拟",
+              "record_key": "SimStopEventID",
+              "record_id": "SIM-STOP-00348",
+              "field_names": [
+                "源停机组",
+                "停机类型",
+                "源停机位置",
+                "模拟工位",
+                "源停机原因",
+                "开始时间",
+                "结束时间",
+                "持续时间_分钟",
+                "是否换产事件"
+              ],
+              "semantic_fields": [
+                "stop_group",
+                "stop_type",
+                "stop_position",
+                "sim_station",
+                "stop_reason",
+                "start_time",
+                "end_time",
+                "duration_min",
+                "is_changeover"
+              ],
+              "source_object_id": "SIM-STOP-00348",
+              "data_time": "2025-10-09",
+              "source_type": "TEAM_ENGINEERED_SIMULATION"
+            },
+            {
+              "dataset_id": "TEAM_ENGINEERED_SIMULATION",
+              "semantic_table": "downtime_event",
+              "source_table": "13_多产线停机_模拟",
+              "record_key": "SimStopEventID",
+              "record_id": "SIM-STOP-00351",
+              "field_names": [
+                "源停机组",
+                "停机类型",
+                "源停机位置",
+                "模拟工位",
+                "源停机原因",
+                "开始时间",
+                "结束时间",
+                "持续时间_分钟",
+                "是否换产事件"
+              ],
+              "semantic_fields": [
+                "stop_group",
+                "stop_type",
+                "stop_position",
+                "sim_station",
+                "stop_reason",
+                "start_time",
+                "end_time",
+                "duration_min",
+                "is_changeover"
+              ],
+              "source_object_id": "SIM-STOP-00351",
+              "data_time": "2025-10-09",
+              "source_type": "TEAM_ENGINEERED_SIMULATION"
+            },
+            {
+              "dataset_id": "TEAM_ENGINEERED_SIMULATION",
+              "semantic_table": "downtime_event",
+              "source_table": "13_多产线停机_模拟",
+              "record_key": "SimStopEventID",
+              "record_id": "SIM-STOP-00354",
+              "field_names": [
+                "源停机组",
+                "停机类型",
+                "源停机位置",
+                "模拟工位",
+                "源停机原因",
+                "开始时间",
+                "结束时间",
+                "持续时间_分钟",
+                "是否换产事件"
+              ],
+              "semantic_fields": [
+                "stop_group",
+                "stop_type",
+                "stop_position",
+                "sim_station",
+                "stop_reason",
+                "start_time",
+                "end_time",
+                "duration_min",
+                "is_changeover"
+              ],
+              "source_object_id": "SIM-STOP-00354",
+              "data_time": "2025-10-09",
+              "source_type": "TEAM_ENGINEERED_SIMULATION"
+            },
+            {
+              "dataset_id": "TEAM_ENGINEERED_SIMULATION",
+              "semantic_table": "downtime_event",
+              "source_table": "13_多产线停机_模拟",
+              "record_key": "SimStopEventID",
+              "record_id": "SIM-STOP-00357",
+              "field_names": [
+                "源停机组",
+                "停机类型",
+                "源停机位置",
+                "模拟工位",
+                "源停机原因",
+                "开始时间",
+                "结束时间",
+                "持续时间_分钟",
+                "是否换产事件"
+              ],
+              "semantic_fields": [
+                "stop_group",
+                "stop_type",
+                "stop_position",
+                "sim_station",
+                "stop_reason",
+                "start_time",
+                "end_time",
+                "duration_min",
+                "is_changeover"
+              ],
+              "source_object_id": "SIM-STOP-00357",
+              "data_time": "2025-10-09",
+              "source_type": "TEAM_ENGINEERED_SIMULATION"
+            },
+            {
+              "dataset_id": "TEAM_ENGINEERED_SIMULATION",
+              "semantic_table": "downtime_event",
+              "source_table": "13_多产线停机_模拟",
+              "record_key": "SimStopEventID",
+              "record_id": "SIM-STOP-00360",
+              "field_names": [
+                "源停机组",
+                "停机类型",
+                "源停机位置",
+                "模拟工位",
+                "源停机原因",
+                "开始时间",
+                "结束时间",
+                "持续时间_分钟",
+                "是否换产事件"
+              ],
+              "semantic_fields": [
+                "stop_group",
+                "stop_type",
+                "stop_position",
+                "sim_station",
+                "stop_reason",
+                "start_time",
+                "end_time",
+                "duration_min",
+                "is_changeover"
+              ],
+              "source_object_id": "SIM-STOP-00360",
+              "data_time": "2025-10-09",
+              "source_type": "TEAM_ENGINEERED_SIMULATION"
+            },
+            {
+              "dataset_id": "TEAM_ENGINEERED_SIMULATION",
+              "semantic_table": "downtime_event",
+              "source_table": "13_多产线停机_模拟",
+              "record_key": "SimStopEventID",
+              "record_id": "SIM-STOP-00363",
+              "field_names": [
+                "源停机组",
+                "停机类型",
+                "源停机位置",
+                "模拟工位",
+                "源停机原因",
+                "开始时间",
+                "结束时间",
+                "持续时间_分钟",
+                "是否换产事件"
+              ],
+              "semantic_fields": [
+                "stop_group",
+                "stop_type",
+                "stop_position",
+                "sim_station",
+                "stop_reason",
+                "start_time",
+                "end_time",
+                "duration_min",
+                "is_changeover"
+              ],
+              "source_object_id": "SIM-STOP-00363",
+              "data_time": "2025-10-09",
+              "source_type": "TEAM_ENGINEERED_SIMULATION"
+            },
+            {
+              "dataset_id": "TEAM_ENGINEERED_SIMULATION",
+              "semantic_table": "downtime_event",
+              "source_table": "13_多产线停机_模拟",
+              "record_key": "SimStopEventID",
+              "record_id": "SIM-STOP-00366",
+              "field_names": [
+                "源停机组",
+                "停机类型",
+                "源停机位置",
+                "模拟工位",
+                "源停机原因",
+                "开始时间",
+                "结束时间",
+                "持续时间_分钟",
+                "是否换产事件"
+              ],
+              "semantic_fields": [
+                "stop_group",
+                "stop_type",
+                "stop_position",
+                "sim_station",
+                "stop_reason",
+                "start_time",
+                "end_time",
+                "duration_min",
+                "is_changeover"
+              ],
+              "source_object_id": "SIM-STOP-00366",
+              "data_time": "2025-10-09",
+              "source_type": "TEAM_ENGINEERED_SIMULATION"
+            },
+            {
+              "dataset_id": "TEAM_ENGINEERED_SIMULATION",
+              "semantic_table": "downtime_event",
+              "source_table": "13_多产线停机_模拟",
+              "record_key": "SimStopEventID",
+              "record_id": "SIM-STOP-00369",
+              "field_names": [
+                "源停机组",
+                "停机类型",
+                "源停机位置",
+                "模拟工位",
+                "源停机原因",
+                "开始时间",
+                "结束时间",
+                "持续时间_分钟",
+                "是否换产事件"
+              ],
+              "semantic_fields": [
+                "stop_group",
+                "stop_type",
+                "stop_position",
+                "sim_station",
+                "stop_reason",
+                "start_time",
+                "end_time",
+                "duration_min",
+                "is_changeover"
+              ],
+              "source_object_id": "SIM-STOP-00369",
+              "data_time": "2025-10-09",
+              "source_type": "TEAM_ENGINEERED_SIMULATION"
+            },
+            {
+              "dataset_id": "TEAM_ENGINEERED_SIMULATION",
+              "semantic_table": "downtime_event",
+              "source_table": "13_多产线停机_模拟",
+              "record_key": "SimStopEventID",
+              "record_id": "SIM-STOP-00372",
+              "field_names": [
+                "源停机组",
+                "停机类型",
+                "源停机位置",
+                "模拟工位",
+                "源停机原因",
+                "开始时间",
+                "结束时间",
+                "持续时间_分钟",
+                "是否换产事件"
+              ],
+              "semantic_fields": [
+                "stop_group",
+                "stop_type",
+                "stop_position",
+                "sim_station",
+                "stop_reason",
+                "start_time",
+                "end_time",
+                "duration_min",
+                "is_changeover"
+              ],
+              "source_object_id": "SIM-STOP-00372",
+              "data_time": "2025-10-09",
+              "source_type": "TEAM_ENGINEERED_SIMULATION"
+            },
+            {
+              "dataset_id": "TEAM_ENGINEERED_SIMULATION",
+              "semantic_table": "downtime_event",
+              "source_table": "13_多产线停机_模拟",
+              "record_key": "SimStopEventID",
+              "record_id": "SIM-STOP-00375",
+              "field_names": [
+                "源停机组",
+                "停机类型",
+                "源停机位置",
+                "模拟工位",
+                "源停机原因",
+                "开始时间",
+                "结束时间",
+                "持续时间_分钟",
+                "是否换产事件"
+              ],
+              "semantic_fields": [
+                "stop_group",
+                "stop_type",
+                "stop_position",
+                "sim_station",
+                "stop_reason",
+                "start_time",
+                "end_time",
+                "duration_min",
+                "is_changeover"
+              ],
+              "source_object_id": "SIM-STOP-00375",
+              "data_time": "2025-10-09",
+              "source_type": "TEAM_ENGINEERED_SIMULATION"
+            },
+            {
+              "dataset_id": "TEAM_ENGINEERED_SIMULATION",
+              "semantic_table": "downtime_event",
+              "source_table": "13_多产线停机_模拟",
+              "record_key": "SimStopEventID",
+              "record_id": "SIM-STOP-00378",
+              "field_names": [
+                "源停机组",
+                "停机类型",
+                "源停机位置",
+                "模拟工位",
+                "源停机原因",
+                "开始时间",
+                "结束时间",
+                "持续时间_分钟",
+                "是否换产事件"
+              ],
+              "semantic_fields": [
+                "stop_group",
+                "stop_type",
+                "stop_position",
+                "sim_station",
+                "stop_reason",
+                "start_time",
+                "end_time",
+                "duration_min",
+                "is_changeover"
+              ],
+              "source_object_id": "SIM-STOP-00378",
+              "data_time": "2025-10-09",
+              "source_type": "TEAM_ENGINEERED_SIMULATION"
+            }
+          ]
+        },
+        {
+          "metric_code": "UNPLANNED_DOWNTIME_MINUTES",
+          "value": 100.5,
+          "value_type": "decimal",
+          "display_format": "#,##0.0",
+          "unit": "分钟",
+          "aggregation_scope": "single_shift",
+          "description": "非计划停机合计（10条非计划停机事件）",
+          "evidence_refs": [
+            {
+              "dataset_id": "TEAM_ENGINEERED_SIMULATION",
+              "semantic_table": "downtime_event",
+              "source_table": "13_多产线停机_模拟",
+              "record_key": "SimStopEventID",
+              "record_id": "SIM-STOP-00336",
+              "field_names": [
+                "源停机组",
+                "停机类型",
+                "源停机位置",
+                "模拟工位",
+                "源停机原因",
+                "开始时间",
+                "结束时间",
+                "持续时间_分钟",
+                "是否换产事件"
+              ],
+              "semantic_fields": [
+                "stop_group",
+                "stop_type",
+                "stop_position",
+                "sim_station",
+                "stop_reason",
+                "start_time",
+                "end_time",
+                "duration_min",
+                "is_changeover"
+              ],
+              "source_object_id": "SIM-STOP-00336",
+              "data_time": "2025-10-09",
+              "source_type": "TEAM_ENGINEERED_SIMULATION"
+            },
+            {
+              "dataset_id": "TEAM_ENGINEERED_SIMULATION",
+              "semantic_table": "downtime_event",
+              "source_table": "13_多产线停机_模拟",
+              "record_key": "SimStopEventID",
+              "record_id": "SIM-STOP-00339",
+              "field_names": [
+                "源停机组",
+                "停机类型",
+                "源停机位置",
+                "模拟工位",
+                "源停机原因",
+                "开始时间",
+                "结束时间",
+                "持续时间_分钟",
+                "是否换产事件"
+              ],
+              "semantic_fields": [
+                "stop_group",
+                "stop_type",
+                "stop_position",
+                "sim_station",
+                "stop_reason",
+                "start_time",
+                "end_time",
+                "duration_min",
+                "is_changeover"
+              ],
+              "source_object_id": "SIM-STOP-00339",
+              "data_time": "2025-10-09",
+              "source_type": "TEAM_ENGINEERED_SIMULATION"
+            },
+            {
+              "dataset_id": "TEAM_ENGINEERED_SIMULATION",
+              "semantic_table": "downtime_event",
+              "source_table": "13_多产线停机_模拟",
+              "record_key": "SimStopEventID",
+              "record_id": "SIM-STOP-00342",
+              "field_names": [
+                "源停机组",
+                "停机类型",
+                "源停机位置",
+                "模拟工位",
+                "源停机原因",
+                "开始时间",
+                "结束时间",
+                "持续时间_分钟",
+                "是否换产事件"
+              ],
+              "semantic_fields": [
+                "stop_group",
+                "stop_type",
+                "stop_position",
+                "sim_station",
+                "stop_reason",
+                "start_time",
+                "end_time",
+                "duration_min",
+                "is_changeover"
+              ],
+              "source_object_id": "SIM-STOP-00342",
+              "data_time": "2025-10-09",
+              "source_type": "TEAM_ENGINEERED_SIMULATION"
+            },
+            {
+              "dataset_id": "TEAM_ENGINEERED_SIMULATION",
+              "semantic_table": "downtime_event",
+              "source_table": "13_多产线停机_模拟",
+              "record_key": "SimStopEventID",
+              "record_id": "SIM-STOP-00345",
+              "field_names": [
+                "源停机组",
+                "停机类型",
+                "源停机位置",
+                "模拟工位",
+                "源停机原因",
+                "开始时间",
+                "结束时间",
+                "持续时间_分钟",
+                "是否换产事件"
+              ],
+              "semantic_fields": [
+                "stop_group",
+                "stop_type",
+                "stop_position",
+                "sim_station",
+                "stop_reason",
+                "start_time",
+                "end_time",
+                "duration_min",
+                "is_changeover"
+              ],
+              "source_object_id": "SIM-STOP-00345",
+              "data_time": "2025-10-09",
+              "source_type": "TEAM_ENGINEERED_SIMULATION"
+            },
+            {
+              "dataset_id": "TEAM_ENGINEERED_SIMULATION",
+              "semantic_table": "downtime_event",
+              "source_table": "13_多产线停机_模拟",
+              "record_key": "SimStopEventID",
+              "record_id": "SIM-STOP-00348",
+              "field_names": [
+                "源停机组",
+                "停机类型",
+                "源停机位置",
+                "模拟工位",
+                "源停机原因",
+                "开始时间",
+                "结束时间",
+                "持续时间_分钟",
+                "是否换产事件"
+              ],
+              "semantic_fields": [
+                "stop_group",
+                "stop_type",
+                "stop_position",
+                "sim_station",
+                "stop_reason",
+                "start_time",
+                "end_time",
+                "duration_min",
+                "is_changeover"
+              ],
+              "source_object_id": "SIM-STOP-00348",
+              "data_time": "2025-10-09",
+              "source_type": "TEAM_ENGINEERED_SIMULATION"
+            },
+            {
+              "dataset_id": "TEAM_ENGINEERED_SIMULATION",
+              "semantic_table": "downtime_event",
+              "source_table": "13_多产线停机_模拟",
+              "record_key": "SimStopEventID",
+              "record_id": "SIM-STOP-00351",
+              "field_names": [
+                "源停机组",
+                "停机类型",
+                "源停机位置",
+                "模拟工位",
+                "源停机原因",
+                "开始时间",
+                "结束时间",
+                "持续时间_分钟",
+                "是否换产事件"
+              ],
+              "semantic_fields": [
+                "stop_group",
+                "stop_type",
+                "stop_position",
+                "sim_station",
+                "stop_reason",
+                "start_time",
+                "end_time",
+                "duration_min",
+                "is_changeover"
+              ],
+              "source_object_id": "SIM-STOP-00351",
+              "data_time": "2025-10-09",
+              "source_type": "TEAM_ENGINEERED_SIMULATION"
+            },
+            {
+              "dataset_id": "TEAM_ENGINEERED_SIMULATION",
+              "semantic_table": "downtime_event",
+              "source_table": "13_多产线停机_模拟",
+              "record_key": "SimStopEventID",
+              "record_id": "SIM-STOP-00354",
+              "field_names": [
+                "源停机组",
+                "停机类型",
+                "源停机位置",
+                "模拟工位",
+                "源停机原因",
+                "开始时间",
+                "结束时间",
+                "持续时间_分钟",
+                "是否换产事件"
+              ],
+              "semantic_fields": [
+                "stop_group",
+                "stop_type",
+                "stop_position",
+                "sim_station",
+                "stop_reason",
+                "start_time",
+                "end_time",
+                "duration_min",
+                "is_changeover"
+              ],
+              "source_object_id": "SIM-STOP-00354",
+              "data_time": "2025-10-09",
+              "source_type": "TEAM_ENGINEERED_SIMULATION"
+            },
+            {
+              "dataset_id": "TEAM_ENGINEERED_SIMULATION",
+              "semantic_table": "downtime_event",
+              "source_table": "13_多产线停机_模拟",
+              "record_key": "SimStopEventID",
+              "record_id": "SIM-STOP-00357",
+              "field_names": [
+                "源停机组",
+                "停机类型",
+                "源停机位置",
+                "模拟工位",
+                "源停机原因",
+                "开始时间",
+                "结束时间",
+                "持续时间_分钟",
+                "是否换产事件"
+              ],
+              "semantic_fields": [
+                "stop_group",
+                "stop_type",
+                "stop_position",
+                "sim_station",
+                "stop_reason",
+                "start_time",
+                "end_time",
+                "duration_min",
+                "is_changeover"
+              ],
+              "source_object_id": "SIM-STOP-00357",
+              "data_time": "2025-10-09",
+              "source_type": "TEAM_ENGINEERED_SIMULATION"
+            },
+            {
+              "dataset_id": "TEAM_ENGINEERED_SIMULATION",
+              "semantic_table": "downtime_event",
+              "source_table": "13_多产线停机_模拟",
+              "record_key": "SimStopEventID",
+              "record_id": "SIM-STOP-00360",
+              "field_names": [
+                "源停机组",
+                "停机类型",
+                "源停机位置",
+                "模拟工位",
+                "源停机原因",
+                "开始时间",
+                "结束时间",
+                "持续时间_分钟",
+                "是否换产事件"
+              ],
+              "semantic_fields": [
+                "stop_group",
+                "stop_type",
+                "stop_position",
+                "sim_station",
+                "stop_reason",
+                "start_time",
+                "end_time",
+                "duration_min",
+                "is_changeover"
+              ],
+              "source_object_id": "SIM-STOP-00360",
+              "data_time": "2025-10-09",
+              "source_type": "TEAM_ENGINEERED_SIMULATION"
+            },
+            {
+              "dataset_id": "TEAM_ENGINEERED_SIMULATION",
+              "semantic_table": "downtime_event",
+              "source_table": "13_多产线停机_模拟",
+              "record_key": "SimStopEventID",
+              "record_id": "SIM-STOP-00363",
+              "field_names": [
+                "源停机组",
+                "停机类型",
+                "源停机位置",
+                "模拟工位",
+                "源停机原因",
+                "开始时间",
+                "结束时间",
+                "持续时间_分钟",
+                "是否换产事件"
+              ],
+              "semantic_fields": [
+                "stop_group",
+                "stop_type",
+                "stop_position",
+                "sim_station",
+                "stop_reason",
+                "start_time",
+                "end_time",
+                "duration_min",
+                "is_changeover"
+              ],
+              "source_object_id": "SIM-STOP-00363",
+              "data_time": "2025-10-09",
+              "source_type": "TEAM_ENGINEERED_SIMULATION"
+            },
+            {
+              "dataset_id": "TEAM_ENGINEERED_SIMULATION",
+              "semantic_table": "downtime_event",
+              "source_table": "13_多产线停机_模拟",
+              "record_key": "SimStopEventID",
+              "record_id": "SIM-STOP-00366",
+              "field_names": [
+                "源停机组",
+                "停机类型",
+                "源停机位置",
+                "模拟工位",
+                "源停机原因",
+                "开始时间",
+                "结束时间",
+                "持续时间_分钟",
+                "是否换产事件"
+              ],
+              "semantic_fields": [
+                "stop_group",
+                "stop_type",
+                "stop_position",
+                "sim_station",
+                "stop_reason",
+                "start_time",
+                "end_time",
+                "duration_min",
+                "is_changeover"
+              ],
+              "source_object_id": "SIM-STOP-00366",
+              "data_time": "2025-10-09",
+              "source_type": "TEAM_ENGINEERED_SIMULATION"
+            },
+            {
+              "dataset_id": "TEAM_ENGINEERED_SIMULATION",
+              "semantic_table": "downtime_event",
+              "source_table": "13_多产线停机_模拟",
+              "record_key": "SimStopEventID",
+              "record_id": "SIM-STOP-00369",
+              "field_names": [
+                "源停机组",
+                "停机类型",
+                "源停机位置",
+                "模拟工位",
+                "源停机原因",
+                "开始时间",
+                "结束时间",
+                "持续时间_分钟",
+                "是否换产事件"
+              ],
+              "semantic_fields": [
+                "stop_group",
+                "stop_type",
+                "stop_position",
+                "sim_station",
+                "stop_reason",
+                "start_time",
+                "end_time",
+                "duration_min",
+                "is_changeover"
+              ],
+              "source_object_id": "SIM-STOP-00369",
+              "data_time": "2025-10-09",
+              "source_type": "TEAM_ENGINEERED_SIMULATION"
+            },
+            {
+              "dataset_id": "TEAM_ENGINEERED_SIMULATION",
+              "semantic_table": "downtime_event",
+              "source_table": "13_多产线停机_模拟",
+              "record_key": "SimStopEventID",
+              "record_id": "SIM-STOP-00372",
+              "field_names": [
+                "源停机组",
+                "停机类型",
+                "源停机位置",
+                "模拟工位",
+                "源停机原因",
+                "开始时间",
+                "结束时间",
+                "持续时间_分钟",
+                "是否换产事件"
+              ],
+              "semantic_fields": [
+                "stop_group",
+                "stop_type",
+                "stop_position",
+                "sim_station",
+                "stop_reason",
+                "start_time",
+                "end_time",
+                "duration_min",
+                "is_changeover"
+              ],
+              "source_object_id": "SIM-STOP-00372",
+              "data_time": "2025-10-09",
+              "source_type": "TEAM_ENGINEERED_SIMULATION"
+            },
+            {
+              "dataset_id": "TEAM_ENGINEERED_SIMULATION",
+              "semantic_table": "downtime_event",
+              "source_table": "13_多产线停机_模拟",
+              "record_key": "SimStopEventID",
+              "record_id": "SIM-STOP-00375",
+              "field_names": [
+                "源停机组",
+                "停机类型",
+                "源停机位置",
+                "模拟工位",
+                "源停机原因",
+                "开始时间",
+                "结束时间",
+                "持续时间_分钟",
+                "是否换产事件"
+              ],
+              "semantic_fields": [
+                "stop_group",
+                "stop_type",
+                "stop_position",
+                "sim_station",
+                "stop_reason",
+                "start_time",
+                "end_time",
+                "duration_min",
+                "is_changeover"
+              ],
+              "source_object_id": "SIM-STOP-00375",
+              "data_time": "2025-10-09",
+              "source_type": "TEAM_ENGINEERED_SIMULATION"
+            },
+            {
+              "dataset_id": "TEAM_ENGINEERED_SIMULATION",
+              "semantic_table": "downtime_event",
+              "source_table": "13_多产线停机_模拟",
+              "record_key": "SimStopEventID",
+              "record_id": "SIM-STOP-00378",
+              "field_names": [
+                "源停机组",
+                "停机类型",
+                "源停机位置",
+                "模拟工位",
+                "源停机原因",
+                "开始时间",
+                "结束时间",
+                "持续时间_分钟",
+                "是否换产事件"
+              ],
+              "semantic_fields": [
+                "stop_group",
+                "stop_type",
+                "stop_position",
+                "sim_station",
+                "stop_reason",
+                "start_time",
+                "end_time",
+                "duration_min",
+                "is_changeover"
+              ],
+              "source_object_id": "SIM-STOP-00378",
+              "data_time": "2025-10-09",
+              "source_type": "TEAM_ENGINEERED_SIMULATION"
+            }
+          ]
+        },
+        {
+          "metric_code": "AVAILABILITY",
+          "value": 0.609567,
+          "value_type": "ratio",
+          "display_format": "0.0%",
+          "unit": "ratio",
+          "aggregation_scope": "single_shift",
+          "evidence_refs": [
+            {
+              "dataset_id": "TEAM_ENGINEERED_SIMULATION",
+              "semantic_table": "oee_shift",
+              "source_table": "12_多产线班次_模拟",
+              "record_key": "SimShiftID",
+              "record_id": "LINE-S03-PRE-20251009",
+              "field_names": [
+                "开动率",
+                "非计划停机_秒",
+                "计划停机_秒"
+              ],
+              "semantic_fields": [
+                "availability",
+                "unplanned_downtime_sec",
+                "planned_downtime_sec"
+              ],
+              "source_object_id": "LINE-S03-PRE-20251009",
+              "data_time": "2025-10-09",
+              "source_type": "TEAM_ENGINEERED_SIMULATION"
+            }
+          ]
+        }
+      ],
+      "charts": [
+        {
+          "chart_id": "CHART-STOP-GROUP-PARETO",
+          "type": "pareto",
+          "title": "停机组Pareto（LINE-S03-PRE-20251009）",
+          "data": [
+            {
+              "源停机组": "SETUPS-CHANGEOVERS",
+              "事件数": 5,
+              "累计分钟": 91.5
+            },
+            {
+              "源停机组": "FAILURE",
+              "事件数": 6,
+              "累计分钟": 73.5
+            },
+            {
+              "源停机组": "MATERIALS",
+              "事件数": 2,
+              "累计分钟": 16.8
+            },
+            {
+              "源停机组": "OPERATIONAL",
+              "事件数": 2,
+              "累计分钟": 29.9
+            }
+          ],
+          "evidence_refs": [
+            {
+              "dataset_id": "TEAM_ENGINEERED_SIMULATION",
+              "semantic_table": "downtime_event",
+              "source_table": "13_多产线停机_模拟",
+              "record_key": "SimStopEventID",
+              "record_id": "SIM-STOP-00336",
+              "field_names": [
+                "源停机组",
+                "停机类型",
+                "源停机位置",
+                "模拟工位",
+                "源停机原因",
+                "开始时间",
+                "结束时间",
+                "持续时间_分钟",
+                "是否换产事件"
+              ],
+              "semantic_fields": [
+                "stop_group",
+                "stop_type",
+                "stop_position",
+                "sim_station",
+                "stop_reason",
+                "start_time",
+                "end_time",
+                "duration_min",
+                "is_changeover"
+              ],
+              "source_object_id": "SIM-STOP-00336",
+              "data_time": "2025-10-09",
+              "source_type": "TEAM_ENGINEERED_SIMULATION"
+            },
+            {
+              "dataset_id": "TEAM_ENGINEERED_SIMULATION",
+              "semantic_table": "downtime_event",
+              "source_table": "13_多产线停机_模拟",
+              "record_key": "SimStopEventID",
+              "record_id": "SIM-STOP-00339",
+              "field_names": [
+                "源停机组",
+                "停机类型",
+                "源停机位置",
+                "模拟工位",
+                "源停机原因",
+                "开始时间",
+                "结束时间",
+                "持续时间_分钟",
+                "是否换产事件"
+              ],
+              "semantic_fields": [
+                "stop_group",
+                "stop_type",
+                "stop_position",
+                "sim_station",
+                "stop_reason",
+                "start_time",
+                "end_time",
+                "duration_min",
+                "is_changeover"
+              ],
+              "source_object_id": "SIM-STOP-00339",
+              "data_time": "2025-10-09",
+              "source_type": "TEAM_ENGINEERED_SIMULATION"
+            },
+            {
+              "dataset_id": "TEAM_ENGINEERED_SIMULATION",
+              "semantic_table": "downtime_event",
+              "source_table": "13_多产线停机_模拟",
+              "record_key": "SimStopEventID",
+              "record_id": "SIM-STOP-00342",
+              "field_names": [
+                "源停机组",
+                "停机类型",
+                "源停机位置",
+                "模拟工位",
+                "源停机原因",
+                "开始时间",
+                "结束时间",
+                "持续时间_分钟",
+                "是否换产事件"
+              ],
+              "semantic_fields": [
+                "stop_group",
+                "stop_type",
+                "stop_position",
+                "sim_station",
+                "stop_reason",
+                "start_time",
+                "end_time",
+                "duration_min",
+                "is_changeover"
+              ],
+              "source_object_id": "SIM-STOP-00342",
+              "data_time": "2025-10-09",
+              "source_type": "TEAM_ENGINEERED_SIMULATION"
+            },
+            {
+              "dataset_id": "TEAM_ENGINEERED_SIMULATION",
+              "semantic_table": "downtime_event",
+              "source_table": "13_多产线停机_模拟",
+              "record_key": "SimStopEventID",
+              "record_id": "SIM-STOP-00345",
+              "field_names": [
+                "源停机组",
+                "停机类型",
+                "源停机位置",
+                "模拟工位",
+                "源停机原因",
+                "开始时间",
+                "结束时间",
+                "持续时间_分钟",
+                "是否换产事件"
+              ],
+              "semantic_fields": [
+                "stop_group",
+                "stop_type",
+                "stop_position",
+                "sim_station",
+                "stop_reason",
+                "start_time",
+                "end_time",
+                "duration_min",
+                "is_changeover"
+              ],
+              "source_object_id": "SIM-STOP-00345",
+              "data_time": "2025-10-09",
+              "source_type": "TEAM_ENGINEERED_SIMULATION"
+            },
+            {
+              "dataset_id": "TEAM_ENGINEERED_SIMULATION",
+              "semantic_table": "downtime_event",
+              "source_table": "13_多产线停机_模拟",
+              "record_key": "SimStopEventID",
+              "record_id": "SIM-STOP-00348",
+              "field_names": [
+                "源停机组",
+                "停机类型",
+                "源停机位置",
+                "模拟工位",
+                "源停机原因",
+                "开始时间",
+                "结束时间",
+                "持续时间_分钟",
+                "是否换产事件"
+              ],
+              "semantic_fields": [
+                "stop_group",
+                "stop_type",
+                "stop_position",
+                "sim_station",
+                "stop_reason",
+                "start_time",
+                "end_time",
+                "duration_min",
+                "is_changeover"
+              ],
+              "source_object_id": "SIM-STOP-00348",
+              "data_time": "2025-10-09",
+              "source_type": "TEAM_ENGINEERED_SIMULATION"
+            },
+            {
+              "dataset_id": "TEAM_ENGINEERED_SIMULATION",
+              "semantic_table": "downtime_event",
+              "source_table": "13_多产线停机_模拟",
+              "record_key": "SimStopEventID",
+              "record_id": "SIM-STOP-00351",
+              "field_names": [
+                "源停机组",
+                "停机类型",
+                "源停机位置",
+                "模拟工位",
+                "源停机原因",
+                "开始时间",
+                "结束时间",
+                "持续时间_分钟",
+                "是否换产事件"
+              ],
+              "semantic_fields": [
+                "stop_group",
+                "stop_type",
+                "stop_position",
+                "sim_station",
+                "stop_reason",
+                "start_time",
+                "end_time",
+                "duration_min",
+                "is_changeover"
+              ],
+              "source_object_id": "SIM-STOP-00351",
+              "data_time": "2025-10-09",
+              "source_type": "TEAM_ENGINEERED_SIMULATION"
+            },
+            {
+              "dataset_id": "TEAM_ENGINEERED_SIMULATION",
+              "semantic_table": "downtime_event",
+              "source_table": "13_多产线停机_模拟",
+              "record_key": "SimStopEventID",
+              "record_id": "SIM-STOP-00354",
+              "field_names": [
+                "源停机组",
+                "停机类型",
+                "源停机位置",
+                "模拟工位",
+                "源停机原因",
+                "开始时间",
+                "结束时间",
+                "持续时间_分钟",
+                "是否换产事件"
+              ],
+              "semantic_fields": [
+                "stop_group",
+                "stop_type",
+                "stop_position",
+                "sim_station",
+                "stop_reason",
+                "start_time",
+                "end_time",
+                "duration_min",
+                "is_changeover"
+              ],
+              "source_object_id": "SIM-STOP-00354",
+              "data_time": "2025-10-09",
+              "source_type": "TEAM_ENGINEERED_SIMULATION"
+            },
+            {
+              "dataset_id": "TEAM_ENGINEERED_SIMULATION",
+              "semantic_table": "downtime_event",
+              "source_table": "13_多产线停机_模拟",
+              "record_key": "SimStopEventID",
+              "record_id": "SIM-STOP-00357",
+              "field_names": [
+                "源停机组",
+                "停机类型",
+                "源停机位置",
+                "模拟工位",
+                "源停机原因",
+                "开始时间",
+                "结束时间",
+                "持续时间_分钟",
+                "是否换产事件"
+              ],
+              "semantic_fields": [
+                "stop_group",
+                "stop_type",
+                "stop_position",
+                "sim_station",
+                "stop_reason",
+                "start_time",
+                "end_time",
+                "duration_min",
+                "is_changeover"
+              ],
+              "source_object_id": "SIM-STOP-00357",
+              "data_time": "2025-10-09",
+              "source_type": "TEAM_ENGINEERED_SIMULATION"
+            },
+            {
+              "dataset_id": "TEAM_ENGINEERED_SIMULATION",
+              "semantic_table": "downtime_event",
+              "source_table": "13_多产线停机_模拟",
+              "record_key": "SimStopEventID",
+              "record_id": "SIM-STOP-00360",
+              "field_names": [
+                "源停机组",
+                "停机类型",
+                "源停机位置",
+                "模拟工位",
+                "源停机原因",
+                "开始时间",
+                "结束时间",
+                "持续时间_分钟",
+                "是否换产事件"
+              ],
+              "semantic_fields": [
+                "stop_group",
+                "stop_type",
+                "stop_position",
+                "sim_station",
+                "stop_reason",
+                "start_time",
+                "end_time",
+                "duration_min",
+                "is_changeover"
+              ],
+              "source_object_id": "SIM-STOP-00360",
+              "data_time": "2025-10-09",
+              "source_type": "TEAM_ENGINEERED_SIMULATION"
+            },
+            {
+              "dataset_id": "TEAM_ENGINEERED_SIMULATION",
+              "semantic_table": "downtime_event",
+              "source_table": "13_多产线停机_模拟",
+              "record_key": "SimStopEventID",
+              "record_id": "SIM-STOP-00363",
+              "field_names": [
+                "源停机组",
+                "停机类型",
+                "源停机位置",
+                "模拟工位",
+                "源停机原因",
+                "开始时间",
+                "结束时间",
+                "持续时间_分钟",
+                "是否换产事件"
+              ],
+              "semantic_fields": [
+                "stop_group",
+                "stop_type",
+                "stop_position",
+                "sim_station",
+                "stop_reason",
+                "start_time",
+                "end_time",
+                "duration_min",
+                "is_changeover"
+              ],
+              "source_object_id": "SIM-STOP-00363",
+              "data_time": "2025-10-09",
+              "source_type": "TEAM_ENGINEERED_SIMULATION"
+            },
+            {
+              "dataset_id": "TEAM_ENGINEERED_SIMULATION",
+              "semantic_table": "downtime_event",
+              "source_table": "13_多产线停机_模拟",
+              "record_key": "SimStopEventID",
+              "record_id": "SIM-STOP-00366",
+              "field_names": [
+                "源停机组",
+                "停机类型",
+                "源停机位置",
+                "模拟工位",
+                "源停机原因",
+                "开始时间",
+                "结束时间",
+                "持续时间_分钟",
+                "是否换产事件"
+              ],
+              "semantic_fields": [
+                "stop_group",
+                "stop_type",
+                "stop_position",
+                "sim_station",
+                "stop_reason",
+                "start_time",
+                "end_time",
+                "duration_min",
+                "is_changeover"
+              ],
+              "source_object_id": "SIM-STOP-00366",
+              "data_time": "2025-10-09",
+              "source_type": "TEAM_ENGINEERED_SIMULATION"
+            },
+            {
+              "dataset_id": "TEAM_ENGINEERED_SIMULATION",
+              "semantic_table": "downtime_event",
+              "source_table": "13_多产线停机_模拟",
+              "record_key": "SimStopEventID",
+              "record_id": "SIM-STOP-00369",
+              "field_names": [
+                "源停机组",
+                "停机类型",
+                "源停机位置",
+                "模拟工位",
+                "源停机原因",
+                "开始时间",
+                "结束时间",
+                "持续时间_分钟",
+                "是否换产事件"
+              ],
+              "semantic_fields": [
+                "stop_group",
+                "stop_type",
+                "stop_position",
+                "sim_station",
+                "stop_reason",
+                "start_time",
+                "end_time",
+                "duration_min",
+                "is_changeover"
+              ],
+              "source_object_id": "SIM-STOP-00369",
+              "data_time": "2025-10-09",
+              "source_type": "TEAM_ENGINEERED_SIMULATION"
+            },
+            {
+              "dataset_id": "TEAM_ENGINEERED_SIMULATION",
+              "semantic_table": "downtime_event",
+              "source_table": "13_多产线停机_模拟",
+              "record_key": "SimStopEventID",
+              "record_id": "SIM-STOP-00372",
+              "field_names": [
+                "源停机组",
+                "停机类型",
+                "源停机位置",
+                "模拟工位",
+                "源停机原因",
+                "开始时间",
+                "结束时间",
+                "持续时间_分钟",
+                "是否换产事件"
+              ],
+              "semantic_fields": [
+                "stop_group",
+                "stop_type",
+                "stop_position",
+                "sim_station",
+                "stop_reason",
+                "start_time",
+                "end_time",
+                "duration_min",
+                "is_changeover"
+              ],
+              "source_object_id": "SIM-STOP-00372",
+              "data_time": "2025-10-09",
+              "source_type": "TEAM_ENGINEERED_SIMULATION"
+            },
+            {
+              "dataset_id": "TEAM_ENGINEERED_SIMULATION",
+              "semantic_table": "downtime_event",
+              "source_table": "13_多产线停机_模拟",
+              "record_key": "SimStopEventID",
+              "record_id": "SIM-STOP-00375",
+              "field_names": [
+                "源停机组",
+                "停机类型",
+                "源停机位置",
+                "模拟工位",
+                "源停机原因",
+                "开始时间",
+                "结束时间",
+                "持续时间_分钟",
+                "是否换产事件"
+              ],
+              "semantic_fields": [
+                "stop_group",
+                "stop_type",
+                "stop_position",
+                "sim_station",
+                "stop_reason",
+                "start_time",
+                "end_time",
+                "duration_min",
+                "is_changeover"
+              ],
+              "source_object_id": "SIM-STOP-00375",
+              "data_time": "2025-10-09",
+              "source_type": "TEAM_ENGINEERED_SIMULATION"
+            },
+            {
+              "dataset_id": "TEAM_ENGINEERED_SIMULATION",
+              "semantic_table": "downtime_event",
+              "source_table": "13_多产线停机_模拟",
+              "record_key": "SimStopEventID",
+              "record_id": "SIM-STOP-00378",
+              "field_names": [
+                "源停机组",
+                "停机类型",
+                "源停机位置",
+                "模拟工位",
+                "源停机原因",
+                "开始时间",
+                "结束时间",
+                "持续时间_分钟",
+                "是否换产事件"
+              ],
+              "semantic_fields": [
+                "stop_group",
+                "stop_type",
+                "stop_position",
+                "sim_station",
+                "stop_reason",
+                "start_time",
+                "end_time",
+                "duration_min",
+                "is_changeover"
+              ],
+              "source_object_id": "SIM-STOP-00378",
+              "data_time": "2025-10-09",
+              "source_type": "TEAM_ENGINEERED_SIMULATION"
+            }
+          ]
+        },
+        {
+          "chart_id": "CHART-STOP-REASON-PARETO",
+          "type": "pareto",
+          "title": "停机原因Pareto（LINE-S03-PRE-20251009）",
+          "data": [
+            {
+              "源停机原因": "MATERIAL CHANGEOVER",
+              "次数": 3,
+              "分钟": 81.3
+            },
+            {
+              "源停机原因": "MECHANICAL FAILURE",
+              "次数": 2,
+              "分钟": 55.2
+            },
+            {
+              "源停机原因": "NO PRODUCTION SCHEDULE",
+              "次数": 1,
+              "分钟": 25.3
+            },
+            {
+              "源停机原因": "AUTOMATION FAILURE",
+              "次数": 4,
+              "分钟": 18.3
+            },
+            {
+              "源停机原因": "MATERIAL STARVATION",
+              "次数": 1,
+              "分钟": 10.6
+            },
+            {
+              "源停机原因": "OTHER CALIBRATION",
+              "次数": 2,
+              "分钟": 10.2
+            },
+            {
+              "源停机原因": "RACK STARVATION",
+              "次数": 1,
+              "分钟": 6.2
+            },
+            {
+              "源停机原因": "CLEANING",
+              "次数": 1,
+              "分钟": 4.6
+            }
+          ],
+          "evidence_refs": [
+            {
+              "dataset_id": "TEAM_ENGINEERED_SIMULATION",
+              "semantic_table": "downtime_event",
+              "source_table": "13_多产线停机_模拟",
+              "record_key": "SimStopEventID",
+              "record_id": "SIM-STOP-00336",
+              "field_names": [
+                "源停机组",
+                "停机类型",
+                "源停机位置",
+                "模拟工位",
+                "源停机原因",
+                "开始时间",
+                "结束时间",
+                "持续时间_分钟",
+                "是否换产事件"
+              ],
+              "semantic_fields": [
+                "stop_group",
+                "stop_type",
+                "stop_position",
+                "sim_station",
+                "stop_reason",
+                "start_time",
+                "end_time",
+                "duration_min",
+                "is_changeover"
+              ],
+              "source_object_id": "SIM-STOP-00336",
+              "data_time": "2025-10-09",
+              "source_type": "TEAM_ENGINEERED_SIMULATION"
+            },
+            {
+              "dataset_id": "TEAM_ENGINEERED_SIMULATION",
+              "semantic_table": "downtime_event",
+              "source_table": "13_多产线停机_模拟",
+              "record_key": "SimStopEventID",
+              "record_id": "SIM-STOP-00339",
+              "field_names": [
+                "源停机组",
+                "停机类型",
+                "源停机位置",
+                "模拟工位",
+                "源停机原因",
+                "开始时间",
+                "结束时间",
+                "持续时间_分钟",
+                "是否换产事件"
+              ],
+              "semantic_fields": [
+                "stop_group",
+                "stop_type",
+                "stop_position",
+                "sim_station",
+                "stop_reason",
+                "start_time",
+                "end_time",
+                "duration_min",
+                "is_changeover"
+              ],
+              "source_object_id": "SIM-STOP-00339",
+              "data_time": "2025-10-09",
+              "source_type": "TEAM_ENGINEERED_SIMULATION"
+            },
+            {
+              "dataset_id": "TEAM_ENGINEERED_SIMULATION",
+              "semantic_table": "downtime_event",
+              "source_table": "13_多产线停机_模拟",
+              "record_key": "SimStopEventID",
+              "record_id": "SIM-STOP-00342",
+              "field_names": [
+                "源停机组",
+                "停机类型",
+                "源停机位置",
+                "模拟工位",
+                "源停机原因",
+                "开始时间",
+                "结束时间",
+                "持续时间_分钟",
+                "是否换产事件"
+              ],
+              "semantic_fields": [
+                "stop_group",
+                "stop_type",
+                "stop_position",
+                "sim_station",
+                "stop_reason",
+                "start_time",
+                "end_time",
+                "duration_min",
+                "is_changeover"
+              ],
+              "source_object_id": "SIM-STOP-00342",
+              "data_time": "2025-10-09",
+              "source_type": "TEAM_ENGINEERED_SIMULATION"
+            },
+            {
+              "dataset_id": "TEAM_ENGINEERED_SIMULATION",
+              "semantic_table": "downtime_event",
+              "source_table": "13_多产线停机_模拟",
+              "record_key": "SimStopEventID",
+              "record_id": "SIM-STOP-00345",
+              "field_names": [
+                "源停机组",
+                "停机类型",
+                "源停机位置",
+                "模拟工位",
+                "源停机原因",
+                "开始时间",
+                "结束时间",
+                "持续时间_分钟",
+                "是否换产事件"
+              ],
+              "semantic_fields": [
+                "stop_group",
+                "stop_type",
+                "stop_position",
+                "sim_station",
+                "stop_reason",
+                "start_time",
+                "end_time",
+                "duration_min",
+                "is_changeover"
+              ],
+              "source_object_id": "SIM-STOP-00345",
+              "data_time": "2025-10-09",
+              "source_type": "TEAM_ENGINEERED_SIMULATION"
+            },
+            {
+              "dataset_id": "TEAM_ENGINEERED_SIMULATION",
+              "semantic_table": "downtime_event",
+              "source_table": "13_多产线停机_模拟",
+              "record_key": "SimStopEventID",
+              "record_id": "SIM-STOP-00348",
+              "field_names": [
+                "源停机组",
+                "停机类型",
+                "源停机位置",
+                "模拟工位",
+                "源停机原因",
+                "开始时间",
+                "结束时间",
+                "持续时间_分钟",
+                "是否换产事件"
+              ],
+              "semantic_fields": [
+                "stop_group",
+                "stop_type",
+                "stop_position",
+                "sim_station",
+                "stop_reason",
+                "start_time",
+                "end_time",
+                "duration_min",
+                "is_changeover"
+              ],
+              "source_object_id": "SIM-STOP-00348",
+              "data_time": "2025-10-09",
+              "source_type": "TEAM_ENGINEERED_SIMULATION"
+            },
+            {
+              "dataset_id": "TEAM_ENGINEERED_SIMULATION",
+              "semantic_table": "downtime_event",
+              "source_table": "13_多产线停机_模拟",
+              "record_key": "SimStopEventID",
+              "record_id": "SIM-STOP-00351",
+              "field_names": [
+                "源停机组",
+                "停机类型",
+                "源停机位置",
+                "模拟工位",
+                "源停机原因",
+                "开始时间",
+                "结束时间",
+                "持续时间_分钟",
+                "是否换产事件"
+              ],
+              "semantic_fields": [
+                "stop_group",
+                "stop_type",
+                "stop_position",
+                "sim_station",
+                "stop_reason",
+                "start_time",
+                "end_time",
+                "duration_min",
+                "is_changeover"
+              ],
+              "source_object_id": "SIM-STOP-00351",
+              "data_time": "2025-10-09",
+              "source_type": "TEAM_ENGINEERED_SIMULATION"
+            },
+            {
+              "dataset_id": "TEAM_ENGINEERED_SIMULATION",
+              "semantic_table": "downtime_event",
+              "source_table": "13_多产线停机_模拟",
+              "record_key": "SimStopEventID",
+              "record_id": "SIM-STOP-00354",
+              "field_names": [
+                "源停机组",
+                "停机类型",
+                "源停机位置",
+                "模拟工位",
+                "源停机原因",
+                "开始时间",
+                "结束时间",
+                "持续时间_分钟",
+                "是否换产事件"
+              ],
+              "semantic_fields": [
+                "stop_group",
+                "stop_type",
+                "stop_position",
+                "sim_station",
+                "stop_reason",
+                "start_time",
+                "end_time",
+                "duration_min",
+                "is_changeover"
+              ],
+              "source_object_id": "SIM-STOP-00354",
+              "data_time": "2025-10-09",
+              "source_type": "TEAM_ENGINEERED_SIMULATION"
+            },
+            {
+              "dataset_id": "TEAM_ENGINEERED_SIMULATION",
+              "semantic_table": "downtime_event",
+              "source_table": "13_多产线停机_模拟",
+              "record_key": "SimStopEventID",
+              "record_id": "SIM-STOP-00357",
+              "field_names": [
+                "源停机组",
+                "停机类型",
+                "源停机位置",
+                "模拟工位",
+                "源停机原因",
+                "开始时间",
+                "结束时间",
+                "持续时间_分钟",
+                "是否换产事件"
+              ],
+              "semantic_fields": [
+                "stop_group",
+                "stop_type",
+                "stop_position",
+                "sim_station",
+                "stop_reason",
+                "start_time",
+                "end_time",
+                "duration_min",
+                "is_changeover"
+              ],
+              "source_object_id": "SIM-STOP-00357",
+              "data_time": "2025-10-09",
+              "source_type": "TEAM_ENGINEERED_SIMULATION"
+            },
+            {
+              "dataset_id": "TEAM_ENGINEERED_SIMULATION",
+              "semantic_table": "downtime_event",
+              "source_table": "13_多产线停机_模拟",
+              "record_key": "SimStopEventID",
+              "record_id": "SIM-STOP-00360",
+              "field_names": [
+                "源停机组",
+                "停机类型",
+                "源停机位置",
+                "模拟工位",
+                "源停机原因",
+                "开始时间",
+                "结束时间",
+                "持续时间_分钟",
+                "是否换产事件"
+              ],
+              "semantic_fields": [
+                "stop_group",
+                "stop_type",
+                "stop_position",
+                "sim_station",
+                "stop_reason",
+                "start_time",
+                "end_time",
+                "duration_min",
+                "is_changeover"
+              ],
+              "source_object_id": "SIM-STOP-00360",
+              "data_time": "2025-10-09",
+              "source_type": "TEAM_ENGINEERED_SIMULATION"
+            },
+            {
+              "dataset_id": "TEAM_ENGINEERED_SIMULATION",
+              "semantic_table": "downtime_event",
+              "source_table": "13_多产线停机_模拟",
+              "record_key": "SimStopEventID",
+              "record_id": "SIM-STOP-00363",
+              "field_names": [
+                "源停机组",
+                "停机类型",
+                "源停机位置",
+                "模拟工位",
+                "源停机原因",
+                "开始时间",
+                "结束时间",
+                "持续时间_分钟",
+                "是否换产事件"
+              ],
+              "semantic_fields": [
+                "stop_group",
+                "stop_type",
+                "stop_position",
+                "sim_station",
+                "stop_reason",
+                "start_time",
+                "end_time",
+                "duration_min",
+                "is_changeover"
+              ],
+              "source_object_id": "SIM-STOP-00363",
+              "data_time": "2025-10-09",
+              "source_type": "TEAM_ENGINEERED_SIMULATION"
+            },
+            {
+              "dataset_id": "TEAM_ENGINEERED_SIMULATION",
+              "semantic_table": "downtime_event",
+              "source_table": "13_多产线停机_模拟",
+              "record_key": "SimStopEventID",
+              "record_id": "SIM-STOP-00366",
+              "field_names": [
+                "源停机组",
+                "停机类型",
+                "源停机位置",
+                "模拟工位",
+                "源停机原因",
+                "开始时间",
+                "结束时间",
+                "持续时间_分钟",
+                "是否换产事件"
+              ],
+              "semantic_fields": [
+                "stop_group",
+                "stop_type",
+                "stop_position",
+                "sim_station",
+                "stop_reason",
+                "start_time",
+                "end_time",
+                "duration_min",
+                "is_changeover"
+              ],
+              "source_object_id": "SIM-STOP-00366",
+              "data_time": "2025-10-09",
+              "source_type": "TEAM_ENGINEERED_SIMULATION"
+            },
+            {
+              "dataset_id": "TEAM_ENGINEERED_SIMULATION",
+              "semantic_table": "downtime_event",
+              "source_table": "13_多产线停机_模拟",
+              "record_key": "SimStopEventID",
+              "record_id": "SIM-STOP-00369",
+              "field_names": [
+                "源停机组",
+                "停机类型",
+                "源停机位置",
+                "模拟工位",
+                "源停机原因",
+                "开始时间",
+                "结束时间",
+                "持续时间_分钟",
+                "是否换产事件"
+              ],
+              "semantic_fields": [
+                "stop_group",
+                "stop_type",
+                "stop_position",
+                "sim_station",
+                "stop_reason",
+                "start_time",
+                "end_time",
+                "duration_min",
+                "is_changeover"
+              ],
+              "source_object_id": "SIM-STOP-00369",
+              "data_time": "2025-10-09",
+              "source_type": "TEAM_ENGINEERED_SIMULATION"
+            },
+            {
+              "dataset_id": "TEAM_ENGINEERED_SIMULATION",
+              "semantic_table": "downtime_event",
+              "source_table": "13_多产线停机_模拟",
+              "record_key": "SimStopEventID",
+              "record_id": "SIM-STOP-00372",
+              "field_names": [
+                "源停机组",
+                "停机类型",
+                "源停机位置",
+                "模拟工位",
+                "源停机原因",
+                "开始时间",
+                "结束时间",
+                "持续时间_分钟",
+                "是否换产事件"
+              ],
+              "semantic_fields": [
+                "stop_group",
+                "stop_type",
+                "stop_position",
+                "sim_station",
+                "stop_reason",
+                "start_time",
+                "end_time",
+                "duration_min",
+                "is_changeover"
+              ],
+              "source_object_id": "SIM-STOP-00372",
+              "data_time": "2025-10-09",
+              "source_type": "TEAM_ENGINEERED_SIMULATION"
+            },
+            {
+              "dataset_id": "TEAM_ENGINEERED_SIMULATION",
+              "semantic_table": "downtime_event",
+              "source_table": "13_多产线停机_模拟",
+              "record_key": "SimStopEventID",
+              "record_id": "SIM-STOP-00375",
+              "field_names": [
+                "源停机组",
+                "停机类型",
+                "源停机位置",
+                "模拟工位",
+                "源停机原因",
+                "开始时间",
+                "结束时间",
+                "持续时间_分钟",
+                "是否换产事件"
+              ],
+              "semantic_fields": [
+                "stop_group",
+                "stop_type",
+                "stop_position",
+                "sim_station",
+                "stop_reason",
+                "start_time",
+                "end_time",
+                "duration_min",
+                "is_changeover"
+              ],
+              "source_object_id": "SIM-STOP-00375",
+              "data_time": "2025-10-09",
+              "source_type": "TEAM_ENGINEERED_SIMULATION"
+            },
+            {
+              "dataset_id": "TEAM_ENGINEERED_SIMULATION",
+              "semantic_table": "downtime_event",
+              "source_table": "13_多产线停机_模拟",
+              "record_key": "SimStopEventID",
+              "record_id": "SIM-STOP-00378",
+              "field_names": [
+                "源停机组",
+                "停机类型",
+                "源停机位置",
+                "模拟工位",
+                "源停机原因",
+                "开始时间",
+                "结束时间",
+                "持续时间_分钟",
+                "是否换产事件"
+              ],
+              "semantic_fields": [
+                "stop_group",
+                "stop_type",
+                "stop_position",
+                "sim_station",
+                "stop_reason",
+                "start_time",
+                "end_time",
+                "duration_min",
+                "is_changeover"
+              ],
+              "source_object_id": "SIM-STOP-00378",
+              "data_time": "2025-10-09",
+              "source_type": "TEAM_ENGINEERED_SIMULATION"
+            }
+          ]
+        }
+      ],
+      "downtime_events": [
+        {
+          "sim_stop_event_id": "SIM-STOP-00369",
+          "源停机原因": "MECHANICAL FAILURE",
+          "源停机组": "FAILURE",
+          "源停机位置": "DRYER",
+          "模拟工位": "烘干/固化工位",
+          "持续时间_分钟": 43.1,
+          "是否换产事件": "否",
+          "note": "最大单次故障停机"
+        },
+        {
+          "sim_stop_event_id": "SIM-STOP-00339",
+          "源停机原因": "MATERIAL CHANGEOVER",
+          "源停机组": "SETUPS-CHANGEOVERS",
+          "源停机位置": "EXTRUDER PRESS",
+          "模拟工位": "主加工工位",
+          "持续时间_分钟": 49.0,
+          "是否换产事件": "是",
+          "note": "MATERIAL CHANGEOVER单次最长"
+        }
+      ],
+      "downtime_summary": {
+        "total_events": 15,
+        "total_minutes": 211.7,
+        "planned_events": 5,
+        "unplanned_events": 10,
+        "unplanned_minutes": 100.5,
+        "changeover_events": 5,
+        "by_group": [
+          {
+            "源停机组": "SETUPS-CHANGEOVERS",
+            "事件数": 5,
+            "累计分钟": 91.5
+          },
+          {
+            "源停机组": "FAILURE",
+            "事件数": 6,
+            "累计分钟": 73.5
+          },
+          {
+            "源停机组": "MATERIALS",
+            "事件数": 2,
+            "累计分钟": 16.8
+          },
+          {
+            "源停机组": "OPERATIONAL",
+            "事件数": 2,
+            "累计分钟": 29.9
+          }
+        ],
+        "by_reason": [
+          {
+            "源停机原因": "MATERIAL CHANGEOVER",
+            "次数": 3,
+            "分钟": 81.3
+          },
+          {
+            "源停机原因": "MECHANICAL FAILURE",
+            "次数": 2,
+            "分钟": 55.2
+          },
+          {
+            "源停机原因": "NO PRODUCTION SCHEDULE",
+            "次数": 1,
+            "分钟": 25.3
+          },
+          {
+            "源停机原因": "AUTOMATION FAILURE",
+            "次数": 4,
+            "分钟": 18.3
+          },
+          {
+            "源停机原因": "MATERIAL STARVATION",
+            "次数": 1,
+            "分钟": 10.6
+          },
+          {
+            "源停机原因": "OTHER CALIBRATION",
+            "次数": 2,
+            "分钟": 10.2
+          },
+          {
+            "源停机原因": "RACK STARVATION",
+            "次数": 1,
+            "分钟": 6.2
+          },
+          {
+            "源停机原因": "CLEANING",
+            "次数": 1,
+            "分钟": 4.6
+          }
+        ],
+        "max_single_failure": {
+          "reason": "MECHANICAL FAILURE",
+          "minutes": 43.1,
+          "sim_stop_event_id": "SIM-STOP-00369"
+        },
+        "max_single_changeover": {
+          "reason": "MATERIAL CHANGEOVER",
+          "minutes": 49.0,
+          "sim_stop_event_id": "SIM-STOP-00339"
+        }
+      },
+      "alerts": [
+        {
+          "alert_id": "ALERT-EQUIP-001",
+          "severity": "high",
+          "message": "非计划停机100.5分钟（10条），MECHANICAL FAILURE单次43.1分钟为最大故障停机",
+          "evidence_refs": [
+            {
+              "dataset_id": "TEAM_ENGINEERED_SIMULATION",
+              "semantic_table": "downtime_event",
+              "source_table": "13_多产线停机_模拟",
+              "record_key": "SimStopEventID",
+              "record_id": "SIM-STOP-00369",
+              "field_names": [
+                "源停机原因",
+                "持续时间_分钟",
+                "源停机组"
+              ],
+              "semantic_fields": [
+                "stop_reason",
+                "duration_min",
+                "stop_group"
+              ],
+              "source_object_id": "SIM-STOP-00369",
+              "data_time": "2025-10-09",
+              "source_type": "TEAM_ENGINEERED_SIMULATION"
+            }
+          ]
+        },
+        {
+          "alert_id": "ALERT-EQUIP-002",
+          "severity": "medium",
+          "message": "MATERIAL CHANGEOVER单次最长49.0分钟（SIM-STOP-00339），换产事件共5条",
+          "evidence_refs": [
+            {
+              "dataset_id": "TEAM_ENGINEERED_SIMULATION",
+              "semantic_table": "downtime_event",
+              "source_table": "13_多产线停机_模拟",
+              "record_key": "SimStopEventID",
+              "record_id": "SIM-STOP-00339",
+              "field_names": [
+                "源停机原因",
+                "持续时间_分钟",
+                "是否换产事件"
+              ],
+              "semantic_fields": [
+                "stop_reason",
+                "duration_min",
+                "is_changeover"
+              ],
+              "source_object_id": "SIM-STOP-00339",
+              "data_time": "2025-10-09",
+              "source_type": "TEAM_ENGINEERED_SIMULATION"
+            }
+          ]
+        }
+      ],
+      "tasks": [
+        {
+          "task_id": "TASK-20251009-0002",
+          "status": "已完成",
+          "description": "评估OEE产出停线影响（含停机明细分析）",
+          "evidence_refs": [
+            {
+              "dataset_id": "TEAM_ENGINEERED_SIMULATION",
+              "semantic_table": "downtime_event",
+              "source_table": "13_多产线停机_模拟",
+              "record_key": "SimStopEventID",
+              "record_id": "SIM-STOP-00336",
+              "field_names": [
+                "源停机组",
+                "停机类型",
+                "源停机位置",
+                "模拟工位",
+                "源停机原因",
+                "开始时间",
+                "结束时间",
+                "持续时间_分钟",
+                "是否换产事件"
+              ],
+              "semantic_fields": [
+                "stop_group",
+                "stop_type",
+                "stop_position",
+                "sim_station",
+                "stop_reason",
+                "start_time",
+                "end_time",
+                "duration_min",
+                "is_changeover"
+              ],
+              "source_object_id": "SIM-STOP-00336",
+              "data_time": "2025-10-09",
+              "source_type": "TEAM_ENGINEERED_SIMULATION"
+            },
+            {
+              "dataset_id": "TEAM_ENGINEERED_SIMULATION",
+              "semantic_table": "downtime_event",
+              "source_table": "13_多产线停机_模拟",
+              "record_key": "SimStopEventID",
+              "record_id": "SIM-STOP-00339",
+              "field_names": [
+                "源停机组",
+                "停机类型",
+                "源停机位置",
+                "模拟工位",
+                "源停机原因",
+                "开始时间",
+                "结束时间",
+                "持续时间_分钟",
+                "是否换产事件"
+              ],
+              "semantic_fields": [
+                "stop_group",
+                "stop_type",
+                "stop_position",
+                "sim_station",
+                "stop_reason",
+                "start_time",
+                "end_time",
+                "duration_min",
+                "is_changeover"
+              ],
+              "source_object_id": "SIM-STOP-00339",
+              "data_time": "2025-10-09",
+              "source_type": "TEAM_ENGINEERED_SIMULATION"
+            },
+            {
+              "dataset_id": "TEAM_ENGINEERED_SIMULATION",
+              "semantic_table": "downtime_event",
+              "source_table": "13_多产线停机_模拟",
+              "record_key": "SimStopEventID",
+              "record_id": "SIM-STOP-00342",
+              "field_names": [
+                "源停机组",
+                "停机类型",
+                "源停机位置",
+                "模拟工位",
+                "源停机原因",
+                "开始时间",
+                "结束时间",
+                "持续时间_分钟",
+                "是否换产事件"
+              ],
+              "semantic_fields": [
+                "stop_group",
+                "stop_type",
+                "stop_position",
+                "sim_station",
+                "stop_reason",
+                "start_time",
+                "end_time",
+                "duration_min",
+                "is_changeover"
+              ],
+              "source_object_id": "SIM-STOP-00342",
+              "data_time": "2025-10-09",
+              "source_type": "TEAM_ENGINEERED_SIMULATION"
+            }
+          ]
+        }
+      ],
+      "decisions_required": [],
+      "data_gaps": [
+        {
+          "gap_id": "GAP-EQUIP-001",
+          "description": "缺少稳定的唯一EquipmentID、标准故障码和维修工单，因此不能精确计算设备级MTBF/MTTR，也不能把模拟工位当作真实设备资产",
+          "affected_fields": [
+            "equipment_id",
+            "fault_code",
+            "repair_work_order",
+            "mtbf",
+            "mttr"
+          ],
+          "source_table": "13_多产线停机_模拟",
+          "available_fields": [
+            "源停机组",
+            "停机类型",
+            "源停机位置",
+            "模拟工位",
+            "源停机原因",
+            "开始时间",
+            "结束时间",
+            "持续时间_分钟",
+            "是否换产事件"
+          ]
+        }
+      ],
+      "evidence_refs": [
+        {
+          "dataset_id": "TEAM_ENGINEERED_SIMULATION",
+          "semantic_table": "downtime_event",
+          "source_table": "13_多产线停机_模拟",
+          "record_key": "SimStopEventID",
+          "record_id": "SIM-STOP-00336",
+          "field_names": [
+            "源停机组",
+            "停机类型",
+            "源停机位置",
+            "模拟工位",
+            "源停机原因",
+            "开始时间",
+            "结束时间",
+            "持续时间_分钟",
+            "是否换产事件"
+          ],
+          "semantic_fields": [
+            "stop_group",
+            "stop_type",
+            "stop_position",
+            "sim_station",
+            "stop_reason",
+            "start_time",
+            "end_time",
+            "duration_min",
+            "is_changeover"
+          ],
+          "source_object_id": "SIM-STOP-00336",
+          "data_time": "2025-10-09",
+          "source_type": "TEAM_ENGINEERED_SIMULATION"
+        },
+        {
+          "dataset_id": "TEAM_ENGINEERED_SIMULATION",
+          "semantic_table": "downtime_event",
+          "source_table": "13_多产线停机_模拟",
+          "record_key": "SimStopEventID",
+          "record_id": "SIM-STOP-00339",
+          "field_names": [
+            "源停机组",
+            "停机类型",
+            "源停机位置",
+            "模拟工位",
+            "源停机原因",
+            "开始时间",
+            "结束时间",
+            "持续时间_分钟",
+            "是否换产事件"
+          ],
+          "semantic_fields": [
+            "stop_group",
+            "stop_type",
+            "stop_position",
+            "sim_station",
+            "stop_reason",
+            "start_time",
+            "end_time",
+            "duration_min",
+            "is_changeover"
+          ],
+          "source_object_id": "SIM-STOP-00339",
+          "data_time": "2025-10-09",
+          "source_type": "TEAM_ENGINEERED_SIMULATION"
+        },
+        {
+          "dataset_id": "TEAM_ENGINEERED_SIMULATION",
+          "semantic_table": "downtime_event",
+          "source_table": "13_多产线停机_模拟",
+          "record_key": "SimStopEventID",
+          "record_id": "SIM-STOP-00342",
+          "field_names": [
+            "源停机组",
+            "停机类型",
+            "源停机位置",
+            "模拟工位",
+            "源停机原因",
+            "开始时间",
+            "结束时间",
+            "持续时间_分钟",
+            "是否换产事件"
+          ],
+          "semantic_fields": [
+            "stop_group",
+            "stop_type",
+            "stop_position",
+            "sim_station",
+            "stop_reason",
+            "start_time",
+            "end_time",
+            "duration_min",
+            "is_changeover"
+          ],
+          "source_object_id": "SIM-STOP-00342",
+          "data_time": "2025-10-09",
+          "source_type": "TEAM_ENGINEERED_SIMULATION"
+        },
+        {
+          "dataset_id": "TEAM_ENGINEERED_SIMULATION",
+          "semantic_table": "downtime_event",
+          "source_table": "13_多产线停机_模拟",
+          "record_key": "SimStopEventID",
+          "record_id": "SIM-STOP-00345",
+          "field_names": [
+            "源停机组",
+            "停机类型",
+            "源停机位置",
+            "模拟工位",
+            "源停机原因",
+            "开始时间",
+            "结束时间",
+            "持续时间_分钟",
+            "是否换产事件"
+          ],
+          "semantic_fields": [
+            "stop_group",
+            "stop_type",
+            "stop_position",
+            "sim_station",
+            "stop_reason",
+            "start_time",
+            "end_time",
+            "duration_min",
+            "is_changeover"
+          ],
+          "source_object_id": "SIM-STOP-00345",
+          "data_time": "2025-10-09",
+          "source_type": "TEAM_ENGINEERED_SIMULATION"
+        },
+        {
+          "dataset_id": "TEAM_ENGINEERED_SIMULATION",
+          "semantic_table": "downtime_event",
+          "source_table": "13_多产线停机_模拟",
+          "record_key": "SimStopEventID",
+          "record_id": "SIM-STOP-00348",
+          "field_names": [
+            "源停机组",
+            "停机类型",
+            "源停机位置",
+            "模拟工位",
+            "源停机原因",
+            "开始时间",
+            "结束时间",
+            "持续时间_分钟",
+            "是否换产事件"
+          ],
+          "semantic_fields": [
+            "stop_group",
+            "stop_type",
+            "stop_position",
+            "sim_station",
+            "stop_reason",
+            "start_time",
+            "end_time",
+            "duration_min",
+            "is_changeover"
+          ],
+          "source_object_id": "SIM-STOP-00348",
+          "data_time": "2025-10-09",
+          "source_type": "TEAM_ENGINEERED_SIMULATION"
+        },
+        {
+          "dataset_id": "TEAM_ENGINEERED_SIMULATION",
+          "semantic_table": "downtime_event",
+          "source_table": "13_多产线停机_模拟",
+          "record_key": "SimStopEventID",
+          "record_id": "SIM-STOP-00351",
+          "field_names": [
+            "源停机组",
+            "停机类型",
+            "源停机位置",
+            "模拟工位",
+            "源停机原因",
+            "开始时间",
+            "结束时间",
+            "持续时间_分钟",
+            "是否换产事件"
+          ],
+          "semantic_fields": [
+            "stop_group",
+            "stop_type",
+            "stop_position",
+            "sim_station",
+            "stop_reason",
+            "start_time",
+            "end_time",
+            "duration_min",
+            "is_changeover"
+          ],
+          "source_object_id": "SIM-STOP-00351",
+          "data_time": "2025-10-09",
+          "source_type": "TEAM_ENGINEERED_SIMULATION"
+        },
+        {
+          "dataset_id": "TEAM_ENGINEERED_SIMULATION",
+          "semantic_table": "downtime_event",
+          "source_table": "13_多产线停机_模拟",
+          "record_key": "SimStopEventID",
+          "record_id": "SIM-STOP-00354",
+          "field_names": [
+            "源停机组",
+            "停机类型",
+            "源停机位置",
+            "模拟工位",
+            "源停机原因",
+            "开始时间",
+            "结束时间",
+            "持续时间_分钟",
+            "是否换产事件"
+          ],
+          "semantic_fields": [
+            "stop_group",
+            "stop_type",
+            "stop_position",
+            "sim_station",
+            "stop_reason",
+            "start_time",
+            "end_time",
+            "duration_min",
+            "is_changeover"
+          ],
+          "source_object_id": "SIM-STOP-00354",
+          "data_time": "2025-10-09",
+          "source_type": "TEAM_ENGINEERED_SIMULATION"
+        },
+        {
+          "dataset_id": "TEAM_ENGINEERED_SIMULATION",
+          "semantic_table": "downtime_event",
+          "source_table": "13_多产线停机_模拟",
+          "record_key": "SimStopEventID",
+          "record_id": "SIM-STOP-00357",
+          "field_names": [
+            "源停机组",
+            "停机类型",
+            "源停机位置",
+            "模拟工位",
+            "源停机原因",
+            "开始时间",
+            "结束时间",
+            "持续时间_分钟",
+            "是否换产事件"
+          ],
+          "semantic_fields": [
+            "stop_group",
+            "stop_type",
+            "stop_position",
+            "sim_station",
+            "stop_reason",
+            "start_time",
+            "end_time",
+            "duration_min",
+            "is_changeover"
+          ],
+          "source_object_id": "SIM-STOP-00357",
+          "data_time": "2025-10-09",
+          "source_type": "TEAM_ENGINEERED_SIMULATION"
+        },
+        {
+          "dataset_id": "TEAM_ENGINEERED_SIMULATION",
+          "semantic_table": "downtime_event",
+          "source_table": "13_多产线停机_模拟",
+          "record_key": "SimStopEventID",
+          "record_id": "SIM-STOP-00360",
+          "field_names": [
+            "源停机组",
+            "停机类型",
+            "源停机位置",
+            "模拟工位",
+            "源停机原因",
+            "开始时间",
+            "结束时间",
+            "持续时间_分钟",
+            "是否换产事件"
+          ],
+          "semantic_fields": [
+            "stop_group",
+            "stop_type",
+            "stop_position",
+            "sim_station",
+            "stop_reason",
+            "start_time",
+            "end_time",
+            "duration_min",
+            "is_changeover"
+          ],
+          "source_object_id": "SIM-STOP-00360",
+          "data_time": "2025-10-09",
+          "source_type": "TEAM_ENGINEERED_SIMULATION"
+        },
+        {
+          "dataset_id": "TEAM_ENGINEERED_SIMULATION",
+          "semantic_table": "downtime_event",
+          "source_table": "13_多产线停机_模拟",
+          "record_key": "SimStopEventID",
+          "record_id": "SIM-STOP-00363",
+          "field_names": [
+            "源停机组",
+            "停机类型",
+            "源停机位置",
+            "模拟工位",
+            "源停机原因",
+            "开始时间",
+            "结束时间",
+            "持续时间_分钟",
+            "是否换产事件"
+          ],
+          "semantic_fields": [
+            "stop_group",
+            "stop_type",
+            "stop_position",
+            "sim_station",
+            "stop_reason",
+            "start_time",
+            "end_time",
+            "duration_min",
+            "is_changeover"
+          ],
+          "source_object_id": "SIM-STOP-00363",
+          "data_time": "2025-10-09",
+          "source_type": "TEAM_ENGINEERED_SIMULATION"
+        },
+        {
+          "dataset_id": "TEAM_ENGINEERED_SIMULATION",
+          "semantic_table": "downtime_event",
+          "source_table": "13_多产线停机_模拟",
+          "record_key": "SimStopEventID",
+          "record_id": "SIM-STOP-00366",
+          "field_names": [
+            "源停机组",
+            "停机类型",
+            "源停机位置",
+            "模拟工位",
+            "源停机原因",
+            "开始时间",
+            "结束时间",
+            "持续时间_分钟",
+            "是否换产事件"
+          ],
+          "semantic_fields": [
+            "stop_group",
+            "stop_type",
+            "stop_position",
+            "sim_station",
+            "stop_reason",
+            "start_time",
+            "end_time",
+            "duration_min",
+            "is_changeover"
+          ],
+          "source_object_id": "SIM-STOP-00366",
+          "data_time": "2025-10-09",
+          "source_type": "TEAM_ENGINEERED_SIMULATION"
+        },
+        {
+          "dataset_id": "TEAM_ENGINEERED_SIMULATION",
+          "semantic_table": "downtime_event",
+          "source_table": "13_多产线停机_模拟",
+          "record_key": "SimStopEventID",
+          "record_id": "SIM-STOP-00369",
+          "field_names": [
+            "源停机组",
+            "停机类型",
+            "源停机位置",
+            "模拟工位",
+            "源停机原因",
+            "开始时间",
+            "结束时间",
+            "持续时间_分钟",
+            "是否换产事件"
+          ],
+          "semantic_fields": [
+            "stop_group",
+            "stop_type",
+            "stop_position",
+            "sim_station",
+            "stop_reason",
+            "start_time",
+            "end_time",
+            "duration_min",
+            "is_changeover"
+          ],
+          "source_object_id": "SIM-STOP-00369",
+          "data_time": "2025-10-09",
+          "source_type": "TEAM_ENGINEERED_SIMULATION"
+        },
+        {
+          "dataset_id": "TEAM_ENGINEERED_SIMULATION",
+          "semantic_table": "downtime_event",
+          "source_table": "13_多产线停机_模拟",
+          "record_key": "SimStopEventID",
+          "record_id": "SIM-STOP-00372",
+          "field_names": [
+            "源停机组",
+            "停机类型",
+            "源停机位置",
+            "模拟工位",
+            "源停机原因",
+            "开始时间",
+            "结束时间",
+            "持续时间_分钟",
+            "是否换产事件"
+          ],
+          "semantic_fields": [
+            "stop_group",
+            "stop_type",
+            "stop_position",
+            "sim_station",
+            "stop_reason",
+            "start_time",
+            "end_time",
+            "duration_min",
+            "is_changeover"
+          ],
+          "source_object_id": "SIM-STOP-00372",
+          "data_time": "2025-10-09",
+          "source_type": "TEAM_ENGINEERED_SIMULATION"
+        },
+        {
+          "dataset_id": "TEAM_ENGINEERED_SIMULATION",
+          "semantic_table": "downtime_event",
+          "source_table": "13_多产线停机_模拟",
+          "record_key": "SimStopEventID",
+          "record_id": "SIM-STOP-00375",
+          "field_names": [
+            "源停机组",
+            "停机类型",
+            "源停机位置",
+            "模拟工位",
+            "源停机原因",
+            "开始时间",
+            "结束时间",
+            "持续时间_分钟",
+            "是否换产事件"
+          ],
+          "semantic_fields": [
+            "stop_group",
+            "stop_type",
+            "stop_position",
+            "sim_station",
+            "stop_reason",
+            "start_time",
+            "end_time",
+            "duration_min",
+            "is_changeover"
+          ],
+          "source_object_id": "SIM-STOP-00375",
+          "data_time": "2025-10-09",
+          "source_type": "TEAM_ENGINEERED_SIMULATION"
+        },
+        {
+          "dataset_id": "TEAM_ENGINEERED_SIMULATION",
+          "semantic_table": "downtime_event",
+          "source_table": "13_多产线停机_模拟",
+          "record_key": "SimStopEventID",
+          "record_id": "SIM-STOP-00378",
+          "field_names": [
+            "源停机组",
+            "停机类型",
+            "源停机位置",
+            "模拟工位",
+            "源停机原因",
+            "开始时间",
+            "结束时间",
+            "持续时间_分钟",
+            "是否换产事件"
+          ],
+          "semantic_fields": [
+            "stop_group",
+            "stop_type",
+            "stop_position",
+            "sim_station",
+            "stop_reason",
+            "start_time",
+            "end_time",
+            "duration_min",
+            "is_changeover"
+          ],
+          "source_object_id": "SIM-STOP-00378",
+          "data_time": "2025-10-09",
+          "source_type": "TEAM_ENGINEERED_SIMULATION"
+        },
+        {
+          "dataset_id": "TEAM_ENGINEERED_SIMULATION",
+          "semantic_table": "oee_shift",
+          "source_table": "12_多产线班次_模拟",
+          "record_key": "SimShiftID",
+          "record_id": "LINE-S03-PRE-20251009",
+          "field_names": [
+            "开动率",
+            "非计划停机_秒",
+            "计划停机_秒"
+          ],
+          "semantic_fields": [
+            "availability",
+            "unplanned_downtime_sec",
+            "planned_downtime_sec"
+          ],
+          "source_object_id": "LINE-S03-PRE-20251009",
+          "data_time": "2025-10-09",
+          "source_type": "TEAM_ENGINEERED_SIMULATION"
+        }
+      ],
+      "rule_version": "RULESET-v1.0",
+      "knowledge_version": "KNOWLEDGE-v1.0",
+      "last_updated_at": "2026-08-07T14:26:28Z"
+    },
+    {
+      "event_id": "EVT-20251009-0001",
+      "role": "process",
+      "dataset_id": "TEAM_ENGINEERED_SIMULATION",
+      "line_ids": [
+        "LINE-S03"
+      ],
+      "headline": "LINE-S03 性能率82.51%，工艺参数数据不足",
+      "kpis": [
+        {
+          "metric_code": "PERFORMANCE",
+          "value": 0.825067,
+          "value_type": "ratio",
+          "display_format": "0.0%",
+          "unit": "ratio",
+          "aggregation_scope": "single_shift",
+          "evidence_refs": [
+            {
+              "dataset_id": "TEAM_ENGINEERED_SIMULATION",
+              "semantic_table": "oee_shift",
+              "source_table": "12_多产线班次_模拟",
+              "record_key": "SimShiftID",
+              "record_id": "LINE-S03-PRE-20251009",
+              "field_names": [
+                "性能率"
+              ],
+              "semantic_fields": [
+                "performance"
+              ],
+              "source_object_id": "LINE-S03-PRE-20251009",
+              "data_time": "2025-10-09",
+              "source_type": "TEAM_ENGINEERED_SIMULATION"
+            }
+          ]
+        }
+      ],
+      "charts": [],
+      "alerts": [],
+      "tasks": [
+        {
+          "task_id": "TASK-20251009-0004",
+          "status": "已完成",
+          "description": "判断换产或工艺偏移辅助原因"
+        }
+      ],
+      "decisions_required": [],
+      "data_gaps": [
+        {
+          "gap_id": "GAP-PROC-001",
+          "description": "SIM-v2.2数据包未包含工艺参数表（torque、temperature等），性能率根因无法定位",
+          "affected_fields": [
+            "torque_peak",
+            "temp_variance",
+            "cycle_time"
+          ],
+          "source_table": "process_param (not in SIM-v2.2)"
+        }
+      ],
+      "evidence_refs": [
+        {
+          "dataset_id": "TEAM_ENGINEERED_SIMULATION",
+          "semantic_table": "oee_shift",
+          "source_table": "12_多产线班次_模拟",
+          "record_key": "SimShiftID",
+          "record_id": "LINE-S03-PRE-20251009",
+          "field_names": [
+            "性能率"
+          ],
+          "semantic_fields": [
+            "performance"
+          ],
+          "source_object_id": "LINE-S03-PRE-20251009",
+          "data_time": "2025-10-09",
+          "source_type": "TEAM_ENGINEERED_SIMULATION"
+        }
+      ],
+      "rule_version": "RULESET-v1.0",
+      "knowledge_version": "KNOWLEDGE-v1.0",
+      "last_updated_at": "2026-08-07T14:26:28Z"
+    },
+    {
+      "event_id": "EVT-20251009-0001",
+      "role": "supply",
+      "dataset_id": "TEAM_ENGINEERED_SIMULATION",
+      "line_ids": [
+        "LINE-S03"
+      ],
+      "headline": "黄金事件关联工单WO-20251009-013共3项物料；M-DISPLAY缺口250件，M-HOUSING有200件质量冻结且待复检",
+      "supply_chain_query": {
+        "query_id": "QUERY-SUPPLY-EVT-20251009-0001-V2",
+        "join_path": [
+          "12.SimShiftID -> 12.SourceShiftID",
+          "12.SourceShiftID -> 03.ShiftID",
+          "03.WorkOrderID -> 04.WorkOrderID",
+          "04.BusinessKey -> 17.BusinessKey"
+        ],
+        "step_counts": {
+          "matched_shifts": 1,
+          "matched_work_orders": 1,
+          "matched_materials": 3,
+          "shortage_materials": 1,
+          "matched_freezes": 1
+        },
+        "matched_ids": {
+          "work_order_id": "WO-20251009-013",
+          "material_business_keys": [
+            "SO-2413-1-M-DISPLAY",
+            "SO-2413-2-M-PCBA",
+            "SO-2413-3-M-HOUSING"
+          ],
+          "freeze_ids": [
+            "FZ-0005"
+          ]
+        },
+        "join_detail": {
+          "step1": {
+            "input": "SimShiftID=LINE-S03-PRE-20251009",
+            "source_table": "12_多产线班次_模拟",
+            "output": "SourceShiftID=SHIFT-PRE-20251009",
+            "matched_count": 1
+          },
+          "step2": {
+            "input": "ShiftID=SHIFT-PRE-20251009",
+            "source_table": "03_工单映射_模拟",
+            "output": "WorkOrderID=WO-20251009-013, OrderNo=SO-2413, 风险等级=高",
+            "matched_count": 1
+          },
+          "step3": {
+            "input": "WorkOrderID=WO-20251009-013",
+            "source_table": "04_订单物料_模拟",
+            "output": "3条物料: SO-2413-1-M-DISPLAY, SO-2413-2-M-PCBA, SO-2413-3-M-HOUSING",
+            "matched_count": 3
+          },
+          "step4": {
+            "input": "BusinessKey IN [SO-2413-1-M-DISPLAY, SO-2413-2-M-PCBA, SO-2413-3-M-HOUSING]",
+            "source_table": "17_质量冻结明细_模拟",
+            "output": "FZ-0005 (BusinessKey=SO-2413-3-M-HOUSING, 结构件, 200, 待复检)",
+            "matched_count": 1
+          }
+        },
+        "conclusion": "黄金事件关联工单WO-20251009-013共涉及3项物料；M-DISPLAY在需求日前缺口250件，M-HOUSING有200件质量冻结且待复检。该信息属于同工单供应保障风险，能够支撑供应链评估，但不宣称本次班次质量异常必然导致该冻结。",
+        "executed_at": "2026-08-07T13:36:21Z",
+        "run_id": "RUN-CORRECT-003"
+      },
+      "kpis": [
+        {
+          "metric_code": "MATERIAL_SHORTAGE",
+          "value": 250,
+          "value_type": "integer",
+          "display_format": "#,##0",
+          "unit": "件",
+          "aggregation_scope": "single_work_order",
+          "description": "M-DISPLAY显示模组需求日前缺口",
+          "evidence_refs": [
+            {
+              "dataset_id": "TEAM_ENGINEERED_SIMULATION",
+              "semantic_table": "material_detail",
+              "source_table": "04_订单物料_模拟",
+              "record_key": "BusinessKey",
+              "record_id": "SO-2413-1-M-DISPLAY",
+              "field_names": [
+                "物料编码",
+                "物料名称",
+                "计划数量",
+                "BOM用量",
+                "已领料",
+                "现有库存",
+                "已占用",
+                "质量冻结",
+                "需求日前确认到货"
+              ],
+              "semantic_fields": [
+                "material_code",
+                "material_name",
+                "plan_qty",
+                "bom_usage",
+                "issued_qty",
+                "stock",
+                "occupied",
+                "quality_frozen",
+                "inbound_before_demand"
+              ],
+              "source_object_id": "SO-2413-1-M-DISPLAY",
+              "data_time": "2025-10-09",
+              "source_type": "TEAM_ENGINEERED_SIMULATION"
+            }
+          ],
+          "materialized_values": {
+            "需求量": 1000,
+            "需求日前可用量": 750,
+            "物料缺口": 250,
+            "质量冻结": 0
+          }
+        },
+        {
+          "metric_code": "MATERIAL_FREEZE",
+          "value": 200,
+          "value_type": "integer",
+          "display_format": "#,##0",
+          "unit": "件",
+          "aggregation_scope": "single_work_order",
+          "description": "M-HOUSING结构件质量冻结数量（待复检）",
+          "evidence_refs": [
+            {
+              "dataset_id": "TEAM_ENGINEERED_SIMULATION",
+              "semantic_table": "quality_freeze",
+              "source_table": "17_质量冻结明细_模拟",
+              "record_key": "FreezeID",
+              "record_id": "FZ-0005",
+              "field_names": [
+                "物料编码",
+                "物料名称",
+                "冻结数量",
+                "冻结原因",
+                "状态",
+                "BusinessKey"
+              ],
+              "semantic_fields": [
+                "material_code",
+                "material_name",
+                "freeze_qty",
+                "freeze_reason",
+                "status",
+                "business_key"
+              ],
+              "source_object_id": "FZ-0005",
+              "data_time": "2025-10-09",
+              "source_type": "TEAM_ENGINEERED_SIMULATION"
+            }
+          ]
+        },
+        {
+          "metric_code": "MATERIAL_COUNT",
+          "value": 3,
+          "value_type": "integer",
+          "display_format": "#,##0",
+          "unit": "项",
+          "aggregation_scope": "single_work_order",
+          "description": "关联工单物料总数",
+          "evidence_refs": [
+            {
+              "dataset_id": "TEAM_ENGINEERED_SIMULATION",
+              "semantic_table": "work_order_mapping",
+              "source_table": "03_工单映射_模拟",
+              "record_key": "WorkOrderID",
+              "record_id": "WO-20251009-013",
+              "field_names": [
+                "WorkOrderID",
+                "ShiftID",
+                "OrderNo",
+                "计划数量",
+                "风险等级"
+              ],
+              "semantic_fields": [
+                "work_order_id",
+                "shift_id",
+                "order_no",
+                "plan_qty",
+                "risk_level"
+              ],
+              "source_object_id": "WO-20251009-013",
+              "data_time": "2025-10-09",
+              "source_type": "TEAM_ENGINEERED_SIMULATION"
+            },
+            {
+              "dataset_id": "TEAM_ENGINEERED_SIMULATION",
+              "semantic_table": "material_detail",
+              "source_table": "04_订单物料_模拟",
+              "record_key": "BusinessKey",
+              "record_id": "SO-2413-1-M-DISPLAY",
+              "field_names": [
+                "物料编码",
+                "物料名称",
+                "BusinessKey"
+              ],
+              "semantic_fields": [
+                "material_code",
+                "material_name",
+                "business_key"
+              ],
+              "source_object_id": "SO-2413-1-M-DISPLAY",
+              "data_time": "2025-10-09",
+              "source_type": "TEAM_ENGINEERED_SIMULATION"
+            },
+            {
+              "dataset_id": "TEAM_ENGINEERED_SIMULATION",
+              "semantic_table": "material_detail",
+              "source_table": "04_订单物料_模拟",
+              "record_key": "BusinessKey",
+              "record_id": "SO-2413-2-M-PCBA",
+              "field_names": [
+                "物料编码",
+                "物料名称",
+                "BusinessKey"
+              ],
+              "semantic_fields": [
+                "material_code",
+                "material_name",
+                "business_key"
+              ],
+              "source_object_id": "SO-2413-2-M-PCBA",
+              "data_time": "2025-10-09",
+              "source_type": "TEAM_ENGINEERED_SIMULATION"
+            },
+            {
+              "dataset_id": "TEAM_ENGINEERED_SIMULATION",
+              "semantic_table": "material_detail",
+              "source_table": "04_订单物料_模拟",
+              "record_key": "BusinessKey",
+              "record_id": "SO-2413-3-M-HOUSING",
+              "field_names": [
+                "物料编码",
+                "物料名称",
+                "BusinessKey"
+              ],
+              "semantic_fields": [
+                "material_code",
+                "material_name",
+                "business_key"
+              ],
+              "source_object_id": "SO-2413-3-M-HOUSING",
+              "data_time": "2025-10-09",
+              "source_type": "TEAM_ENGINEERED_SIMULATION"
+            }
+          ]
+        }
+      ],
+      "material_detail": [
+        {
+          "business_key": "SO-2413-1-M-DISPLAY",
+          "material_code": "M-DISPLAY",
+          "material_name": "显示模组",
+          "需求量": 1000,
+          "需求日前可用量": 750,
+          "物料缺口": 250,
+          "质量冻结": 0,
+          "evidence_ref_record_id": "SO-2413-1-M-DISPLAY"
+        },
+        {
+          "business_key": "SO-2413-2-M-PCBA",
+          "material_code": "M-PCBA",
+          "material_name": "主板组件",
+          "需求量": 1000,
+          "需求日前可用量": 1000,
+          "物料缺口": 0,
+          "质量冻结": 0,
+          "evidence_ref_record_id": "SO-2413-2-M-PCBA"
+        },
+        {
+          "business_key": "SO-2413-3-M-HOUSING",
+          "material_code": "M-HOUSING",
+          "material_name": "结构件",
+          "需求量": 2000,
+          "需求日前可用量": 2000,
+          "物料缺口": 0,
+          "质量冻结": 200,
+          "freeze_id": "FZ-0005",
+          "freeze_status": "待复检",
+          "evidence_ref_record_id": "SO-2413-3-M-HOUSING"
+        }
+      ],
+      "charts": [
+        {
+          "chart_id": "CHART-MATERIAL-GAP",
+          "type": "bar",
+          "title": "物料缺口与冻结概览（WO-20251009-013）",
+          "data": [
+            {
+              "material": "M-DISPLAY 显示模组",
+              "缺口": 250,
+              "冻结": 0
+            },
+            {
+              "material": "M-PCBA 主板组件",
+              "缺口": 0,
+              "冻结": 0
+            },
+            {
+              "material": "M-HOUSING 结构件",
+              "缺口": 0,
+              "冻结": 200
+            }
+          ],
+          "evidence_refs": [
+            {
+              "dataset_id": "TEAM_ENGINEERED_SIMULATION",
+              "semantic_table": "material_detail",
+              "source_table": "04_订单物料_模拟",
+              "record_key": "BusinessKey",
+              "record_id": "SO-2413-1-M-DISPLAY",
+              "field_names": [
+                "物料编码",
+                "物料名称",
+                "计划数量",
+                "BOM用量",
+                "已领料",
+                "现有库存",
+                "已占用",
+                "质量冻结"
+              ],
+              "semantic_fields": [
+                "material_code",
+                "material_name",
+                "plan_qty",
+                "bom_usage",
+                "issued_qty",
+                "stock",
+                "occupied",
+                "quality_frozen"
+              ],
+              "source_object_id": "SO-2413-1-M-DISPLAY",
+              "data_time": "2025-10-09",
+              "source_type": "TEAM_ENGINEERED_SIMULATION"
+            },
+            {
+              "dataset_id": "TEAM_ENGINEERED_SIMULATION",
+              "semantic_table": "material_detail",
+              "source_table": "04_订单物料_模拟",
+              "record_key": "BusinessKey",
+              "record_id": "SO-2413-2-M-PCBA",
+              "field_names": [
+                "物料编码",
+                "物料名称",
+                "计划数量",
+                "BOM用量",
+                "已领料",
+                "现有库存",
+                "已占用",
+                "质量冻结"
+              ],
+              "semantic_fields": [
+                "material_code",
+                "material_name",
+                "plan_qty",
+                "bom_usage",
+                "issued_qty",
+                "stock",
+                "occupied",
+                "quality_frozen"
+              ],
+              "source_object_id": "SO-2413-2-M-PCBA",
+              "data_time": "2025-10-09",
+              "source_type": "TEAM_ENGINEERED_SIMULATION"
+            },
+            {
+              "dataset_id": "TEAM_ENGINEERED_SIMULATION",
+              "semantic_table": "material_detail",
+              "source_table": "04_订单物料_模拟",
+              "record_key": "BusinessKey",
+              "record_id": "SO-2413-3-M-HOUSING",
+              "field_names": [
+                "物料编码",
+                "物料名称",
+                "计划数量",
+                "BOM用量",
+                "已领料",
+                "现有库存",
+                "已占用",
+                "质量冻结"
+              ],
+              "semantic_fields": [
+                "material_code",
+                "material_name",
+                "plan_qty",
+                "bom_usage",
+                "issued_qty",
+                "stock",
+                "occupied",
+                "quality_frozen"
+              ],
+              "source_object_id": "SO-2413-3-M-HOUSING",
+              "data_time": "2025-10-09",
+              "source_type": "TEAM_ENGINEERED_SIMULATION"
+            },
+            {
+              "dataset_id": "TEAM_ENGINEERED_SIMULATION",
+              "semantic_table": "quality_freeze",
+              "source_table": "17_质量冻结明细_模拟",
+              "record_key": "FreezeID",
+              "record_id": "FZ-0005",
+              "field_names": [
+                "冻结数量",
+                "状态",
+                "冻结原因"
+              ],
+              "semantic_fields": [
+                "freeze_qty",
+                "status",
+                "freeze_reason"
+              ],
+              "source_object_id": "FZ-0005",
+              "data_time": "2025-10-09",
+              "source_type": "TEAM_ENGINEERED_SIMULATION"
+            }
+          ]
+        }
+      ],
+      "alerts": [
+        {
+          "alert_id": "ALERT-SUPPLY-001",
+          "severity": "high",
+          "message": "M-DISPLAY显示模组需求日前缺口250件，需确认加急到货或替代料方案",
+          "evidence_refs": [
+            {
+              "dataset_id": "TEAM_ENGINEERED_SIMULATION",
+              "semantic_table": "material_detail",
+              "source_table": "04_订单物料_模拟",
+              "record_key": "BusinessKey",
+              "record_id": "SO-2413-1-M-DISPLAY",
+              "field_names": [
+                "物料编码",
+                "物料名称",
+                "计划数量",
+                "BOM用量",
+                "已领料",
+                "现有库存",
+                "已占用",
+                "质量冻结",
+                "需求日前确认到货"
+              ],
+              "semantic_fields": [
+                "material_code",
+                "material_name",
+                "plan_qty",
+                "bom_usage",
+                "issued_qty",
+                "stock",
+                "occupied",
+                "quality_frozen",
+                "inbound_before_demand"
+              ],
+              "source_object_id": "SO-2413-1-M-DISPLAY",
+              "data_time": "2025-10-09",
+              "source_type": "TEAM_ENGINEERED_SIMULATION"
+            }
+          ]
+        },
+        {
+          "alert_id": "ALERT-SUPPLY-002",
+          "severity": "high",
+          "message": "M-HOUSING结构件200件质量冻结，状态待复检，冻结原因尺寸超差",
+          "evidence_refs": [
+            {
+              "dataset_id": "TEAM_ENGINEERED_SIMULATION",
+              "semantic_table": "quality_freeze",
+              "source_table": "17_质量冻结明细_模拟",
+              "record_key": "FreezeID",
+              "record_id": "FZ-0005",
+              "field_names": [
+                "物料编码",
+                "物料名称",
+                "冻结数量",
+                "冻结原因",
+                "状态",
+                "BusinessKey"
+              ],
+              "semantic_fields": [
+                "material_code",
+                "material_name",
+                "freeze_qty",
+                "freeze_reason",
+                "status",
+                "business_key"
+              ],
+              "source_object_id": "FZ-0005",
+              "data_time": "2025-10-09",
+              "source_type": "TEAM_ENGINEERED_SIMULATION"
+            }
+          ]
+        }
+      ],
+      "tasks": [
+        {
+          "task_id": "TASK-20251009-0003",
+          "status": "已完成",
+          "description": "评估冻结缺料影响",
+          "evidence_refs": [
+            {
+              "dataset_id": "TEAM_ENGINEERED_SIMULATION",
+              "semantic_table": "work_order_mapping",
+              "source_table": "03_工单映射_模拟",
+              "record_key": "WorkOrderID",
+              "record_id": "WO-20251009-013",
+              "field_names": [
+                "WorkOrderID",
+                "OrderNo",
+                "风险等级",
+                "计划数量"
+              ],
+              "semantic_fields": [
+                "work_order_id",
+                "order_no",
+                "risk_level",
+                "plan_qty"
+              ],
+              "source_object_id": "WO-20251009-013",
+              "data_time": "2025-10-09",
+              "source_type": "TEAM_ENGINEERED_SIMULATION"
+            },
+            {
+              "dataset_id": "TEAM_ENGINEERED_SIMULATION",
+              "semantic_table": "material_detail",
+              "source_table": "04_订单物料_模拟",
+              "record_key": "BusinessKey",
+              "record_id": "SO-2413-1-M-DISPLAY",
+              "field_names": [
+                "物料编码",
+                "物料名称",
+                "计划数量",
+                "BOM用量",
+                "已领料",
+                "现有库存",
+                "已占用",
+                "质量冻结",
+                "需求日前确认到货"
+              ],
+              "semantic_fields": [
+                "material_code",
+                "material_name",
+                "plan_qty",
+                "bom_usage",
+                "issued_qty",
+                "stock",
+                "occupied",
+                "quality_frozen",
+                "inbound_before_demand"
+              ],
+              "source_object_id": "SO-2413-1-M-DISPLAY",
+              "data_time": "2025-10-09",
+              "source_type": "TEAM_ENGINEERED_SIMULATION"
+            },
+            {
+              "dataset_id": "TEAM_ENGINEERED_SIMULATION",
+              "semantic_table": "material_detail",
+              "source_table": "04_订单物料_模拟",
+              "record_key": "BusinessKey",
+              "record_id": "SO-2413-2-M-PCBA",
+              "field_names": [
+                "物料编码",
+                "物料名称",
+                "计划数量",
+                "BOM用量",
+                "已领料",
+                "现有库存",
+                "已占用",
+                "质量冻结"
+              ],
+              "semantic_fields": [
+                "material_code",
+                "material_name",
+                "plan_qty",
+                "bom_usage",
+                "issued_qty",
+                "stock",
+                "occupied",
+                "quality_frozen"
+              ],
+              "source_object_id": "SO-2413-2-M-PCBA",
+              "data_time": "2025-10-09",
+              "source_type": "TEAM_ENGINEERED_SIMULATION"
+            },
+            {
+              "dataset_id": "TEAM_ENGINEERED_SIMULATION",
+              "semantic_table": "material_detail",
+              "source_table": "04_订单物料_模拟",
+              "record_key": "BusinessKey",
+              "record_id": "SO-2413-3-M-HOUSING",
+              "field_names": [
+                "物料编码",
+                "物料名称",
+                "计划数量",
+                "BOM用量",
+                "已领料",
+                "现有库存",
+                "已占用",
+                "质量冻结"
+              ],
+              "semantic_fields": [
+                "material_code",
+                "material_name",
+                "plan_qty",
+                "bom_usage",
+                "issued_qty",
+                "stock",
+                "occupied",
+                "quality_frozen"
+              ],
+              "source_object_id": "SO-2413-3-M-HOUSING",
+              "data_time": "2025-10-09",
+              "source_type": "TEAM_ENGINEERED_SIMULATION"
+            },
+            {
+              "dataset_id": "TEAM_ENGINEERED_SIMULATION",
+              "semantic_table": "quality_freeze",
+              "source_table": "17_质量冻结明细_模拟",
+              "record_key": "FreezeID",
+              "record_id": "FZ-0005",
+              "field_names": [
+                "物料编码",
+                "物料名称",
+                "冻结数量",
+                "冻结原因",
+                "状态"
+              ],
+              "semantic_fields": [
+                "material_code",
+                "material_name",
+                "freeze_qty",
+                "freeze_reason",
+                "status"
+              ],
+              "source_object_id": "FZ-0005",
+              "data_time": "2025-10-09",
+              "source_type": "TEAM_ENGINEERED_SIMULATION"
+            }
+          ]
+        }
+      ],
+      "decisions_required": [
+        {
+          "decision_id": "DEC-20251009-0003",
+          "confirmation_id": "CONF-20251009-0003",
+          "event_id": "EVT-20251009-0001",
+          "action": "确认M-DISPLAY 250件缺口的加急到货/替代料方案",
+          "risk_level": "high",
+          "status": "待确认",
+          "evidence_refs": [
+            {
+              "dataset_id": "TEAM_ENGINEERED_SIMULATION",
+              "semantic_table": "material_detail",
+              "source_table": "04_订单物料_模拟",
+              "record_key": "BusinessKey",
+              "record_id": "SO-2413-1-M-DISPLAY",
+              "field_names": [
+                "物料编码",
+                "物料名称",
+                "计划数量",
+                "BOM用量",
+                "已领料",
+                "现有库存",
+                "已占用",
+                "质量冻结",
+                "需求日前确认到货"
+              ],
+              "semantic_fields": [
+                "material_code",
+                "material_name",
+                "plan_qty",
+                "bom_usage",
+                "issued_qty",
+                "stock",
+                "occupied",
+                "quality_frozen",
+                "inbound_before_demand"
+              ],
+              "source_object_id": "SO-2413-1-M-DISPLAY",
+              "data_time": "2025-10-09",
+              "source_type": "TEAM_ENGINEERED_SIMULATION"
+            }
+          ]
+        }
+      ],
+      "data_gaps": [],
+      "evidence_refs": [
+        {
+          "dataset_id": "TEAM_ENGINEERED_SIMULATION",
+          "semantic_table": "work_order_mapping",
+          "source_table": "03_工单映射_模拟",
+          "record_key": "WorkOrderID",
+          "record_id": "WO-20251009-013",
+          "field_names": [
+            "WorkOrderID",
+            "ShiftID",
+            "OrderNo",
+            "计划数量",
+            "风险等级"
+          ],
+          "semantic_fields": [
+            "work_order_id",
+            "shift_id",
+            "order_no",
+            "plan_qty",
+            "risk_level"
+          ],
+          "source_object_id": "WO-20251009-013",
+          "data_time": "2025-10-09",
+          "source_type": "TEAM_ENGINEERED_SIMULATION"
+        },
+        {
+          "dataset_id": "TEAM_ENGINEERED_SIMULATION",
+          "semantic_table": "material_detail",
+          "source_table": "04_订单物料_模拟",
+          "record_key": "BusinessKey",
+          "record_id": "SO-2413-1-M-DISPLAY",
+          "field_names": [
+            "物料编码",
+            "物料名称",
+            "计划数量",
+            "BOM用量",
+            "已领料",
+            "现有库存",
+            "已占用",
+            "质量冻结",
+            "需求日前确认到货"
+          ],
+          "semantic_fields": [
+            "material_code",
+            "material_name",
+            "plan_qty",
+            "bom_usage",
+            "issued_qty",
+            "stock",
+            "occupied",
+            "quality_frozen",
+            "inbound_before_demand"
+          ],
+          "source_object_id": "SO-2413-1-M-DISPLAY",
+          "data_time": "2025-10-09",
+          "source_type": "TEAM_ENGINEERED_SIMULATION"
+        },
+        {
+          "dataset_id": "TEAM_ENGINEERED_SIMULATION",
+          "semantic_table": "material_detail",
+          "source_table": "04_订单物料_模拟",
+          "record_key": "BusinessKey",
+          "record_id": "SO-2413-2-M-PCBA",
+          "field_names": [
+            "物料编码",
+            "物料名称",
+            "计划数量",
+            "BOM用量",
+            "已领料",
+            "现有库存",
+            "已占用",
+            "质量冻结"
+          ],
+          "semantic_fields": [
+            "material_code",
+            "material_name",
+            "plan_qty",
+            "bom_usage",
+            "issued_qty",
+            "stock",
+            "occupied",
+            "quality_frozen"
+          ],
+          "source_object_id": "SO-2413-2-M-PCBA",
+          "data_time": "2025-10-09",
+          "source_type": "TEAM_ENGINEERED_SIMULATION"
+        },
+        {
+          "dataset_id": "TEAM_ENGINEERED_SIMULATION",
+          "semantic_table": "material_detail",
+          "source_table": "04_订单物料_模拟",
+          "record_key": "BusinessKey",
+          "record_id": "SO-2413-3-M-HOUSING",
+          "field_names": [
+            "物料编码",
+            "物料名称",
+            "计划数量",
+            "BOM用量",
+            "已领料",
+            "现有库存",
+            "已占用",
+            "质量冻结"
+          ],
+          "semantic_fields": [
+            "material_code",
+            "material_name",
+            "plan_qty",
+            "bom_usage",
+            "issued_qty",
+            "stock",
+            "occupied",
+            "quality_frozen"
+          ],
+          "source_object_id": "SO-2413-3-M-HOUSING",
+          "data_time": "2025-10-09",
+          "source_type": "TEAM_ENGINEERED_SIMULATION"
+        },
+        {
+          "dataset_id": "TEAM_ENGINEERED_SIMULATION",
+          "semantic_table": "quality_freeze",
+          "source_table": "17_质量冻结明细_模拟",
+          "record_key": "FreezeID",
+          "record_id": "FZ-0005",
+          "field_names": [
+            "物料编码",
+            "物料名称",
+            "冻结数量",
+            "冻结原因",
+            "状态",
+            "BusinessKey"
+          ],
+          "semantic_fields": [
+            "material_code",
+            "material_name",
+            "freeze_qty",
+            "freeze_reason",
+            "status",
+            "business_key"
+          ],
+          "source_object_id": "FZ-0005",
+          "data_time": "2025-10-09",
+          "source_type": "TEAM_ENGINEERED_SIMULATION"
+        }
+      ],
+      "rule_version": "RULESET-v1.0",
+      "knowledge_version": "KNOWLEDGE-v1.0",
+      "last_updated_at": "2026-08-07T14:26:28Z"
+    }
+  ],
+  "control_table_refs": {
+    "bf_events": {
+      "table_id": "tblBCVCDY0j2Nv64",
+      "record_id": "recvrBGIhE6SFL",
+      "event_status": "待确认",
+      "analysis_version": 4
+    },
+    "bf_subtasks": {
+      "TASK-20251009-0001": "recvrBGSQJ45zR",
+      "TASK-20251009-0002": "recvrBGSQJf8Fe",
+      "TASK-20251009-0003": "recvrBGSQJt0Yg",
+      "TASK-20251009-0004": "recvrBGSQJQTb2"
+    },
+    "bf_human_confirmations": {
+      "CONF-20251009-0001": {
+        "record_id": "recvrBGUIfliU8",
+        "status": "撤回"
+      },
+      "CONF-20251009-0002": {
+        "record_id": "recvrC7dF49ZOb",
+        "status": "待确认"
+      },
+      "CONF-20251009-0003": {
+        "record_id": "recvrCyOpQkaQH",
+        "status": "待确认"
+      }
+    },
+    "bf_agent_runs": {
+      "RUN-CORRECT-002": "recvrC7dE58q7c",
+      "RUN-CORRECT-003": "pending_creation",
+      "RUN-CORRECT-004": "recvrCyT2v5JBq"
+    }
+  },
+  "materialization": {
+    "oee_recompute": 0.4591115012,
+    "good_output": 14135,
+    "yield_recompute": 0.9128626,
+    "defect_total": 1349,
+    "oee_gap": -0.3008884988,
+    "risk_level": "高",
+    "material_gap_formula": {
+      "需求量": "MAX(计划数量 × BOM用量 - 已领料, 0)",
+      "需求日前可用量": "MAX(现有库存 - 已占用 - 质量冻结 + 需求日前确认到货, 0)",
+      "物料缺口": "MAX(需求量 - 需求日前可用量, 0)"
+    },
+    "material_results": [
+      {
+        "business_key": "SO-2413-1-M-DISPLAY",
+        "需求量": 1000,
+        "可用量": 750,
+        "缺口": 250,
+        "冻结": 0
+      },
+      {
+        "business_key": "SO-2413-2-M-PCBA",
+        "需求量": 1000,
+        "可用量": 1000,
+        "缺口": 0,
+        "冻结": 0
+      },
+      {
+        "business_key": "SO-2413-3-M-HOUSING",
+        "需求量": 2000,
+        "可用量": 2000,
+        "缺口": 0,
+        "冻结": 200
+      }
+    ]
+  },
+  "audit_trail": {
+    "previous_analysis": {
+      "status": "superseded",
+      "superseded_by_run_id": "RUN-CORRECT-002",
+      "errors_corrected": [
+        "OEE原值0.693已纠正为0.4591115012",
+        "不良总数原值84721已纠正为1349（错误聚合范围）",
+        "冻结记录FZ-0001/FZ-0004/FZ-0007已移除与黄金事件的关联",
+        "原确认记录CONF-20251009-0001已在BF_HUMAN_CONFIRMATIONS中标记为撤回"
+      ]
+    },
+    "correction_run": {
+      "run_id": "RUN-CORRECT-002",
+      "record_id": "recvrC7dE58q7c",
+      "description": "SIM-v2.2适配纠偏运行",
+      "timestamp": "2026-08-07T12:39:23Z"
+    }
+  },
+  "evidence_ref_summary": {
+    "occurrence_count": 160,
+    "deduplicated_physical_record_count": 27,
+    "deduplicated_records": [
+      "03_工单映射_模拟:WO-20251009-013",
+      "04_订单物料_模拟:SO-2413-1-M-DISPLAY",
+      "04_订单物料_模拟:SO-2413-2-M-PCBA",
+      "04_订单物料_模拟:SO-2413-3-M-HOUSING",
+      "12_多产线班次_模拟:LINE-S03-PRE-20251009",
+      "13_多产线停机_模拟:SIM-STOP-00336",
+      "13_多产线停机_模拟:SIM-STOP-00339",
+      "13_多产线停机_模拟:SIM-STOP-00342",
+      "13_多产线停机_模拟:SIM-STOP-00345",
+      "13_多产线停机_模拟:SIM-STOP-00348",
+      "13_多产线停机_模拟:SIM-STOP-00351",
+      "13_多产线停机_模拟:SIM-STOP-00354",
+      "13_多产线停机_模拟:SIM-STOP-00357",
+      "13_多产线停机_模拟:SIM-STOP-00360",
+      "13_多产线停机_模拟:SIM-STOP-00363",
+      "13_多产线停机_模拟:SIM-STOP-00366",
+      "13_多产线停机_模拟:SIM-STOP-00369",
+      "13_多产线停机_模拟:SIM-STOP-00372",
+      "13_多产线停机_模拟:SIM-STOP-00375",
+      "13_多产线停机_模拟:SIM-STOP-00378",
+      "14_多产线告警_模拟:SIM-EVT-00086",
+      "16_不良类型_模拟:DEF-00191",
+      "16_不良类型_模拟:DEF-00192",
+      "16_不良类型_模拟:DEF-00193",
+      "16_不良类型_模拟:DEF-00194",
+      "16_不良类型_模拟:DEF-00195",
+      "17_质量冻结明细_模拟:FZ-0005"
+    ]
+  },
+  "validation_contract": {
+    "version": "v1.4-validation-contract",
+    "rules": [
+      {
+        "rule_id": "VR-001",
+        "description": "DecisionID必须唯一",
+        "check": "all decision_id values across roles must be unique (after normalization)"
+      },
+      {
+        "rule_id": "VR-002",
+        "description": "每个需要人工确认的DecisionID必须绑定一个真实存在的ConfirmationID",
+        "check": "for each decision with status=待确认: decision.confirmation_id must exist in BF_HUMAN_CONFIRMATIONS"
+      },
+      {
+        "rule_id": "VR-003",
+        "description": "一个ConfirmationID只能对应一个规范化决策动作",
+        "check": "one confirmation_id maps to exactly one canonical decision_id (1:1)"
+      },
+      {
+        "rule_id": "VR-004",
+        "description": "同一个决策可在多个角色视图重复展示，但DecisionID、ConfirmationID、Action必须完全一致",
+        "check": "if same decision_id appears in multiple roles, all fields must match"
+      },
+      {
+        "rule_id": "VR-005",
+        "description": "ConfirmationID的控制表状态必须与载荷状态一致",
+        "check": "confirmation.confirmation_status in BF_HUMAN_CONFIRMATIONS === decision.status in payload"
+      }
+    ],
+    "machine_check_pseudocode": "\nfor each canonical decision:\n  assert decision.confirmation_id exists in BF_HUMAN_CONFIRMATIONS\n  assert confirmation.event_id === decision.event_id\n  assert confirmation.action === decision.action\n  assert one confirmation_id maps to one canonical decision_id\n"
+  },
+  "validation_results": {
+    "all_passed": true,
+    "rules": [
+      {
+        "rule_id": "VR-001",
+        "passed": true,
+        "detail": "DecisionIDs: ['DEC-20251009-0002', 'DEC-20251009-0003'], duplicates: none"
+      },
+      {
+        "rule_id": "VR-002",
+        "passed": true,
+        "detail": "DEC-20251009-0002.CONF-20251009-0002 → exists=True, record_id=recvrC7dF49ZOb; DEC-20251009-0003.CONF-20251009-0003 → exists=True, record_id=recvrCyOpQkaQH"
+      },
+      {
+        "rule_id": "VR-003",
+        "passed": true,
+        "detail": "CONF-20251009-0002 → DEC-20251009-0002 (1:1 OK); CONF-20251009-0003 → DEC-20251009-0003 (1:1 OK)"
+      },
+      {
+        "rule_id": "VR-004",
+        "passed": true,
+        "detail": "No decision_id appears in multiple roles (vacuously true)"
+      },
+      {
+        "rule_id": "VR-005",
+        "passed": true,
+        "detail": "CONF-20251009-0002: control=待确认, payload=待确认, match=True; CONF-20251009-0003: control=待确认, payload=待确认, match=True"
+      }
+    ],
+    "decision_confirmation_map": [
+      {
+        "role": "factory",
+        "decision_id": "DEC-20251009-0002",
+        "confirmation_id": "CONF-20251009-0002",
+        "action": "对LINE-S03-PRE-20251009当班产品启动隔离与100%复检",
+        "event_id": "EVT-20251009-0001",
+        "status": "待确认",
+        "risk_level": "high"
+      },
+      {
+        "role": "supply",
+        "decision_id": "DEC-20251009-0003",
+        "confirmation_id": "CONF-20251009-0003",
+        "action": "确认M-DISPLAY 250件缺口的加急到货/替代料方案",
+        "event_id": "EVT-20251009-0001",
+        "status": "待确认",
+        "risk_level": "high"
+      }
+    ],
+    "pending_confirmation_count": 2
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "contract_version": "mapping-status-v1.0",
+  "description": "字段映射状态枚举与自动处理规则合同",
+  "allowed_status": [
+    "confirmed",
+    "proposed",
+    "ambiguous",
+    "rejected",
+    "unmapped"
+  ],
+  "auto_confirmation_rules": {
+    "new_source_or_unknown_field": "不得自动 confirmed",
+    "inherit_confirmed_conditions": [
+      "命中已人工批准的映射规则",
+      "来源身份或来源结构签名符合合同",
+      "字段名、数据类型和单位约束全部匹配",
+      "合同版本和审批引用完整",
+      "没有发现新的值域冲突"
+    ],
+    "inherit_confirmed_output": [
+      "inherited_approval",
+      "approval_source",
+      "approval_rule_id",
+      "approval_rule_version"
+    ],
+    "degrade_when_unmet": "proposed 或 ambiguous",
+    "skill_cannot_create_approval": true,
+    "confidence_not_equal_to_confirmation": true,
+    "requires_human_confirmation_conditions": [
+      "低置信度",
+      "单位冲突",
+      "口径冲突",
+      "多目标匹配"
+    ]
+  },
+  "skill_version": "0.1.0",
+  "skill_cannot_confirm_new_relations": true
+}

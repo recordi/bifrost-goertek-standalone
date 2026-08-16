@@ -1,0 +1,2713 @@
+{
+  "payload_type": "peer_overlay",
+  "payload_version": "PEER-OVERLAY-v1.0",
+  "event": {
+    "event_id": "EVT-OMP-03-GOLDEN-0001",
+    "status": "needs_confirmation",
+    "task_count": 3,
+    "evidence_ref_count": 17,
+    "data_gap_count": 4,
+    "human_confirmation_required": true
+  },
+  "peer_overlay": {
+    "overlay_version": "PEER-OVERLAY-v1.0",
+    "source_payload_sha256": "ff0e5b869ab9bdeb3f7f5198630e9aedd539fdf6ef1689730314d76ea1f44b60",
+    "status": "active",
+    "read_only": true,
+    "target": "adapter-test-only",
+    "role_scope": {
+      "factory": [
+        "event",
+        "analysis_enhancements"
+      ],
+      "line": [
+        "production-specialist",
+        "analysis_enhancements"
+      ],
+      "quality": [
+        "quality-specialist",
+        "analysis_enhancements"
+      ],
+      "equipment": [
+        "production-specialist",
+        "data_gaps"
+      ],
+      "process": [
+        "quality-specialist",
+        "data_gaps"
+      ],
+      "supply": [
+        "supply-specialist",
+        "analysis_enhancements"
+      ]
+    },
+    "display_hints": {
+      "a01-oee-loss-tree": {
+        "title_key": "oee_loss_tree",
+        "chart": "loss_tree",
+        "roles": [
+          "factory",
+          "line",
+          "equipment"
+        ]
+      },
+      "a02-pareto": {
+        "title_key": "pareto",
+        "chart": "horizontal_bar",
+        "roles": [
+          "factory",
+          "line",
+          "quality"
+        ]
+      },
+      "a07-yield-funnel": {
+        "title_key": "yield_funnel",
+        "chart": "funnel",
+        "roles": [
+          "factory",
+          "quality",
+          "line"
+        ]
+      },
+      "a03-spc-rules": {
+        "title_key": "spc_gate",
+        "chart": "status_card",
+        "roles": [
+          "quality",
+          "process"
+        ]
+      },
+      "a08-supply-chain-gap": {
+        "title_key": "supply_gap",
+        "chart": "table",
+        "roles": [
+          "supply",
+          "factory",
+          "line"
+        ]
+      }
+    }
+  },
+  "analysis_enhancements": [
+    {
+      "contract_version": "BIFROST_PEER_SKILL_OUTPUT_v1",
+      "skill_id": "a01-oee-loss-tree",
+      "status": "available",
+      "event_id": "EVT-OMP-03-GOLDEN-0001",
+      "task_id": "TASK-OMP-03-PROD",
+      "evidence_refs": [
+        "EVREF-v1:25af4b6d3356e3d5810e43303d4b62775d17a040d21541006ed08b3421e1c49a",
+        "EVREF-v1:2e41c03a80d6b9fb13f0c38ae941c32707339d0b3f3c78950ded627173b19ce8",
+        "EVREF-v1:5ff4114f4c0d40b727908e1d120493ba1929519955bd736a6d61ed5b40f8bace",
+        "EVREF-v1:6d7359295d824b418cc97ebf859fc801b88592a532cbe1fdcb5254f09f13ee36",
+        "EVREF-v1:9fb662ec899a3215a2d1ae3630346d74c9097cc618cb7cad379d3b5761e5b334",
+        "EVREF-v1:a8d0cd12b2c9a6a760e37df215ce8446da9a592d92138bc4e3c44fb6b9ac958f",
+        "EVREF-v1:c3face5807ad5b1f8dc3ef82bedb46fe563c21720c47152cb915103a90e7e60f",
+        "EVREF-v1:f96e0f3419d50da377aaa21cfc0c2784ad94548e1d46fea993fc0e089f72840a"
+      ],
+      "data_gaps": [
+        "mtbf_mttr",
+        "shift_trend"
+      ],
+      "insights": [],
+      "evidence_gate": {
+        "status": "passed",
+        "required": true,
+        "evidence_refs": [
+          "EVREF-v1:25af4b6d3356e3d5810e43303d4b62775d17a040d21541006ed08b3421e1c49a",
+          "EVREF-v1:2e41c03a80d6b9fb13f0c38ae941c32707339d0b3f3c78950ded627173b19ce8",
+          "EVREF-v1:5ff4114f4c0d40b727908e1d120493ba1929519955bd736a6d61ed5b40f8bace",
+          "EVREF-v1:6d7359295d824b418cc97ebf859fc801b88592a532cbe1fdcb5254f09f13ee36",
+          "EVREF-v1:9fb662ec899a3215a2d1ae3630346d74c9097cc618cb7cad379d3b5761e5b334",
+          "EVREF-v1:a8d0cd12b2c9a6a760e37df215ce8446da9a592d92138bc4e3c44fb6b9ac958f",
+          "EVREF-v1:c3face5807ad5b1f8dc3ef82bedb46fe563c21720c47152cb915103a90e7e60f",
+          "EVREF-v1:f96e0f3419d50da377aaa21cfc0c2784ad94548e1d46fea993fc0e089f72840a"
+        ],
+        "missing_fields": [],
+        "source": "fixed_adapter_payload"
+      },
+      "display_descriptor": {
+        "language": "zh-CN",
+        "source": "peer_skill_executor",
+        "title_zh": "OEE损失树",
+        "chart_type": "loss_tree"
+      },
+      "does_not_replace_authoritative_metrics": true,
+      "oee_loss_tree": {
+        "availability": [
+          {
+            "cause_type": "direct_driver",
+            "semantic_field": "availability",
+            "value": 0.85,
+            "unit": "ratio",
+            "evidence_refs": [
+              "EVREF-v1:5ff4114f4c0d40b727908e1d120493ba1929519955bd736a6d61ed5b40f8bace"
+            ]
+          },
+          {
+            "cause_type": "observed_cause",
+            "category": "availability_loss",
+            "statement": "非计划停机 45 分钟，为开动率下降证据（OEE直接驱动 availability 的证据）",
+            "evidence_refs": [
+              "EVREF-v1:f96e0f3419d50da377aaa21cfc0c2784ad94548e1d46fea993fc0e089f72840a"
+            ]
+          }
+        ],
+        "performance": [
+          {
+            "cause_type": "direct_driver",
+            "semantic_field": "performance_rate",
+            "value": 0.78,
+            "unit": "ratio",
+            "evidence_refs": [
+              "EVREF-v1:6d7359295d824b418cc97ebf859fc801b88592a532cbe1fdcb5254f09f13ee36"
+            ]
+          }
+        ],
+        "quality": [
+          {
+            "cause_type": "direct_driver",
+            "semantic_field": "quality_factor",
+            "value": 0.912867,
+            "unit": "ratio",
+            "evidence_refs": [
+              "EVREF-v1:25af4b6d3356e3d5810e43303d4b62775d17a040d21541006ed08b3421e1c49a"
+            ]
+          }
+        ]
+      },
+      "validation_errors": []
+    },
+    {
+      "contract_version": "BIFROST_PEER_SKILL_OUTPUT_v1",
+      "skill_id": "a02-pareto",
+      "status": "not_observed",
+      "event_id": "EVT-OMP-03-GOLDEN-0001",
+      "task_id": "TASK-OMP-03-PROD",
+      "evidence_refs": [
+        "EVREF-v1:25af4b6d3356e3d5810e43303d4b62775d17a040d21541006ed08b3421e1c49a",
+        "EVREF-v1:2e41c03a80d6b9fb13f0c38ae941c32707339d0b3f3c78950ded627173b19ce8",
+        "EVREF-v1:5ff4114f4c0d40b727908e1d120493ba1929519955bd736a6d61ed5b40f8bace",
+        "EVREF-v1:6d7359295d824b418cc97ebf859fc801b88592a532cbe1fdcb5254f09f13ee36",
+        "EVREF-v1:9fb662ec899a3215a2d1ae3630346d74c9097cc618cb7cad379d3b5761e5b334",
+        "EVREF-v1:a8d0cd12b2c9a6a760e37df215ce8446da9a592d92138bc4e3c44fb6b9ac958f",
+        "EVREF-v1:c3face5807ad5b1f8dc3ef82bedb46fe563c21720c47152cb915103a90e7e60f",
+        "EVREF-v1:f96e0f3419d50da377aaa21cfc0c2784ad94548e1d46fea993fc0e089f72840a"
+      ],
+      "data_gaps": [
+        "mtbf_mttr",
+        "shift_trend",
+        "categorical_cause_values"
+      ],
+      "insights": [],
+      "evidence_gate": {
+        "status": "passed",
+        "required": true,
+        "evidence_refs": [
+          "EVREF-v1:25af4b6d3356e3d5810e43303d4b62775d17a040d21541006ed08b3421e1c49a",
+          "EVREF-v1:2e41c03a80d6b9fb13f0c38ae941c32707339d0b3f3c78950ded627173b19ce8",
+          "EVREF-v1:5ff4114f4c0d40b727908e1d120493ba1929519955bd736a6d61ed5b40f8bace",
+          "EVREF-v1:6d7359295d824b418cc97ebf859fc801b88592a532cbe1fdcb5254f09f13ee36",
+          "EVREF-v1:9fb662ec899a3215a2d1ae3630346d74c9097cc618cb7cad379d3b5761e5b334",
+          "EVREF-v1:a8d0cd12b2c9a6a760e37df215ce8446da9a592d92138bc4e3c44fb6b9ac958f",
+          "EVREF-v1:c3face5807ad5b1f8dc3ef82bedb46fe563c21720c47152cb915103a90e7e60f",
+          "EVREF-v1:f96e0f3419d50da377aaa21cfc0c2784ad94548e1d46fea993fc0e089f72840a"
+        ],
+        "missing_fields": [],
+        "source": "fixed_adapter_payload"
+      },
+      "display_descriptor": {
+        "language": "zh-CN",
+        "source": "peer_skill_executor",
+        "title_zh": "原因 Pareto",
+        "chart_type": "horizontal_bar"
+      },
+      "does_not_replace_authoritative_metrics": true,
+      "pareto": {
+        "dimension": null,
+        "unit": null,
+        "items": []
+      },
+      "reason": "no_categorical_cause_values",
+      "validation_errors": []
+    },
+    {
+      "contract_version": "BIFROST_PEER_SKILL_OUTPUT_v1",
+      "skill_id": "a07-yield-funnel",
+      "status": "available",
+      "event_id": "EVT-OMP-03-GOLDEN-0001",
+      "task_id": "TASK-OMP-03-QUAL",
+      "evidence_refs": [
+        "EVREF-v1:3ae85957ba607c7a2daa666dd06edca0ab015a8a40061547d143eacd650909b8",
+        "EVREF-v1:48c90c3a270d5b2265448f96168fa879f774d8523d346b765cf2fd0b4f1cca7e",
+        "EVREF-v1:5208d666bf141e2f72ff83a290a82bd3f44cb3a8b966273f79d8b85c3e73b0ef",
+        "EVREF-v1:7e32579d6ade4195e27b2513d371c67c427ae5607c4f59ec7f05cae5074cbece"
+      ],
+      "data_gaps": [
+        "sample_rule",
+        "spc_measurement_points"
+      ],
+      "insights": [],
+      "evidence_gate": {
+        "status": "passed",
+        "required": true,
+        "evidence_refs": [
+          "EVREF-v1:3ae85957ba607c7a2daa666dd06edca0ab015a8a40061547d143eacd650909b8",
+          "EVREF-v1:48c90c3a270d5b2265448f96168fa879f774d8523d346b765cf2fd0b4f1cca7e",
+          "EVREF-v1:5208d666bf141e2f72ff83a290a82bd3f44cb3a8b966273f79d8b85c3e73b0ef",
+          "EVREF-v1:7e32579d6ade4195e27b2513d371c67c427ae5607c4f59ec7f05cae5074cbece"
+        ],
+        "missing_fields": [],
+        "source": "fixed_adapter_payload"
+      },
+      "display_descriptor": {
+        "language": "zh-CN",
+        "source": "peer_skill_executor",
+        "title_zh": "良率漏斗",
+        "chart_type": "funnel"
+      },
+      "does_not_replace_authoritative_metrics": true,
+      "yield_funnel": {
+        "stages": [
+          {
+            "semantic_field": "defect_total",
+            "value": 50,
+            "unit": null,
+            "evidence_refs": [
+              "EVREF-v1:7e32579d6ade4195e27b2513d371c67c427ae5607c4f59ec7f05cae5074cbece"
+            ]
+          },
+          {
+            "semantic_field": "yield",
+            "value": 0.95,
+            "unit": null,
+            "evidence_refs": [
+              "EVREF-v1:5208d666bf141e2f72ff83a290a82bd3f44cb3a8b966273f79d8b85c3e73b0ef"
+            ]
+          }
+        ]
+      },
+      "validation_errors": []
+    },
+    {
+      "contract_version": "BIFROST_PEER_SKILL_OUTPUT_v1",
+      "skill_id": "a03-spc-rules",
+      "status": "blocked",
+      "event_id": "EVT-OMP-03-GOLDEN-0001",
+      "task_id": "TASK-OMP-03-QUAL",
+      "evidence_refs": [
+        "EVREF-v1:3ae85957ba607c7a2daa666dd06edca0ab015a8a40061547d143eacd650909b8",
+        "EVREF-v1:48c90c3a270d5b2265448f96168fa879f774d8523d346b765cf2fd0b4f1cca7e",
+        "EVREF-v1:5208d666bf141e2f72ff83a290a82bd3f44cb3a8b966273f79d8b85c3e73b0ef",
+        "EVREF-v1:7e32579d6ade4195e27b2513d371c67c427ae5607c4f59ec7f05cae5074cbece"
+      ],
+      "data_gaps": [
+        "lsl",
+        "sample_rule",
+        "spc_measurement_points",
+        "usl",
+        "evidence_refs"
+      ],
+      "insights": [],
+      "evidence_gate": {
+        "status": "blocked",
+        "required": true,
+        "evidence_refs": [],
+        "missing_fields": [
+          "lsl",
+          "sample_rule",
+          "spc_measurement_points",
+          "usl"
+        ],
+        "source": "fixed_adapter_payload"
+      },
+      "display_descriptor": {
+        "language": "zh-CN",
+        "source": "peer_skill_executor",
+        "title_zh": "SPC状态",
+        "chart_type": "status_card"
+      },
+      "does_not_replace_authoritative_metrics": true,
+      "spc_gate": {
+        "status": "blocked",
+        "required_fields": [
+          "lsl",
+          "sample_rule",
+          "spc_measurement_points",
+          "usl"
+        ],
+        "missing_fields": [
+          "lsl",
+          "sample_rule",
+          "spc_measurement_points",
+          "usl"
+        ],
+        "evidence_missing_fields": [],
+        "evidence_refs": []
+      },
+      "spc": {
+        "cpk": null,
+        "measurement_points": null,
+        "missing_fields": [
+          "lsl",
+          "sample_rule",
+          "spc_measurement_points",
+          "usl"
+        ]
+      },
+      "cpk": null,
+      "validation_errors": []
+    },
+    {
+      "contract_version": "BIFROST_PEER_SKILL_OUTPUT_v1",
+      "skill_id": "a08-supply-chain-gap",
+      "status": "available",
+      "event_id": "EVT-OMP-03-GOLDEN-0001",
+      "task_id": "TASK-OMP-03-SUPPLY",
+      "evidence_refs": [
+        "EVREF-v1:389d4a1da99ca49798af2868b17b35d4debd29cee1904bbd4a9659b8c5fd419d",
+        "EVREF-v1:553e0295c0a085d3151d6cdbe5d279d3ec371745b51a35d16d7261133bd9ea3b",
+        "EVREF-v1:8cc0db0e01432eec066fa2e42a2498d30e7d4848dd1c0a87ff01d67678fbef10",
+        "EVREF-v1:8e0d77e29cf72ec779803314fa771cfdf69d3d92a918b5bd998e3bcc82faa7c2",
+        "EVREF-v1:b81c7e9e48e3818b4149d0e4c7f9669be26d215228cc89474f2e82cdb0150f99"
+      ],
+      "data_gaps": [],
+      "insights": [],
+      "evidence_gate": {
+        "status": "passed",
+        "required": true,
+        "evidence_refs": [
+          "EVREF-v1:389d4a1da99ca49798af2868b17b35d4debd29cee1904bbd4a9659b8c5fd419d",
+          "EVREF-v1:553e0295c0a085d3151d6cdbe5d279d3ec371745b51a35d16d7261133bd9ea3b",
+          "EVREF-v1:8cc0db0e01432eec066fa2e42a2498d30e7d4848dd1c0a87ff01d67678fbef10",
+          "EVREF-v1:8e0d77e29cf72ec779803314fa771cfdf69d3d92a918b5bd998e3bcc82faa7c2",
+          "EVREF-v1:b81c7e9e48e3818b4149d0e4c7f9669be26d215228cc89474f2e82cdb0150f99"
+        ],
+        "missing_fields": [],
+        "source": "fixed_adapter_payload"
+      },
+      "display_descriptor": {
+        "language": "zh-CN",
+        "source": "peer_skill_executor",
+        "title_zh": "供应缺口",
+        "chart_type": "table"
+      },
+      "does_not_replace_authoritative_metrics": true,
+      "supply_gap": {
+        "metrics": [
+          {
+            "metric_id": "M-SUP-001",
+            "label": "PO-TEST-0001#row1 采购数量",
+            "value": 1000.0,
+            "display_format": "#,##0",
+            "semantic_field": "purchase_qty",
+            "evidence_refs": [
+              "EVREF-v1:553e0295c0a085d3151d6cdbe5d279d3ec371745b51a35d16d7261133bd9ea3b"
+            ]
+          },
+          {
+            "metric_id": "M-SUP-002",
+            "label": "PO-TEST-0001#row1 到货数量",
+            "value": 1000.0,
+            "display_format": "#,##0",
+            "semantic_field": "arrived_qty",
+            "evidence_refs": [
+              "EVREF-v1:389d4a1da99ca49798af2868b17b35d4debd29cee1904bbd4a9659b8c5fd419d"
+            ]
+          }
+        ],
+        "oee_attribution": "forbidden"
+      },
+      "oee_attribution": "forbidden",
+      "validation_errors": []
+    }
+  ],
+  "peer_skill_outputs": [
+    {
+      "contract_version": "BIFROST_PEER_SKILL_OUTPUT_v1",
+      "skill_id": "a01-oee-loss-tree",
+      "status": "available",
+      "event_id": "EVT-OMP-03-GOLDEN-0001",
+      "task_id": "TASK-OMP-03-PROD",
+      "evidence_refs": [
+        "EVREF-v1:25af4b6d3356e3d5810e43303d4b62775d17a040d21541006ed08b3421e1c49a",
+        "EVREF-v1:2e41c03a80d6b9fb13f0c38ae941c32707339d0b3f3c78950ded627173b19ce8",
+        "EVREF-v1:5ff4114f4c0d40b727908e1d120493ba1929519955bd736a6d61ed5b40f8bace",
+        "EVREF-v1:6d7359295d824b418cc97ebf859fc801b88592a532cbe1fdcb5254f09f13ee36",
+        "EVREF-v1:9fb662ec899a3215a2d1ae3630346d74c9097cc618cb7cad379d3b5761e5b334",
+        "EVREF-v1:a8d0cd12b2c9a6a760e37df215ce8446da9a592d92138bc4e3c44fb6b9ac958f",
+        "EVREF-v1:c3face5807ad5b1f8dc3ef82bedb46fe563c21720c47152cb915103a90e7e60f",
+        "EVREF-v1:f96e0f3419d50da377aaa21cfc0c2784ad94548e1d46fea993fc0e089f72840a"
+      ],
+      "data_gaps": [
+        "mtbf_mttr",
+        "shift_trend"
+      ],
+      "insights": [],
+      "evidence_gate": {
+        "status": "passed",
+        "required": true,
+        "evidence_refs": [
+          "EVREF-v1:25af4b6d3356e3d5810e43303d4b62775d17a040d21541006ed08b3421e1c49a",
+          "EVREF-v1:2e41c03a80d6b9fb13f0c38ae941c32707339d0b3f3c78950ded627173b19ce8",
+          "EVREF-v1:5ff4114f4c0d40b727908e1d120493ba1929519955bd736a6d61ed5b40f8bace",
+          "EVREF-v1:6d7359295d824b418cc97ebf859fc801b88592a532cbe1fdcb5254f09f13ee36",
+          "EVREF-v1:9fb662ec899a3215a2d1ae3630346d74c9097cc618cb7cad379d3b5761e5b334",
+          "EVREF-v1:a8d0cd12b2c9a6a760e37df215ce8446da9a592d92138bc4e3c44fb6b9ac958f",
+          "EVREF-v1:c3face5807ad5b1f8dc3ef82bedb46fe563c21720c47152cb915103a90e7e60f",
+          "EVREF-v1:f96e0f3419d50da377aaa21cfc0c2784ad94548e1d46fea993fc0e089f72840a"
+        ],
+        "missing_fields": [],
+        "source": "fixed_adapter_payload"
+      },
+      "display_descriptor": {
+        "language": "zh-CN",
+        "source": "peer_skill_executor",
+        "title_zh": "OEE损失树",
+        "chart_type": "loss_tree"
+      },
+      "does_not_replace_authoritative_metrics": true,
+      "oee_loss_tree": {
+        "availability": [
+          {
+            "cause_type": "direct_driver",
+            "semantic_field": "availability",
+            "value": 0.85,
+            "unit": "ratio",
+            "evidence_refs": [
+              "EVREF-v1:5ff4114f4c0d40b727908e1d120493ba1929519955bd736a6d61ed5b40f8bace"
+            ]
+          },
+          {
+            "cause_type": "observed_cause",
+            "category": "availability_loss",
+            "statement": "非计划停机 45 分钟，为开动率下降证据（OEE直接驱动 availability 的证据）",
+            "evidence_refs": [
+              "EVREF-v1:f96e0f3419d50da377aaa21cfc0c2784ad94548e1d46fea993fc0e089f72840a"
+            ]
+          }
+        ],
+        "performance": [
+          {
+            "cause_type": "direct_driver",
+            "semantic_field": "performance_rate",
+            "value": 0.78,
+            "unit": "ratio",
+            "evidence_refs": [
+              "EVREF-v1:6d7359295d824b418cc97ebf859fc801b88592a532cbe1fdcb5254f09f13ee36"
+            ]
+          }
+        ],
+        "quality": [
+          {
+            "cause_type": "direct_driver",
+            "semantic_field": "quality_factor",
+            "value": 0.912867,
+            "unit": "ratio",
+            "evidence_refs": [
+              "EVREF-v1:25af4b6d3356e3d5810e43303d4b62775d17a040d21541006ed08b3421e1c49a"
+            ]
+          }
+        ]
+      },
+      "validation_errors": []
+    },
+    {
+      "contract_version": "BIFROST_PEER_SKILL_OUTPUT_v1",
+      "skill_id": "a02-pareto",
+      "status": "not_observed",
+      "event_id": "EVT-OMP-03-GOLDEN-0001",
+      "task_id": "TASK-OMP-03-PROD",
+      "evidence_refs": [
+        "EVREF-v1:25af4b6d3356e3d5810e43303d4b62775d17a040d21541006ed08b3421e1c49a",
+        "EVREF-v1:2e41c03a80d6b9fb13f0c38ae941c32707339d0b3f3c78950ded627173b19ce8",
+        "EVREF-v1:5ff4114f4c0d40b727908e1d120493ba1929519955bd736a6d61ed5b40f8bace",
+        "EVREF-v1:6d7359295d824b418cc97ebf859fc801b88592a532cbe1fdcb5254f09f13ee36",
+        "EVREF-v1:9fb662ec899a3215a2d1ae3630346d74c9097cc618cb7cad379d3b5761e5b334",
+        "EVREF-v1:a8d0cd12b2c9a6a760e37df215ce8446da9a592d92138bc4e3c44fb6b9ac958f",
+        "EVREF-v1:c3face5807ad5b1f8dc3ef82bedb46fe563c21720c47152cb915103a90e7e60f",
+        "EVREF-v1:f96e0f3419d50da377aaa21cfc0c2784ad94548e1d46fea993fc0e089f72840a"
+      ],
+      "data_gaps": [
+        "mtbf_mttr",
+        "shift_trend",
+        "categorical_cause_values"
+      ],
+      "insights": [],
+      "evidence_gate": {
+        "status": "passed",
+        "required": true,
+        "evidence_refs": [
+          "EVREF-v1:25af4b6d3356e3d5810e43303d4b62775d17a040d21541006ed08b3421e1c49a",
+          "EVREF-v1:2e41c03a80d6b9fb13f0c38ae941c32707339d0b3f3c78950ded627173b19ce8",
+          "EVREF-v1:5ff4114f4c0d40b727908e1d120493ba1929519955bd736a6d61ed5b40f8bace",
+          "EVREF-v1:6d7359295d824b418cc97ebf859fc801b88592a532cbe1fdcb5254f09f13ee36",
+          "EVREF-v1:9fb662ec899a3215a2d1ae3630346d74c9097cc618cb7cad379d3b5761e5b334",
+          "EVREF-v1:a8d0cd12b2c9a6a760e37df215ce8446da9a592d92138bc4e3c44fb6b9ac958f",
+          "EVREF-v1:c3face5807ad5b1f8dc3ef82bedb46fe563c21720c47152cb915103a90e7e60f",
+          "EVREF-v1:f96e0f3419d50da377aaa21cfc0c2784ad94548e1d46fea993fc0e089f72840a"
+        ],
+        "missing_fields": [],
+        "source": "fixed_adapter_payload"
+      },
+      "display_descriptor": {
+        "language": "zh-CN",
+        "source": "peer_skill_executor",
+        "title_zh": "原因 Pareto",
+        "chart_type": "horizontal_bar"
+      },
+      "does_not_replace_authoritative_metrics": true,
+      "pareto": {
+        "dimension": null,
+        "unit": null,
+        "items": []
+      },
+      "reason": "no_categorical_cause_values",
+      "validation_errors": []
+    },
+    {
+      "contract_version": "BIFROST_PEER_SKILL_OUTPUT_v1",
+      "skill_id": "a07-yield-funnel",
+      "status": "available",
+      "event_id": "EVT-OMP-03-GOLDEN-0001",
+      "task_id": "TASK-OMP-03-QUAL",
+      "evidence_refs": [
+        "EVREF-v1:3ae85957ba607c7a2daa666dd06edca0ab015a8a40061547d143eacd650909b8",
+        "EVREF-v1:48c90c3a270d5b2265448f96168fa879f774d8523d346b765cf2fd0b4f1cca7e",
+        "EVREF-v1:5208d666bf141e2f72ff83a290a82bd3f44cb3a8b966273f79d8b85c3e73b0ef",
+        "EVREF-v1:7e32579d6ade4195e27b2513d371c67c427ae5607c4f59ec7f05cae5074cbece"
+      ],
+      "data_gaps": [
+        "sample_rule",
+        "spc_measurement_points"
+      ],
+      "insights": [],
+      "evidence_gate": {
+        "status": "passed",
+        "required": true,
+        "evidence_refs": [
+          "EVREF-v1:3ae85957ba607c7a2daa666dd06edca0ab015a8a40061547d143eacd650909b8",
+          "EVREF-v1:48c90c3a270d5b2265448f96168fa879f774d8523d346b765cf2fd0b4f1cca7e",
+          "EVREF-v1:5208d666bf141e2f72ff83a290a82bd3f44cb3a8b966273f79d8b85c3e73b0ef",
+          "EVREF-v1:7e32579d6ade4195e27b2513d371c67c427ae5607c4f59ec7f05cae5074cbece"
+        ],
+        "missing_fields": [],
+        "source": "fixed_adapter_payload"
+      },
+      "display_descriptor": {
+        "language": "zh-CN",
+        "source": "peer_skill_executor",
+        "title_zh": "良率漏斗",
+        "chart_type": "funnel"
+      },
+      "does_not_replace_authoritative_metrics": true,
+      "yield_funnel": {
+        "stages": [
+          {
+            "semantic_field": "defect_total",
+            "value": 50,
+            "unit": null,
+            "evidence_refs": [
+              "EVREF-v1:7e32579d6ade4195e27b2513d371c67c427ae5607c4f59ec7f05cae5074cbece"
+            ]
+          },
+          {
+            "semantic_field": "yield",
+            "value": 0.95,
+            "unit": null,
+            "evidence_refs": [
+              "EVREF-v1:5208d666bf141e2f72ff83a290a82bd3f44cb3a8b966273f79d8b85c3e73b0ef"
+            ]
+          }
+        ]
+      },
+      "validation_errors": []
+    },
+    {
+      "contract_version": "BIFROST_PEER_SKILL_OUTPUT_v1",
+      "skill_id": "a03-spc-rules",
+      "status": "blocked",
+      "event_id": "EVT-OMP-03-GOLDEN-0001",
+      "task_id": "TASK-OMP-03-QUAL",
+      "evidence_refs": [
+        "EVREF-v1:3ae85957ba607c7a2daa666dd06edca0ab015a8a40061547d143eacd650909b8",
+        "EVREF-v1:48c90c3a270d5b2265448f96168fa879f774d8523d346b765cf2fd0b4f1cca7e",
+        "EVREF-v1:5208d666bf141e2f72ff83a290a82bd3f44cb3a8b966273f79d8b85c3e73b0ef",
+        "EVREF-v1:7e32579d6ade4195e27b2513d371c67c427ae5607c4f59ec7f05cae5074cbece"
+      ],
+      "data_gaps": [
+        "lsl",
+        "sample_rule",
+        "spc_measurement_points",
+        "usl",
+        "evidence_refs"
+      ],
+      "insights": [],
+      "evidence_gate": {
+        "status": "blocked",
+        "required": true,
+        "evidence_refs": [],
+        "missing_fields": [
+          "lsl",
+          "sample_rule",
+          "spc_measurement_points",
+          "usl"
+        ],
+        "source": "fixed_adapter_payload"
+      },
+      "display_descriptor": {
+        "language": "zh-CN",
+        "source": "peer_skill_executor",
+        "title_zh": "SPC状态",
+        "chart_type": "status_card"
+      },
+      "does_not_replace_authoritative_metrics": true,
+      "spc_gate": {
+        "status": "blocked",
+        "required_fields": [
+          "lsl",
+          "sample_rule",
+          "spc_measurement_points",
+          "usl"
+        ],
+        "missing_fields": [
+          "lsl",
+          "sample_rule",
+          "spc_measurement_points",
+          "usl"
+        ],
+        "evidence_missing_fields": [],
+        "evidence_refs": []
+      },
+      "spc": {
+        "cpk": null,
+        "measurement_points": null,
+        "missing_fields": [
+          "lsl",
+          "sample_rule",
+          "spc_measurement_points",
+          "usl"
+        ]
+      },
+      "cpk": null,
+      "validation_errors": []
+    },
+    {
+      "contract_version": "BIFROST_PEER_SKILL_OUTPUT_v1",
+      "skill_id": "a08-supply-chain-gap",
+      "status": "available",
+      "event_id": "EVT-OMP-03-GOLDEN-0001",
+      "task_id": "TASK-OMP-03-SUPPLY",
+      "evidence_refs": [
+        "EVREF-v1:389d4a1da99ca49798af2868b17b35d4debd29cee1904bbd4a9659b8c5fd419d",
+        "EVREF-v1:553e0295c0a085d3151d6cdbe5d279d3ec371745b51a35d16d7261133bd9ea3b",
+        "EVREF-v1:8cc0db0e01432eec066fa2e42a2498d30e7d4848dd1c0a87ff01d67678fbef10",
+        "EVREF-v1:8e0d77e29cf72ec779803314fa771cfdf69d3d92a918b5bd998e3bcc82faa7c2",
+        "EVREF-v1:b81c7e9e48e3818b4149d0e4c7f9669be26d215228cc89474f2e82cdb0150f99"
+      ],
+      "data_gaps": [],
+      "insights": [],
+      "evidence_gate": {
+        "status": "passed",
+        "required": true,
+        "evidence_refs": [
+          "EVREF-v1:389d4a1da99ca49798af2868b17b35d4debd29cee1904bbd4a9659b8c5fd419d",
+          "EVREF-v1:553e0295c0a085d3151d6cdbe5d279d3ec371745b51a35d16d7261133bd9ea3b",
+          "EVREF-v1:8cc0db0e01432eec066fa2e42a2498d30e7d4848dd1c0a87ff01d67678fbef10",
+          "EVREF-v1:8e0d77e29cf72ec779803314fa771cfdf69d3d92a918b5bd998e3bcc82faa7c2",
+          "EVREF-v1:b81c7e9e48e3818b4149d0e4c7f9669be26d215228cc89474f2e82cdb0150f99"
+        ],
+        "missing_fields": [],
+        "source": "fixed_adapter_payload"
+      },
+      "display_descriptor": {
+        "language": "zh-CN",
+        "source": "peer_skill_executor",
+        "title_zh": "供应缺口",
+        "chart_type": "table"
+      },
+      "does_not_replace_authoritative_metrics": true,
+      "supply_gap": {
+        "metrics": [
+          {
+            "metric_id": "M-SUP-001",
+            "label": "PO-TEST-0001#row1 采购数量",
+            "value": 1000.0,
+            "display_format": "#,##0",
+            "semantic_field": "purchase_qty",
+            "evidence_refs": [
+              "EVREF-v1:553e0295c0a085d3151d6cdbe5d279d3ec371745b51a35d16d7261133bd9ea3b"
+            ]
+          },
+          {
+            "metric_id": "M-SUP-002",
+            "label": "PO-TEST-0001#row1 到货数量",
+            "value": 1000.0,
+            "display_format": "#,##0",
+            "semantic_field": "arrived_qty",
+            "evidence_refs": [
+              "EVREF-v1:389d4a1da99ca49798af2868b17b35d4debd29cee1904bbd4a9659b8c5fd419d"
+            ]
+          }
+        ],
+        "oee_attribution": "forbidden"
+      },
+      "oee_attribution": "forbidden",
+      "validation_errors": []
+    }
+  ],
+  "role_projections": {
+    "厂长": {
+      "contract_version": "BIFROST_ROLE_PROJECTION_v1",
+      "role": "厂长",
+      "status": "available",
+      "allowed_skill_ids": [
+        "a01-oee-loss-tree",
+        "a02-pareto",
+        "a07-yield-funnel",
+        "a08-supply-chain-gap"
+      ],
+      "skill_outputs": [
+        {
+          "contract_version": "BIFROST_PEER_SKILL_OUTPUT_v1",
+          "skill_id": "a01-oee-loss-tree",
+          "status": "available",
+          "event_id": "EVT-OMP-03-GOLDEN-0001",
+          "task_id": "TASK-OMP-03-PROD",
+          "evidence_refs": [
+            "EVREF-v1:25af4b6d3356e3d5810e43303d4b62775d17a040d21541006ed08b3421e1c49a",
+            "EVREF-v1:2e41c03a80d6b9fb13f0c38ae941c32707339d0b3f3c78950ded627173b19ce8",
+            "EVREF-v1:5ff4114f4c0d40b727908e1d120493ba1929519955bd736a6d61ed5b40f8bace",
+            "EVREF-v1:6d7359295d824b418cc97ebf859fc801b88592a532cbe1fdcb5254f09f13ee36",
+            "EVREF-v1:9fb662ec899a3215a2d1ae3630346d74c9097cc618cb7cad379d3b5761e5b334",
+            "EVREF-v1:a8d0cd12b2c9a6a760e37df215ce8446da9a592d92138bc4e3c44fb6b9ac958f",
+            "EVREF-v1:c3face5807ad5b1f8dc3ef82bedb46fe563c21720c47152cb915103a90e7e60f",
+            "EVREF-v1:f96e0f3419d50da377aaa21cfc0c2784ad94548e1d46fea993fc0e089f72840a"
+          ],
+          "data_gaps": [
+            "mtbf_mttr",
+            "shift_trend"
+          ],
+          "insights": [],
+          "evidence_gate": {
+            "status": "passed",
+            "required": true,
+            "evidence_refs": [
+              "EVREF-v1:25af4b6d3356e3d5810e43303d4b62775d17a040d21541006ed08b3421e1c49a",
+              "EVREF-v1:2e41c03a80d6b9fb13f0c38ae941c32707339d0b3f3c78950ded627173b19ce8",
+              "EVREF-v1:5ff4114f4c0d40b727908e1d120493ba1929519955bd736a6d61ed5b40f8bace",
+              "EVREF-v1:6d7359295d824b418cc97ebf859fc801b88592a532cbe1fdcb5254f09f13ee36",
+              "EVREF-v1:9fb662ec899a3215a2d1ae3630346d74c9097cc618cb7cad379d3b5761e5b334",
+              "EVREF-v1:a8d0cd12b2c9a6a760e37df215ce8446da9a592d92138bc4e3c44fb6b9ac958f",
+              "EVREF-v1:c3face5807ad5b1f8dc3ef82bedb46fe563c21720c47152cb915103a90e7e60f",
+              "EVREF-v1:f96e0f3419d50da377aaa21cfc0c2784ad94548e1d46fea993fc0e089f72840a"
+            ],
+            "missing_fields": [],
+            "source": "fixed_adapter_payload"
+          },
+          "display_descriptor": {
+            "language": "zh-CN",
+            "source": "peer_skill_executor",
+            "title_zh": "OEE损失树",
+            "chart_type": "loss_tree"
+          },
+          "does_not_replace_authoritative_metrics": true,
+          "oee_loss_tree": {
+            "availability": [
+              {
+                "cause_type": "direct_driver",
+                "semantic_field": "availability",
+                "value": 0.85,
+                "unit": "ratio",
+                "evidence_refs": [
+                  "EVREF-v1:5ff4114f4c0d40b727908e1d120493ba1929519955bd736a6d61ed5b40f8bace"
+                ]
+              },
+              {
+                "cause_type": "observed_cause",
+                "category": "availability_loss",
+                "statement": "非计划停机 45 分钟，为开动率下降证据（OEE直接驱动 availability 的证据）",
+                "evidence_refs": [
+                  "EVREF-v1:f96e0f3419d50da377aaa21cfc0c2784ad94548e1d46fea993fc0e089f72840a"
+                ]
+              }
+            ],
+            "performance": [
+              {
+                "cause_type": "direct_driver",
+                "semantic_field": "performance_rate",
+                "value": 0.78,
+                "unit": "ratio",
+                "evidence_refs": [
+                  "EVREF-v1:6d7359295d824b418cc97ebf859fc801b88592a532cbe1fdcb5254f09f13ee36"
+                ]
+              }
+            ],
+            "quality": [
+              {
+                "cause_type": "direct_driver",
+                "semantic_field": "quality_factor",
+                "value": 0.912867,
+                "unit": "ratio",
+                "evidence_refs": [
+                  "EVREF-v1:25af4b6d3356e3d5810e43303d4b62775d17a040d21541006ed08b3421e1c49a"
+                ]
+              }
+            ]
+          },
+          "validation_errors": []
+        },
+        {
+          "contract_version": "BIFROST_PEER_SKILL_OUTPUT_v1",
+          "skill_id": "a02-pareto",
+          "status": "not_observed",
+          "event_id": "EVT-OMP-03-GOLDEN-0001",
+          "task_id": "TASK-OMP-03-PROD",
+          "evidence_refs": [
+            "EVREF-v1:25af4b6d3356e3d5810e43303d4b62775d17a040d21541006ed08b3421e1c49a",
+            "EVREF-v1:2e41c03a80d6b9fb13f0c38ae941c32707339d0b3f3c78950ded627173b19ce8",
+            "EVREF-v1:5ff4114f4c0d40b727908e1d120493ba1929519955bd736a6d61ed5b40f8bace",
+            "EVREF-v1:6d7359295d824b418cc97ebf859fc801b88592a532cbe1fdcb5254f09f13ee36",
+            "EVREF-v1:9fb662ec899a3215a2d1ae3630346d74c9097cc618cb7cad379d3b5761e5b334",
+            "EVREF-v1:a8d0cd12b2c9a6a760e37df215ce8446da9a592d92138bc4e3c44fb6b9ac958f",
+            "EVREF-v1:c3face5807ad5b1f8dc3ef82bedb46fe563c21720c47152cb915103a90e7e60f",
+            "EVREF-v1:f96e0f3419d50da377aaa21cfc0c2784ad94548e1d46fea993fc0e089f72840a"
+          ],
+          "data_gaps": [
+            "mtbf_mttr",
+            "shift_trend",
+            "categorical_cause_values"
+          ],
+          "insights": [],
+          "evidence_gate": {
+            "status": "passed",
+            "required": true,
+            "evidence_refs": [
+              "EVREF-v1:25af4b6d3356e3d5810e43303d4b62775d17a040d21541006ed08b3421e1c49a",
+              "EVREF-v1:2e41c03a80d6b9fb13f0c38ae941c32707339d0b3f3c78950ded627173b19ce8",
+              "EVREF-v1:5ff4114f4c0d40b727908e1d120493ba1929519955bd736a6d61ed5b40f8bace",
+              "EVREF-v1:6d7359295d824b418cc97ebf859fc801b88592a532cbe1fdcb5254f09f13ee36",
+              "EVREF-v1:9fb662ec899a3215a2d1ae3630346d74c9097cc618cb7cad379d3b5761e5b334",
+              "EVREF-v1:a8d0cd12b2c9a6a760e37df215ce8446da9a592d92138bc4e3c44fb6b9ac958f",
+              "EVREF-v1:c3face5807ad5b1f8dc3ef82bedb46fe563c21720c47152cb915103a90e7e60f",
+              "EVREF-v1:f96e0f3419d50da377aaa21cfc0c2784ad94548e1d46fea993fc0e089f72840a"
+            ],
+            "missing_fields": [],
+            "source": "fixed_adapter_payload"
+          },
+          "display_descriptor": {
+            "language": "zh-CN",
+            "source": "peer_skill_executor",
+            "title_zh": "原因 Pareto",
+            "chart_type": "horizontal_bar"
+          },
+          "does_not_replace_authoritative_metrics": true,
+          "pareto": {
+            "dimension": null,
+            "unit": null,
+            "items": []
+          },
+          "reason": "no_categorical_cause_values",
+          "validation_errors": []
+        },
+        {
+          "contract_version": "BIFROST_PEER_SKILL_OUTPUT_v1",
+          "skill_id": "a07-yield-funnel",
+          "status": "available",
+          "event_id": "EVT-OMP-03-GOLDEN-0001",
+          "task_id": "TASK-OMP-03-QUAL",
+          "evidence_refs": [
+            "EVREF-v1:3ae85957ba607c7a2daa666dd06edca0ab015a8a40061547d143eacd650909b8",
+            "EVREF-v1:48c90c3a270d5b2265448f96168fa879f774d8523d346b765cf2fd0b4f1cca7e",
+            "EVREF-v1:5208d666bf141e2f72ff83a290a82bd3f44cb3a8b966273f79d8b85c3e73b0ef",
+            "EVREF-v1:7e32579d6ade4195e27b2513d371c67c427ae5607c4f59ec7f05cae5074cbece"
+          ],
+          "data_gaps": [
+            "sample_rule",
+            "spc_measurement_points"
+          ],
+          "insights": [],
+          "evidence_gate": {
+            "status": "passed",
+            "required": true,
+            "evidence_refs": [
+              "EVREF-v1:3ae85957ba607c7a2daa666dd06edca0ab015a8a40061547d143eacd650909b8",
+              "EVREF-v1:48c90c3a270d5b2265448f96168fa879f774d8523d346b765cf2fd0b4f1cca7e",
+              "EVREF-v1:5208d666bf141e2f72ff83a290a82bd3f44cb3a8b966273f79d8b85c3e73b0ef",
+              "EVREF-v1:7e32579d6ade4195e27b2513d371c67c427ae5607c4f59ec7f05cae5074cbece"
+            ],
+            "missing_fields": [],
+            "source": "fixed_adapter_payload"
+          },
+          "display_descriptor": {
+            "language": "zh-CN",
+            "source": "peer_skill_executor",
+            "title_zh": "良率漏斗",
+            "chart_type": "funnel"
+          },
+          "does_not_replace_authoritative_metrics": true,
+          "yield_funnel": {
+            "stages": [
+              {
+                "semantic_field": "defect_total",
+                "value": 50,
+                "unit": null,
+                "evidence_refs": [
+                  "EVREF-v1:7e32579d6ade4195e27b2513d371c67c427ae5607c4f59ec7f05cae5074cbece"
+                ]
+              },
+              {
+                "semantic_field": "yield",
+                "value": 0.95,
+                "unit": null,
+                "evidence_refs": [
+                  "EVREF-v1:5208d666bf141e2f72ff83a290a82bd3f44cb3a8b966273f79d8b85c3e73b0ef"
+                ]
+              }
+            ]
+          },
+          "validation_errors": []
+        },
+        {
+          "contract_version": "BIFROST_PEER_SKILL_OUTPUT_v1",
+          "skill_id": "a08-supply-chain-gap",
+          "status": "available",
+          "event_id": "EVT-OMP-03-GOLDEN-0001",
+          "task_id": "TASK-OMP-03-SUPPLY",
+          "evidence_refs": [
+            "EVREF-v1:389d4a1da99ca49798af2868b17b35d4debd29cee1904bbd4a9659b8c5fd419d",
+            "EVREF-v1:553e0295c0a085d3151d6cdbe5d279d3ec371745b51a35d16d7261133bd9ea3b",
+            "EVREF-v1:8cc0db0e01432eec066fa2e42a2498d30e7d4848dd1c0a87ff01d67678fbef10",
+            "EVREF-v1:8e0d77e29cf72ec779803314fa771cfdf69d3d92a918b5bd998e3bcc82faa7c2",
+            "EVREF-v1:b81c7e9e48e3818b4149d0e4c7f9669be26d215228cc89474f2e82cdb0150f99"
+          ],
+          "data_gaps": [],
+          "insights": [],
+          "evidence_gate": {
+            "status": "passed",
+            "required": true,
+            "evidence_refs": [
+              "EVREF-v1:389d4a1da99ca49798af2868b17b35d4debd29cee1904bbd4a9659b8c5fd419d",
+              "EVREF-v1:553e0295c0a085d3151d6cdbe5d279d3ec371745b51a35d16d7261133bd9ea3b",
+              "EVREF-v1:8cc0db0e01432eec066fa2e42a2498d30e7d4848dd1c0a87ff01d67678fbef10",
+              "EVREF-v1:8e0d77e29cf72ec779803314fa771cfdf69d3d92a918b5bd998e3bcc82faa7c2",
+              "EVREF-v1:b81c7e9e48e3818b4149d0e4c7f9669be26d215228cc89474f2e82cdb0150f99"
+            ],
+            "missing_fields": [],
+            "source": "fixed_adapter_payload"
+          },
+          "display_descriptor": {
+            "language": "zh-CN",
+            "source": "peer_skill_executor",
+            "title_zh": "供应缺口",
+            "chart_type": "table"
+          },
+          "does_not_replace_authoritative_metrics": true,
+          "supply_gap": {
+            "metrics": [
+              {
+                "metric_id": "M-SUP-001",
+                "label": "PO-TEST-0001#row1 采购数量",
+                "value": 1000.0,
+                "display_format": "#,##0",
+                "semantic_field": "purchase_qty",
+                "evidence_refs": [
+                  "EVREF-v1:553e0295c0a085d3151d6cdbe5d279d3ec371745b51a35d16d7261133bd9ea3b"
+                ]
+              },
+              {
+                "metric_id": "M-SUP-002",
+                "label": "PO-TEST-0001#row1 到货数量",
+                "value": 1000.0,
+                "display_format": "#,##0",
+                "semantic_field": "arrived_qty",
+                "evidence_refs": [
+                  "EVREF-v1:389d4a1da99ca49798af2868b17b35d4debd29cee1904bbd4a9659b8c5fd419d"
+                ]
+              }
+            ],
+            "oee_attribution": "forbidden"
+          },
+          "oee_attribution": "forbidden",
+          "validation_errors": []
+        }
+      ],
+      "conclusions": {
+        "oee_loss_tree": [
+          {
+            "availability": [
+              {
+                "cause_type": "direct_driver",
+                "semantic_field": "availability",
+                "value": 0.85,
+                "unit": "ratio",
+                "evidence_refs": [
+                  "EVREF-v1:5ff4114f4c0d40b727908e1d120493ba1929519955bd736a6d61ed5b40f8bace"
+                ]
+              },
+              {
+                "cause_type": "observed_cause",
+                "category": "availability_loss",
+                "statement": "非计划停机 45 分钟，为开动率下降证据（OEE直接驱动 availability 的证据）",
+                "evidence_refs": [
+                  "EVREF-v1:f96e0f3419d50da377aaa21cfc0c2784ad94548e1d46fea993fc0e089f72840a"
+                ]
+              }
+            ],
+            "performance": [
+              {
+                "cause_type": "direct_driver",
+                "semantic_field": "performance_rate",
+                "value": 0.78,
+                "unit": "ratio",
+                "evidence_refs": [
+                  "EVREF-v1:6d7359295d824b418cc97ebf859fc801b88592a532cbe1fdcb5254f09f13ee36"
+                ]
+              }
+            ],
+            "quality": [
+              {
+                "cause_type": "direct_driver",
+                "semantic_field": "quality_factor",
+                "value": 0.912867,
+                "unit": "ratio",
+                "evidence_refs": [
+                  "EVREF-v1:25af4b6d3356e3d5810e43303d4b62775d17a040d21541006ed08b3421e1c49a"
+                ]
+              }
+            ]
+          }
+        ],
+        "pareto": [
+          {
+            "dimension": null,
+            "unit": null,
+            "items": []
+          }
+        ],
+        "yield_funnel": [
+          {
+            "stages": [
+              {
+                "semantic_field": "defect_total",
+                "value": 50,
+                "unit": null,
+                "evidence_refs": [
+                  "EVREF-v1:7e32579d6ade4195e27b2513d371c67c427ae5607c4f59ec7f05cae5074cbece"
+                ]
+              },
+              {
+                "semantic_field": "yield",
+                "value": 0.95,
+                "unit": null,
+                "evidence_refs": [
+                  "EVREF-v1:5208d666bf141e2f72ff83a290a82bd3f44cb3a8b966273f79d8b85c3e73b0ef"
+                ]
+              }
+            ]
+          }
+        ],
+        "supply_gap": [
+          {
+            "metrics": [
+              {
+                "metric_id": "M-SUP-001",
+                "label": "PO-TEST-0001#row1 采购数量",
+                "value": 1000.0,
+                "display_format": "#,##0",
+                "semantic_field": "purchase_qty",
+                "evidence_refs": [
+                  "EVREF-v1:553e0295c0a085d3151d6cdbe5d279d3ec371745b51a35d16d7261133bd9ea3b"
+                ]
+              },
+              {
+                "metric_id": "M-SUP-002",
+                "label": "PO-TEST-0001#row1 到货数量",
+                "value": 1000.0,
+                "display_format": "#,##0",
+                "semantic_field": "arrived_qty",
+                "evidence_refs": [
+                  "EVREF-v1:389d4a1da99ca49798af2868b17b35d4debd29cee1904bbd4a9659b8c5fd419d"
+                ]
+              }
+            ],
+            "oee_attribution": "forbidden"
+          }
+        ]
+      },
+      "evidence_refs": [
+        "EVREF-v1:25af4b6d3356e3d5810e43303d4b62775d17a040d21541006ed08b3421e1c49a",
+        "EVREF-v1:2e41c03a80d6b9fb13f0c38ae941c32707339d0b3f3c78950ded627173b19ce8",
+        "EVREF-v1:389d4a1da99ca49798af2868b17b35d4debd29cee1904bbd4a9659b8c5fd419d",
+        "EVREF-v1:3ae85957ba607c7a2daa666dd06edca0ab015a8a40061547d143eacd650909b8",
+        "EVREF-v1:48c90c3a270d5b2265448f96168fa879f774d8523d346b765cf2fd0b4f1cca7e",
+        "EVREF-v1:5208d666bf141e2f72ff83a290a82bd3f44cb3a8b966273f79d8b85c3e73b0ef",
+        "EVREF-v1:553e0295c0a085d3151d6cdbe5d279d3ec371745b51a35d16d7261133bd9ea3b",
+        "EVREF-v1:5ff4114f4c0d40b727908e1d120493ba1929519955bd736a6d61ed5b40f8bace",
+        "EVREF-v1:6d7359295d824b418cc97ebf859fc801b88592a532cbe1fdcb5254f09f13ee36",
+        "EVREF-v1:7e32579d6ade4195e27b2513d371c67c427ae5607c4f59ec7f05cae5074cbece",
+        "EVREF-v1:8cc0db0e01432eec066fa2e42a2498d30e7d4848dd1c0a87ff01d67678fbef10",
+        "EVREF-v1:8e0d77e29cf72ec779803314fa771cfdf69d3d92a918b5bd998e3bcc82faa7c2",
+        "EVREF-v1:9fb662ec899a3215a2d1ae3630346d74c9097cc618cb7cad379d3b5761e5b334",
+        "EVREF-v1:a8d0cd12b2c9a6a760e37df215ce8446da9a592d92138bc4e3c44fb6b9ac958f",
+        "EVREF-v1:b81c7e9e48e3818b4149d0e4c7f9669be26d215228cc89474f2e82cdb0150f99",
+        "EVREF-v1:c3face5807ad5b1f8dc3ef82bedb46fe563c21720c47152cb915103a90e7e60f",
+        "EVREF-v1:f96e0f3419d50da377aaa21cfc0c2784ad94548e1d46fea993fc0e089f72840a"
+      ],
+      "data_gaps": [
+        "categorical_cause_values",
+        "mtbf_mttr",
+        "sample_rule",
+        "shift_trend",
+        "spc_measurement_points"
+      ],
+      "read_only": true
+    },
+    "线长": {
+      "contract_version": "BIFROST_ROLE_PROJECTION_v1",
+      "role": "线长",
+      "status": "available",
+      "allowed_skill_ids": [
+        "a01-oee-loss-tree",
+        "a02-pareto",
+        "a07-yield-funnel"
+      ],
+      "skill_outputs": [
+        {
+          "contract_version": "BIFROST_PEER_SKILL_OUTPUT_v1",
+          "skill_id": "a01-oee-loss-tree",
+          "status": "available",
+          "event_id": "EVT-OMP-03-GOLDEN-0001",
+          "task_id": "TASK-OMP-03-PROD",
+          "evidence_refs": [
+            "EVREF-v1:25af4b6d3356e3d5810e43303d4b62775d17a040d21541006ed08b3421e1c49a",
+            "EVREF-v1:2e41c03a80d6b9fb13f0c38ae941c32707339d0b3f3c78950ded627173b19ce8",
+            "EVREF-v1:5ff4114f4c0d40b727908e1d120493ba1929519955bd736a6d61ed5b40f8bace",
+            "EVREF-v1:6d7359295d824b418cc97ebf859fc801b88592a532cbe1fdcb5254f09f13ee36",
+            "EVREF-v1:9fb662ec899a3215a2d1ae3630346d74c9097cc618cb7cad379d3b5761e5b334",
+            "EVREF-v1:a8d0cd12b2c9a6a760e37df215ce8446da9a592d92138bc4e3c44fb6b9ac958f",
+            "EVREF-v1:c3face5807ad5b1f8dc3ef82bedb46fe563c21720c47152cb915103a90e7e60f",
+            "EVREF-v1:f96e0f3419d50da377aaa21cfc0c2784ad94548e1d46fea993fc0e089f72840a"
+          ],
+          "data_gaps": [
+            "mtbf_mttr",
+            "shift_trend"
+          ],
+          "insights": [],
+          "evidence_gate": {
+            "status": "passed",
+            "required": true,
+            "evidence_refs": [
+              "EVREF-v1:25af4b6d3356e3d5810e43303d4b62775d17a040d21541006ed08b3421e1c49a",
+              "EVREF-v1:2e41c03a80d6b9fb13f0c38ae941c32707339d0b3f3c78950ded627173b19ce8",
+              "EVREF-v1:5ff4114f4c0d40b727908e1d120493ba1929519955bd736a6d61ed5b40f8bace",
+              "EVREF-v1:6d7359295d824b418cc97ebf859fc801b88592a532cbe1fdcb5254f09f13ee36",
+              "EVREF-v1:9fb662ec899a3215a2d1ae3630346d74c9097cc618cb7cad379d3b5761e5b334",
+              "EVREF-v1:a8d0cd12b2c9a6a760e37df215ce8446da9a592d92138bc4e3c44fb6b9ac958f",
+              "EVREF-v1:c3face5807ad5b1f8dc3ef82bedb46fe563c21720c47152cb915103a90e7e60f",
+              "EVREF-v1:f96e0f3419d50da377aaa21cfc0c2784ad94548e1d46fea993fc0e089f72840a"
+            ],
+            "missing_fields": [],
+            "source": "fixed_adapter_payload"
+          },
+          "display_descriptor": {
+            "language": "zh-CN",
+            "source": "peer_skill_executor",
+            "title_zh": "OEE损失树",
+            "chart_type": "loss_tree"
+          },
+          "does_not_replace_authoritative_metrics": true,
+          "oee_loss_tree": {
+            "availability": [
+              {
+                "cause_type": "direct_driver",
+                "semantic_field": "availability",
+                "value": 0.85,
+                "unit": "ratio",
+                "evidence_refs": [
+                  "EVREF-v1:5ff4114f4c0d40b727908e1d120493ba1929519955bd736a6d61ed5b40f8bace"
+                ]
+              },
+              {
+                "cause_type": "observed_cause",
+                "category": "availability_loss",
+                "statement": "非计划停机 45 分钟，为开动率下降证据（OEE直接驱动 availability 的证据）",
+                "evidence_refs": [
+                  "EVREF-v1:f96e0f3419d50da377aaa21cfc0c2784ad94548e1d46fea993fc0e089f72840a"
+                ]
+              }
+            ],
+            "performance": [
+              {
+                "cause_type": "direct_driver",
+                "semantic_field": "performance_rate",
+                "value": 0.78,
+                "unit": "ratio",
+                "evidence_refs": [
+                  "EVREF-v1:6d7359295d824b418cc97ebf859fc801b88592a532cbe1fdcb5254f09f13ee36"
+                ]
+              }
+            ],
+            "quality": [
+              {
+                "cause_type": "direct_driver",
+                "semantic_field": "quality_factor",
+                "value": 0.912867,
+                "unit": "ratio",
+                "evidence_refs": [
+                  "EVREF-v1:25af4b6d3356e3d5810e43303d4b62775d17a040d21541006ed08b3421e1c49a"
+                ]
+              }
+            ]
+          },
+          "validation_errors": []
+        },
+        {
+          "contract_version": "BIFROST_PEER_SKILL_OUTPUT_v1",
+          "skill_id": "a02-pareto",
+          "status": "not_observed",
+          "event_id": "EVT-OMP-03-GOLDEN-0001",
+          "task_id": "TASK-OMP-03-PROD",
+          "evidence_refs": [
+            "EVREF-v1:25af4b6d3356e3d5810e43303d4b62775d17a040d21541006ed08b3421e1c49a",
+            "EVREF-v1:2e41c03a80d6b9fb13f0c38ae941c32707339d0b3f3c78950ded627173b19ce8",
+            "EVREF-v1:5ff4114f4c0d40b727908e1d120493ba1929519955bd736a6d61ed5b40f8bace",
+            "EVREF-v1:6d7359295d824b418cc97ebf859fc801b88592a532cbe1fdcb5254f09f13ee36",
+            "EVREF-v1:9fb662ec899a3215a2d1ae3630346d74c9097cc618cb7cad379d3b5761e5b334",
+            "EVREF-v1:a8d0cd12b2c9a6a760e37df215ce8446da9a592d92138bc4e3c44fb6b9ac958f",
+            "EVREF-v1:c3face5807ad5b1f8dc3ef82bedb46fe563c21720c47152cb915103a90e7e60f",
+            "EVREF-v1:f96e0f3419d50da377aaa21cfc0c2784ad94548e1d46fea993fc0e089f72840a"
+          ],
+          "data_gaps": [
+            "mtbf_mttr",
+            "shift_trend",
+            "categorical_cause_values"
+          ],
+          "insights": [],
+          "evidence_gate": {
+            "status": "passed",
+            "required": true,
+            "evidence_refs": [
+              "EVREF-v1:25af4b6d3356e3d5810e43303d4b62775d17a040d21541006ed08b3421e1c49a",
+              "EVREF-v1:2e41c03a80d6b9fb13f0c38ae941c32707339d0b3f3c78950ded627173b19ce8",
+              "EVREF-v1:5ff4114f4c0d40b727908e1d120493ba1929519955bd736a6d61ed5b40f8bace",
+              "EVREF-v1:6d7359295d824b418cc97ebf859fc801b88592a532cbe1fdcb5254f09f13ee36",
+              "EVREF-v1:9fb662ec899a3215a2d1ae3630346d74c9097cc618cb7cad379d3b5761e5b334",
+              "EVREF-v1:a8d0cd12b2c9a6a760e37df215ce8446da9a592d92138bc4e3c44fb6b9ac958f",
+              "EVREF-v1:c3face5807ad5b1f8dc3ef82bedb46fe563c21720c47152cb915103a90e7e60f",
+              "EVREF-v1:f96e0f3419d50da377aaa21cfc0c2784ad94548e1d46fea993fc0e089f72840a"
+            ],
+            "missing_fields": [],
+            "source": "fixed_adapter_payload"
+          },
+          "display_descriptor": {
+            "language": "zh-CN",
+            "source": "peer_skill_executor",
+            "title_zh": "原因 Pareto",
+            "chart_type": "horizontal_bar"
+          },
+          "does_not_replace_authoritative_metrics": true,
+          "pareto": {
+            "dimension": null,
+            "unit": null,
+            "items": []
+          },
+          "reason": "no_categorical_cause_values",
+          "validation_errors": []
+        },
+        {
+          "contract_version": "BIFROST_PEER_SKILL_OUTPUT_v1",
+          "skill_id": "a07-yield-funnel",
+          "status": "available",
+          "event_id": "EVT-OMP-03-GOLDEN-0001",
+          "task_id": "TASK-OMP-03-QUAL",
+          "evidence_refs": [
+            "EVREF-v1:3ae85957ba607c7a2daa666dd06edca0ab015a8a40061547d143eacd650909b8",
+            "EVREF-v1:48c90c3a270d5b2265448f96168fa879f774d8523d346b765cf2fd0b4f1cca7e",
+            "EVREF-v1:5208d666bf141e2f72ff83a290a82bd3f44cb3a8b966273f79d8b85c3e73b0ef",
+            "EVREF-v1:7e32579d6ade4195e27b2513d371c67c427ae5607c4f59ec7f05cae5074cbece"
+          ],
+          "data_gaps": [
+            "sample_rule",
+            "spc_measurement_points"
+          ],
+          "insights": [],
+          "evidence_gate": {
+            "status": "passed",
+            "required": true,
+            "evidence_refs": [
+              "EVREF-v1:3ae85957ba607c7a2daa666dd06edca0ab015a8a40061547d143eacd650909b8",
+              "EVREF-v1:48c90c3a270d5b2265448f96168fa879f774d8523d346b765cf2fd0b4f1cca7e",
+              "EVREF-v1:5208d666bf141e2f72ff83a290a82bd3f44cb3a8b966273f79d8b85c3e73b0ef",
+              "EVREF-v1:7e32579d6ade4195e27b2513d371c67c427ae5607c4f59ec7f05cae5074cbece"
+            ],
+            "missing_fields": [],
+            "source": "fixed_adapter_payload"
+          },
+          "display_descriptor": {
+            "language": "zh-CN",
+            "source": "peer_skill_executor",
+            "title_zh": "良率漏斗",
+            "chart_type": "funnel"
+          },
+          "does_not_replace_authoritative_metrics": true,
+          "yield_funnel": {
+            "stages": [
+              {
+                "semantic_field": "defect_total",
+                "value": 50,
+                "unit": null,
+                "evidence_refs": [
+                  "EVREF-v1:7e32579d6ade4195e27b2513d371c67c427ae5607c4f59ec7f05cae5074cbece"
+                ]
+              },
+              {
+                "semantic_field": "yield",
+                "value": 0.95,
+                "unit": null,
+                "evidence_refs": [
+                  "EVREF-v1:5208d666bf141e2f72ff83a290a82bd3f44cb3a8b966273f79d8b85c3e73b0ef"
+                ]
+              }
+            ]
+          },
+          "validation_errors": []
+        }
+      ],
+      "conclusions": {
+        "oee_loss_tree": [
+          {
+            "availability": [
+              {
+                "cause_type": "direct_driver",
+                "semantic_field": "availability",
+                "value": 0.85,
+                "unit": "ratio",
+                "evidence_refs": [
+                  "EVREF-v1:5ff4114f4c0d40b727908e1d120493ba1929519955bd736a6d61ed5b40f8bace"
+                ]
+              },
+              {
+                "cause_type": "observed_cause",
+                "category": "availability_loss",
+                "statement": "非计划停机 45 分钟，为开动率下降证据（OEE直接驱动 availability 的证据）",
+                "evidence_refs": [
+                  "EVREF-v1:f96e0f3419d50da377aaa21cfc0c2784ad94548e1d46fea993fc0e089f72840a"
+                ]
+              }
+            ],
+            "performance": [
+              {
+                "cause_type": "direct_driver",
+                "semantic_field": "performance_rate",
+                "value": 0.78,
+                "unit": "ratio",
+                "evidence_refs": [
+                  "EVREF-v1:6d7359295d824b418cc97ebf859fc801b88592a532cbe1fdcb5254f09f13ee36"
+                ]
+              }
+            ],
+            "quality": [
+              {
+                "cause_type": "direct_driver",
+                "semantic_field": "quality_factor",
+                "value": 0.912867,
+                "unit": "ratio",
+                "evidence_refs": [
+                  "EVREF-v1:25af4b6d3356e3d5810e43303d4b62775d17a040d21541006ed08b3421e1c49a"
+                ]
+              }
+            ]
+          }
+        ],
+        "pareto": [
+          {
+            "dimension": null,
+            "unit": null,
+            "items": []
+          }
+        ],
+        "yield_funnel": [
+          {
+            "stages": [
+              {
+                "semantic_field": "defect_total",
+                "value": 50,
+                "unit": null,
+                "evidence_refs": [
+                  "EVREF-v1:7e32579d6ade4195e27b2513d371c67c427ae5607c4f59ec7f05cae5074cbece"
+                ]
+              },
+              {
+                "semantic_field": "yield",
+                "value": 0.95,
+                "unit": null,
+                "evidence_refs": [
+                  "EVREF-v1:5208d666bf141e2f72ff83a290a82bd3f44cb3a8b966273f79d8b85c3e73b0ef"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "evidence_refs": [
+        "EVREF-v1:25af4b6d3356e3d5810e43303d4b62775d17a040d21541006ed08b3421e1c49a",
+        "EVREF-v1:2e41c03a80d6b9fb13f0c38ae941c32707339d0b3f3c78950ded627173b19ce8",
+        "EVREF-v1:3ae85957ba607c7a2daa666dd06edca0ab015a8a40061547d143eacd650909b8",
+        "EVREF-v1:48c90c3a270d5b2265448f96168fa879f774d8523d346b765cf2fd0b4f1cca7e",
+        "EVREF-v1:5208d666bf141e2f72ff83a290a82bd3f44cb3a8b966273f79d8b85c3e73b0ef",
+        "EVREF-v1:5ff4114f4c0d40b727908e1d120493ba1929519955bd736a6d61ed5b40f8bace",
+        "EVREF-v1:6d7359295d824b418cc97ebf859fc801b88592a532cbe1fdcb5254f09f13ee36",
+        "EVREF-v1:7e32579d6ade4195e27b2513d371c67c427ae5607c4f59ec7f05cae5074cbece",
+        "EVREF-v1:9fb662ec899a3215a2d1ae3630346d74c9097cc618cb7cad379d3b5761e5b334",
+        "EVREF-v1:a8d0cd12b2c9a6a760e37df215ce8446da9a592d92138bc4e3c44fb6b9ac958f",
+        "EVREF-v1:c3face5807ad5b1f8dc3ef82bedb46fe563c21720c47152cb915103a90e7e60f",
+        "EVREF-v1:f96e0f3419d50da377aaa21cfc0c2784ad94548e1d46fea993fc0e089f72840a"
+      ],
+      "data_gaps": [
+        "categorical_cause_values",
+        "mtbf_mttr",
+        "sample_rule",
+        "shift_trend",
+        "spc_measurement_points"
+      ],
+      "read_only": true
+    },
+    "质量": {
+      "contract_version": "BIFROST_ROLE_PROJECTION_v1",
+      "role": "质量",
+      "status": "blocked",
+      "allowed_skill_ids": [
+        "a02-pareto",
+        "a03-spc-rules",
+        "a07-yield-funnel"
+      ],
+      "skill_outputs": [
+        {
+          "contract_version": "BIFROST_PEER_SKILL_OUTPUT_v1",
+          "skill_id": "a02-pareto",
+          "status": "not_observed",
+          "event_id": "EVT-OMP-03-GOLDEN-0001",
+          "task_id": "TASK-OMP-03-PROD",
+          "evidence_refs": [
+            "EVREF-v1:25af4b6d3356e3d5810e43303d4b62775d17a040d21541006ed08b3421e1c49a",
+            "EVREF-v1:2e41c03a80d6b9fb13f0c38ae941c32707339d0b3f3c78950ded627173b19ce8",
+            "EVREF-v1:5ff4114f4c0d40b727908e1d120493ba1929519955bd736a6d61ed5b40f8bace",
+            "EVREF-v1:6d7359295d824b418cc97ebf859fc801b88592a532cbe1fdcb5254f09f13ee36",
+            "EVREF-v1:9fb662ec899a3215a2d1ae3630346d74c9097cc618cb7cad379d3b5761e5b334",
+            "EVREF-v1:a8d0cd12b2c9a6a760e37df215ce8446da9a592d92138bc4e3c44fb6b9ac958f",
+            "EVREF-v1:c3face5807ad5b1f8dc3ef82bedb46fe563c21720c47152cb915103a90e7e60f",
+            "EVREF-v1:f96e0f3419d50da377aaa21cfc0c2784ad94548e1d46fea993fc0e089f72840a"
+          ],
+          "data_gaps": [
+            "mtbf_mttr",
+            "shift_trend",
+            "categorical_cause_values"
+          ],
+          "insights": [],
+          "evidence_gate": {
+            "status": "passed",
+            "required": true,
+            "evidence_refs": [
+              "EVREF-v1:25af4b6d3356e3d5810e43303d4b62775d17a040d21541006ed08b3421e1c49a",
+              "EVREF-v1:2e41c03a80d6b9fb13f0c38ae941c32707339d0b3f3c78950ded627173b19ce8",
+              "EVREF-v1:5ff4114f4c0d40b727908e1d120493ba1929519955bd736a6d61ed5b40f8bace",
+              "EVREF-v1:6d7359295d824b418cc97ebf859fc801b88592a532cbe1fdcb5254f09f13ee36",
+              "EVREF-v1:9fb662ec899a3215a2d1ae3630346d74c9097cc618cb7cad379d3b5761e5b334",
+              "EVREF-v1:a8d0cd12b2c9a6a760e37df215ce8446da9a592d92138bc4e3c44fb6b9ac958f",
+              "EVREF-v1:c3face5807ad5b1f8dc3ef82bedb46fe563c21720c47152cb915103a90e7e60f",
+              "EVREF-v1:f96e0f3419d50da377aaa21cfc0c2784ad94548e1d46fea993fc0e089f72840a"
+            ],
+            "missing_fields": [],
+            "source": "fixed_adapter_payload"
+          },
+          "display_descriptor": {
+            "language": "zh-CN",
+            "source": "peer_skill_executor",
+            "title_zh": "原因 Pareto",
+            "chart_type": "horizontal_bar"
+          },
+          "does_not_replace_authoritative_metrics": true,
+          "pareto": {
+            "dimension": null,
+            "unit": null,
+            "items": []
+          },
+          "reason": "no_categorical_cause_values",
+          "validation_errors": []
+        },
+        {
+          "contract_version": "BIFROST_PEER_SKILL_OUTPUT_v1",
+          "skill_id": "a07-yield-funnel",
+          "status": "available",
+          "event_id": "EVT-OMP-03-GOLDEN-0001",
+          "task_id": "TASK-OMP-03-QUAL",
+          "evidence_refs": [
+            "EVREF-v1:3ae85957ba607c7a2daa666dd06edca0ab015a8a40061547d143eacd650909b8",
+            "EVREF-v1:48c90c3a270d5b2265448f96168fa879f774d8523d346b765cf2fd0b4f1cca7e",
+            "EVREF-v1:5208d666bf141e2f72ff83a290a82bd3f44cb3a8b966273f79d8b85c3e73b0ef",
+            "EVREF-v1:7e32579d6ade4195e27b2513d371c67c427ae5607c4f59ec7f05cae5074cbece"
+          ],
+          "data_gaps": [
+            "sample_rule",
+            "spc_measurement_points"
+          ],
+          "insights": [],
+          "evidence_gate": {
+            "status": "passed",
+            "required": true,
+            "evidence_refs": [
+              "EVREF-v1:3ae85957ba607c7a2daa666dd06edca0ab015a8a40061547d143eacd650909b8",
+              "EVREF-v1:48c90c3a270d5b2265448f96168fa879f774d8523d346b765cf2fd0b4f1cca7e",
+              "EVREF-v1:5208d666bf141e2f72ff83a290a82bd3f44cb3a8b966273f79d8b85c3e73b0ef",
+              "EVREF-v1:7e32579d6ade4195e27b2513d371c67c427ae5607c4f59ec7f05cae5074cbece"
+            ],
+            "missing_fields": [],
+            "source": "fixed_adapter_payload"
+          },
+          "display_descriptor": {
+            "language": "zh-CN",
+            "source": "peer_skill_executor",
+            "title_zh": "良率漏斗",
+            "chart_type": "funnel"
+          },
+          "does_not_replace_authoritative_metrics": true,
+          "yield_funnel": {
+            "stages": [
+              {
+                "semantic_field": "defect_total",
+                "value": 50,
+                "unit": null,
+                "evidence_refs": [
+                  "EVREF-v1:7e32579d6ade4195e27b2513d371c67c427ae5607c4f59ec7f05cae5074cbece"
+                ]
+              },
+              {
+                "semantic_field": "yield",
+                "value": 0.95,
+                "unit": null,
+                "evidence_refs": [
+                  "EVREF-v1:5208d666bf141e2f72ff83a290a82bd3f44cb3a8b966273f79d8b85c3e73b0ef"
+                ]
+              }
+            ]
+          },
+          "validation_errors": []
+        },
+        {
+          "contract_version": "BIFROST_PEER_SKILL_OUTPUT_v1",
+          "skill_id": "a03-spc-rules",
+          "status": "blocked",
+          "event_id": "EVT-OMP-03-GOLDEN-0001",
+          "task_id": "TASK-OMP-03-QUAL",
+          "evidence_refs": [
+            "EVREF-v1:3ae85957ba607c7a2daa666dd06edca0ab015a8a40061547d143eacd650909b8",
+            "EVREF-v1:48c90c3a270d5b2265448f96168fa879f774d8523d346b765cf2fd0b4f1cca7e",
+            "EVREF-v1:5208d666bf141e2f72ff83a290a82bd3f44cb3a8b966273f79d8b85c3e73b0ef",
+            "EVREF-v1:7e32579d6ade4195e27b2513d371c67c427ae5607c4f59ec7f05cae5074cbece"
+          ],
+          "data_gaps": [
+            "lsl",
+            "sample_rule",
+            "spc_measurement_points",
+            "usl",
+            "evidence_refs"
+          ],
+          "insights": [],
+          "evidence_gate": {
+            "status": "blocked",
+            "required": true,
+            "evidence_refs": [],
+            "missing_fields": [
+              "lsl",
+              "sample_rule",
+              "spc_measurement_points",
+              "usl"
+            ],
+            "source": "fixed_adapter_payload"
+          },
+          "display_descriptor": {
+            "language": "zh-CN",
+            "source": "peer_skill_executor",
+            "title_zh": "SPC状态",
+            "chart_type": "status_card"
+          },
+          "does_not_replace_authoritative_metrics": true,
+          "spc_gate": {
+            "status": "blocked",
+            "required_fields": [
+              "lsl",
+              "sample_rule",
+              "spc_measurement_points",
+              "usl"
+            ],
+            "missing_fields": [
+              "lsl",
+              "sample_rule",
+              "spc_measurement_points",
+              "usl"
+            ],
+            "evidence_missing_fields": [],
+            "evidence_refs": []
+          },
+          "spc": {
+            "cpk": null,
+            "measurement_points": null,
+            "missing_fields": [
+              "lsl",
+              "sample_rule",
+              "spc_measurement_points",
+              "usl"
+            ]
+          },
+          "cpk": null,
+          "validation_errors": []
+        }
+      ],
+      "conclusions": {
+        "pareto": [
+          {
+            "dimension": null,
+            "unit": null,
+            "items": []
+          }
+        ],
+        "yield_funnel": [
+          {
+            "stages": [
+              {
+                "semantic_field": "defect_total",
+                "value": 50,
+                "unit": null,
+                "evidence_refs": [
+                  "EVREF-v1:7e32579d6ade4195e27b2513d371c67c427ae5607c4f59ec7f05cae5074cbece"
+                ]
+              },
+              {
+                "semantic_field": "yield",
+                "value": 0.95,
+                "unit": null,
+                "evidence_refs": [
+                  "EVREF-v1:5208d666bf141e2f72ff83a290a82bd3f44cb3a8b966273f79d8b85c3e73b0ef"
+                ]
+              }
+            ]
+          }
+        ],
+        "spc": [
+          {
+            "cpk": null,
+            "measurement_points": null,
+            "missing_fields": [
+              "lsl",
+              "sample_rule",
+              "spc_measurement_points",
+              "usl"
+            ]
+          }
+        ]
+      },
+      "evidence_refs": [
+        "EVREF-v1:25af4b6d3356e3d5810e43303d4b62775d17a040d21541006ed08b3421e1c49a",
+        "EVREF-v1:2e41c03a80d6b9fb13f0c38ae941c32707339d0b3f3c78950ded627173b19ce8",
+        "EVREF-v1:3ae85957ba607c7a2daa666dd06edca0ab015a8a40061547d143eacd650909b8",
+        "EVREF-v1:48c90c3a270d5b2265448f96168fa879f774d8523d346b765cf2fd0b4f1cca7e",
+        "EVREF-v1:5208d666bf141e2f72ff83a290a82bd3f44cb3a8b966273f79d8b85c3e73b0ef",
+        "EVREF-v1:5ff4114f4c0d40b727908e1d120493ba1929519955bd736a6d61ed5b40f8bace",
+        "EVREF-v1:6d7359295d824b418cc97ebf859fc801b88592a532cbe1fdcb5254f09f13ee36",
+        "EVREF-v1:7e32579d6ade4195e27b2513d371c67c427ae5607c4f59ec7f05cae5074cbece",
+        "EVREF-v1:9fb662ec899a3215a2d1ae3630346d74c9097cc618cb7cad379d3b5761e5b334",
+        "EVREF-v1:a8d0cd12b2c9a6a760e37df215ce8446da9a592d92138bc4e3c44fb6b9ac958f",
+        "EVREF-v1:c3face5807ad5b1f8dc3ef82bedb46fe563c21720c47152cb915103a90e7e60f",
+        "EVREF-v1:f96e0f3419d50da377aaa21cfc0c2784ad94548e1d46fea993fc0e089f72840a"
+      ],
+      "data_gaps": [
+        "categorical_cause_values",
+        "evidence_refs",
+        "lsl",
+        "mtbf_mttr",
+        "sample_rule",
+        "shift_trend",
+        "spc_measurement_points",
+        "usl"
+      ],
+      "read_only": true
+    },
+    "设备": {
+      "contract_version": "BIFROST_ROLE_PROJECTION_v1",
+      "role": "设备",
+      "status": "available",
+      "allowed_skill_ids": [
+        "a01-oee-loss-tree",
+        "a02-pareto"
+      ],
+      "skill_outputs": [
+        {
+          "contract_version": "BIFROST_PEER_SKILL_OUTPUT_v1",
+          "skill_id": "a01-oee-loss-tree",
+          "status": "available",
+          "event_id": "EVT-OMP-03-GOLDEN-0001",
+          "task_id": "TASK-OMP-03-PROD",
+          "evidence_refs": [
+            "EVREF-v1:25af4b6d3356e3d5810e43303d4b62775d17a040d21541006ed08b3421e1c49a",
+            "EVREF-v1:2e41c03a80d6b9fb13f0c38ae941c32707339d0b3f3c78950ded627173b19ce8",
+            "EVREF-v1:5ff4114f4c0d40b727908e1d120493ba1929519955bd736a6d61ed5b40f8bace",
+            "EVREF-v1:6d7359295d824b418cc97ebf859fc801b88592a532cbe1fdcb5254f09f13ee36",
+            "EVREF-v1:9fb662ec899a3215a2d1ae3630346d74c9097cc618cb7cad379d3b5761e5b334",
+            "EVREF-v1:a8d0cd12b2c9a6a760e37df215ce8446da9a592d92138bc4e3c44fb6b9ac958f",
+            "EVREF-v1:c3face5807ad5b1f8dc3ef82bedb46fe563c21720c47152cb915103a90e7e60f",
+            "EVREF-v1:f96e0f3419d50da377aaa21cfc0c2784ad94548e1d46fea993fc0e089f72840a"
+          ],
+          "data_gaps": [
+            "mtbf_mttr",
+            "shift_trend"
+          ],
+          "insights": [],
+          "evidence_gate": {
+            "status": "passed",
+            "required": true,
+            "evidence_refs": [
+              "EVREF-v1:25af4b6d3356e3d5810e43303d4b62775d17a040d21541006ed08b3421e1c49a",
+              "EVREF-v1:2e41c03a80d6b9fb13f0c38ae941c32707339d0b3f3c78950ded627173b19ce8",
+              "EVREF-v1:5ff4114f4c0d40b727908e1d120493ba1929519955bd736a6d61ed5b40f8bace",
+              "EVREF-v1:6d7359295d824b418cc97ebf859fc801b88592a532cbe1fdcb5254f09f13ee36",
+              "EVREF-v1:9fb662ec899a3215a2d1ae3630346d74c9097cc618cb7cad379d3b5761e5b334",
+              "EVREF-v1:a8d0cd12b2c9a6a760e37df215ce8446da9a592d92138bc4e3c44fb6b9ac958f",
+              "EVREF-v1:c3face5807ad5b1f8dc3ef82bedb46fe563c21720c47152cb915103a90e7e60f",
+              "EVREF-v1:f96e0f3419d50da377aaa21cfc0c2784ad94548e1d46fea993fc0e089f72840a"
+            ],
+            "missing_fields": [],
+            "source": "fixed_adapter_payload"
+          },
+          "display_descriptor": {
+            "language": "zh-CN",
+            "source": "peer_skill_executor",
+            "title_zh": "OEE损失树",
+            "chart_type": "loss_tree"
+          },
+          "does_not_replace_authoritative_metrics": true,
+          "oee_loss_tree": {
+            "availability": [
+              {
+                "cause_type": "direct_driver",
+                "semantic_field": "availability",
+                "value": 0.85,
+                "unit": "ratio",
+                "evidence_refs": [
+                  "EVREF-v1:5ff4114f4c0d40b727908e1d120493ba1929519955bd736a6d61ed5b40f8bace"
+                ]
+              },
+              {
+                "cause_type": "observed_cause",
+                "category": "availability_loss",
+                "statement": "非计划停机 45 分钟，为开动率下降证据（OEE直接驱动 availability 的证据）",
+                "evidence_refs": [
+                  "EVREF-v1:f96e0f3419d50da377aaa21cfc0c2784ad94548e1d46fea993fc0e089f72840a"
+                ]
+              }
+            ],
+            "performance": [
+              {
+                "cause_type": "direct_driver",
+                "semantic_field": "performance_rate",
+                "value": 0.78,
+                "unit": "ratio",
+                "evidence_refs": [
+                  "EVREF-v1:6d7359295d824b418cc97ebf859fc801b88592a532cbe1fdcb5254f09f13ee36"
+                ]
+              }
+            ],
+            "quality": [
+              {
+                "cause_type": "direct_driver",
+                "semantic_field": "quality_factor",
+                "value": 0.912867,
+                "unit": "ratio",
+                "evidence_refs": [
+                  "EVREF-v1:25af4b6d3356e3d5810e43303d4b62775d17a040d21541006ed08b3421e1c49a"
+                ]
+              }
+            ]
+          },
+          "validation_errors": []
+        },
+        {
+          "contract_version": "BIFROST_PEER_SKILL_OUTPUT_v1",
+          "skill_id": "a02-pareto",
+          "status": "not_observed",
+          "event_id": "EVT-OMP-03-GOLDEN-0001",
+          "task_id": "TASK-OMP-03-PROD",
+          "evidence_refs": [
+            "EVREF-v1:25af4b6d3356e3d5810e43303d4b62775d17a040d21541006ed08b3421e1c49a",
+            "EVREF-v1:2e41c03a80d6b9fb13f0c38ae941c32707339d0b3f3c78950ded627173b19ce8",
+            "EVREF-v1:5ff4114f4c0d40b727908e1d120493ba1929519955bd736a6d61ed5b40f8bace",
+            "EVREF-v1:6d7359295d824b418cc97ebf859fc801b88592a532cbe1fdcb5254f09f13ee36",
+            "EVREF-v1:9fb662ec899a3215a2d1ae3630346d74c9097cc618cb7cad379d3b5761e5b334",
+            "EVREF-v1:a8d0cd12b2c9a6a760e37df215ce8446da9a592d92138bc4e3c44fb6b9ac958f",
+            "EVREF-v1:c3face5807ad5b1f8dc3ef82bedb46fe563c21720c47152cb915103a90e7e60f",
+            "EVREF-v1:f96e0f3419d50da377aaa21cfc0c2784ad94548e1d46fea993fc0e089f72840a"
+          ],
+          "data_gaps": [
+            "mtbf_mttr",
+            "shift_trend",
+            "categorical_cause_values"
+          ],
+          "insights": [],
+          "evidence_gate": {
+            "status": "passed",
+            "required": true,
+            "evidence_refs": [
+              "EVREF-v1:25af4b6d3356e3d5810e43303d4b62775d17a040d21541006ed08b3421e1c49a",
+              "EVREF-v1:2e41c03a80d6b9fb13f0c38ae941c32707339d0b3f3c78950ded627173b19ce8",
+              "EVREF-v1:5ff4114f4c0d40b727908e1d120493ba1929519955bd736a6d61ed5b40f8bace",
+              "EVREF-v1:6d7359295d824b418cc97ebf859fc801b88592a532cbe1fdcb5254f09f13ee36",
+              "EVREF-v1:9fb662ec899a3215a2d1ae3630346d74c9097cc618cb7cad379d3b5761e5b334",
+              "EVREF-v1:a8d0cd12b2c9a6a760e37df215ce8446da9a592d92138bc4e3c44fb6b9ac958f",
+              "EVREF-v1:c3face5807ad5b1f8dc3ef82bedb46fe563c21720c47152cb915103a90e7e60f",
+              "EVREF-v1:f96e0f3419d50da377aaa21cfc0c2784ad94548e1d46fea993fc0e089f72840a"
+            ],
+            "missing_fields": [],
+            "source": "fixed_adapter_payload"
+          },
+          "display_descriptor": {
+            "language": "zh-CN",
+            "source": "peer_skill_executor",
+            "title_zh": "原因 Pareto",
+            "chart_type": "horizontal_bar"
+          },
+          "does_not_replace_authoritative_metrics": true,
+          "pareto": {
+            "dimension": null,
+            "unit": null,
+            "items": []
+          },
+          "reason": "no_categorical_cause_values",
+          "validation_errors": []
+        }
+      ],
+      "conclusions": {
+        "oee_loss_tree": [
+          {
+            "availability": [
+              {
+                "cause_type": "direct_driver",
+                "semantic_field": "availability",
+                "value": 0.85,
+                "unit": "ratio",
+                "evidence_refs": [
+                  "EVREF-v1:5ff4114f4c0d40b727908e1d120493ba1929519955bd736a6d61ed5b40f8bace"
+                ]
+              },
+              {
+                "cause_type": "observed_cause",
+                "category": "availability_loss",
+                "statement": "非计划停机 45 分钟，为开动率下降证据（OEE直接驱动 availability 的证据）",
+                "evidence_refs": [
+                  "EVREF-v1:f96e0f3419d50da377aaa21cfc0c2784ad94548e1d46fea993fc0e089f72840a"
+                ]
+              }
+            ],
+            "performance": [
+              {
+                "cause_type": "direct_driver",
+                "semantic_field": "performance_rate",
+                "value": 0.78,
+                "unit": "ratio",
+                "evidence_refs": [
+                  "EVREF-v1:6d7359295d824b418cc97ebf859fc801b88592a532cbe1fdcb5254f09f13ee36"
+                ]
+              }
+            ],
+            "quality": [
+              {
+                "cause_type": "direct_driver",
+                "semantic_field": "quality_factor",
+                "value": 0.912867,
+                "unit": "ratio",
+                "evidence_refs": [
+                  "EVREF-v1:25af4b6d3356e3d5810e43303d4b62775d17a040d21541006ed08b3421e1c49a"
+                ]
+              }
+            ]
+          }
+        ],
+        "pareto": [
+          {
+            "dimension": null,
+            "unit": null,
+            "items": []
+          }
+        ]
+      },
+      "evidence_refs": [
+        "EVREF-v1:25af4b6d3356e3d5810e43303d4b62775d17a040d21541006ed08b3421e1c49a",
+        "EVREF-v1:2e41c03a80d6b9fb13f0c38ae941c32707339d0b3f3c78950ded627173b19ce8",
+        "EVREF-v1:5ff4114f4c0d40b727908e1d120493ba1929519955bd736a6d61ed5b40f8bace",
+        "EVREF-v1:6d7359295d824b418cc97ebf859fc801b88592a532cbe1fdcb5254f09f13ee36",
+        "EVREF-v1:9fb662ec899a3215a2d1ae3630346d74c9097cc618cb7cad379d3b5761e5b334",
+        "EVREF-v1:a8d0cd12b2c9a6a760e37df215ce8446da9a592d92138bc4e3c44fb6b9ac958f",
+        "EVREF-v1:c3face5807ad5b1f8dc3ef82bedb46fe563c21720c47152cb915103a90e7e60f",
+        "EVREF-v1:f96e0f3419d50da377aaa21cfc0c2784ad94548e1d46fea993fc0e089f72840a"
+      ],
+      "data_gaps": [
+        "categorical_cause_values",
+        "mtbf_mttr",
+        "shift_trend"
+      ],
+      "read_only": true
+    },
+    "工艺": {
+      "contract_version": "BIFROST_ROLE_PROJECTION_v1",
+      "role": "工艺",
+      "status": "blocked",
+      "allowed_skill_ids": [
+        "a01-oee-loss-tree",
+        "a02-pareto",
+        "a03-spc-rules"
+      ],
+      "skill_outputs": [
+        {
+          "contract_version": "BIFROST_PEER_SKILL_OUTPUT_v1",
+          "skill_id": "a01-oee-loss-tree",
+          "status": "available",
+          "event_id": "EVT-OMP-03-GOLDEN-0001",
+          "task_id": "TASK-OMP-03-PROD",
+          "evidence_refs": [
+            "EVREF-v1:25af4b6d3356e3d5810e43303d4b62775d17a040d21541006ed08b3421e1c49a",
+            "EVREF-v1:2e41c03a80d6b9fb13f0c38ae941c32707339d0b3f3c78950ded627173b19ce8",
+            "EVREF-v1:5ff4114f4c0d40b727908e1d120493ba1929519955bd736a6d61ed5b40f8bace",
+            "EVREF-v1:6d7359295d824b418cc97ebf859fc801b88592a532cbe1fdcb5254f09f13ee36",
+            "EVREF-v1:9fb662ec899a3215a2d1ae3630346d74c9097cc618cb7cad379d3b5761e5b334",
+            "EVREF-v1:a8d0cd12b2c9a6a760e37df215ce8446da9a592d92138bc4e3c44fb6b9ac958f",
+            "EVREF-v1:c3face5807ad5b1f8dc3ef82bedb46fe563c21720c47152cb915103a90e7e60f",
+            "EVREF-v1:f96e0f3419d50da377aaa21cfc0c2784ad94548e1d46fea993fc0e089f72840a"
+          ],
+          "data_gaps": [
+            "mtbf_mttr",
+            "shift_trend"
+          ],
+          "insights": [],
+          "evidence_gate": {
+            "status": "passed",
+            "required": true,
+            "evidence_refs": [
+              "EVREF-v1:25af4b6d3356e3d5810e43303d4b62775d17a040d21541006ed08b3421e1c49a",
+              "EVREF-v1:2e41c03a80d6b9fb13f0c38ae941c32707339d0b3f3c78950ded627173b19ce8",
+              "EVREF-v1:5ff4114f4c0d40b727908e1d120493ba1929519955bd736a6d61ed5b40f8bace",
+              "EVREF-v1:6d7359295d824b418cc97ebf859fc801b88592a532cbe1fdcb5254f09f13ee36",
+              "EVREF-v1:9fb662ec899a3215a2d1ae3630346d74c9097cc618cb7cad379d3b5761e5b334",
+              "EVREF-v1:a8d0cd12b2c9a6a760e37df215ce8446da9a592d92138bc4e3c44fb6b9ac958f",
+              "EVREF-v1:c3face5807ad5b1f8dc3ef82bedb46fe563c21720c47152cb915103a90e7e60f",
+              "EVREF-v1:f96e0f3419d50da377aaa21cfc0c2784ad94548e1d46fea993fc0e089f72840a"
+            ],
+            "missing_fields": [],
+            "source": "fixed_adapter_payload"
+          },
+          "display_descriptor": {
+            "language": "zh-CN",
+            "source": "peer_skill_executor",
+            "title_zh": "OEE损失树",
+            "chart_type": "loss_tree"
+          },
+          "does_not_replace_authoritative_metrics": true,
+          "oee_loss_tree": {
+            "availability": [
+              {
+                "cause_type": "direct_driver",
+                "semantic_field": "availability",
+                "value": 0.85,
+                "unit": "ratio",
+                "evidence_refs": [
+                  "EVREF-v1:5ff4114f4c0d40b727908e1d120493ba1929519955bd736a6d61ed5b40f8bace"
+                ]
+              },
+              {
+                "cause_type": "observed_cause",
+                "category": "availability_loss",
+                "statement": "非计划停机 45 分钟，为开动率下降证据（OEE直接驱动 availability 的证据）",
+                "evidence_refs": [
+                  "EVREF-v1:f96e0f3419d50da377aaa21cfc0c2784ad94548e1d46fea993fc0e089f72840a"
+                ]
+              }
+            ],
+            "performance": [
+              {
+                "cause_type": "direct_driver",
+                "semantic_field": "performance_rate",
+                "value": 0.78,
+                "unit": "ratio",
+                "evidence_refs": [
+                  "EVREF-v1:6d7359295d824b418cc97ebf859fc801b88592a532cbe1fdcb5254f09f13ee36"
+                ]
+              }
+            ],
+            "quality": [
+              {
+                "cause_type": "direct_driver",
+                "semantic_field": "quality_factor",
+                "value": 0.912867,
+                "unit": "ratio",
+                "evidence_refs": [
+                  "EVREF-v1:25af4b6d3356e3d5810e43303d4b62775d17a040d21541006ed08b3421e1c49a"
+                ]
+              }
+            ]
+          },
+          "validation_errors": []
+        },
+        {
+          "contract_version": "BIFROST_PEER_SKILL_OUTPUT_v1",
+          "skill_id": "a02-pareto",
+          "status": "not_observed",
+          "event_id": "EVT-OMP-03-GOLDEN-0001",
+          "task_id": "TASK-OMP-03-PROD",
+          "evidence_refs": [
+            "EVREF-v1:25af4b6d3356e3d5810e43303d4b62775d17a040d21541006ed08b3421e1c49a",
+            "EVREF-v1:2e41c03a80d6b9fb13f0c38ae941c32707339d0b3f3c78950ded627173b19ce8",
+            "EVREF-v1:5ff4114f4c0d40b727908e1d120493ba1929519955bd736a6d61ed5b40f8bace",
+            "EVREF-v1:6d7359295d824b418cc97ebf859fc801b88592a532cbe1fdcb5254f09f13ee36",
+            "EVREF-v1:9fb662ec899a3215a2d1ae3630346d74c9097cc618cb7cad379d3b5761e5b334",
+            "EVREF-v1:a8d0cd12b2c9a6a760e37df215ce8446da9a592d92138bc4e3c44fb6b9ac958f",
+            "EVREF-v1:c3face5807ad5b1f8dc3ef82bedb46fe563c21720c47152cb915103a90e7e60f",
+            "EVREF-v1:f96e0f3419d50da377aaa21cfc0c2784ad94548e1d46fea993fc0e089f72840a"
+          ],
+          "data_gaps": [
+            "mtbf_mttr",
+            "shift_trend",
+            "categorical_cause_values"
+          ],
+          "insights": [],
+          "evidence_gate": {
+            "status": "passed",
+            "required": true,
+            "evidence_refs": [
+              "EVREF-v1:25af4b6d3356e3d5810e43303d4b62775d17a040d21541006ed08b3421e1c49a",
+              "EVREF-v1:2e41c03a80d6b9fb13f0c38ae941c32707339d0b3f3c78950ded627173b19ce8",
+              "EVREF-v1:5ff4114f4c0d40b727908e1d120493ba1929519955bd736a6d61ed5b40f8bace",
+              "EVREF-v1:6d7359295d824b418cc97ebf859fc801b88592a532cbe1fdcb5254f09f13ee36",
+              "EVREF-v1:9fb662ec899a3215a2d1ae3630346d74c9097cc618cb7cad379d3b5761e5b334",
+              "EVREF-v1:a8d0cd12b2c9a6a760e37df215ce8446da9a592d92138bc4e3c44fb6b9ac958f",
+              "EVREF-v1:c3face5807ad5b1f8dc3ef82bedb46fe563c21720c47152cb915103a90e7e60f",
+              "EVREF-v1:f96e0f3419d50da377aaa21cfc0c2784ad94548e1d46fea993fc0e089f72840a"
+            ],
+            "missing_fields": [],
+            "source": "fixed_adapter_payload"
+          },
+          "display_descriptor": {
+            "language": "zh-CN",
+            "source": "peer_skill_executor",
+            "title_zh": "原因 Pareto",
+            "chart_type": "horizontal_bar"
+          },
+          "does_not_replace_authoritative_metrics": true,
+          "pareto": {
+            "dimension": null,
+            "unit": null,
+            "items": []
+          },
+          "reason": "no_categorical_cause_values",
+          "validation_errors": []
+        },
+        {
+          "contract_version": "BIFROST_PEER_SKILL_OUTPUT_v1",
+          "skill_id": "a03-spc-rules",
+          "status": "blocked",
+          "event_id": "EVT-OMP-03-GOLDEN-0001",
+          "task_id": "TASK-OMP-03-QUAL",
+          "evidence_refs": [
+            "EVREF-v1:3ae85957ba607c7a2daa666dd06edca0ab015a8a40061547d143eacd650909b8",
+            "EVREF-v1:48c90c3a270d5b2265448f96168fa879f774d8523d346b765cf2fd0b4f1cca7e",
+            "EVREF-v1:5208d666bf141e2f72ff83a290a82bd3f44cb3a8b966273f79d8b85c3e73b0ef",
+            "EVREF-v1:7e32579d6ade4195e27b2513d371c67c427ae5607c4f59ec7f05cae5074cbece"
+          ],
+          "data_gaps": [
+            "lsl",
+            "sample_rule",
+            "spc_measurement_points",
+            "usl",
+            "evidence_refs"
+          ],
+          "insights": [],
+          "evidence_gate": {
+            "status": "blocked",
+            "required": true,
+            "evidence_refs": [],
+            "missing_fields": [
+              "lsl",
+              "sample_rule",
+              "spc_measurement_points",
+              "usl"
+            ],
+            "source": "fixed_adapter_payload"
+          },
+          "display_descriptor": {
+            "language": "zh-CN",
+            "source": "peer_skill_executor",
+            "title_zh": "SPC状态",
+            "chart_type": "status_card"
+          },
+          "does_not_replace_authoritative_metrics": true,
+          "spc_gate": {
+            "status": "blocked",
+            "required_fields": [
+              "lsl",
+              "sample_rule",
+              "spc_measurement_points",
+              "usl"
+            ],
+            "missing_fields": [
+              "lsl",
+              "sample_rule",
+              "spc_measurement_points",
+              "usl"
+            ],
+            "evidence_missing_fields": [],
+            "evidence_refs": []
+          },
+          "spc": {
+            "cpk": null,
+            "measurement_points": null,
+            "missing_fields": [
+              "lsl",
+              "sample_rule",
+              "spc_measurement_points",
+              "usl"
+            ]
+          },
+          "cpk": null,
+          "validation_errors": []
+        }
+      ],
+      "conclusions": {
+        "oee_loss_tree": [
+          {
+            "availability": [
+              {
+                "cause_type": "direct_driver",
+                "semantic_field": "availability",
+                "value": 0.85,
+                "unit": "ratio",
+                "evidence_refs": [
+                  "EVREF-v1:5ff4114f4c0d40b727908e1d120493ba1929519955bd736a6d61ed5b40f8bace"
+                ]
+              },
+              {
+                "cause_type": "observed_cause",
+                "category": "availability_loss",
+                "statement": "非计划停机 45 分钟，为开动率下降证据（OEE直接驱动 availability 的证据）",
+                "evidence_refs": [
+                  "EVREF-v1:f96e0f3419d50da377aaa21cfc0c2784ad94548e1d46fea993fc0e089f72840a"
+                ]
+              }
+            ],
+            "performance": [
+              {
+                "cause_type": "direct_driver",
+                "semantic_field": "performance_rate",
+                "value": 0.78,
+                "unit": "ratio",
+                "evidence_refs": [
+                  "EVREF-v1:6d7359295d824b418cc97ebf859fc801b88592a532cbe1fdcb5254f09f13ee36"
+                ]
+              }
+            ],
+            "quality": [
+              {
+                "cause_type": "direct_driver",
+                "semantic_field": "quality_factor",
+                "value": 0.912867,
+                "unit": "ratio",
+                "evidence_refs": [
+                  "EVREF-v1:25af4b6d3356e3d5810e43303d4b62775d17a040d21541006ed08b3421e1c49a"
+                ]
+              }
+            ]
+          }
+        ],
+        "pareto": [
+          {
+            "dimension": null,
+            "unit": null,
+            "items": []
+          }
+        ],
+        "spc": [
+          {
+            "cpk": null,
+            "measurement_points": null,
+            "missing_fields": [
+              "lsl",
+              "sample_rule",
+              "spc_measurement_points",
+              "usl"
+            ]
+          }
+        ]
+      },
+      "evidence_refs": [
+        "EVREF-v1:25af4b6d3356e3d5810e43303d4b62775d17a040d21541006ed08b3421e1c49a",
+        "EVREF-v1:2e41c03a80d6b9fb13f0c38ae941c32707339d0b3f3c78950ded627173b19ce8",
+        "EVREF-v1:3ae85957ba607c7a2daa666dd06edca0ab015a8a40061547d143eacd650909b8",
+        "EVREF-v1:48c90c3a270d5b2265448f96168fa879f774d8523d346b765cf2fd0b4f1cca7e",
+        "EVREF-v1:5208d666bf141e2f72ff83a290a82bd3f44cb3a8b966273f79d8b85c3e73b0ef",
+        "EVREF-v1:5ff4114f4c0d40b727908e1d120493ba1929519955bd736a6d61ed5b40f8bace",
+        "EVREF-v1:6d7359295d824b418cc97ebf859fc801b88592a532cbe1fdcb5254f09f13ee36",
+        "EVREF-v1:7e32579d6ade4195e27b2513d371c67c427ae5607c4f59ec7f05cae5074cbece",
+        "EVREF-v1:9fb662ec899a3215a2d1ae3630346d74c9097cc618cb7cad379d3b5761e5b334",
+        "EVREF-v1:a8d0cd12b2c9a6a760e37df215ce8446da9a592d92138bc4e3c44fb6b9ac958f",
+        "EVREF-v1:c3face5807ad5b1f8dc3ef82bedb46fe563c21720c47152cb915103a90e7e60f",
+        "EVREF-v1:f96e0f3419d50da377aaa21cfc0c2784ad94548e1d46fea993fc0e089f72840a"
+      ],
+      "data_gaps": [
+        "categorical_cause_values",
+        "evidence_refs",
+        "lsl",
+        "mtbf_mttr",
+        "sample_rule",
+        "shift_trend",
+        "spc_measurement_points",
+        "usl"
+      ],
+      "read_only": true
+    },
+    "供应链": {
+      "contract_version": "BIFROST_ROLE_PROJECTION_v1",
+      "role": "供应链",
+      "status": "available",
+      "allowed_skill_ids": [
+        "a08-supply-chain-gap"
+      ],
+      "skill_outputs": [
+        {
+          "contract_version": "BIFROST_PEER_SKILL_OUTPUT_v1",
+          "skill_id": "a08-supply-chain-gap",
+          "status": "available",
+          "event_id": "EVT-OMP-03-GOLDEN-0001",
+          "task_id": "TASK-OMP-03-SUPPLY",
+          "evidence_refs": [
+            "EVREF-v1:389d4a1da99ca49798af2868b17b35d4debd29cee1904bbd4a9659b8c5fd419d",
+            "EVREF-v1:553e0295c0a085d3151d6cdbe5d279d3ec371745b51a35d16d7261133bd9ea3b",
+            "EVREF-v1:8cc0db0e01432eec066fa2e42a2498d30e7d4848dd1c0a87ff01d67678fbef10",
+            "EVREF-v1:8e0d77e29cf72ec779803314fa771cfdf69d3d92a918b5bd998e3bcc82faa7c2",
+            "EVREF-v1:b81c7e9e48e3818b4149d0e4c7f9669be26d215228cc89474f2e82cdb0150f99"
+          ],
+          "data_gaps": [],
+          "insights": [],
+          "evidence_gate": {
+            "status": "passed",
+            "required": true,
+            "evidence_refs": [
+              "EVREF-v1:389d4a1da99ca49798af2868b17b35d4debd29cee1904bbd4a9659b8c5fd419d",
+              "EVREF-v1:553e0295c0a085d3151d6cdbe5d279d3ec371745b51a35d16d7261133bd9ea3b",
+              "EVREF-v1:8cc0db0e01432eec066fa2e42a2498d30e7d4848dd1c0a87ff01d67678fbef10",
+              "EVREF-v1:8e0d77e29cf72ec779803314fa771cfdf69d3d92a918b5bd998e3bcc82faa7c2",
+              "EVREF-v1:b81c7e9e48e3818b4149d0e4c7f9669be26d215228cc89474f2e82cdb0150f99"
+            ],
+            "missing_fields": [],
+            "source": "fixed_adapter_payload"
+          },
+          "display_descriptor": {
+            "language": "zh-CN",
+            "source": "peer_skill_executor",
+            "title_zh": "供应缺口",
+            "chart_type": "table"
+          },
+          "does_not_replace_authoritative_metrics": true,
+          "supply_gap": {
+            "metrics": [
+              {
+                "metric_id": "M-SUP-001",
+                "label": "PO-TEST-0001#row1 采购数量",
+                "value": 1000.0,
+                "display_format": "#,##0",
+                "semantic_field": "purchase_qty",
+                "evidence_refs": [
+                  "EVREF-v1:553e0295c0a085d3151d6cdbe5d279d3ec371745b51a35d16d7261133bd9ea3b"
+                ]
+              },
+              {
+                "metric_id": "M-SUP-002",
+                "label": "PO-TEST-0001#row1 到货数量",
+                "value": 1000.0,
+                "display_format": "#,##0",
+                "semantic_field": "arrived_qty",
+                "evidence_refs": [
+                  "EVREF-v1:389d4a1da99ca49798af2868b17b35d4debd29cee1904bbd4a9659b8c5fd419d"
+                ]
+              }
+            ],
+            "oee_attribution": "forbidden"
+          },
+          "oee_attribution": "forbidden",
+          "validation_errors": []
+        }
+      ],
+      "conclusions": {
+        "supply_gap": [
+          {
+            "metrics": [
+              {
+                "metric_id": "M-SUP-001",
+                "label": "PO-TEST-0001#row1 采购数量",
+                "value": 1000.0,
+                "display_format": "#,##0",
+                "semantic_field": "purchase_qty",
+                "evidence_refs": [
+                  "EVREF-v1:553e0295c0a085d3151d6cdbe5d279d3ec371745b51a35d16d7261133bd9ea3b"
+                ]
+              },
+              {
+                "metric_id": "M-SUP-002",
+                "label": "PO-TEST-0001#row1 到货数量",
+                "value": 1000.0,
+                "display_format": "#,##0",
+                "semantic_field": "arrived_qty",
+                "evidence_refs": [
+                  "EVREF-v1:389d4a1da99ca49798af2868b17b35d4debd29cee1904bbd4a9659b8c5fd419d"
+                ]
+              }
+            ],
+            "oee_attribution": "forbidden"
+          }
+        ]
+      },
+      "evidence_refs": [
+        "EVREF-v1:389d4a1da99ca49798af2868b17b35d4debd29cee1904bbd4a9659b8c5fd419d",
+        "EVREF-v1:553e0295c0a085d3151d6cdbe5d279d3ec371745b51a35d16d7261133bd9ea3b",
+        "EVREF-v1:8cc0db0e01432eec066fa2e42a2498d30e7d4848dd1c0a87ff01d67678fbef10",
+        "EVREF-v1:8e0d77e29cf72ec779803314fa771cfdf69d3d92a918b5bd998e3bcc82faa7c2",
+        "EVREF-v1:b81c7e9e48e3818b4149d0e4c7f9669be26d215228cc89474f2e82cdb0150f99"
+      ],
+      "data_gaps": [],
+      "read_only": true
+    }
+  },
+  "governance_findings": {
+    "status": "not_run",
+    "reason": "fixed adapter contract contains validated results, not raw governance input",
+    "required_next_input": [
+      "raw_rows",
+      "schema",
+      "reference_tables",
+      "time_fields"
+    ]
+  },
+  "formal_derived_insights": {
+    "promotion_status": "approved",
+    "formal_integration_status": "attached_additive",
+    "derived_insights": [
+      {
+        "insight_id": "DERIVED-EVT-OMP-03-GOLDEN-0001-TASK-OMP-03-PROD-a01-oee-loss-tree",
+        "skill_id": "a01-oee-loss-tree",
+        "authority": "bifrost_derived",
+        "status": "approved",
+        "metric_effect": "none",
+        "does_not_replace_authoritative_metrics": true,
+        "promotion_scope": "formal-derived",
+        "evidence_provenance": "authoritative_task_evidence",
+        "source_payload_sha256": "ff0e5b869ab9bdeb3f7f5198630e9aedd539fdf6ef1689730314d76ea1f44b60",
+        "event_id": "EVT-OMP-03-GOLDEN-0001",
+        "task_id": "TASK-OMP-03-PROD",
+        "approval": {
+          "approval_id": "USER-INSTRUCTION-PEER-PROMOTION",
+          "approved_by": "project-owner",
+          "approval_source": "explicit_user_request",
+          "event_id": "EVT-OMP-03-GOLDEN-0001",
+          "approved_skill_ids": [
+            "a01-oee-loss-tree",
+            "a07-yield-funnel",
+            "a08-supply-chain-gap"
+          ]
+        },
+        "evidence_refs": [
+          "EVREF-v1:25af4b6d3356e3d5810e43303d4b62775d17a040d21541006ed08b3421e1c49a",
+          "EVREF-v1:2e41c03a80d6b9fb13f0c38ae941c32707339d0b3f3c78950ded627173b19ce8",
+          "EVREF-v1:5ff4114f4c0d40b727908e1d120493ba1929519955bd736a6d61ed5b40f8bace",
+          "EVREF-v1:6d7359295d824b418cc97ebf859fc801b88592a532cbe1fdcb5254f09f13ee36",
+          "EVREF-v1:9fb662ec899a3215a2d1ae3630346d74c9097cc618cb7cad379d3b5761e5b334",
+          "EVREF-v1:a8d0cd12b2c9a6a760e37df215ce8446da9a592d92138bc4e3c44fb6b9ac958f",
+          "EVREF-v1:c3face5807ad5b1f8dc3ef82bedb46fe563c21720c47152cb915103a90e7e60f",
+          "EVREF-v1:f96e0f3419d50da377aaa21cfc0c2784ad94548e1d46fea993fc0e089f72840a"
+        ],
+        "physical_evidence_refs": [],
+        "evidence_binding_hash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "payload": {
+          "contract_version": "BIFROST_PEER_SKILL_OUTPUT_v1",
+          "skill_id": "a01-oee-loss-tree",
+          "status": "available",
+          "event_id": "EVT-OMP-03-GOLDEN-0001",
+          "task_id": "TASK-OMP-03-PROD",
+          "evidence_refs": [
+            "EVREF-v1:25af4b6d3356e3d5810e43303d4b62775d17a040d21541006ed08b3421e1c49a",
+            "EVREF-v1:2e41c03a80d6b9fb13f0c38ae941c32707339d0b3f3c78950ded627173b19ce8",
+            "EVREF-v1:5ff4114f4c0d40b727908e1d120493ba1929519955bd736a6d61ed5b40f8bace",
+            "EVREF-v1:6d7359295d824b418cc97ebf859fc801b88592a532cbe1fdcb5254f09f13ee36",
+            "EVREF-v1:9fb662ec899a3215a2d1ae3630346d74c9097cc618cb7cad379d3b5761e5b334",
+            "EVREF-v1:a8d0cd12b2c9a6a760e37df215ce8446da9a592d92138bc4e3c44fb6b9ac958f",
+            "EVREF-v1:c3face5807ad5b1f8dc3ef82bedb46fe563c21720c47152cb915103a90e7e60f",
+            "EVREF-v1:f96e0f3419d50da377aaa21cfc0c2784ad94548e1d46fea993fc0e089f72840a"
+          ],
+          "data_gaps": [
+            "mtbf_mttr",
+            "shift_trend"
+          ],
+          "insights": [],
+          "evidence_gate": {
+            "status": "passed",
+            "required": true,
+            "evidence_refs": [
+              "EVREF-v1:25af4b6d3356e3d5810e43303d4b62775d17a040d21541006ed08b3421e1c49a",
+              "EVREF-v1:2e41c03a80d6b9fb13f0c38ae941c32707339d0b3f3c78950ded627173b19ce8",
+              "EVREF-v1:5ff4114f4c0d40b727908e1d120493ba1929519955bd736a6d61ed5b40f8bace",
+              "EVREF-v1:6d7359295d824b418cc97ebf859fc801b88592a532cbe1fdcb5254f09f13ee36",
+              "EVREF-v1:9fb662ec899a3215a2d1ae3630346d74c9097cc618cb7cad379d3b5761e5b334",
+              "EVREF-v1:a8d0cd12b2c9a6a760e37df215ce8446da9a592d92138bc4e3c44fb6b9ac958f",
+              "EVREF-v1:c3face5807ad5b1f8dc3ef82bedb46fe563c21720c47152cb915103a90e7e60f",
+              "EVREF-v1:f96e0f3419d50da377aaa21cfc0c2784ad94548e1d46fea993fc0e089f72840a"
+            ],
+            "missing_fields": [],
+            "source": "fixed_adapter_payload"
+          },
+          "display_descriptor": {
+            "language": "zh-CN",
+            "source": "peer_skill_executor",
+            "title_zh": "OEE损失树",
+            "chart_type": "loss_tree"
+          },
+          "does_not_replace_authoritative_metrics": true,
+          "oee_loss_tree": {
+            "availability": [
+              {
+                "cause_type": "direct_driver",
+                "semantic_field": "availability",
+                "value": 0.85,
+                "unit": "ratio",
+                "evidence_refs": [
+                  "EVREF-v1:5ff4114f4c0d40b727908e1d120493ba1929519955bd736a6d61ed5b40f8bace"
+                ]
+              },
+              {
+                "cause_type": "observed_cause",
+                "category": "availability_loss",
+                "statement": "非计划停机 45 分钟，为开动率下降证据（OEE直接驱动 availability 的证据）",
+                "evidence_refs": [
+                  "EVREF-v1:f96e0f3419d50da377aaa21cfc0c2784ad94548e1d46fea993fc0e089f72840a"
+                ]
+              }
+            ],
+            "performance": [
+              {
+                "cause_type": "direct_driver",
+                "semantic_field": "performance_rate",
+                "value": 0.78,
+                "unit": "ratio",
+                "evidence_refs": [
+                  "EVREF-v1:6d7359295d824b418cc97ebf859fc801b88592a532cbe1fdcb5254f09f13ee36"
+                ]
+              }
+            ],
+            "quality": [
+              {
+                "cause_type": "direct_driver",
+                "semantic_field": "quality_factor",
+                "value": 0.912867,
+                "unit": "ratio",
+                "evidence_refs": [
+                  "EVREF-v1:25af4b6d3356e3d5810e43303d4b62775d17a040d21541006ed08b3421e1c49a"
+                ]
+              }
+            ]
+          },
+          "validation_errors": []
+        }
+      },
+      {
+        "insight_id": "DERIVED-EVT-OMP-03-GOLDEN-0001-TASK-OMP-03-QUAL-a07-yield-funnel",
+        "skill_id": "a07-yield-funnel",
+        "authority": "bifrost_derived",
+        "status": "approved",
+        "metric_effect": "none",
+        "does_not_replace_authoritative_metrics": true,
+        "promotion_scope": "formal-derived",
+        "evidence_provenance": "authoritative_task_evidence",
+        "source_payload_sha256": "ff0e5b869ab9bdeb3f7f5198630e9aedd539fdf6ef1689730314d76ea1f44b60",
+        "event_id": "EVT-OMP-03-GOLDEN-0001",
+        "task_id": "TASK-OMP-03-QUAL",
+        "approval": {
+          "approval_id": "USER-INSTRUCTION-PEER-PROMOTION",
+          "approved_by": "project-owner",
+          "approval_source": "explicit_user_request",
+          "event_id": "EVT-OMP-03-GOLDEN-0001",
+          "approved_skill_ids": [
+            "a01-oee-loss-tree",
+            "a07-yield-funnel",
+            "a08-supply-chain-gap"
+          ]
+        },
+        "evidence_refs": [
+          "EVREF-v1:3ae85957ba607c7a2daa666dd06edca0ab015a8a40061547d143eacd650909b8",
+          "EVREF-v1:48c90c3a270d5b2265448f96168fa879f774d8523d346b765cf2fd0b4f1cca7e",
+          "EVREF-v1:5208d666bf141e2f72ff83a290a82bd3f44cb3a8b966273f79d8b85c3e73b0ef",
+          "EVREF-v1:7e32579d6ade4195e27b2513d371c67c427ae5607c4f59ec7f05cae5074cbece"
+        ],
+        "physical_evidence_refs": [],
+        "evidence_binding_hash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "payload": {
+          "contract_version": "BIFROST_PEER_SKILL_OUTPUT_v1",
+          "skill_id": "a07-yield-funnel",
+          "status": "available",
+          "event_id": "EVT-OMP-03-GOLDEN-0001",
+          "task_id": "TASK-OMP-03-QUAL",
+          "evidence_refs": [
+            "EVREF-v1:3ae85957ba607c7a2daa666dd06edca0ab015a8a40061547d143eacd650909b8",
+            "EVREF-v1:48c90c3a270d5b2265448f96168fa879f774d8523d346b765cf2fd0b4f1cca7e",
+            "EVREF-v1:5208d666bf141e2f72ff83a290a82bd3f44cb3a8b966273f79d8b85c3e73b0ef",
+            "EVREF-v1:7e32579d6ade4195e27b2513d371c67c427ae5607c4f59ec7f05cae5074cbece"
+          ],
+          "data_gaps": [
+            "sample_rule",
+            "spc_measurement_points"
+          ],
+          "insights": [],
+          "evidence_gate": {
+            "status": "passed",
+            "required": true,
+            "evidence_refs": [
+              "EVREF-v1:3ae85957ba607c7a2daa666dd06edca0ab015a8a40061547d143eacd650909b8",
+              "EVREF-v1:48c90c3a270d5b2265448f96168fa879f774d8523d346b765cf2fd0b4f1cca7e",
+              "EVREF-v1:5208d666bf141e2f72ff83a290a82bd3f44cb3a8b966273f79d8b85c3e73b0ef",
+              "EVREF-v1:7e32579d6ade4195e27b2513d371c67c427ae5607c4f59ec7f05cae5074cbece"
+            ],
+            "missing_fields": [],
+            "source": "fixed_adapter_payload"
+          },
+          "display_descriptor": {
+            "language": "zh-CN",
+            "source": "peer_skill_executor",
+            "title_zh": "良率漏斗",
+            "chart_type": "funnel"
+          },
+          "does_not_replace_authoritative_metrics": true,
+          "yield_funnel": {
+            "stages": [
+              {
+                "semantic_field": "defect_total",
+                "value": 50,
+                "unit": null,
+                "evidence_refs": [
+                  "EVREF-v1:7e32579d6ade4195e27b2513d371c67c427ae5607c4f59ec7f05cae5074cbece"
+                ]
+              },
+              {
+                "semantic_field": "yield",
+                "value": 0.95,
+                "unit": null,
+                "evidence_refs": [
+                  "EVREF-v1:5208d666bf141e2f72ff83a290a82bd3f44cb3a8b966273f79d8b85c3e73b0ef"
+                ]
+              }
+            ]
+          },
+          "validation_errors": []
+        }
+      },
+      {
+        "insight_id": "DERIVED-EVT-OMP-03-GOLDEN-0001-TASK-OMP-03-SUPPLY-a08-supply-chain-gap",
+        "skill_id": "a08-supply-chain-gap",
+        "authority": "bifrost_derived",
+        "status": "approved",
+        "metric_effect": "none",
+        "does_not_replace_authoritative_metrics": true,
+        "promotion_scope": "formal-derived",
+        "evidence_provenance": "authoritative_task_evidence",
+        "source_payload_sha256": "ff0e5b869ab9bdeb3f7f5198630e9aedd539fdf6ef1689730314d76ea1f44b60",
+        "event_id": "EVT-OMP-03-GOLDEN-0001",
+        "task_id": "TASK-OMP-03-SUPPLY",
+        "approval": {
+          "approval_id": "USER-INSTRUCTION-PEER-PROMOTION",
+          "approved_by": "project-owner",
+          "approval_source": "explicit_user_request",
+          "event_id": "EVT-OMP-03-GOLDEN-0001",
+          "approved_skill_ids": [
+            "a01-oee-loss-tree",
+            "a07-yield-funnel",
+            "a08-supply-chain-gap"
+          ]
+        },
+        "evidence_refs": [
+          "EVREF-v1:389d4a1da99ca49798af2868b17b35d4debd29cee1904bbd4a9659b8c5fd419d",
+          "EVREF-v1:553e0295c0a085d3151d6cdbe5d279d3ec371745b51a35d16d7261133bd9ea3b",
+          "EVREF-v1:8cc0db0e01432eec066fa2e42a2498d30e7d4848dd1c0a87ff01d67678fbef10",
+          "EVREF-v1:8e0d77e29cf72ec779803314fa771cfdf69d3d92a918b5bd998e3bcc82faa7c2",
+          "EVREF-v1:b81c7e9e48e3818b4149d0e4c7f9669be26d215228cc89474f2e82cdb0150f99"
+        ],
+        "physical_evidence_refs": [],
+        "evidence_binding_hash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "payload": {
+          "contract_version": "BIFROST_PEER_SKILL_OUTPUT_v1",
+          "skill_id": "a08-supply-chain-gap",
+          "status": "available",
+          "event_id": "EVT-OMP-03-GOLDEN-0001",
+          "task_id": "TASK-OMP-03-SUPPLY",
+          "evidence_refs": [
+            "EVREF-v1:389d4a1da99ca49798af2868b17b35d4debd29cee1904bbd4a9659b8c5fd419d",
+            "EVREF-v1:553e0295c0a085d3151d6cdbe5d279d3ec371745b51a35d16d7261133bd9ea3b",
+            "EVREF-v1:8cc0db0e01432eec066fa2e42a2498d30e7d4848dd1c0a87ff01d67678fbef10",
+            "EVREF-v1:8e0d77e29cf72ec779803314fa771cfdf69d3d92a918b5bd998e3bcc82faa7c2",
+            "EVREF-v1:b81c7e9e48e3818b4149d0e4c7f9669be26d215228cc89474f2e82cdb0150f99"
+          ],
+          "data_gaps": [],
+          "insights": [],
+          "evidence_gate": {
+            "status": "passed",
+            "required": true,
+            "evidence_refs": [
+              "EVREF-v1:389d4a1da99ca49798af2868b17b35d4debd29cee1904bbd4a9659b8c5fd419d",
+              "EVREF-v1:553e0295c0a085d3151d6cdbe5d279d3ec371745b51a35d16d7261133bd9ea3b",
+              "EVREF-v1:8cc0db0e01432eec066fa2e42a2498d30e7d4848dd1c0a87ff01d67678fbef10",
+              "EVREF-v1:8e0d77e29cf72ec779803314fa771cfdf69d3d92a918b5bd998e3bcc82faa7c2",
+              "EVREF-v1:b81c7e9e48e3818b4149d0e4c7f9669be26d215228cc89474f2e82cdb0150f99"
+            ],
+            "missing_fields": [],
+            "source": "fixed_adapter_payload"
+          },
+          "display_descriptor": {
+            "language": "zh-CN",
+            "source": "peer_skill_executor",
+            "title_zh": "供应缺口",
+            "chart_type": "table"
+          },
+          "does_not_replace_authoritative_metrics": true,
+          "supply_gap": {
+            "metrics": [
+              {
+                "metric_id": "M-SUP-001",
+                "label": "PO-TEST-0001#row1 采购数量",
+                "value": 1000.0,
+                "display_format": "#,##0",
+                "semantic_field": "purchase_qty",
+                "evidence_refs": [
+                  "EVREF-v1:553e0295c0a085d3151d6cdbe5d279d3ec371745b51a35d16d7261133bd9ea3b"
+                ]
+              },
+              {
+                "metric_id": "M-SUP-002",
+                "label": "PO-TEST-0001#row1 到货数量",
+                "value": 1000.0,
+                "display_format": "#,##0",
+                "semantic_field": "arrived_qty",
+                "evidence_refs": [
+                  "EVREF-v1:389d4a1da99ca49798af2868b17b35d4debd29cee1904bbd4a9659b8c5fd419d"
+                ]
+              }
+            ],
+            "oee_attribution": "forbidden"
+          },
+          "oee_attribution": "forbidden",
+          "validation_errors": []
+        }
+      }
+    ],
+    "requires_human_confirmation": false
+  }
+}

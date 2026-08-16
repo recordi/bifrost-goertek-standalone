@@ -1,0 +1,119 @@
+{
+  "version": "1.1",
+  "description": "Synthetic defect-seeding test set for Bifrost governance node (S2-2, Wave 6, Agent E deliverable). All data is fabricated for testing purposes and does not represent real Goertek business data.",
+  "test_cases": [
+    {
+      "id": "01-missing-value",
+      "defect_type": "missing_value",
+      "path": "01-missing-value/",
+      "description": "Critical production fields (quantity, product_id, revenue_cny, yield_rate, line_code) contain NULL values across 24 of 60 rows.",
+      "detection_hints": "d-class profiling / null_rate quality_flags"
+    },
+    {
+      "id": "02-unit-inconsistent",
+      "defect_type": "unit_inconsistent",
+      "path": "02-unit-inconsistent/",
+      "description": "PLANT-03 records unit_price_cny in 万元 scale while other plants use 元 scale in the same column, producing a bimodal distribution with a 10000x gap.",
+      "detection_hints": "d01-unit-inconsistent"
+    },
+    {
+      "id": "03-duplicate-key",
+      "defect_type": "duplicate_key",
+      "path": "03-duplicate-key/",
+      "description": "Composite key (date, line_code, sku_id) has 8 duplicate rows forming 4 duplicate pairs with identical field values, indicating ETL duplicate extraction.",
+      "detection_hints": "d02-duplicate-key"
+    },
+    {
+      "id": "04-out-of-domain",
+      "defect_type": "out_of_domain",
+      "path": "04-out-of-domain/",
+      "description": "yield_rate and utilization_rate columns (semantic: ratio, domain [0,1]) contain 7 impossible values including negative ratios and ratios exceeding 1.0.",
+      "detection_hints": "profiling out_of_domain quality_flag"
+    },
+    {
+      "id": "05-temporal-gap",
+      "defect_type": "temporal_gap",
+      "path": "05-temporal-gap/",
+      "description": "Daily production time series is missing 3 scattered working days (2026-02-04, 2026-02-05, 2026-02-18) after correctly excluding weekends and a known planned-maintenance window.",
+      "detection_hints": "d03-temporal-gap"
+    },
+    {
+      "id": "06-referential-broken",
+      "defect_type": "referential_broken",
+      "path": "06-referential-broken/",
+      "description": "line_code column contains 8 rows (10%) referencing 3 production-line codes not present in the dimension table, concentrated in the most recent records.",
+      "detection_hints": "d04-referential-broken"
+    },
+    {
+      "id": "07-false-anomaly-promo-spike",
+      "defect_type": "false_anomaly",
+      "path": "07-false-anomaly-promo-spike/",
+      "description": "Statistically extreme 8-10x sales spike over 3 days that is a legitimate promotional event (promo_tag='promo_6_1_mid_year'), not a data defect. Tests governance's false-positive filtering.",
+      "detection_hints": "d05-business-exception"
+    }
+  ],
+  "metadata": {
+    "created_at": "2026-08-07",
+    "synthetic": true,
+    "author": "Agent E (S2-2 Wave 6)",
+    "coverage": [
+      "missing_value",
+      "unit_inconsistent",
+      "duplicate_key",
+      "out_of_domain",
+      "temporal_gap",
+      "referential_broken",
+      "false_anomaly"
+    ],
+    "red_lines": [
+      "Synthetic Data Labeling: All fixtures are synthetic. Mark them as such in manifest metadata and CSV headers. Never fabricate real Goertek business data.",
+      "No Placeholders: Every CSV must be parseable and contain realistic column names/values. No \"TODO\", \"PLACEHOLDER\", or stub content.",
+      "Ground Truth Accuracy: expected.json must precisely describe what defect was seeded and where. This is the test oracle.",
+      "DefectType Enum Coverage: Cover all 6 core enum values from packages/contracts/schemas/common.schema.json#/$defs/Defect/properties/defect_type plus at least one false-anomaly case."
+    ],
+    "row_index_convention": "0-based over data rows (header excluded). Verified against 01/02/04, whose expected.json affected_rows match 0-based positions exactly.",
+    "revisions": [
+      {
+        "version": "1.1",
+        "date": "2026-08-09",
+        "rationale": "Four input.csv files did not actually contain the defect their expected.json asserts, so they could not serve as a governance-accuracy oracle. Per fixtures red line 'Ground Truth Accuracy: expected.json ... is the test oracle', every expected.json was left byte-for-byte unchanged and the input data was corrected to match it. No oracle was weakened to fit the data.",
+        "changes": [
+          {
+            "case": "03-duplicate-key",
+            "problem": "The 4 declared duplicate pairs shared only the date column, so the composite key (date, line_code, sku_id) produced 0 duplicate groups and expected.json's 'identical field values across all columns' was false.",
+            "fix": "For each pair in evidence.duplicate_pairs, copied row a over row b in full.",
+            "verified": "4 duplicate groups at rows [15,16,38,39,62,63,89,90] == affected_rows; duplicate_count 8; total_rows 120; ratio 6.7%; every pair identical across all columns."
+          },
+          {
+            "case": "04-out-of-domain",
+            "problem": "The generator cycled input_qty over {1000..1700 step 50} and output_qty over {950..1390 step 40} at different phases, so output_qty overtook input_qty in blocks. 28 rows carried derived yield_rate > 1 on top of the 5 seeded ones, making the declared 5%/7-row violation count false.",
+            "fix": "For each overshoot row, lowered output_qty to the largest value on the generator's own lattice (950+40k) below input_qty, and recomputed yield_rate = round(output_qty/input_qty, 4). The 5 seeded yield_rate cells and 2 seeded utilization_rate cells were left byte-identical (row 45 keeps its injected 1.08 despite its output_qty changing).",
+            "verified": "yield violations exactly [12,27,45,68,83] with values [1.12,-0.03,1.08,1.15,-0.01]; utilization violations [34,71] with [1.23,-0.05]; merged affected_rows [12,27,34,45,68,71,83]; 0 rows with output_qty > input_qty remain; all 95 non-seeded rows satisfy yield_rate == round(output_qty/input_qty, 4) and lie in [0,1]."
+          },
+          {
+            "case": "05-temporal-gap",
+            "problem": "Dates ran 2026-01-04..2026-03-30, one day earlier than the declared range, and the absent working days did not line up with the declared gaps.",
+            "fix": "Shifted the whole date column +1 day to restore the declared range, then moved the three present-but-should-be-absent dates (2026-02-04, 2026-02-18, 2026-03-09) onto the three absent-but-should-be-present dates (2026-02-06, 2026-02-19, 2026-03-11) and re-sorted. daily_output_qty values were not touched.",
+            "verified": "range 2026-01-05..2026-03-31; calendar_days 86; expected_working_days 62; actual_data_days 57; weekends_excluded 24; missing_working_days exactly [2026-02-04,2026-02-05,2026-02-18]; planned_downtime_excluded exactly [2026-03-09,2026-03-10]; gap_count 3; gap_ratio 4.8%; 0 weekend rows; no duplicate dates."
+          },
+          {
+            "case": "05-temporal-gap",
+            "problem": "expected.json declares planned_downtime_excluded [2026-03-09, 2026-03-10], but nothing in the directory declared that window. d03-temporal-gap makes the business calendar a premise of the judgement, so a detector reading only input.csv necessarily finds 5 missing working days instead of the declared 3.",
+            "fix": "Added calendar.json declaring the planned-downtime window as data, alongside time_grain and the same SYNTHETIC_GOERTEK_FIXTURE data_label. The window is now a project input rather than an assumption compiled into the detector.",
+            "verified": "With calendar.json present the detector reports exactly the 3 declared missing_working_days; deleting it returns the count to 5. test_05_planned_downtime_comes_from_the_calendar_file deletes the file and asserts that regression, so an implementation that hardcodes those two dates fails."
+          },
+          {
+            "case": "06-referential-broken",
+            "problem": "The case declared a dimension table but the directory contained only input.csv, so the referential check had nothing to join against.",
+            "fix": "Added dimension-line.csv holding exactly the 4 valid_codes from expected.json (LINE-F01..F04), carrying the same SYNTHETIC_GOERTEK_FIXTURE data_label as every other fixture file.",
+            "verified": "valid_codes and dangling_codes [LINE-NEW-05,06,07] match; dangling rows [72..79] == affected_rows; dangling_row_count 8; total_rows 80; ratio 10%; case- and whitespace-normalized intersection of dangling and valid codes is empty, so the break is genuinely referential and not a formatting artifact."
+          }
+        ],
+        "unchanged": [
+          "All seven expected.json files (byte-identical to v1.0).",
+          "01-missing-value/input.csv, 02-unit-inconsistent/input.csv, 07-false-anomaly-promo-spike/input.csv — re-verified against their oracles and already correct. 07 in particular: promo rows at [31,32,33] with max/p50 = 8.9x, which must stay below d01's 100x bimodal threshold so the false-positive filter is actually exercised."
+        ]
+      }
+    ]
+  }
+}

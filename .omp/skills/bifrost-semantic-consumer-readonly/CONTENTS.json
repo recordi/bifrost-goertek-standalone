@@ -1,0 +1,70 @@
+{
+  "package_name": "BIFROST_CONSUMER_READONLY_v0.1.4_PLATFORM_READY_SINGLE_ROOT",
+  "logical_version": "0.1.4",
+  "root_directory": "bifrost-semantic-consumer-readonly",
+  "stage": "04D.4C.1_PLATFORM_READY_NOT_DEPLOYED",
+  "created_at": "2026-08-11T16:37:54.393992+00:00",
+  "files": [
+    {
+      "path": "CONTENTS.json",
+      "sha256": null,
+      "size": 2213
+    },
+    {
+      "path": "README.md",
+      "sha256": "f4e28b094b93b7d5e05d424b6562f1b678c7928aa910929fde0fdb668a86fdf6",
+      "size": 5409
+    },
+    {
+      "path": "SKILL.md",
+      "sha256": "e2a4dec373c21a97504d52c1559af57b5f4b8898510d33803a75b80ca2a5988e",
+      "size": 5008
+    },
+    {
+      "path": "consumer/__init__.py",
+      "sha256": "344391e341ca5a05135aa58d6d883ce7008d8a8350955e215a25a4bdd5f4e951",
+      "size": 326
+    },
+    {
+      "path": "consumer/consumer_adapter.py",
+      "sha256": "f0823ae93f203ec20c69114ba5e7397f67b63529311082b49732cdc46924b314",
+      "size": 88487
+    },
+    {
+      "path": "consumer/coverage_matrix.py",
+      "sha256": "b0c145d5fd7f39adf71003d2726b8fdcc135ebc044688af6b96fb77255dbe6e0",
+      "size": 35334
+    },
+    {
+      "path": "consumer/role_permissions.py",
+      "sha256": "6bde290840415eadcfe56b1c92d20421fa6b706237d834925ae6240cc8ffa53d",
+      "size": 2547
+    },
+    {
+      "path": "schema/BIFROST_CONSUMER_QUERY_v0.2.json",
+      "sha256": "bbb49ff6d49d2ad07e3c006624e5476f9219b76182cd070985004606f122866c",
+      "size": 3658
+    },
+    {
+      "path": "schema/bifrost_decision_input_v0.1.schema.json",
+      "sha256": "b899167f8fd282c3e1992a063bda8ffd5ba0d2b64cde82b13e6f946c7dfc9862",
+      "size": 4752
+    },
+    {
+      "path": "schema/consumer_query_request_v0.1.schema.json",
+      "sha256": "74f75e29b9276eb88c97fbea6f992ef60780a5444c7cff8bfc9f54b38e1c0975",
+      "size": 1708
+    },
+    {
+      "path": "schema/consumer_query_response_v0.1.schema.json",
+      "sha256": "28d78a8a66b26707ac40a4e4a53e1f7f9907cc6985f9ce80c5260d48f28e7330",
+      "size": 1095
+    },
+    {
+      "path": "validator/consumer_validator.py",
+      "sha256": "40a94e2b7cc2f0c64be0224aa16902b9a73690980378a30dcd2d416a3f748d24",
+      "size": 11549
+    }
+  ],
+  "contents_json_sha256": null
+}

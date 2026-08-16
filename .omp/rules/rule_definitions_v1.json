@@ -1,0 +1,30 @@
+{
+  "rule_set_id": "BIFROST-RULESET-DEMO",
+  "rule_version": "1.0.0",
+  "effective_from": "2026-08-14T00:00:00Z",
+  "status": "published",
+  "threshold_strategy": "strict",
+  "metrics": {
+    "oee": {
+      "label": "综合设备效率",
+      "formula": "availability * performance_rate * quality_rate",
+      "unit": "ratio",
+      "min_sample_size": 1,
+      "thresholds": {"target": 0.76, "warning": 0.70, "critical": 0.60, "direction": "higher_is_better"}
+    },
+    "yield_rate": {
+      "label": "良率",
+      "formula": "good_qty / input_qty",
+      "unit": "ratio",
+      "min_sample_size": 1,
+      "thresholds": {"target": 0.98, "warning": 0.975, "critical": 0.95, "direction": "higher_is_better"}
+    },
+    "changeover_overrun_minutes": {
+      "label": "换产超时",
+      "formula": "max(actual_changeover_minutes - standard_changeover_minutes, 0)",
+      "unit": "minutes",
+      "min_sample_size": 1,
+      "thresholds": {"target": 0, "warning": 5, "critical": 15, "direction": "lower_is_better"}
+    }
+  }
+}

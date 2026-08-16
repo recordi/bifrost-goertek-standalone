@@ -1,0 +1,17 @@
+{
+  "defect_type": "referential_broken",
+  "severity": "high",
+  "affected_columns": ["line_code"],
+  "description": "line_code column references a production-line dimension table containing 4 valid codes (LINE-F01, LINE-F02, LINE-F03, LINE-F04). The last 8 rows (10% of 80 total rows) use 3 dangling codes (LINE-NEW-05, LINE-NEW-06, LINE-NEW-07) not present in the dimension table. These dangling references are concentrated in the most recent records (rows 72-79, the tail of the time series), and all share a consistent NEW- naming pattern, indicating new production lines that have started reporting output before being registered in the dimension table (temporary/timing issue rather than permanent data corruption).",
+  "detection_hints": "d04-referential-broken skill Step 3 (no declared enum, check fact-vs-dimension intersection): compute distinct line_code values in fact data, diff against dimension table's distinct line_code values. Step 4 attribution: dangling codes concentrated in recent records with consistent naming pattern point to 'new entity precedes dimension table update' scenario, implying low fix_cost once dimension table syncs.",
+  "affected_rows": [72, 73, 74, 75, 76, 77, 78, 79],
+  "evidence": {
+    "dimension_table_valid_codes": ["LINE-F01", "LINE-F02", "LINE-F03", "LINE-F04"],
+    "dangling_codes": ["LINE-NEW-05", "LINE-NEW-06", "LINE-NEW-07"],
+    "dangling_row_count": 8,
+    "total_rows": 80,
+    "dangling_ratio": "10%",
+    "temporal_concentration": "all dangling rows are in the most recent 8 records (rows 72-79), suggesting new lines pending dimension-table sync rather than historical corruption",
+    "format_check": "codes checked for case/whitespace mismatch against dimension table; confirmed genuinely absent, not a formatting false positive"
+  }
+}

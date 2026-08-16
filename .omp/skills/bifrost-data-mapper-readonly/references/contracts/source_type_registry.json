@@ -1,0 +1,22 @@
+{
+  "registry_version": "source-type-registry-v1.0",
+  "description": "数据来源类型注册表，定义已知 source_family / source_type 组合",
+  "source_types": [
+    {
+      "source_family": "TEAM_ENGINEERED_SIMULATION",
+      "source_type": "TEAM_ENGINEERED_SIMULATION_STATIC_SNAPSHOT",
+      "description": "团队工程化模拟数据静态快照",
+      "mapping_rule_version": "MAP-v1.0.1",
+      "semantic_model_version": "SEM-v1.1.1",
+      "approval_status": "approved"
+    },
+    {
+      "source_family": "OFFICIAL_DEIDENTIFIED_SIMULATION",
+      "source_type": "OFFICIAL_DEIDENTIFIED_SIMULATION",
+      "description": "官方脱敏模拟数据",
+      "mapping_rule_version": "MAP-OFFICIAL-v0.2.1",
+      "semantic_model_version": "SEM-v1.1.1",
+      "approval_status": "approved"
+    }
+  ]
+}

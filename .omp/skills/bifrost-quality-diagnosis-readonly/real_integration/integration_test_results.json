@@ -1,0 +1,147 @@
+{
+  "test_suite": "BIFROST quality v0.1.2 real consumer integration",
+  "specialist_type": "quality",
+  "logical_version": "0.1.2",
+  "output_contract": "BIFROST_SPECIALIST_RESULT_v0.1.3",
+  "consumer_version": "0.1.1",
+  "data_plane_zip_sha256": "81a8e5947a28ffe1dcabe123f54e00815ec4a06ca876e0f070ca59a88cf01b42",
+  "approved_data_plane_zip_sha256": "81a8e5947a28ffe1dcabe123f54e00815ec4a06ca876e0f070ca59a88cf01b42",
+  "data_plane_zip_approved": true,
+  "scenarios": [
+    {
+      "scenario": "A_real_success",
+      "entity": "defect_detail",
+      "field": "simulated_shift_id",
+      "consumer_version": "0.1.1",
+      "consumer_zip_sha256": "81a8e5947a28ffe1dcabe123f54e00815ec4a06ca876e0f070ca59a88cf01b42",
+      "source_release_id": "BIFROST-SEMANTIC-DATA-PLANE-v0.2-HOTFIX-04C.5B.2",
+      "source_snapshot_id": "SDS-P02_SIM-20260810-113856",
+      "decision_input_valid": true,
+      "specialist_result_valid": true,
+      "against_input_valid": true,
+      "normalized_facts": 1575,
+      "evidence_refs": 0,
+      "data_gaps": 6,
+      "status": "warning",
+      "actor_can_execute": false,
+      "source_write_performed": false,
+      "specialist_version": "0.1.2",
+      "contract_version": "BIFROST-SPECIALIST-RESULT-v0.1.3",
+      "local_trace_id": "QUALITY-AE53A559406A4B65",
+      "validator_output": {
+        "validate_input": "PASS(input): real_integration/decision_input_scenario_A.json",
+        "validate": "PASS: real_integration/specialist_result_scenario_A.json",
+        "against_input": "PASS(against-input): real_integration/specialist_result_scenario_A.json"
+      }
+    },
+    {
+      "scenario": "B_real_data_gap",
+      "entity": "quality_freeze",
+      "field": "decision_event_id",
+      "consumer_version": "0.1.1",
+      "consumer_zip_sha256": "81a8e5947a28ffe1dcabe123f54e00815ec4a06ca876e0f070ca59a88cf01b42",
+      "source_release_id": "BIFROST-SEMANTIC-DATA-PLANE-v0.2-HOTFIX-04C.5B.2",
+      "source_snapshot_id": "SDS-P02_SIM-20260810-113856",
+      "specialist_result_valid": true,
+      "against_input_valid": true,
+      "normalized_facts": 45,
+      "evidence_refs": 0,
+      "data_gaps": 6,
+      "status": "warning",
+      "actor_can_execute": false,
+      "data_gap_detail": [
+        {
+          "entity": "defect_detail",
+          "field": "spc_measurement_points",
+          "occ": 1,
+          "arc": 1
+        },
+        {
+          "entity": "defect_detail",
+          "field": "sample_rule",
+          "occ": 1,
+          "arc": 1
+        },
+        {
+          "entity": "quality_freeze",
+          "field": "freeze_status",
+          "occ": 45,
+          "arc": 45
+        },
+        {
+          "entity": "quality_freeze",
+          "field": "freeze_id",
+          "occ": 45,
+          "arc": 45
+        },
+        {
+          "entity": "quality_freeze",
+          "field": "freeze_quantity",
+          "occ": 45,
+          "arc": 45
+        },
+        {
+          "entity": "quality_yield",
+          "field": "yield",
+          "occ": 1,
+          "arc": 1
+        }
+      ]
+    },
+    {
+      "scenario": "C_blocked",
+      "entity": "(synthetic blocked input)",
+      "specialist_result_valid": true,
+      "status": "blocked",
+      "conclusion": "",
+      "evidence_refs": 0,
+      "actor_can_execute": false
+    },
+    {
+      "scenario": "D_mutation",
+      "description": "删除全部事实后 metrics/causes/actions 消失",
+      "specialist_result_valid": true,
+      "against_input_valid": true,
+      "status": "warning",
+      "metrics": 0,
+      "causes": 0,
+      "actions": 0,
+      "evidence_refs": 0,
+      "actor_can_execute": false
+    },
+    {
+      "scenario": "E_high_risk",
+      "description": "unfreeze_request → needs_confirmation",
+      "specialist_result_valid": true,
+      "against_input_valid": true,
+      "status": "needs_confirmation",
+      "high_risk_actions": 1,
+      "needs_human_confirmation": true,
+      "actor_can_execute": false
+    }
+  ],
+  "verified_capabilities": [
+    "输入合同 BIFROST_DECISION_INPUT_v0.1 校验（真实 consumer 输出）",
+    "EVREF-v1 字段级证据生成与跨输入输出验证（真实数据）",
+    "data_gaps 归并（9 字段，数千条原始缺口归并为少量结构化缺口）",
+    "纯 data_gap warning 模式（真实数据字段不足时 conclusion='' / evidence_refs=[]）",
+    "blocked 语义（输入合同失败时不输出业务结论）",
+    "needs_confirmation 高风险门控（冻结审查动作）",
+    "变异测试（删除事实后 metrics/causes/actions 同步消失）",
+    "共享验证器 validate + validate-against-input 全部通过"
+  ],
+  "unverified_capabilities_due_to_insufficient_fields": [
+    "良率分析：FINAL 数据面无 yield/yield_rate/quality_rate/good_output/total_output 字段",
+    "不良分布分析：defect_detail 仅含 simulated_shift_id，缺 defect_type/defect_count/defect_ratio",
+    "SPC/Cpk 计算：无 spc_measurement_points/usl/lsl/sample_rule 字段",
+    "冻结状态分析：quality_freeze 仅含 decision_event_id，缺 freeze_status/freeze_id/freeze_quantity",
+    "复检分析：无 inspection_status/reinspection_status 字段",
+    "不良守恒聚合检查：无 defect_count/defect_ratio 字段无法执行聚合",
+    "注：以上能力代码已实现并通过合成夹具测试，但因 FINAL 数据面质量相关实体字段不足，无法在真实联调中产生 completed 结果"
+  ],
+  "synthetic_vs_real_separation": {
+    "synthetic_tests": "13 个合成夹具覆盖全部质量规则（T01-T42），已明确标注为合成合同测试",
+    "real_integration": "5 个真实 consumer 联调场景（A-E），基于 FINAL 数据面 + consumer v0.1.1",
+    "note": "合成测试不冒充真实联调；真实联调中字段不足的能力已登记为未验证"
+  }
+}

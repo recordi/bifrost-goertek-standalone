@@ -1,0 +1,103 @@
+{
+  "contract_name": "BIFROST_SPECIALIST_RESULT_v0.1",
+  "contract_version": "BIFROST-SPECIALIST-RESULT-v0.1.3",
+  "specialist_type": "quality",
+  "status": "warning",
+  "request_id": "REQ-20260810-0002",
+  "source_release_id": "REL-SEMANTIC-20260809",
+  "source_snapshot_id": "SNAP-20260810T0800",
+  "conclusion": "LINE-S03 良率 96.8% 达标，但 SPC 控制图 Cpk 数据缺失，无法判定过程能力稳定性，存在统计失控隐患。",
+  "severity": "low",
+  "confidence": 0.71,
+  "metrics": [
+    {
+      "metric_id": "yield_line_s03",
+      "label": "良率",
+      "value": 0.968,
+      "display_format": "0.0%",
+      "semantic_field": "yield_rate",
+      "evidence_refs": [
+        "EVREF-v1:e6d56c9186b2b2847f74f5a03b992edb0bd2643f07c4643687ce9b2b4c2498d0"
+      ]
+    }
+  ],
+  "causes": [
+    {
+      "cause_id": "C-QUAL-01",
+      "category": "spc_data_missing",
+      "statement": "Cpk 控制图采样数据未物化，无法计算过程能力指数",
+      "causal_evidence_level": "associated_risk",
+      "evidence_refs": [
+        "EVREF-v1:e6d56c9186b2b2847f74f5a03b992edb0bd2643f07c4643687ce9b2b4c2498d0"
+      ]
+    }
+  ],
+  "affected_objects": [
+    {
+      "object_type": "line",
+      "object_id": "LINE-S03",
+      "status": "running"
+    }
+  ],
+  "recommended_actions": [
+    {
+      "action_id": "A-QUAL-01",
+      "action": "补采 SPC 采样数据并重算 Cpk",
+      "priority": "medium",
+      "is_high_risk": false,
+      "needs_human_confirmation": false,
+      "prohibited_auto_execute": true,
+      "actor_can_execute": false,
+      "affected_object": "LINE-S03",
+      "evidence_refs": [
+        "EVREF-v1:e6d56c9186b2b2847f74f5a03b992edb0bd2643f07c4643687ce9b2b4c2498d0"
+      ]
+    }
+  ],
+  "needs_human_confirmation": false,
+  "evidence_refs": [
+    "EVREF-v1:e6d56c9186b2b2847f74f5a03b992edb0bd2643f07c4643687ce9b2b4c2498d0"
+  ],
+  "data_gaps": [
+    {
+      "semantic_entity": "LINE-S03",
+      "semantic_field": "spc_cpk",
+      "reason": "SPC 控制图采样记录未物化到语义数据面",
+      "value_consumption_status": "missing",
+      "source_locator": "source_table=spc_sample, record_key=null",
+      "required_resolution": "由数据接入层补采 SPC 采样记录并物化 provenance_ref",
+      "affected_record_count": 1,
+      "sample_source_locators": [
+        "source_table=spc_sample, record_key=null"
+      ],
+      "occurrence_count": 1
+    }
+  ],
+  "actor_can_execute": false,
+  "contract_versions": {
+    "specialist_result_contract_version": "BIFROST-SPECIALIST-RESULT-v0.1.3",
+    "decision_input_contract_version": "BIFROST-DECISION-INPUT-v0.1",
+    "semantic_model_version": "SEM-2026.08",
+    "mapping_rule_version": "MAP-2026.08",
+    "specialist_logical_version": "QUAL-LOGIC-v0.1.0"
+  },
+  "validation": {
+    "status": "warning",
+    "issues": [],
+    "warnings": [
+      "SPC Cpk 数据缺失，过程能力稳定性无法判定"
+    ],
+    "input_contract_valid": true,
+    "evidence_contract_valid": true,
+    "output_contract_valid": true
+  },
+  "local_trace_id": "TRACE-QUAL-20260810-0002",
+  "specialist_details": {
+    "defect_distribution": {
+      "critical": 0,
+      "major": 12,
+      "minor": 34
+    },
+    "freeze_status": "none"
+  }
+}

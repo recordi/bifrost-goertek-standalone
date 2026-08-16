@@ -1,0 +1,149 @@
+{
+  "contract_name": "BIFROST_DECISION_INPUT_v0.1",
+  "contract_version": "BIFROST-DECISION-INPUT-v0.1",
+  "request_id": "FIX-01",
+  "consumer_agent_id": "agent_test",
+  "role": "supply",
+  "query_context": {
+    "semantic_entity": "purchase_order",
+    "source_scope": "P01",
+    "read_only": true
+  },
+  "source_release_id": "REL-TEST",
+  "source_snapshot_id": "SNAP-TEST",
+  "normalized_facts": [
+    {
+      "semantic_record_key": "供-采购订单与库存#purchase_order#PO-TEST-0001#row1",
+      "source_table": "test",
+      "source_record_id": "row1",
+      "semantic_field": "material_code",
+      "normalized_value": "MAT-X1",
+      "normalized_data_type": "str",
+      "normalized_unit": "",
+      "display_format": "",
+      "value_consumption_status": "usable",
+      "provenance_ref": {
+        "source_field": "material_code",
+        "raw_value": "MAT-X1",
+        "source_data_type": "str",
+        "evidence_locator": {
+          "source_file_sha256": "abc123",
+          "source_table": "test",
+          "source_row_number": 1,
+          "source_column_name": "material_code",
+          "source_column_index": 1
+        }
+      }
+    },
+    {
+      "semantic_record_key": "供-采购订单与库存#purchase_order#PO-TEST-0001#row1",
+      "source_table": "test",
+      "source_record_id": "row1",
+      "semantic_field": "purchase_qty",
+      "normalized_value": 1000,
+      "normalized_data_type": "str",
+      "normalized_unit": "",
+      "display_format": "",
+      "value_consumption_status": "usable",
+      "provenance_ref": {
+        "source_field": "purchase_qty",
+        "raw_value": 1000,
+        "source_data_type": "str",
+        "evidence_locator": {
+          "source_file_sha256": "abc123",
+          "source_table": "test",
+          "source_row_number": 1,
+          "source_column_name": "purchase_qty",
+          "source_column_index": 4
+        }
+      }
+    },
+    {
+      "semantic_record_key": "供-采购订单与库存#purchase_order#PO-TEST-0001#row1",
+      "source_table": "test",
+      "source_record_id": "row1",
+      "semantic_field": "arrived_qty",
+      "normalized_value": 1000,
+      "normalized_data_type": "str",
+      "normalized_unit": "",
+      "display_format": "",
+      "value_consumption_status": "usable",
+      "provenance_ref": {
+        "source_field": "arrived_qty",
+        "raw_value": 1000,
+        "source_data_type": "str",
+        "evidence_locator": {
+          "source_file_sha256": "abc123",
+          "source_table": "test",
+          "source_row_number": 1,
+          "source_column_name": "arrived_qty",
+          "source_column_index": 9
+        }
+      }
+    },
+    {
+      "semantic_record_key": "供-采购订单与库存#purchase_order#PO-TEST-0001#row1",
+      "source_table": "test",
+      "source_record_id": "row1",
+      "semantic_field": "promised_delivery_date",
+      "normalized_value": "2026-06-01T00:00:00",
+      "normalized_data_type": "str",
+      "normalized_unit": "",
+      "display_format": "",
+      "value_consumption_status": "usable",
+      "provenance_ref": {
+        "source_field": "promised_delivery_date",
+        "raw_value": "2026-06-01T00:00:00",
+        "source_data_type": "str",
+        "evidence_locator": {
+          "source_file_sha256": "abc123",
+          "source_table": "test",
+          "source_row_number": 1,
+          "source_column_name": "promised_delivery_date",
+          "source_column_index": 7
+        }
+      }
+    },
+    {
+      "semantic_record_key": "供-采购订单与库存#purchase_order#PO-TEST-0001#row1",
+      "source_table": "test",
+      "source_record_id": "row1",
+      "semantic_field": "actual_arrival_date",
+      "normalized_value": "2026-05-30T00:00:00",
+      "normalized_data_type": "str",
+      "normalized_unit": "",
+      "display_format": "",
+      "value_consumption_status": "usable",
+      "provenance_ref": {
+        "source_field": "actual_arrival_date",
+        "raw_value": "2026-05-30T00:00:00",
+        "source_data_type": "str",
+        "evidence_locator": {
+          "source_file_sha256": "abc123",
+          "source_table": "test",
+          "source_row_number": 1,
+          "source_column_name": "actual_arrival_date",
+          "source_column_index": 8
+        }
+      }
+    }
+  ],
+  "data_gaps": [],
+  "provenance_refs": [],
+  "contract_versions": {
+    "decision_input_contract_version": "BIFROST-DECISION-INPUT-v0.1"
+  },
+  "validation": {
+    "status": "passed",
+    "issues": [],
+    "normalized_facts_count": 5,
+    "data_gaps_count": 0,
+    "decision_usable_gate_enforced": true,
+    "read_only_enforced": true,
+    "no_cross_record_join": true,
+    "no_business_conclusion": true
+  },
+  "source_write_performed": false,
+  "actor_can_execute": false,
+  "local_trace_id": "TRACE-ecf286654a08"
+}

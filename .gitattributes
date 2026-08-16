@@ -1,0 +1,15 @@
+# 行尾统一为 LF。
+#
+# 起因不是洁癖：CI 在 ubuntu 上跑，packages/contracts 的漂移检查是逐字节比较
+# generated/ 与重新生成的产物。Windows 上写进版本库的 CRLF 会让同一份内容在
+# Linux 上比较失败——"契约漂移"报警指向的其实是行尾。同类风险适用于任何
+# 按字节/按行比较的检查（快照、指纹、diff 断言）。
+#
+# 约定：仓库里存 LF，检出也是 LF（不按平台改写）。generated/ 的产物由
+# scripts/generate-py.mjs 自己规范成 LF，这里是第二道防线，防止某个
+# core.autocrlf=true 的检出把 CRLF 带回来。
+* text=auto eol=lf
+
+# 二进制：禁止任何行尾改写，否则文件会被损坏。
+*.png binary
+*.db binary

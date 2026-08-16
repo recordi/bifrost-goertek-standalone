@@ -1,0 +1,171 @@
+{
+  "started_at": "2026-08-11T16:34:37Z",
+  "tests": [
+    {
+      "name": "rc1_sha_approved_in_consumer_registry",
+      "passed": true,
+      "detail": {
+        "rc1_sha": "b12e1f6c8abc9f901275c09f679fc7d8ec5cae4f89fac42271e704dd436069e0",
+        "registered": [
+          "81a8e5947a28ffe1...",
+          "b12e1f6c8abc9f90..."
+        ]
+      }
+    },
+    {
+      "name": "consumer_readonly_success",
+      "passed": true,
+      "detail": {
+        "status": "COMPLETED",
+        "matched_release": "BIFROST_v0.3_RC1"
+      }
+    },
+    {
+      "name": "readonly_facts_count",
+      "passed": true,
+      "detail": {
+        "count": 20
+      }
+    },
+    {
+      "name": "readonly_no_expedite_action",
+      "passed": true,
+      "detail": {
+        "action_count": 0,
+        "actions": []
+      }
+    },
+    {
+      "name": "verify_po20260001_values",
+      "passed": true,
+      "detail": {
+        "po_number": "PO-2026-0001",
+        "purchase_qty": 6666,
+        "arrived_qty": 6573,
+        "shortfall_expected": 93,
+        "material_code": "MAT-001"
+      }
+    },
+    {
+      "name": "verify_mat001_present",
+      "passed": true,
+      "detail": {
+        "affected_sample": [
+          {
+            "object_type": "purchase_order",
+            "object_id": "PO-2026-0001#row2"
+          },
+          {
+            "object_type": "purchase_order",
+            "object_id": "PO-2026-0001#row12"
+          }
+        ]
+      }
+    },
+    {
+      "name": "verify_partial_arrival_status",
+      "passed": true,
+      "detail": {
+        "conclusion_has_partial": true,
+        "completion_gap": true
+      }
+    },
+    {
+      "name": "verify_arrival_date_registered_only",
+      "passed": true,
+      "detail": {
+        "note_present": true
+      }
+    },
+    {
+      "name": "verify_overdue_indeterminate_and_gap",
+      "passed": true,
+      "detail": {
+        "asof_time_gap": true,
+        "completion_gap": true,
+        "gap_reasons": [
+          "missing_full_delivery_completion_evidence",
+          "missing_as_of_time_for_remaining_overdue",
+          "未登记批准的供应连续性风险严重度阈值规则",
+          "entity_not_present_in_data_plane"
+        ]
+      }
+    },
+    {
+      "name": "verify_local_run_only_no_persistent_ids",
+      "passed": true,
+      "detail": {
+        "action_identifier_scope": "local_run_only"
+      }
+    },
+    {
+      "name": "actor_can_execute_false",
+      "passed": true,
+      "detail": {}
+    },
+    {
+      "name": "readonly_needs_human_confirmation_false",
+      "passed": true,
+      "detail": {}
+    },
+    {
+      "name": "readonly_external_validator_passed",
+      "passed": true,
+      "detail": {}
+    },
+    {
+      "name": "readonly_evref_v1_format",
+      "passed": true,
+      "detail": {
+        "count": 20
+      }
+    },
+    {
+      "name": "consumer_expedite_success",
+      "passed": true,
+      "detail": {
+        "status": "COMPLETED"
+      }
+    },
+    {
+      "name": "expedite_gate_detected",
+      "passed": true,
+      "detail": {
+        "gate": "explicit_request_detected"
+      }
+    },
+    {
+      "name": "expedite_gate_withholds_without_shortage_evref",
+      "passed": true,
+      "detail": {
+        "action_count": 0,
+        "reason": "真实数据面无 material_shortage 实体，shortage 字段级 EVREF 不充分，门控正确不生成加急动作",
+        "gate": "explicit_request_detected"
+      }
+    },
+    {
+      "name": "expedite_external_validator_passed",
+      "passed": true,
+      "detail": {}
+    },
+    {
+      "name": "expedite_actor_can_execute_false",
+      "passed": true,
+      "detail": {}
+    },
+    {
+      "name": "dataplane_zip_unchanged",
+      "passed": true,
+      "detail": {
+        "before": "b12e1f6c8abc9f901275c09f679fc7d8ec5cae4f89fac42271e704dd436069e0",
+        "after": "b12e1f6c8abc9f901275c09f679fc7d8ec5cae4f89fac42271e704dd436069e0"
+      }
+    }
+  ],
+  "summary": {
+    "total": 20,
+    "passed": 20,
+    "failed": 0
+  },
+  "finished_at": "2026-08-11T16:34:40Z"
+}
