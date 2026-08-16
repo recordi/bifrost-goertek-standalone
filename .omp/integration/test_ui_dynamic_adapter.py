@@ -54,7 +54,7 @@ class DynamicAdapterUiTests(unittest.TestCase):
         data_layer = (Path(__file__).parents[2] / "output" / "bifrost-ui-runtime" / "src" / "data.jsx").read_text(encoding="utf-8")
         self.assertIn("ReadableBusinessInterpretationCard", page)
         self.assertIn("业务解读与下一步", page)
-        self.assertIn("不良类型指质量检测中对问题的业务分类", page)
+        self.assertIn("质量问题分类回答“检测发现了什么”", page)
         self.assertIn("buildBusinessViewBrief", data_layer)
         self.assertIn("不等于已经确认的根因", data_layer)
 
